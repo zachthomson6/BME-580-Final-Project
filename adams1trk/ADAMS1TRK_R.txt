@@ -1,0 +1,2108 @@
+==========================================================================================
+
+ADAMS Tracker Data (Early Release, Version 7.0, December 2010)
+
+Note to Users: This codebook is designed to match the distribution dataset. 
+Codebook metadata are derived from the data collection instrument.
+If you have questions concerning codebook layout or content please bring
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section TRK: DEMOGRAPHICS AND FIELD OUTCOMES  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: TRK   Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original household across waves of HRS.
+
+         .................................................................................
+          1770           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER IDENTIFIER
+         Section: TRK   Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each respondent has a Person Number. The identifier is unique within an original
+         household across waves of HRS.
+
+         .................................................................................
+          1233         010.  Person Number
+            18         011.  Person Number
+           372         020.  Person Number
+             2         021.  Person Number
+            68         030.  Person Number
+            76         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: TRK   Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable uniquely identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+          1770             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+GSUBHH         2000 HRS SUBHOUSEHOLD IDENTIFIER
+         Section: TRK   Level: Respondent      Type: Character  Width: 1   Decimals: 0
+
+         Category: IDENTIFIER
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  In the baseline
+         interview, all households for the wave are considered 'original' households, and
+         so all have a SUBHH of zero. Respondents can have a sub-household identifier at
+         a particular wave even if they did not provide an interview.
+
+         .................................................................................
+          1752           0.  Original household
+            10           1.  Sub-household, split off from original
+             4           2.  Sub-household, split off from original
+             2           7.  Used when two respondents split and then recombine with each
+                             other
+             2           9.  Not in this wave
+
+
+==========================================================================================
+
+HSUBHH         2002 HRS SUBHOUSEHOLD IDENTIFIER
+         Section: TRK   Level: Respondent      Type: Character  Width: 1   Decimals: 0
+
+         Category: IDENTIFIER
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0). In the baseline
+         interview, all households for the wave are considered 'original' households, and
+         so all have a SUBHH of zero. Respondents can have a sub-household identifier at
+         a particular wave even if they did not provide an interview.
+
+         .................................................................................
+          1566           0.  Original household
+            10           1.  Sub-household, split off from original
+             7           2.  Sub-household, split off from original
+           174           3.  Deceased respondent household
+            10           4.  Deceased respondent household
+             3           7.  Used when two respondents split and then recombine with each
+                             other
+
+
+==========================================================================================
+
+SUBHHFLG       FLAG - CHANGED HOUSEHOLD 2000 TO 2002
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+           191           1.  Yes, changed sub-household identifier between 2000 and 2002
+          1579           5.  No, did not change sub-household identifier between 2000 and
+                             2002
+
+
+==========================================================================================
+
+AASSESS        WHETHER WAVE A ASSESSMENT COMPLETED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         .................................................................................
+           856           1.  Yes
+           914           5.  No
+
+
+==========================================================================================
+
+AMONTH         MONTH OF WAVE A ADAMS ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         .................................................................................
+            62           1.  January
+            50           2.  February
+            58           3.  March
+            56           4.  April
+            63           5.  May
+            54           6.  June
+            63           7.  July
+            92           8.  August
+            85           9.  September
+           113          10.  October
+            93          11.  November
+            67          12.  December
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AYEAR          YEAR OF WAVE A ADAMS ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         .................................................................................
+           123        2001.  Year
+           318        2002.  Year
+           413        2003.  Year
+             2        2004.  Year
+           914        9997.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AFRESULT       WAVE A ASSESSMENT RESULT CODE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         This variable is the detailed result of ADAMS assessment attempt code recorded
+         as of the close of the ADAMS field period.
+
+         .................................................................................
+           856           1.  Wave A assessment visit completed
+           687           5.  Refused/Non-participation
+           227           7.  Deceased before Wave A assessment could be completed
+
+
+==========================================================================================
+
+VITSTAT        SUBJECT VITAL STATUS - WAVE A
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         This variable is based on HRS and Duke tracking efforts during the ADAMS field
+         period. It represents the vital status (living or deceased) of individuals
+         selected for the ADAMS study.
+
+         .................................................................................
+          1543           1.  Alive
+           227           5.  Deceased
+
+
+==========================================================================================
+
+AALOCEXM       WAVE A EXAM LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: DEMOGRAPHICS
+
+         .................................................................................
+           718           1.  Subject's residence
+                         2.  Community health clinic
+           109           3.  Nursing home
+             3           4.  Hospital
+            26           5.  Other (Specified in AALOCSP)
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AINFQUES       WHETHER WAVE A INF. QNAIRE RETURNED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+
+         A paper-and-pencil informant caregiving questionnaire was left with each
+         informant at the time of the Wave A assessment.  This variable indicates whether
+         the informant returned a usable questionnaire.
+
+         .................................................................................
+           744           1.  Yes
+           112           5.  No
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AAGE           SUBJECT AGE - WAVE A
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE A
+
+         .................................................................................
+           354                   70-79.  Age
+           367                   80-89.  Age
+           126                   90-99.  Age
+             9                 100-109.  Age
+           914                     997.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AAGEBKT        SUBJECT AGE BRACKET - WAVE A
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE A
+
+         .................................................................................
+           354           1.  70-79 years of age
+           367           2.  80-89 years of age
+           135           3.  90 years of age or older
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AAMARRD        SUBJECT MARITAL STATUS - WAVE A
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: DEMOGRAPHICS
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+            20           1.  Single
+           333           2.  Married or common law
+            41           3.  Divorced
+             8           4.  Separated
+           451           5.  Widow
+             3           8.  DK (Don't Know)
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AACURRWK       SUBJECT EMPLOYMENT STATUS - WAVE A
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: OCCUPATION
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+            22           1.  Working
+           732           2.  Retired
+            36           3.  Semi-retired
+            17           4.  Disabled
+            48           5.  Unemployed
+           915          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+FOLUPSEL       WHETHER SUBJECT SELECTED FOR WAVE B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         This variable indicates whether the subject was selected to have a Wave B
+         assessment.
+
+         .................................................................................
+           333           1.  Yes
+          1437           5.  No
+
+
+==========================================================================================
+
+BASSESS        WHETHER WAVE B ASSESSMENT COMPLETED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         .................................................................................
+           252           1.  Yes
+          1518           5.  No
+
+
+==========================================================================================
+
+BMONTH         MONTH OF WAVE B ADAMS ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         .................................................................................
+            23           1.  January
+            34           2.  February
+            41           3.  March
+            25           4.  April
+            13           5.  May
+            18           6.  June
+            12           7.  July
+            15           8.  August
+            18           9.  September
+            18          10.  October
+            22          11.  November
+            13          12.  December
+          1518          97.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BYEAR          YEAR OF WAVE B ADAMS ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         .................................................................................
+             7        2002.  Year
+            60        2003.  Year
+           123        2004.  Year
+            62        2005.  Year
+          1518        9997.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BFRESULT       WAVE B ASSESSMENT FIELD RESULT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         This variable is the detailed result of ADAMS Wave B assessment attempt code
+         recorded as of the close of the ADAMS field period.
+
+         .................................................................................
+           252           1.  Wave B assessment visit completed
+            48           5.  Refused/Non-participation
+            33           7.  Deceased before Wave B assessment could be completed
+          1437          97.  Not selected for Wave B assessment
+
+
+==========================================================================================
+
+BALOCEXM       WAVE B VISIT EXAM LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE B
+
+         .................................................................................
+           219           1.  Subject's residence
+                         2.  Community health clinic
+            14           3.  Nursing home
+                         4.  Hospital
+            19           5.  Other (Specified in BALOCSP)
+          1518          97.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BINFQUES       WHETHER WAVE B INF. QNAIRE RETURNED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE B
+
+         A paper-and-pencil informant caregiving questionnaire was left with each
+         informant at the time of the Wave B assessment. This variable indicates whether
+         the informant returned a usable questionnaire.
+
+         .................................................................................
+           205           1.  Yes
+            47           5.  No
+          1518          97.  No Wave B assessment completed
+
+
+==========================================================================================
+
+AINFCHG        WHETHER SAME INFORMANT AT WAVES A AND B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         This variable indicates whether the informant was the same individual at both
+         the Wave A and Wave B assessments.  Additional information about the informant
+         (e.g., demographics) can be found in sections AG and BG, which contain data from
+         the self-administered informant questionnaire.
+
+         .................................................................................
+           247           1.  Same informant at Wave A and Wave B visit
+             3           5.  Different informant at Wave A and Wave B visit
+             2           7.  Wave A assessment informant deceased/ no other informant
+                             available
+          1518          97.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BAGE           SUBJECT AGE - WAVE B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE B
+
+         .................................................................................
+            93                   70-79.  Age
+           124                   80-89.  Age
+            33                   90-99.  Age
+             2                 100-109.  Age
+          1518                     997.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BAGEBKT        SUBJECT AGE BRACKET - WAVE B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE B
+
+         .................................................................................
+            93           1.  70-79 years of age
+           124           2.  80-89 years of age
+            35           3.  90 years of age or older
+          1518          97.  No Wave B assessment completed
+
+
+==========================================================================================
+
+BAMARRD        SUBJECT MARITAL STATUS - WAVE B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE B
+
+         .................................................................................
+             7           1.  Single
+           101           2.  Married or common law
+            11           3.  Divorced
+             5           4.  Separated
+           128           5.  Widow
+                         8.  DK (Don't Know)
+          1518          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+BACURRWK       SUBJECT EMPLOYMENT STATUS - WAVE B
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: OCCUPATION
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave B assessment was not completed.
+
+         .................................................................................
+                         1.  Working
+           228           2.  Retired
+            11           3.  Semi-retired
+             8           4.  Disabled
+             5           5.  Unemployed
+          1518          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+CWAVE          WHETHER SUBJECT TARGETED FOR WAVE C ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE C
+
+         .................................................................................
+           466           1.  Yes
+          1304           5.  No
+
+
+==========================================================================================
+
+CASSESS        WHETHER WAVE C ASSESSMENT COMPLETED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+           315           1.  Yes
+          1455           5.  No
+
+
+==========================================================================================
+
+CMONTH         MONTH OF WAVE C ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE C
+
+         .................................................................................
+            24           1.  January
+            17           2.  February
+            13           3.  March
+            24           4.  April
+            17           5.  May
+            40           6.  June
+            31           7.  July
+            42           8.  August
+            40           9.  September
+            36          10.  October
+            18          11.  November
+            13          12.  December
+          1455       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CYEAR          YEAR OF WAVE C ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: FIELDWORK - WAVE C
+
+         .................................................................................
+           100        2006.  Year
+           194        2007.  Year
+            21        2008.  Year
+          1455       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CFRESULT       WAVE C ASSESSMENT RESULT CODE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE C
+
+         This variable is the detailed result of ADAMS Wave C assessment attempt code
+         recorded as of the close of the ADAMS field period.
+
+         .................................................................................
+           315           1.  Wave C assessment visit completed
+            70           5.  Refused/Non-participation
+            81           7.  Deceased before Wave C assessment could be completed
+          1304       Blank.  Not selected for Wave C assessment
+
+
+==========================================================================================
+
+CVITSTAT       SUBJECT VITAL STATUS AS OF ADAMS WAVE C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE C
+
+         This variable is based on HRS and Duke tracking efforts during the ADAMS field
+         period. It represents the vital status (living or deceased) of individuals
+         selected for the ADAMS study.
+
+         .................................................................................
+           385           1.  Alive
+            81           5.  Deceased/Presumed Deceased
+          1304       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CALOCEXM       ADAMS WAVE C ASSESSMENT LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+           292           1.  Home/Family Home
+             1           2.  Assisted Living
+            19           3.  Nursing/Convalescent Home (permanent)
+                         4.  Hospital/Medical/Rehabilitation Center (temporary)
+             3           5.  Other (Specify)
+          1455       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CAGE           SUBJECT AGE - WAVE C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE C
+
+         .................................................................................
+           117                   70-79.  Age
+           160                   80-89.  Age
+            37                   90-99.  Age
+             1                 100-109.  Age
+          1455                   Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CAGEBKT        SUBJECT AGE BRACKET - WAVE C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE C
+
+         .................................................................................
+           117           1.  70-79 years of age
+           160           2.  80-89 years of age
+            38           3.  90 years of age or older
+          1455       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+CAMARRD        SUBJECT MARITAL STATUS - WAVE C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE C
+
+         This information was gathered during the ADAMS Wave C assessment and is
+         therefore blank for any individual for whom a Wave C assessment was not
+         completed.
+
+         .................................................................................
+             8           1.  Single
+           131           2.  Married or common law
+            22           3.  Divorced
+             1           4.  Separated
+           153           5.  Widow
+          1455       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+DWAVE          WHETHER SUBJECT TARGETED FOR WAVE D ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE D
+
+         .................................................................................
+           280           1.  Yes
+          1490           5.  No
+
+
+==========================================================================================
+
+DASSESS        WHETHER WAVE D ASSESSMENT COMPLETED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+           217           1.  Yes
+          1553           5.  No
+
+
+==========================================================================================
+
+DMONTH         MONTH OF WAVE D ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE D
+
+         .................................................................................
+            13           1.  January
+            15           2.  February
+            18           3.  March
+            28           4.  April
+            15           5.  May
+            25           6.  June
+            16           7.  July
+            22           8.  August
+            20           9.  September
+            16          10.  October
+            21          11.  November
+             8          12.  December
+          1553       Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DYEAR          YEAR OF WAVE D ASSESSMENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: FIELDWORK - WAVE D
+
+         .................................................................................
+           125        2008.  Year
+            92        2009.  Year
+          1553       Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DFRESULT       WAVE D ASSESSMENT RESULT CODE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE D
+
+         This variable is the detailed result of ADAMS Wave D assessment attempt code
+         recorded as of the close of the ADAMS field period.
+
+         .................................................................................
+           217           1.  Wave D assessment visit completed
+            35           5.  Refused/Non-participation
+            28           7.  Deceased before Wave D assessment could be completed
+          1490       Blank.  Not selected for Wave D assessment
+
+
+==========================================================================================
+
+DVITSTAT       SUBJECT VITAL STATUS AS OF ADAMS WAVE D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: FIELDWORK - WAVE D
+
+         This variable is based on HRS and Duke tracking efforts during the ADAMS field
+         period. It represents the vital status (living or deceased) of individuals
+         selected for the ADAMS study.
+
+         .................................................................................
+           252           1.  Alive
+            28           5.  Deceased
+          1490       Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DALOCEXM       ADAMS WAVE D ASSESSMENT LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+           209           1.  Home/Family Home
+                         2.  Assisted Living
+             5           3.  Nursing/Convalescent Home (permanent)
+             1           4.  Hospital/MediDAl/Rehabilitation Center (temporary)
+             2           5.  Other (Specify)
+          1553       Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DAGE           SUBJECT AGE - WAVE D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE D
+
+         .................................................................................
+            56                   70-79.  Age
+           135                   80-89.  Age
+            25                   90-99.  Age
+             1                 100-109.  Age
+          1553                   Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DAGEBKT        SUBJECT AGE BRACKET - WAVE D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE D
+
+         .................................................................................
+            56           1.  70-79 years of age
+           135           2.  80-89 years of age
+            26           3.  90 years of age or older
+          1553       Blank.  No Wave D assessment completed
+
+
+==========================================================================================
+
+DAMARRD        SUBJECT MARITAL STATUS - WAVE D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE D
+
+         This information was gathered during the ADAMS Wave D assessment and is
+         therefore blank for any individual for whom a Wave D assessment was not
+         completed.
+
+         .................................................................................
+             9           1.  Single
+            94           2.  Married or common law
+            14           3.  Divorced
+                         4.  Separated
+           100           5.  Widow
+          1553       Blank.  No Wave C assessment completed
+
+
+==========================================================================================
+
+GENDER         SUBJECT GENDER
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+           712           1.  Male
+          1058           2.  Female
+
+
+==========================================================================================
+
+RACE           SUBJECT RACE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+             3           0.  Not obtained
+          1403           1.  White/Caucasian
+           305           2.  Black or African American
+            59           7.  Other
+
+
+==========================================================================================
+
+HISPANIC       SUBJECT HISPANIC TYPE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+             3           0.  Not obtained
+           101           1.  Mexican American
+            54           2.  Other Hispanic
+          1612           5.  Not Hispanic
+
+
+==========================================================================================
+
+ETHNIC         SUBJECT ETHNICITY
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+
+         This is a constructed variable based on RACE and HISPANIC from the HRS tracker
+         file.
+
+         .................................................................................
+          1313           1.  White/Caucasian, Not Hispanic
+           299           2.  Black or African American, Not Hispanic
+           155           3.  Hispanic
+             3       Blank.  Not obtained
+
+
+==========================================================================================
+
+EDYRS          SUBJECT YEARS OF FORMAL EDUCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable replaced the SCHLYRS variable (obtained from the HRS 2002 Tracker
+         file).  There are two respondents who reported having 12 years of education
+         during their ADAMS assessment, but had values of 0 on SCHLYRS.
+
+         .................................................................................
+            58                       0.  No Formal Education
+           822                    1-11.  Grades
+           452                      12.  High School
+           249                   13-15.  Some College
+            93                      16.  College Graduate
+            95                      17.  Post College (17+ Years)
+             1                      99.  Unknown
+
+
+==========================================================================================
+
+DEGREE         SUBJECT HIGHEST DEGREE OBTAINED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+           853           0.  No degree
+            51           1.  GED
+           650           2.  High school diploma
+            30           3.  Two year college degree
+           108           4.  Four year college degree
+            58           5.  Master degree
+            19           6.  Professional degree (Ph.D., M.D., J.D.)
+             1           9.  Degree unknown
+
+
+==========================================================================================
+
+AAEDPERF       EDUC: HOW DID SUBJECT DO IN SCHOOL
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: EDUCATIONAL BACKGROUND
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+           218           1.  Above average
+           499           2.  Average
+            57           3.  Below average
+           951          97.  Not assessed/Not asked
+            45          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+AAEVFAIL       EVER FAIL A SUBJECT IN SCHOOL
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: EDUCATIONAL BACKGROUND
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+           167           1.  Yes
+           577           5.  No
+           952          97.  Not assessed/Not asked
+            74          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+AAHLDBCK       EDUC: EVER HELD BACK OR TUTORED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: EDUCATIONAL BACKGROUND
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+           109           1.  Yes
+           654           5.  No
+           952          97.  Not assessed/Not asked
+            55          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+AAEDUCCM       EDUC: SPECIFY FOR ANHLDBCK
+         Section: TRK   Level: Respondent      Type: Character  Width: 50  Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: EDUCATIONAL BACKGROUND
+
+         .................................................................................
+
+
+==========================================================================================
+
+AAEDUCR        EDUC: REASON FOR INCOMPLETE DEGREE
+         Section: TRK   Level: Respondent      Type: Character  Width: 100 Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: EDUCATIONAL BACKGROUND
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADEMSOURCE     ADAMS SOURCE OF EDUCATION DEMOGRAPHIC DATA
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SOURCE
+
+         This variable was collected as part of the Neuropsychological battery
+         demographics during the initial (Wave A) ADAMS assessment.  This variable
+         indicates the source of the data provided in AAEDPERF, AAEVFAIL, AAHLDBCK,
+         AAEDUCCM, and AAEDUCR.
+
+         .................................................................................
+           791           1.  Respondent
+            36           2.  Informant
+            27           3.  Both
+             2           4.  Demographic data not obtained
+           914       Blank.  No assessment completed
+
+
+==========================================================================================
+
+WAVESEL        HRS WAVE PRIOR TO SELECTION FOR ADAMS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: ADAMS FIELDWORK
+
+         ADAMS subjects were selected either from HRS 2000 or HRS 2002.  This variable
+         indicates the HRS wave from which the subject was selected.
+
+         .................................................................................
+           665           1.  HRS 2000
+          1105           2.  HRS 2002
+
+
+==========================================================================================
+
+AASAMSTR       ADAMS SUBJECT SAMPLING STRATUM
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: SAMPLE DESIGN
+
+         The ADAMS strata indicated here are described in the technical documentation
+         report on the sample design, weight, and analysis for ADAMS, available on the
+         website.  In particular, please refer to Tables 1 and 2 in that report for a
+         reference regarding how the strata were defined.
+
+         .................................................................................
+           152           1.  Stratum 1
+           225           2.  Stratum 2
+           300           3.  Stratum 3
+            41           4.  Stratum 4
+            52           5.  Stratum 5
+            54           6.  Stratum 6
+            56           7.  Stratum 7
+            96           8.  Stratum 8
+           130           9.  Stratum 9
+            49          10.  Stratum 10
+            83          11.  Stratum 11
+           262          12.  Stratum 12
+           156          13.  Stratum 13
+            47          14.  Stratum 14
+            26          15.  Stratum 15
+            11          16.  Stratum 16
+            16          17.  Stratum 17
+            14          18.  Stratum 18
+
+
+==========================================================================================
+
+AACOGSTR       SUBJECT COGNITIVE STRATUM
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+
+         .................................................................................
+           414           1.  Low
+           381           2.  Borderline
+           347           3.  Low Normal
+           270           4.  Moderate Normal
+           358           5.  High Normal
+
+
+==========================================================================================
+
+AAAGESEL       AGE WHEN SELECTED INTO ADAMS SAMPLE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+
+         Category: SAMPLE DESIGN
+
+         .................................................................................
+           716                   70-79.  Age
+           775                   80-89.  Age
+           266                   90-99.  Age
+            13                 100-109.  Age
+
+
+==========================================================================================
+
+SELFCOG        HRS SELF RESPONDENT COGNITION SCORE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: SAMPLE DESIGN
+
+         This variable is the cognition score for self-respondents in the HRS and
+         computed from HRS cognition items in the wave from which the subject was
+         selected.  More detail about how this variable was constructed can be found in
+         the data description.
+
+         .................................................................................
+          1238                    0-35.  Range of summary scores on HRS cognition items
+           532                   Blank.  Self-respondent cognition score not available
+
+
+==========================================================================================
+
+PROXCOG        HRS PROXY COGNITION SCORE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: SAMPLE DESIGN
+
+         This variable is the cognition score for proxy respondents in the HRS and
+         computed from HRS proxy cognition items (the IQCODE) in the wave from which the
+         subject was selected.  More detail about how this variable was constructed can
+         be found in the data description.
+
+         .................................................................................
+           530                     2-5.  Range of summary scores on HRS proxy cognition
+                                         measure (IQCODE)
+             2                      97.  Interview finished by proxy reporter but self-R
+                                         cognition items completed
+          1238                   Blank.  Proxy cognition score not available
+
+
+==========================================================================================
+
+PROXY          HRS INTERVIEW PROXY STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+
+         This variable indicates proxy status in the HRS wave from which the subject was
+         selected.  For example, if the subject was selected from HRS 2000, then this
+         variable corresponds to proxy status in HRS 2000. If the subject was selected
+         from HRS 2002, then this variable corresponds to proxy status in HRS 2002.
+
+         .................................................................................
+          1238           0.  HRS interview not conducted with a proxy reporter
+           532           1.  HRS interview conducted with a proxy reporter
+
+
+==========================================================================================
+
+NURSEHM        HRS NURSING HOME STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+
+         This variable indicates nursing home status at the time of the HRS interview
+         from which the subject was selected.  This variable is based on reports obtained
+         during the HRS interview with the respondent, the spouse, or a living proxy for
+         the respondent.
+
+         .................................................................................
+          1543           0.  Respondent not in nursing home
+           227           1.  Respondent in nursing home
+
+
+==========================================================================================
+
+LANGUAGE       HRS INTERVIEW LANGUAGE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: ADAMS FIELDWORK
+
+         This variable indicates language of the HRS interview in the wave from which the
+         subject was selected.  This information was used by Duke University for
+         assessment planning purposes, but may not coincide with the language of the
+         actual ADAMS assessment.
+
+         .................................................................................
+           801           1.  English
+            55           2.  Spanish
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AADEMSPN       WHETHER DEMO. QUESTIONS ASKED IN SPANISH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: FIELDWORK - WAVE A
+         Measure: DEMOGRAPHICS
+
+         This information was gathered during the ADAMS assessment and is therefore blank
+         for any individual for whom an ADAMS Wave A assessment was not completed.
+
+         .................................................................................
+            63           1.  Yes
+           793           5.  No
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AALANG         NATIVE LANGUAGE OF SUBJECT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: NEUROPSYCHOLOGICAL EXAM
+         Measure: DEMOGRAPHICS
+
+         .................................................................................
+           759           1.  English
+            97           2.  Other (Specified in AALANGCD)
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AALANGCD       CODED IF AALANG NOT ENGLISH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         .................................................................................
+           759           1.  English
+            24           2.  Other (Arabic, Belgian, Cantonese, Czechoslovakian, French,
+                             Greek, German, Italian, Lithuanian, Norwegian, Russian,
+                             Slovak, Ukrainian)
+            73           3.  Spanish
+           914          97.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AREGION        SUBJECT GEOGRAPHICAL LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS - WAVE A
+
+         The region is based on the US Census region, although the Southern region was
+         divided into two groups based on Census division: South Atlantic and South
+         Central.
+
+         .................................................................................
+           298           1.  Northeast
+           393           2.  Midwest
+           450           3.  South Atlantic
+           326           4.  South Central
+           303           5.  West
+
+
+==========================================================================================
+
+AURBRUR        SUBJECT URBAN/RURAL STATUS OF LOCATION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+
+         This code is based on the Beale Rural-Urban Continuum Code, which is collapsed
+         to preserve respondent confidentiality.  Information on the Rural-Urban
+         Continuum Code is available in the following USDA report:  Rural-Urban Continuum
+         Codes for Metro and Nonmetro Counties, 1993. By Margaret A. Butler and Calvin L.
+         Beale.  Agriculture and Rural Economy Division, Economic Research Service, U.S.
+         Department of Agriculture. Staff report No. 9425, September 1994.
+
+         .................................................................................
+           728           1.  Urban (Beale Rural-Urban Continuum code 0)
+           512           2.  Suburban (Beale Rural-Urban Continuum codes 1,2)
+           527           3.  Ex-urban (Beale Rural-Urban Continuum codes 3,4,5,6,7,8,9)
+             3       Blank.  Unknown/ No match for Rural-Urban code
+
+
+==========================================================================================
+
+SECLUST        ADAMS SAMPLING ERROR CLUSTER VARIABLE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: SAMPLE DESIGN
+         Measure: FROM HRS TRACKER FILE
+
+         For additional information about this variable, please refer to the technical
+         report on Sample Design, Weighting, and Analysis for ADAMS, available on the
+         website.
+
+         .................................................................................
+           510           1.  CLUSTER
+           346           2.  CLUSTER
+           914       Blank.  No Wave A assessment completed
+
+
+==========================================================================================
+
+SESTRAT        ADAMS SAMPLING ERROR STRATUM VARIABLE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: SAMPLE DESIGN
+         Measure: FROM HRS TRACKER FILE
+
+         For additional information about this variable, please refer to the technical
+         report on Sample Design, Weighting, and Analysis for ADAMS, available on the
+         website.
+
+         .................................................................................
+           856                    1-26.  Stratum
+           914                   Blank.  No Wave A assessment completed
+
+
+==========================================================================================
+
+AASAMPWT_F     ADAMS RESPONDENT LEVEL SAMPLE WEIGHT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 6   Decimals: 0
+
+         Category: SAMPLING WEIGHT
+
+         This sample weight variable was updated in the data file as of June, 2009. This
+         variable replaced a previous (Nov 2007) version of AASAMPWT_F. For details
+         regarding how this variable was created and updated, see the technical
+         documentation by Heeringa et al. (2009). This variable should be used for all
+         cross-sectional analysis of the ADAMS Wave A data. The reference population for
+         this weight is the July 1, 2002 U.S. adult population age 71+.
+
+         .................................................................................
+           856             2548-118178.  Weight
+           914                   Blank.  No weight
+
+
+==========================================================================================
+
+ACLONGWT       ADAMS LONGITUDINAL WEIGHT WAVES A - C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 6   Decimals: 0
+
+         Category: SAMPLING WEIGHT
+
+         The ADAMS weight variable, ACLONGWT, has been constructed specifically for
+         prospective analysis of the Wave A ADAMS sample cohort (U.S. adults, age 71+ on
+         July 1, 2002). ACLONGWT is designed to allow the analyst to look forward from
+         July 1, 2002 and track each Wave A sample member to a final disposition at Wave
+         C. For details regarding how this variable was created, see the technical
+         documentation by Heeringa et al. (2009).
+
+         .................................................................................
+           786             2548-161517.  Weight
+           984                   Blank.  No weight
+
+
+==========================================================================================
+
+OUTCOMEC       STATUS AS OF ADAMS WAVE C
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         The variable, OUTCOMEC, indicates the respondent's status as of Wave C and can
+         be used for longitudinal tracking. It permits quick determination of the
+         longitudinal disposition of each sample case across Waves A-C, including whether
+         the individual was assessed in Wave C, the primary research diagnosis code
+         assigned in Wave C if assessed, and reasons for not being assessed in Wave C
+         (e.g., prior diagnosis of dementia at Wave A or B, or having died prior to Wave
+         C).
+
+         .................................................................................
+           308           1.  Wave A dementia
+           914           9.  Wave A deceased, non-response
+            40          11.  Wave B dementia
+            42          18.  Wave B deceased
+            47          21.  Wave C dementia
+           110          22.  Wave C CIND
+           158          23.  Wave C normal
+            81          28.  Wave C deceased
+            70          29.  Wave C non-response
+
+
+==========================================================================================
+
+CCOHORTWT      ADAMS WAVE C ADJUSTMENT WEIGHT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 6   Decimals: 0
+
+         The variable CCOHORTWT was used to create ACLONGWT.  The reference population
+         for this weight is non-random and we DO NOT advocate analysis of the Wave C data
+         on its own.  For details regarding how this variable was created and updated,
+         see the technical documentation by Heeringa et al. (2009).
+
+         .................................................................................
+           315             2612-161517.  Weight
+          1455                   Blank.  No weight
+
+
+==========================================================================================
+
+OUTCOMED       STATUS AS OF ADAMS WAVE D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         .................................................................................
+           308           1.  Wave A dementia
+           914           9.  Wave A deceased, non-response
+            40          11.  Wave B dementia
+            28          18.  Wave B deceased
+            47          21.  Wave C dementia
+            95          28.  Wave C deceased
+            57          29.  Wave C non-response
+            19          31.  Wave D dementia
+            79          32.  Wave D CIND
+           117          33.  Wave D normal
+            31          38.  Wave D deceased
+            35          39.  Wave D non-response
+
+
+==========================================================================================
+
+ADLONGWT       ADAMS LONGITUDINAL WEIGHT WAVES A - D
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 6   Decimals: 0
+
+         .................................................................................
+           764             2548-166713.  Weight
+          1006                   Blank.  No weight
+
+
+==========================================================================================
+
+BIRTHMO        SUBJECT MONTH OF BIRTH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  For three
+         HRS/AHEAD Overlap cases the HRS and AHEAD month of birth did not match, the
+         AHEAD month of birth is used here.
+
+         .................................................................................
+             4           0.  Month of birth is unknown
+           137           1.  January
+           138           2.  February
+           164           3.  March
+           128           4.  April
+           141           5.  May
+           151           6.  June
+           124           7.  July
+           173           8.  August
+           137           9.  September
+           158          10.  October
+           151          11.  November
+           164          12.  December
+
+
+==========================================================================================
+
+BIRTHYR        SUBJECT YEAR OF BIRTH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  Falling into one
+         of the birth cohorts below does not necessarily mean that the individual is in
+         the corresponding entry cohort.
+
+         .................................................................................
+             7               1890-1899.  Year
+           162               1900-1909.  Year
+           623               1910-1919.  Year
+           815               1920-1929.  Year
+           163               1930-1939.  Year
+
+
+==========================================================================================
+
+GWGTR          HRS 2000 WEIGHT: RESPONDENT LEVEL
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 5   Decimals: 0
+
+         Category: SAMPLING WEIGHT
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This weight
+         should be used in making inferences to INDIVIDUALS in the US in 2000 who were
+         born before 1948. It is based on the original sampling rate for cohort eligible
+         individuals. It has been post-stratified to the March 2000 Current Population
+         Survey based on the birth-cohorts of each spouse/partner, their race/ethnicity
+         and marital status. See http://hrsonline.isr.umich.edu/docs/design.html for more
+         information about weight construction.
+
+         .................................................................................
+           211                       0.  Zero weight
+          1559                 1-11227.  Weight
+
+
+==========================================================================================
+
+HWGTR          HRS 2002 WEIGHT: RESPONDENT LEVEL
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 5   Decimals: 0
+
+         Category: SAMPLING WEIGHT
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0). This weight
+         should be used in making inferences to INDIVIDUALS in the US in 2002 who were
+         born before 1948. It is based on the original sampling rate for cohort eligible
+         individuals. It has been post-stratified to the March 2002 Current Population
+         Survey based on the birth-cohorts of each spouse/partner, their race/ethnicity
+         and marital status. See http://hrsonline.isr.umich.edu/docs/design.html for more
+         information about weight construction.
+
+         .................................................................................
+           419                       0.  Zero weight
+          1351                 1-12949.  Weight
+
+
+==========================================================================================
+
+STUDY          HRS/AHEAD STUDY MEMBERSHIP
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+           260           1.  HRS
+          1196          11.  AHEAD, including the AHEAD-AHEAD overlap case
+            11          12.  HRS/AHEAD Overlap case, AHEAD, given to AHEAD after HRS Wave
+                             1 [1992/1993], appeared in AHEAD
+           298          21.  HRS/AHEAD Overlap case, given to AHEAD after HRS Wave 1
+                             [1992/1993], but never appeared in AHEAD
+             5          31.  WB (War Babies)
+
+
+==========================================================================================
+
+FIRSTIW        FIRST INTERVIEW: STUDY YEAR
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+           247           1.  First interview was in HRS Wave 1 [1992/1993]
+          1179           2.  First interview was in AHEAD Wave 1 [1993/1994]
+             4           3.  First interview was in HRS Wave 2 [1994/1995]
+             7           4.  First interview was in AHEAD Wave 2 [1995/1996]
+             9           5.  First interview was in HRS Wave 3 [1996/1997]
+           310           6.  First interview was in HRS 1998 [1998/1999]
+             8           7.  First interview was in HRS 2000 [2000]
+             6           8.  First interview was in HRS 2002 [2002/2003]
+
+
+==========================================================================================
+
+AIWWAVE        HRS 1992 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            10           0.  No
+           247           1.  Yes
+          1513       Blank.  Not in this wave
+
+
+==========================================================================================
+
+BIWWAVE        AHEAD 93 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            10           0.  No
+          1190           1.  Yes
+           570       Blank.  Not in this wave
+
+
+==========================================================================================
+
+CIWWAVE        HRS 1994 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            14           0.  No
+           235           1.  Yes
+          1521       Blank.  Not in this wave
+
+
+==========================================================================================
+
+DIWWAVE        AHEAD 95 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            55           0.  No
+          1149           1.  Yes
+           566       Blank.  Not in this wave
+
+
+==========================================================================================
+
+EIWWAVE        HRS 1996 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            13           0.  No
+           239           1.  Yes
+          1518       Blank.  Not in this wave
+
+
+==========================================================================================
+
+FIWWAVE        HRS 1998 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            58           0.  No
+          1707           1.  Yes
+             5       Blank.  Not in this wave
+
+
+==========================================================================================
+
+GIWWAVE        HRS 2000 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            33           0.  No
+          1735           1.  Yes
+             2       Blank.  Not in this wave
+
+
+==========================================================================================
+
+HIWWAVE        HRS 2002 WHETHER INTERVIEWED IN THE WAVE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         .................................................................................
+            37           0.  No
+          1733           1.  Yes
+                     Blank.  Not in this wave
+
+
+==========================================================================================
+
+GRESCODE       HRS 2000 INTERVIEW RESULT CODE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable is
+         the detailed result of interview attempt code recorded as of the close of the
+         field period for the wave. It may not be consistent with other status variables
+         that were subsequently edited based on ancillary information.
+
+         .................................................................................
+          1730           1.  Complete Interview
+             5           5.  Partial Interview: Data Through SECT B
+            15          51.  Final Refusal by Respondent
+            14          52.  Final Refusal Not by R (Spouse-Gatekeep)
+             1          61.  NI: R Not Located, Tracking Exhausted
+             1          62.  NI: No Contact with R During Data Collection Period
+             2          67.  NI: Other Reason (Describe Situation)
+             2       Blank.  Not in this wave
+
+
+==========================================================================================
+
+HRESCODE       HRS 2002 INTERVIEW RESULT CODE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable is
+         the detailed result of interview attempt code recorded as of the close of the
+         field period for the wave. It may not be consistent with other status variables
+         that were subsequently edited based on ancillary information.
+
+         .................................................................................
+          1731        1001.  Complete Interview
+             2        1005.  Partial Interview
+            10        5001.  Final Refusal by Respondent
+             8        5002.  Final Refusal by Informant
+             8        5004.  Final refusal by proxy
+             1        5005.  Final refusal, never reached for conversion
+             5        5080.  Final refusal, exit proxy
+             1        6002.  NI: Never answered
+             1        6006.  NI: Unable to identify proxy
+             1        6007.  NI:Other Reason
+             2        9001.  Respondent requests removal from sample
+
+
+==========================================================================================
+
+GALIVE         HRS 2000 VITAL STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0) and is based on
+         HRS tracking efforts. Respondents for whom vital status was not certain are
+         placed in two categories: presumed alive, in which contact was made with someone
+         capable of reporting a death, and unknown in which no contact was made. By
+         definition, no respondents can be deceased at the baseline interview, or they
+         would have been excluded from the sample. The baseline for HRS is HRS 1992; for
+         AHEAD, AHEAD 1993; and for CODA and WB, HRS 1998.
+
+         .................................................................................
+          1768           1.  Alive at this wave
+             2       Blank.  Not in the sample in this wave
+
+
+==========================================================================================
+
+HALIVE         HRS 2002 VITAL STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0) and is based on
+         HRS tracking efforts. Respondents for whom vital status was not certain are
+         placed in two categories: presumed alive, in which contact was made with someone
+         capable of reporting a death, and unknown in which no contact was made. By
+         definition, no respondents can be deceased at the baseline interview, or they
+         would have been excluded from the sample. The baseline for HRS is HRS 1992; for
+         AHEAD, AHEAD 1993; and for CODA and WB, HRS 1998.
+
+         .................................................................................
+          1566           1.  Alive at this wave
+            12           2.  Presumed alive as of this wave
+           190           5.  Known deceased as of this wave
+             2           9.  Vital status unknown
+
+
+==========================================================================================
+
+GIWTYPE        HRS 2000 INTERVIEW TYPE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+          1735           1.  Core interview obtained
+            33           5.  Core interview not obtained
+             2          99.  Not in this wave
+
+
+==========================================================================================
+
+HIWTYPE        HRS 2002 INTERVIEW TYPE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+          1550           1.  Core interview obtained
+            30           5.  Core interview not obtained
+           183          11.  Exit interview obtained
+             7          15.  Exit interview not obtained
+
+
+==========================================================================================
+
+GIWMONTH       HRS 2000 INTERVIEW MONTH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This date is
+         when the interview began. Sometimes interviews are completed on later dates.
+
+         .................................................................................
+                         1.  January
+           105           2.  February
+           333           3.  March
+           276           4.  April
+           295           5.  May
+           282           6.  June
+           188           7.  July
+           143           8.  August
+            51           9.  September
+            43          10.  October
+            19          11.  November
+                        12.  December
+            35       Blank.  Not in this wave, or interview date not obtained
+
+
+==========================================================================================
+
+HIWMONTH       HRS 2002 INTERVIEW MONTH
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This date is
+         when the interview began. Sometimes interviews are completed on later dates.
+
+         .................................................................................
+            20           1.  January
+             3           2.  February
+                         3.  March
+           146           4.  April
+           315           5.  May
+           252           6.  June
+           274           7.  July
+           277           8.  August
+           222           9.  September
+           130          10.  October
+            83          11.  November
+            11          12.  December
+            37       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+GIWYEAR        HRS 2000 INTERVIEW YEAR
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This date is
+         when the interview began. Sometimes interviews are completed on later dates.
+
+         .................................................................................
+          1735        2000.  Year interview began
+            35       Blank.  Not in this wave, or interview date not obtained
+
+
+==========================================================================================
+
+HIWYEAR        HRS 2002 INTERVIEW YEAR
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This date is
+         when the interview began. Sometimes interviews are completed on later dates.
+
+         .................................................................................
+          1710        2002.  Year interview began
+            23        2003.  Year interview began
+            37       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+GPROXY         HRS 2000 PROXY STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+           164           1.  Core interview obtained, was a proxy, proxy was provided by
+                             spouse or partner
+           299           2.  Core interview obtained, was a proxy, proxy was not provided
+                             by spouse or partner
+          1272           5.  Core interview obtained, was not a proxy
+            33           9.  Core interview not obtained
+             2       Blank.  Not in this wave
+
+
+==========================================================================================
+
+HPROXY         HRS 2002 PROXY STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+           144           1.  Core interview obtained, was a proxy, proxy was provided by
+                             spouse or partner
+           283           2.  Core interview obtained, was a proxy, proxy was not provided
+                             by spouse or partner
+          1123           5.  Core interview obtained, was not a proxy
+            30           9.  Core interview not obtained
+            38          11.  Exit interview obtained, proxy provided by spouse/partner
+           145          12.  Exit interview obtained, proxy was not provided by spouse or
+                             partner
+             7          19.  Exit interview not obtained
+
+
+==========================================================================================
+
+GPROXTYP       HRS 2000 PROXY TYPE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS 2000 COVERSCREEN
+
+         This variable is from the HRS 2000 Coverscreen.
+
+         .................................................................................
+           146           2.  Daughter/Stepdaughter
+            58           3.  Son/Stepson
+            25           4.  Daughter-in-law
+                         5.  Son-in-law
+             8           6.  Granddaughter
+             3           7.  Grandson
+            13           8.  Sister
+             2           9.  Brother
+            25          10.  Other relative
+            10          11.  Friend
+             2          12.  Paid helper
+             7          13.  Professional
+          1471       Blank.  Inapplicable
+
+
+==========================================================================================
+
+HPROXTYP       HRS 2002 PROXY TYPE
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS 2002 SECTION A
+
+         This variable is from HRS 2002 Section A.
+
+         .................................................................................
+           156           2.  Spouse/partner
+            46           3.  Son
+             1           4.  Stepson
+             1           5.  Spouse/partner of daughter
+           143           6.  Daughter
+             1           7.  Stepdaughter
+            14           8.  Spouse/partner of son
+            12           9.  Grandchild
+             2          15.  Brother
+             9          17.  Sister
+            26          19.  Other relative
+            12          20.  Other individual
+             2          23.  Paid helper
+             1          24.  Professional
+          1344       Blank.  Inapplicable
+
+
+==========================================================================================
+
+GCOUPLE        HRS 2000 WHETHER COUPLED OR PARTNERED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+           766           1.  Yes
+          1002           5.  No
+             2       Blank.  Not in the sample in this wave
+
+
+==========================================================================================
+
+HCOUPLE        HRS 2002 WHETHER COUPLED OR PARTNERED
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).
+
+         .................................................................................
+           707           1.  Yes
+          1063           5.  No
+
+
+==========================================================================================
+
+GNURSHM        HRS 2000 NURSING HOME STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0). This variable is
+         based on reports obtained during the interview with the respondent, the spouse,
+         or a living proxy for the respondent.
+
+         .................................................................................
+           176           1.  Interviewed in nursing home this wave
+          1559           5.  Interviewed in community this wave
+             2           6.  Spouse/Partner reports R not in nursing home (R not
+                             interviewed)
+            31           9.  Unknown
+             2       Blank.  Not in the wave or core sample
+
+
+==========================================================================================
+
+HNURSHM        HRS 2002 NURSING HOME STATUS
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: DEMOGRAPHICS
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0). This variable is
+         based on reports obtained during the interview with the respondent, the spouse,
+         or a living proxy for the respondent.
+
+         .................................................................................
+           199           1.  Interviewed in nursing home this wave
+             6           3.  Interviewer observation data reports R in nursing home
+          1351           5.  Interviewed in community this wave
+                         6.  Spouse/Partner reports R not in nursing home
+            23           7.  Interviewer observation data reports R not in nursing home
+             1           9.  Unknown
+           190       Blank.  Not in the wave or core sample
+
+
+==========================================================================================
+
+HFAMR          HRS 2002 FAMILY RESPONDENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable
+         indicates whether a respondent provided any family data in this wave.
+
+         .................................................................................
+          1166           1.  Family respondent
+             1           3.  2nd family respondent, answer not retained
+           383           5.  Non-family respondent
+           220       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+GFINR          HRS 2000 FINANCIAL RESPONDENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable
+         indicates whether a respondent provided any financial data in this wave.
+
+         .................................................................................
+          1325           1.  Yes
+           408           5.  No
+             2           6.  No - household had two financial respondents and the
+                             financial info given by this R was not retained
+            35       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+GFAMR          HRS 2000 FAMILY RESPONDENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable
+         indicates whether a respondent provided any family data in this wave.
+
+         .................................................................................
+          1274           1.  Yes
+           459           5.  No
+             2           6.  No - household had two fam. respondents and the family
+                             information given by this R was not retained
+            35       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+HFINR          HRS 2002 FINANCIAL RESPONDENT
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         Category: HRS FIELDWORK
+         Measure: FROM HRS TRACKER FILE
+
+         This variable is from the 2004 HRS tracker file (version 1.0).  This variable
+         indicates whether a respondent provided any financial data in this wave.
+
+         .................................................................................
+          1217           1.  Financial respondent
+             1           3.  2nd financial respondent, answer not retained
+           332           5.  Non-financial respondent
+           220       Blank.  Not in this wave, or interview not obtained
+
+
+==========================================================================================
+
+VERSION        ADAMS DATA RELEASE VERSION
+         Section: TRK   Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+
+         .................................................................................
+          1770           7.  Released December 2010
+
+
+==========================================================================================
