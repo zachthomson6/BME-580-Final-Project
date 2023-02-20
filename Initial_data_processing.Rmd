@@ -1,0 +1,235 @@
+---
+title: "Initial_data_preprocessing_v1"
+author: "Jia Yu Cheung"
+date: "2023-02-17"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(factoextra)
+library(tidyverse)
+library(corrplot)
+library(ggplot2)
+library(psych) # Contains the winsor function and other helpful statistical tools
+library(patchwork)
+library(readr)
+library(reshape2)
+library(robustHD)
+library(DescTools)
+```
+
+## Functions
+```{r}
+# importing data files
+
+read_data <- function(da_filepath, dict_filepath) {
+  # Set path to the data file "*.DA"
+  data.file <- da_filepath
+
+  # Set path to the dictionary file "*.DCT"
+  dict.file <- dict_filepath
+
+  # Read the dictionary file
+  df.dict <- read.table(dict.file, skip = 2, fill = TRUE, stringsAsFactors = FALSE)
+
+  # Set column names for dictionary dataframe
+  colnames(df.dict) <- c("col.num","col.type","col.name","col.width","col.lbl")
+
+  # Remove last row which only contains a closing }
+  df.dict <- df.dict[-nrow(df.dict),]
+
+  # Extract numeric value from column width field
+  df.dict$col.width <- as.integer(sapply(df.dict$col.width, gsub, pattern = "[^0-9\\.]", replacement = ""))
+
+  # Convert column types to format to be used with read_fwf function
+  df.dict$col.type <- sapply(df.dict$col.type, function(x) ifelse(x %in% c("int","byte","long"), "i", ifelse(x == "float", "n", ifelse(x == "double", "d", "c"))))
+
+  # Read the data file into a dataframe
+  # install.packages("utils")
+  df <- read_fwf(file = data.file, fwf_widths(widths = df.dict$col.width, col_names = df.dict$col.name), col_types = paste(df.dict$col.type, collapse = ""))
+
+  # Add column labels to headers
+  attributes(df)$variable.labels <- df.dict$col.lbl
+  return(df)
+}
+
+# 3 Standard Deviation 
+SD <- function(df, coln) {
+  meanc = mean(df$coln)
+  sd3 = 3*sd(df$coln)
+  df_SD3 = filter(df,
+                  coln <= meanc + sd3 &
+                  coln >= meanc - sd3)
+  return(df_SD3)
+}
+```
+
+```{r}
+ # Study Data Sets
+df_physexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AB_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AB_R.dct")
+df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
+df_score = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AD_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AD_R.dct")
+df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
+df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
+df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
+df_dailyactivities = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AG_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AG_R.dct")
+df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
+df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
+df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
+df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
+df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AN_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AN_R.dct")
+
+tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
+```
+
+```{r} 
+# Consolidating Data: adding dementia score as a column 
+df_consolidated_dailyactivities = merge(df_dailyactivities, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+# str(df_consolidated_dailyactivities, list.len=ncol(df_consolidated_dailyactivities))
+
+# Rename columns in df_consolidated_dailyactivites
+df_consolidated_dailyactivities <- df_consolidated_dailyactivities %>% 
+        rename("Television" = "AGQ1",
+               "BoardGames" = "AGQ5",
+               "ArtsCraft" = "AGQ7",
+               "Write" = "AGQ8",
+               "Computer" = "AGQ9",
+               "Memory" = "AGQ11",
+               "DecisionMaking" = "AGQ12",
+               "Organization" = "AGQ13",
+               "Learning" = "AGQ23")
+
+# summary(df_consolidated_dailyactivities)
+
+df_consolidated_neuroexam = merge(df_neuroexam, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+# str(df_consolidated_neuroexam, list.len=ncol(df_consolidated_neuro))
+
+# Rename columns in df_consolidated_neuroexam
+df_consolidated_neuroexam <- df_consolidated_neuroexam %>% 
+        rename("MMSE_score" = "ANMSETOT",
+               "Animal_fluency_score" = "ANAFTOT",
+               "Boston_naming_test"="ANBNTTOT",
+               "Construction_praxis_score"="ANDCPTOT",
+               "Del_word_list_memory"="ANDELCOR",
+               "IMM_word_list_recog"="ANIMMCR2",
+               "Word_list_recognition"="ANRECYES",
+               "Wechsler_logical_memory"="ANWM1TOT",
+               "Fuld_object_memory"="ANFULSC2",
+               "Benton_vis_reten"="ANVRTCOR")
+
+# Rename columns in df_consolidated_physexam
+df_consolidated_physexam = merge(df_physexam, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+# str(df_consolidated_physexam, list.len=ncol(df_consolidated_physexam))
+
+df_consolidated_physexam <- df_consolidated_physexam %>% 
+        rename("Weight" = "ABWEIGHT",
+               "Height" = "ABHEIGHT",
+               "Pulse_obliteration_pressure" = "ABPULSE",
+               "BPM" = "ABBPBEAT",
+               "SystolicBP" = "ABBPSYS1",
+               "DiastolicBP" = "ABBPDIA1",
+               "FeelsBlue_Sad" = "ABC1",
+               "Tired_LowEnergy" = "ABC5",
+               "Lose_Interest" = "ABC4",
+               "SleepProblems" = "ABC9",
+               "Trouble_Concentrating" = "ABC10",
+               "Delusions" = "ABNPA")
+# summary(df_consolidated_physexam)
+```
+
+```{r}
+# Daily Activities Correlation Plot
+dailyactivities_noNA = df_consolidated_dailyactivities %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning)
+
+dailyactivities_noNA$Television <- as.numeric(dailyactivities_noNA$Television)
+dailyactivities_noNA$BoardGames <- as.numeric(dailyactivities_noNA$BoardGames)
+dailyactivities_noNA$ArtsCraft <- as.numeric(dailyactivities_noNA$ArtsCraft)
+dailyactivities_noNA$Write <- as.numeric(dailyactivities_noNA$Write)
+dailyactivities_noNA$Computer <- as.numeric(dailyactivities_noNA$Computer)
+dailyactivities_noNA$Memory <- as.numeric(dailyactivities_noNA$Memory)
+dailyactivities_noNA$DecisionMaking <- as.numeric(dailyactivities_noNA$DecisionMaking)
+dailyactivities_noNA$Organization <- as.numeric(dailyactivities_noNA$Organization)
+dailyactivities_noNA$Learning <- as.numeric(dailyactivities_noNA$Learning)
+
+vars_dailyactivities = dailyactivities_noNA %>% select(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning)
+
+cor = cor(vars_dailyactivities)
+corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.cex = .8)
+
+# Phys Exam Correlation Plot
+physexam_noNA = df_consolidated_physexam %>% drop_na(Height, Pulse_obliteration_pressure, BPM, SystolicBP, DiastolicBP, FeelsBlue_Sad, Tired_LowEnergy, Lose_Interest, SleepProblems, Trouble_Concentrating, Delusions)
+
+physexam_noNA$Height <- as.numeric(physexam_noNA$Height)
+physexam_noNA$Pulse_obliteration_pressure <- as.numeric(physexam_noNA$Pulse_obliteration_pressure)
+physexam_noNA$BPM <- as.numeric(physexam_noNA$BPM)
+physexam_noNA$SystolicBP <- as.numeric(physexam_noNA$SystolicBP)
+physexam_noNA$DiastolicBP <- as.numeric(physexam_noNA$DiastolicBP)
+physexam_noNA$FeelsBlue_Sad <- as.numeric(physexam_noNA$FeelsBlue_Sad)
+physexam_noNA$Tired_LowEnergy <- as.numeric(physexam_noNA$Tired_LowEnergy)
+physexam_noNA$Lose_Interest <- as.numeric(physexam_noNA$Lose_Interest)
+physexam_noNA$SleepProblems <- as.numeric(physexam_noNA$SleepProblems)
+physexam_noNA$Trouble_Concentrating <- as.numeric(physexam_noNA$Trouble_Concentrating)
+physexam_noNA$Delusions <- as.numeric(physexam_noNA$Delusions)
+
+vars_physexam = physexam_noNA %>% select(Height, Pulse_obliteration_pressure, BPM, SystolicBP, DiastolicBP, FeelsBlue_Sad, Tired_LowEnergy, Lose_Interest, SleepProblems, Trouble_Concentrating, Delusions)
+
+cor = cor(vars_physexam)
+corplot_physexam = corrplot(cor, method = "number", tl.cex = .6, number.cex = .8)
+
+```
+
+```{r}
+# Boxplot Plot Neuro Exam Scores
+neuro_rawscores = df_consolidated_neuroexam[ , c("MMSE_score", "Animal_fluency_score","Boston_naming_test","Construction_praxis_score",
+                                                 "Del_word_list_memory","IMM_word_list_recog","Word_list_recognition",
+                                                 "Wechsler_logical_memory","Fuld_object_memory","Benton_vis_reten")]
+# Scale values to the same range
+scaled_neuro = as.data.frame(scale(neuro_rawscores))
+
+# Plot Boxplot
+scaled_neuro_box = ggplot(data = melt(scaled_neuro), aes(x=variable, y=value)) + geom_boxplot(aes(fill=variable)) + theme(axis.text.x=element_blank(),) + labs(title="Scaled Neuro Exam Values", x="Test", y="Scaled Values")
+
+scaled_neuro_box
+
+# Remove outliers (Winsorization Method)
+# neuro_score_winsor = winsor(scaled_neuro, trim = 0.05)
+neuro_score_winsor = lapply(scaled_neuro, Winsorize, probs = c(0.05,0.95))
+neuro_score_winsor = data.frame(neuro_score_winsor)
+
+neuro_score_winsor_box = ggplot(data = melt(neuro_score_winsor), aes(x=variable, y=value)) + geom_boxplot(aes(fill=variable)) + theme(axis.text.x=element_blank(),) + labs(title="Scaled Neuro Exam Values (Without Outliers - Winsorization)", x="Test", y="Scaled Values")
+
+neuro_score_winsor_box
+
+# Remove outliers (3SD)
+neuro_exam_3SD_MMSE = SD(scaled_neuro,"MMSE_score")
+neuro_exam_3SD_animal = SD(scaled_neuro,"Animal_fluency_score")
+neuro_exam_3SD_boston = SD(scaled_neuro,"Boston_naming_test")
+neuro_exam_3SD_wechsler = SD(scaled_neuro,"Wechsler_logical_memory")
+
+neuro_score_sd_box = ggplot(data = melt(neuro_exam_3SD), aes(x=variable, y=value)) + geom_boxplot(aes(fill=variable)) + theme(axis.text.x=element_blank(),) + labs(title="Scaled Neuro Exam Values (Without Outliers - 3SD)", x="Test", y="Scaled Values")
+
+neuro_score_sd_box
+```
+
+```{r}
+# PCA
+
+# Scale and unscaled data
+ivs = data %>% select(-fetal_health)
+pr_unscale = prcomp(ivs)
+pr_scale = prcomp(ivs, scale=TRUE) # Note: output is a list, not a dataframe
+
+names(pr_scale)
+dim(pr_scale$x)
+pr_scale$x
+
+pr_scale$rotation
+
+fviz_eig(pr_scale, addlabels = T, ncp = 16)
+fviz_eig(pr_unscale, addlabels = T, ncp = 16) 
+
+fviz_pca_biplot(pr_scale)
+```
+
+
