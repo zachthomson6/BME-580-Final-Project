@@ -1,0 +1,95 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AH: MEDICAL CONDITIONS -  INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AH    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           856           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AH    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           584         010.  Person Number
+            11         011.  Person Number
+           187         020.  Person Number
+             1         021.  Person Number
+            33         030.  Person Number
+            39         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AH    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           856             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AHCONDITIONS   MEDICAL CONDITIONS PRESENT
+         Section: AH    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CONDITIONS
+
+         WERE MEDICAL CONDITIONS PRESENT?
+
+         Note: ADAMS medical diagnosis prior and/or comorbid conditions form is used to
+         essentially capture lifetime medical history based on informant report at the
+         time of the clinical assessment(s).  The medical conditions data table contains
+         multiple observations per ID number since condition forms can be completed at
+         different phases of the study. This variable is coded 'no' if the form was
+         completed but there were no medical conditions that met the guidelines for
+         inclusion on the form.
+
+         .................................................................................
+           851           1.  Yes
+             5           2.  No
+                     Blank.  NA
+
+
+==========================================================================================
+
+AHTOTCOND      TOTAL NUMBER OF CONDITIONS OR PROCEDURES REPORTED
+         Section: AH    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: TOTCOND
+
+         .................................................................................
+             5                       0.  No conditions reported
+           318                     1-5.  One to five conditions reported
+           403                    6-10.  Six to ten conditions reported
+           130                   11-95.  More than ten conditions reported
+                                 Blank.  NA
+
+
+==========================================================================================

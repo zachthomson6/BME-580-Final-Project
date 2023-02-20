@@ -1,0 +1,143 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AH: MEDICAL CONDITIONS  -  INITIAL VISIT  (Condition)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AH    Level: Condition       Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+          6060           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AH    Level: Condition       Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+          4154         010.  Person Number
+            62         011.  Person Number
+          1322         020.  Person Number
+             6         021.  Person Number
+           215         030.  Person Number
+           292         040.  Person Number
+             9         041.  Person Number
+
+
+==========================================================================================
+
+AHCNUM         CONDITION NUMBER
+         Section: AH    Level: Condition       Type: Numeric    Width: 2   Decimals: 0
+         Ref: CNUM
+
+         Condition mention number.
+
+         .................................................................................
+          3855                     1-5.  First, second, ..., condition mentioned
+          1746                    6-10.  Sixth, seventh, ..., condition mentioned
+           459                   11-95.  Eleventh, twelfth, ..., condition mentioned
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AH    Level: Condition       Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+          6060             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AHCDTYPE       TYPE OF ICD 9 CODE
+         Section: AH    Level: Condition       Type: Numeric    Width: 1   Decimals: 0
+         Ref: TYPE
+
+         .................................................................................
+           513           1.  Supplementary classification of factors influencing health
+                             status and contact with health services (V01-V83.89)
+           788           2.  Procedure codes (00.0-99.99)
+          4759           3.  Medical conditions (001-799.9) and supplemental conditions
+                             --injury and poisoning (800-999.9)
+
+
+==========================================================================================
+
+AHCODE         MEDICAL CONDITION - ICD9 CODE
+         Section: AH    Level: Condition       Type: Character  Width: 6   Decimals: 0
+         Ref: CODE
+
+         MEDICAL CONDITION CODE (ICD9 CODE).
+
+         Note:  Code can be alpha-numeric.  Some codes require entry of a subcode. See
+         Data Description and Usage, Appendix 3, ICD 9 Codes and Sub-codes, for
+         frequencies and meaning of the codes and subcodes.
+
+         .................................................................................
+
+
+==========================================================================================
+
+AHSCODE        MEDICAL CONDITION SUBCODE
+         Section: AH    Level: Condition       Type: Numeric    Width: 1   Decimals: 0
+         Ref: SUB
+
+         MEDICAL CONDITION SUBCODE.
+
+         Note:  The subcodes were added to capture characteristics, such as treatment or
+         sequalae of the medical condition, that might be useful in interpreting the
+         data.  If the ICD-9 codes are the same but the subcodes are different, then the
+         conditions are considered to be different. Subcodes are required if medical
+         condition code is: 436.0, 435.9, 294.8, 412, 427.9, 496, 250.00. See Data
+         Description and Usage, Appendix 3, ICD 9 Codes and Sub-codes, for frequencies
+         and meaning of the codes and subcodes.
+
+         .................................................................................
+
+
+==========================================================================================
+
+AHCSTATUS      CONDITION STATUS
+         Section: AH    Level: Condition       Type: Numeric    Width: 1   Decimals: 0
+         Ref: STATUS
+
+         Status of medical condition coded on form.  Up to 40 conditions can be coded per
+         observation.
+
+         .................................................................................
+            74           1.  CURRENT A condition that is present today, currently with
+                             signs or symptoms, may or may not be under treatment. This
+                             is used for acute conditions or newly diagnosed conditions
+          2563           2.  PAST Any episode(s) of disease or medical event in past,
+                             receiving no treatment for it today, no current signs or
+                             symptoms.  An exception would be medical events such as
+                             stroke and head injury which are coded as past, STATUS = 2,
+                             even if there are lasting
+          3423           3.  PRESENT AND PAST Most conditions that are chronic will be
+                             coded present and past
+
+
+==========================================================================================

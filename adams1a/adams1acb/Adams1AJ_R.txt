@@ -1,0 +1,4963 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AJ: DEMENTIA CHECKLIST & NEUROLOGICAL EXAM -  INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AJ    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           856           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AJ    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           584         010.  Person Number
+            11         011.  Person Number
+           187         020.  Person Number
+             1         021.  Person Number
+            33         030.  Person Number
+            39         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AJ    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           856             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AJNEURCOMP     WHETHER NEUROLLOGICAL EXAM COMPLETED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: NEURCOMP
+
+         NEUROLOGICAL EXAM COMPLETED?
+         The CRN conducts this standardized neurological examination with the subject.
+         For each question, Can't Execute and Missing will mean the following:
+         CAN'T EXECUTE: Subject will not/cannot attempt task secondary to dementia.
+         MISSING: Examiner omits task, subject refuses (not secondary to dementia), or
+         subject unable to do task secondary to physical reason.
+
+         .................................................................................
+           819           1.  YES
+            37           2.  NO
+
+
+==========================================================================================
+
+AJRANGELAT     NEUROLOGICAL EXAM - RANGE, EXTENT OF LATERAL GAZE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RANGELAT
+
+         RANGE/EXTENT OF LATERAL GAZE2
+
+         .................................................................................
+           725           1.  NORMAL -- complete gaze to left/right
+            20           2.  ABNORMAL -- incomplete left or right gaze
+             3           3.  ABNORMAL -- complete absence of left or right gaze
+                         4.  OTHER (SPECIFY)
+            45           8.  CAN'T EXECUTE
+            26           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRANGEVER     NEUROLOGICAL EXAM - RANGE,EXTENT OF VERTICAL GAZE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RANGEVER
+
+         RANGE/EXTENT OF VERTICAL GAZE
+
+         .................................................................................
+           734           1.  NORMAL -- complete up & down gaze
+            13           2.  ABNORMAL -- incomplete up & down gaze
+             4           3.  ABNORMAL -- complete absence of up & down gaze
+                         4.  OTHER (SPECIFY)
+            47           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJPUPILLAR     NEUROLOGICAL EXAM - PUPILLARY REFLEX
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: PUPILLAR
+
+         PUPILLARY REFLEX
+
+         .................................................................................
+           655           1.  NORMAL -- PERRLA
+           120           2.  ABNORMAL -- re:pupil size, reaction time
+            19           3.  OTHER (SPECIFY)
+            10           8.  CAN'T EXECUTE
+            15           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJOPENJAW      NEUROLOGICAL EXAM - OPENING AND CLOSING JAW
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: OPENJAW
+
+         OPENING AND CLOSING JAW
+
+         .................................................................................
+           774           1.  NORMAL -- No deviation of mandible
+            14           2.  ABNORMAL (SPECIFY)
+             1           3.  OTHER (SPECIFY)
+            26           8.  CAN'T EXECUTE
+             4           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJPHARYNGE     NEUROLOGICAL EXAM - PHARYNGEAL MOVEMENTS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: PHARYNGE
+
+         PHARYNGEAL MOVEMENTS (subject opens mouth, says 'ah')
+
+         .................................................................................
+           721           1.  NORMAL -- No deviation of uvula or tongue
+            37           2.  ABNORMAL -- deviation to left or right
+            14           3.  OTHER (SPECIFY)
+            32           8.  CAN'T EXECUTE
+            15           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJCLOSEYES     NEUROLOGICAL EXAM - CLOSE EYES, RESIST OPENING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CLOSEYES
+
+         CLOSE EYES, RESIST OPENING BY EXAMINER
+
+         .................................................................................
+           745           1.  NORMAL -- no weakness of upper eyelid on either side
+            27           2.  ABNORMAL -- unilateral or bilateral weakness
+             2           3.  OTHER (SPECIFY)
+            36           8.  CAN'T EXECUTE
+             9           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJBLOWOUT      NEUROLOGICAL EXAM - BLOW OUT CHEEKS WITH MOUTH CLOSED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: BLOWOUT
+
+         BLOW OUT CHEEKS WITH MOUTH CLOSED
+
+         .................................................................................
+           697           1.  NORMAL -- can perform evenly bilateral
+            41           2.  ABNORMAL -- cannot perform evenly
+            19           3.  ABNORMAL -- cannot perform with mouth closed
+             7           4.  OTHER (SPECIFY)
+            48           8.  CAN'T EXECUTE
+             7           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJWIDESMIL     NEUROLOGICAL EXAM - WIDE SMILE, SHOW TEETH
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: WIDESMIL
+
+         WIDE SMILE- SHOW TEETH
+
+         .................................................................................
+           748           1.  NORMAL -- no weakness noted
+             2           2.  ABNORMAL -- flattened nasolabial fold
+            30           3.  ABNORMAL -- inability to raise corner of mouth on left or
+                             right
+             7           4.  OTHER (SPECIFY)
+            26           8.  CAN'T EXECUTE
+             6           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJEYEBROWS     NEUROLOGICAL EXAM - RAISE EYEBROWS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: EYEBROWS
+
+         FROWN WITH KNIT BROWS
+
+         .................................................................................
+           757           1.  NORMAL -- no weakness noted
+            10           2.  ABNORMAL -- inability to raise eyebrow
+             7           3.  ABNORMAL -- inability to wrinkle forehead on left or right
+             3           4.  OTHER (SPECIFY)
+            39           8.  CAN'T EXECUTE
+             3           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJWINK         NEUROLOGICAL EXAM - WINK WITH OTHER EYE OPEN
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: WINK
+
+         WINK WITH OTHER EYE OPEN
+
+         .................................................................................
+           616           1.  NORMAL -- can perform with either eye
+           124           2.  ABNORMAL -- can perform with one eye only
+            38           3.  ABNORMAL -- cannot perform
+             1           4.  OTHER
+            35           8.  CAN'T EXECUTE
+             5           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJTONGUE       NEUROLOGICAL EXAM - RAPID TONGUE MOVEMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: TONGUE
+
+         RAPID TONGUE MOVEMENT
+
+         .................................................................................
+           482           1.  NORMAL -- 4 touches/second
+           279           2.  ABNORMAL -- <4 touches/second or arrhythmic
+             9           3.  OTHER (SPECIFY)
+            41           8.  CAN'T EXECUTE
+             8           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJMOTOR_A      NEUROLOGICAL EXAM - EYE CLOSURE X20 SECS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MOTOR_A
+
+         MOTOR IMPERSISTENCE: Eye Closure X 20 seconds
+         A.  Eye closure x 20 seconds
+
+         .................................................................................
+           751           1.  NORMAL -- maintains act for 20 seconds
+            24           2.  ABNORMAL -- opens eyes before 20 seconds
+             2           3.  OTHER (SPECIFY)
+            39           8.  CAN'T EXECUTE
+             3           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJMOTOR_B      NEUROLOGICAL EXAM - TONGUE PROTRUSION X20 SECS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MOTOR_B
+
+         MOTOR IMPERSISTENCE: Tongue protrusion x 20 seconds
+         B.  Tongue protrusion x 20 seconds
+
+         .................................................................................
+           712           1.  NORMAL -- maintains act for 20 seconds
+            54           2.  ABNORMAL -- pulls tongue in before 20 seconds
+             2           3.  OTHER (SPECIFY)
+            39           8.  CAN'T EXECUTE
+            12           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRACOUSTA     NEUROLOGICAL EXAM - RUBBING OF FINGERS, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RACOUSTA
+
+         RIGHT Acoustic nerve: Rubbing of fingers
+
+         .................................................................................
+           535           1.  NORMAL -- able to hear
+           225           2.  ABNORMAL -- unable to hear
+             1           3.  OTHER (SPECIFY)
+            37           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLACOUSTA     NEUROLOGICAL EXAM - RUBBING OF FINGERS, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LACOUSTA
+
+         LEFT Acoustic nerve: Rubbing of fingers
+
+         .................................................................................
+           544           1.  NORMAL -- able to hear
+           217           2.  ABNORMAL -- unable to hear
+                         3.  OTHER (SPECIFY)
+            37           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRWHISPER     NEUROLOGICAL EXAM - WHISPERING, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RWHISPER
+
+         RIGHT Acoustic nerve: whispering
+
+         .................................................................................
+           646           1.  NORMAL -- able to hear
+           117           2.  ABNORMAL -- unable to hear
+             2           3.  OTHER (SPECIFY)
+            33           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLWHISPER     NEUROLOGICAL EXAM - WHISPERING, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LWHISPER
+
+         LEFT Acoustic nerve: whispering
+
+         .................................................................................
+           627           1.  NORMAL -- able to hear
+           137           2.  ABNORMAL -- unable to hear
+             2           3.  OTHER (SPECIFY)
+            32           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJCHIN         NEUROLOGICAL EXAM - CHIN RESISTANCE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CHIN
+
+         CHIN RESISTANCE
+
+         .................................................................................
+           721           1.  NORMAL -- no weakness noted on either side
+            17           2.  ABNORMAL -- unilateral weakness
+            22           3.  ABNORMAL -- bilateral weakness
+             1           4.  OTHER (SPECIFY)
+            45           8.  CAN'T EXECUTE
+            13           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJSHOULDER     NEUROLOGICAL EXAM - SHOULDER ELEVATION, SHRUG
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SHOULDER
+
+         SHOULDER ELEVATION (shrug)
+
+         .................................................................................
+           733           1.  NORMAL -- no weakness noted
+             9           2.  ABNORMAL -- unilateral weakness
+             5           3.  ABNORMAL -- bilateral weakness
+             5           4.  OTHER (SPECIFY)
+            44           8.  CAN'T EXECUTE
+            23           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJMUTE         NEUROLOGICAL EXAM - WHETHER SUBJECT IS MUTE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MUTE
+
+         IS SUBJECT MUTE?
+
+         .................................................................................
+             9           1.  YES
+           810           2.  NO
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJREPEAT_A     NEUROLOGICAL EXAM - REPEAT LA,LA,LA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: REPEAT_A
+
+         REPEAT LA, LA, LA, LA, LA
+         A).  'La, La, La, La, La'
+
+         .................................................................................
+           683           1.  NORMAL -- regular rate, rhythm and > 4 syllables/second,
+                             each syllable clear
+            37           2.  ABNORMAL -- arrhythmic
+            27           3.  ABNORMAL -- < 4 syllables/second
+            22           4.  ABNORMAL -- slurred words
+             2           5.  OTHER (SPECIFY)
+            30           8.  CAN'T EXECUTE
+             9           9.  MISSING
+            46       Blank.  Inap
+
+
+==========================================================================================
+
+AJREPEAT_B     NEUROLOGICAL EXAM - REPEAT GO,GO,GO
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: REPEAT_B
+
+         REPEAT GO, GO, GO, GO, GO
+         B).  'Go, Go, Go, Go, Go'
+
+         .................................................................................
+           670           1.  NORMAL -- regular rate, rhythm and > 4 syllables/second,
+                             each syllable clear
+            37           2.  ABNORMAL -- arrhythmic
+            39           3.  ABNORMAL -- < 4 syllables/second
+            20           4.  ABNORMAL -- slurred words
+             6           5.  OTHER (SPECIFY)
+            30           8.  CAN'T EXECUTE
+             8           9.  MISSING
+            46       Blank.  Inap
+
+
+==========================================================================================
+
+AJREPEAT_C     NEUROLOGICAL EXAM - REPEAT KITTY,KITTY,KITTY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: REPEAT_C
+
+         REPEAT KITTY, KITTY, KITTY, KITTY, KITTY
+         C).  'Kitty, Kitty, Kitty, Kitty, Kitty'
+
+         .................................................................................
+           682           1.  NORMAL -- regular rate, rhythm and > 4 syllables/second,
+                             each syllable clear
+            39           2.  ABNORMAL -- arrhythmic
+            34           3.  ABNORMAL -- < 4 syllables/second
+            16           4.  ABNORMAL -- slurred words
+             2           5.  OTHER (SPECIFY)
+            28           8.  CAN'T EXECUTE
+             9           9.  MISSING
+            46       Blank.  Inap
+
+
+==========================================================================================
+
+AJRATECONV     NEUROLOGICAL EXAM - RATE OF CONVERSATION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RATECONV
+
+         RATE OF CONVERSATION
+
+         .................................................................................
+           730           1.  NORMAL -- normal speed
+             8           2.  ABNORMAL -- too fast
+            55           3.  ABNORMAL -- too slow
+             6           4.  OTHER (SPECIFY)
+            10           8.  CAN'T EXECUTE
+             1           9.  MISSING
+            46       Blank.  Inap
+
+
+==========================================================================================
+
+AJCLARCONV     NEUROLOGICAL EXAM - CLARITY OF CONVERSATION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CLARCONV
+
+         CLARITY OF CONVERSATION
+
+         .................................................................................
+           697           1.  NORMAL -- normally understandable
+            77           2.  ABNORMAL -- examiner must listen carefully
+             8           3.  ABNORMAL -- subject must repeat to be understood
+            20           4.  ABNORMAL -- almost incomprehensible
+             2           5.  OTHER (SPECIFY)
+             6           8.  CAN'T EXECUTE
+                         9.  MISSING
+            46       Blank.  Inap
+
+
+==========================================================================================
+
+AJF_NRIGHT     NEUROLOGICAL EXAM - FINGER TO NOSE TOUCH, RIGHT REV
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: F_NRIGHT
+
+         RIGHT FINGER -TO-NOSE TOUCHING
+
+         .................................................................................
+           506           1.  NORMAL -- quickly, smooth and accurate
+           175           2.  ABNORMAL -- slow but accurate
+            48           3.  ABNORMAL -- dysmetria noted
+             6           4.  OTHER (SPECIFY)
+            51           8.  CAN'T EXECUTE
+            33           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJF_NLEFT      NEUROLOGICAL EXAM - FINGER TO NOSE TOUCH, LEFT REV
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: F_NLEFT
+
+         LEFT FINGER -TO-NOSE TOUCHING
+
+         .................................................................................
+           469           1.  NORMAL -- quickly, smooth and accurate
+           191           2.  ABNORMAL -- slow but accurate
+            68           3.  ABNORMAL -- dysmetria noted
+             6           4.  OTHER (SPECIFY)
+            50           8.  CAN'T EXECUTE
+            35           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRF_TTAPP     NEUROLOGICAL EXAM - FINGER THUMB TAPPING, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RF_TTAPP
+
+         RIGHT:  FINGER-THUMB TAPPING
+
+         .................................................................................
+           672           1.  NORMAL -- 4 taps/second
+            47           2.  ABNORMAL -- 3 taps/second or faster but arrhythmic
+            30           3.  ABNORMAL -- < 3 taps/second
+             2           4.  OTHER (SPECIFY)
+            47           8.  CAN'T EXECUTE
+            21           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLF_TTAPP     NEUROLOGICAL EXAM - FINGER THUMB TAPPING, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LF_TTAPP
+
+         LEFT:  FINGER-THUMB TAPPING
+
+         .................................................................................
+           660           1.  NORMAL -- 4 taps/second
+            52           2.  ABNORMAL -- 3 taps/second or faster but arrhythmic
+            31           3.  ABNORMAL -- < 3 taps/second
+             6           4.  OTHER (SPECIFY)
+            47           8.  CAN'T EXECUTE
+            23           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRDIADOCH     NEUROLOGICAL EXAM - DIADOCHOKINESIS, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RDIADOCH
+
+         RIGHT:  DIADOCHOKINESIS
+
+         .................................................................................
+           578           1.  NORMAL -- at least 3 pats/second and smooth
+           128           2.  ABNORMAL -- 2 pats/second or faster but arrhythmic
+                         3.  ABNORMAL -- < 2 pats/second
+            26           4.  OTHER (SPECIFY)
+            53           8.  CAN'T EXECUTE
+            34           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRDIADCOD     NEUROLOGICAL EXAM - DIADOCHOKINESIS ABNORM CODE RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RDIADCOD
+
+         RIGHT: Type of Abnormality
+
+         .................................................................................
+            33           1.  <3 pats/second
+            41           2.  Arrhythmic =2
+            54           3.  Both
+           728       Blank.  Inap
+
+
+==========================================================================================
+
+AJLDIADOCH     NEUROLOGICAL EXAM - DIADOCHOKINESIS, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LDIADOCH
+
+         LEFT:  DIADOCHOKINESIS
+
+         .................................................................................
+           515           1.  NORMAL -- at least 3 pats/second and smooth
+           187           2.  ABNORMAL -- 2 pats/second or faster but arrhythmic
+                         3.  ABNORMAL -- < 2 pats/second
+            26           4.  OTHER (SPECIFY)
+            54           8.  CAN'T EXECUTE
+            37           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLDIADCOD     NEUROLOGICAL EXAM - DIADOCHOKINESIS ABNORM CODE LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LDIADCOD
+
+         LEFT : Type of Abnormality
+
+         .................................................................................
+            45           1.  <3 pats/second
+            65           2.  Arrhythmic =2
+            77           3.  Both
+           669       Blank.  Inap
+
+
+==========================================================================================
+
+AJHAND_A       NEUROLOGICAL EXAM - INTERLOCKING THUMBS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: HAND_A
+
+         HAND PRAXIS TASKS: INTER-LOCKING FINGERS
+         A).  Inter-locking fingers
+
+         .................................................................................
+           656           1.  NORMAL -- performs correctly
+            93           2.  ABNORMAL -- performs incorrectly
+             1           3.  OTHER (SPECIFY)
+            40           8.  CAN'T EXECUTE
+            29           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJHAND_B       NEUROLOGICAL EXAM - MIRRORED FINGERS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: HAND_B
+
+         HAND PRAXIS TASKS: MIRRORED FINGERS
+         B).  Mirrored fingers
+
+         .................................................................................
+           648           1.  NORMAL -- performs correctly
+           102           2.  ABNORMAL -- performs incorrectly
+                         3.  OTHER (SPECIFY)
+            43           8.  CAN'T EXECUTE
+            26           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRGRASP       NEUROLOGICAL EXAM - GRASP, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RGRASP
+
+         RIGHT GRASP
+
+         .................................................................................
+           779           1.  NORMAL -- absent
+             6           2.  ABNORMAL -- subject grasps examiner's hand on stimulation
+             1           3.  ABNORMAL -- grasps after verbal request not to do so
+                         4.  OTHER (SPECIFY)
+            23           8.  CAN'T EXECUTE
+            10           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLGRASP       NEUROLOGICAL EXAM - GRASP, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LGRASP
+
+         LEFT  GRASP
+
+         .................................................................................
+           779           1.  NORMAL -- absent
+             5           2.  ABNORMAL -- subject grasps examiner's hand on stimulation
+             1           3.  ABNORMAL -- grasps after verbal request not to do so
+                         4.  OTHER (SPECIFY)
+            23           8.  CAN'T EXECUTE
+            11           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRMUSCLE      NEUROLOGICAL EXAM - MUSCLE TONUS, ELBOW,WRIST, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RMUSCLE
+
+         RIGHT  MUSCLE TONUS (passive flexion/extension at elbow and wrist)
+
+         .................................................................................
+           697           1.  NORMAL -- normal muscle tone, no rigidity
+            93           2.  ABNORMAL -- rigidity or stiffness present
+             2           3.  OTHER (SPECIFY)
+             7           8.  CAN'T EXECUTE
+            20           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLMUSCLE      NEUROLOGICAL EXAM - MUSCLE TONUS, ELBOW,WRIST, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LMUSCLE
+
+         LEFT  MUSCLE TONUS (passive flexion/extension at elbow and wrist)
+
+         .................................................................................
+           692           1.  NORMAL -- normal muscle tone, no rigidity
+            94           2.  ABNORMAL -- rigidity or stiffness present
+             4           3.  OTHER (SPECIFY)
+             7           8.  CAN'T EXECUTE
+            22           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRCOGWHL      NEUROLOGICAL EXAM - COGWHEEL PHENOMENON, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RCOGWHL
+
+         RIGHT  COGWHEEL PHENOMENON
+
+         .................................................................................
+           790           1.  NORMAL -- no cogwheeling noted
+            10           2.  ABNORMAL -- slight or noticeable rhythmicity throughout
+                         3.  OTHER (SPECIFY)
+             8           8.  CAN'T EXECUTE
+            11           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLCOGWHL      NEUROLOGICAL EXAM - COGWHEEL PHENOMENON, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LCOGWHL
+
+         LEFT  COGWHEEL PHENOMENON
+
+         .................................................................................
+           789           1.  NORMAL -- no cogwheeling noted
+            11           2.  ABNORMAL -- slight or noticeable rhythmicity throughout
+             2           3.  OTHER (SPECIFY)
+             8           8.  CAN'T EXECUTE
+             9           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRANKLE       NEUROLOGICAL EXAM - ANKLE CLONUS, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RANKLE
+
+         RIGHT  ANKLE CLONUS
+         Right
+
+         .................................................................................
+           722           1.  NORMAL -- absent
+            19           2.  ABNORMAL -- present
+             4           3.  OTHER (SPECIFY)
+            11           8.  CAN'T EXECUTE
+            63           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLANKLE       NEUROLOGICAL EXAM - ANKLE CLONUS, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LANKLE
+
+         LEFT  ANKLE CLONUS
+         Left
+
+         .................................................................................
+           713           1.  NORMAL -- absent
+            21           2.  ABNORMAL -- present
+             3           3.  OTHER (SPECIFY)
+            12           8.  CAN'T EXECUTE
+            70           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRPROPRIC     NEUROLOGICAL EXAM - PROPRIOCEPTION, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RPROPRIC
+
+         RIGHT  KINESTHESIS
+
+         .................................................................................
+           521           1.  PRESENT
+           120           2.  ABSENT
+            56           8.  CAN'T EXECUTE
+           122           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLPROPRIC     NEUROLOGICAL EXAM - PROPRIOCEPTION, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LPROPRIC
+
+         LEFT  KINESTHESIS
+
+         .................................................................................
+           529           1.  PRESENT
+           112           2.  ABSENT
+            57           8.  CAN'T EXECUTE
+           121           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRVIBRAT      NEUROLOGICAL EXAM - VIBRATING SENSATION, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RVIBRAT
+
+         RIGHT  VIBRATING SENSATION
+
+         .................................................................................
+           542           1.  PRESENT
+           189           2.  ABSENT
+            39           8.  CAN'T EXECUTE
+            49           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLVIBRAT      NEUROLOGICAL EXAM - VIBRATING SENSATION, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LVIBRAT
+
+         LEFT  VIBRATING SENSATION
+
+         .................................................................................
+           533           1.  PRESENT
+           198           2.  ABSENT
+            39           8.  CAN'T EXECUTE
+            49           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRPLANTAR     NEUROLOGICAL EXAM - PLANTAR RESPONSE, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RPLANTAR
+
+         RIGHT  PLANTAR RESPONSE
+
+         .................................................................................
+           452           1.  NORMAL -- plantar flexion of great toe
+            64           2.  ABNORMAL -- extension of great toe
+           147           3.  ABNORMAL -- no reflex present
+             7           4.  OTHER (SPECIFY)
+            21           8.  CAN'T EXECUTE
+           128           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLPLANTAR     NEUROLOGICAL EXAM - PLANTAR RESPONSE, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LPLANTAR
+
+         LEFT  PLANTAR RESPONSE
+
+         .................................................................................
+           455           1.  NORMAL -- plantar flexion of great toe
+            67           2.  ABNORMAL -- extension of great toe
+           138           3.  ABNORMAL -- no reflex present
+             6           4.  OTHER (SPECIFY)
+            21           8.  CAN'T EXECUTE
+           132           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJRHEEL        NEUROLOGICAL EXAM - HEEL TO KNEE TEST, RIGHT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: RHEEL
+
+         RIGHT  HEEL - TO - KNEE TEST
+
+         .................................................................................
+           505           1.  NORMAL -- moving foot is dorsi flexed and motion down shin
+                             is smooth, slow and accurate
+            40           2.  ABNORMAL -- path of heel is shaky, jerky, wavering
+            26           3.  ABNORMAL -- knee is overshot
+             3           4.  ABNORMAL -- slide down skin accompanied by action tremor
+            19           5.  OTHER (SPECIFY)
+            55           8.  CAN'T EXECUTE
+           171           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJLHEEL        NEUROLOGICAL EXAM - HEEL TO KNEE TEST, LEFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LHEEL
+
+         LEFT  HEEL - TO - KNEE TEST
+
+         .................................................................................
+           485           1.  NORMAL -- moving foot is dorsiflexed and motion down shin is
+                             smooth, slow and accurate
+            48           2.  ABNORMAL -- path of heel is shaky, jerky, wavering
+            34           3.  ABNORMAL -- knee is overshot
+             3           4.  ABNORMAL -- slide down skin accompanied by action tremor
+            21           5.  OTHER (SPECIFY)
+            56           8.  CAN'T EXECUTE
+           172           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJROMBERG      NEUROLOGICAL EXAM - ROMBERGS SIGN
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: ROMBERG
+
+         ROMBERG'S SIGN  (stand with feet together for 10-15 seconds)
+
+         .................................................................................
+           502           1.  NORMAL -- normally still or slight weaving
+            26           2.  ABNORMAL -- falls to one side with eyes closed
+                         3.  ABNORMAL -- falls to one side with eyes open
+            31           4.  ABNORMAL -- needs widened base to stay in one place
+             5           5.  OTHER (SPECIFY)
+            32           8.  CAN'T EXECUTE
+           223           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGAIT_A       NEUROLOGICAL EXAM - WALK HALL 10 PACES
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GAIT_A
+
+         GAIT ACTIVITIES: WALKING DOWN HALL AT LEAST 10 PACES
+         A).  Walking down a hall at least 10 paces
+
+         .................................................................................
+           503           1.  NORMAL -- normal gait, narrow base
+            41           2.  ABNORMAL -- deviation from straight line
+            71           3.  OTHER (SPECIFY)
+            28           8.  CAN'T EXECUTE
+           176           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGAIT_B       NEUROLOGICAL EXAM - PIVOT WHILE TURNING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GAIT_B
+
+         GAIT ACTIVITIES: PIVOT WHILE TURNING
+         B).  Pivot while turning
+
+         .................................................................................
+           429           1.  NORMAL -- pivots on narrow base
+            48           2.  ABNORMAL -- hesitates
+            78           3.  ABNORMAL -- widens base or moves feet
+            53           4.  ABNORMAL -- turns slowly or awkwardly
+             5           5.  OTHER (SPECIFY)
+            29           8.  CAN' T EXECUTE
+           177           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGAIT_C       NEUROLOGICAL EXAM - STOPPING ON UNEXPECTED COMMAND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GAIT_C
+
+         GAIT ACTIVITIES: STOPPING ON UNEXPECTED COMMAND
+         C).  Stopping on unexpected command
+
+         .................................................................................
+           508           1.  NORMAL -- stops on command or takes one small step
+            13           2.  ABNORMAL -- stops but body lurches forward
+            21           3.  ABNORMAL -- takes > 1 step before stopping
+            11           4.  OTHER (SPECIFY)
+            33           8.  CAN'T EXECUTE
+           233           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGAIT_D       NEUROLOGICAL EXAM - FESTINATION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GAIT_D
+
+         GAIT ACTIVITIES: FESTINATION
+         D).  Festination
+
+         .................................................................................
+           526           1.  NORMAL -- none
+            70           2.  ABNORMAL -- slow start
+            18           3.  ABNORMAL -- shuffling gait
+             2           4.  OTHER (SPECIFY)
+            27           8.  CAN'T EXECUTE
+           176           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGAIT_E       NEUROLOGICAL EXAM - ACCESSORY MOVEMENTS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GAIT_E
+
+         GAIT ACTIVITIES: ACCESSORY MOVEMENTS
+         E).  Accessory movements
+
+         .................................................................................
+           462           1.  NORMAL -- normal
+           122           2.  ABNORMAL -- decrease of arm swings
+            14           3.  ABNORMAL -- trunk/neck rigid and flexed
+             2           4.  ABNORMAL -- width of gait gets smaller
+            13           5.  OTHER (SPECIFY)
+            27           8.  CAN'T EXECUTE
+           179           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJTREMOR       NEUROLOGICAL EXAM - TREMOR AT REST
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: TREMOR
+
+         TREMOR AT REST
+
+         .................................................................................
+           712           1.  NORMAL -- none
+            63           2.  ABNORMAL -- slight/occasional
+            29           3.  ABNORMAL -- moderate to severe
+             1           4.  OTHER (SPECIFY)
+             6           8.  CAN'T EXECUTE
+             8           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJTREM_ARM     NEUROLOGICAL EXAM - TREMOR ARMS OUTSTRETCHED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: TREM_ARM
+
+         TREMOR WITH ARMS OUTSTRETCHED
+
+         .................................................................................
+           606           1.  NORMAL -- none
+           130           2.  ABNORMAL -- slight/ occasional
+            21           3.  ABNORMAL -- moderate to severe
+             2           4.  OTHER (SPECIFY)
+            32           8.  CAN'T EXECUTE
+            28           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJPRONAT       NEUROLOGICAL EXAM - PRONATOR DRIFT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: PRONAT
+
+         PRONATOR DRIFT   (arms out-stretched, palms up, eyes closed)
+
+         .................................................................................
+           691           1.  NORMAL -- absence of drift
+            37           2.  ABNORMAL -- spontaneous drift of either /both hands
+             3           3.  OTHER (SPECIFY)
+            41           8.  CAN'T EXECUTE
+            47           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJSTRENGTH     NEUROLOGICAL EXAM - STRENGTH DIFFERENCE, DOWN PRESSURE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: STRENGTH
+
+         STRENGTH DIFFERENCE WITH DOWNWARD PRESSURE AND THEN SUDDEN RELEASE BY EXAMINER
+         (arms outstretched, resists examiner's pressure)
+
+         .................................................................................
+           604           1.  NORMAL -- no strength difference, equal rebound
+            78           2.  ABNORMAL -- unequal rebound
+             6           3.  OTHER (SPECIFY)
+            43           8.  CAN' T EXECUTE
+            88           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJGRIP_BIC     NEUROLOGICAL EXAM - UPPER EXTREMITY, WHICH TEST
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: GRIP_BIC
+
+         UPPER EXTREMITY MOTOR STRENGTH. GRIP STRENGTH, OR BICEPS PULL. STRENGTH
+         DIFFERENCE BETWEEN L AND R FINGER GRASP OR BICEPS PULL.  SUBJECT GRASPS
+         EXAMINER'S EXTENDED FINGERS (2 digits) WITH R AND L TRIALS.
+         WHICH TEST DID THE SUBJECT PERFORM?
+
+         .................................................................................
+           806           1.  GRIP STRENGTH TEST
+             3           2.  BICEPS PULL
+            47       Blank.  Inap
+
+
+==========================================================================================
+
+AJUPPEREXT     NEUROLOGICAL EXAM - UPPER EXTREMITY MOTOR STRENGTH
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: UPPEREXT
+
+         UPPER EXTREMITY MOTOR STRENGTH.  GRIP STRENGTH OR BICEPS PULL.  STRENGTH
+         DIFFERENCE BETWEEN L AND R FINGER GRASP OR BICEPS PULL. SUBJECT GRASPS
+         EXAMINER'S EXTENDED FINGERS (2 digits) WITH R AND L TRIALS.
+
+         .................................................................................
+           624           1.  NORMAL -- No strength difference between R and L trials
+           133           2.  ABNORMAL -- Specify weakness (L or R)
+             5           3.  OTHER
+            25           8.  CAN' T EXECUTE
+            32           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJBRADYKIN     NEUROLOGICAL EXAM - BRADYKENESIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: BRADYKIN
+
+         BRADYKINESIA
+
+         .................................................................................
+           719           1.  NORMAL -- voluntary movements are NORMAL
+            80           2.  ABNORMAL -- mild or marked slowness
+             2           3.  OTHER (SPECIFY)
+            11           8.  CAN' T EXECUTE
+             7           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJMYOCLONU     NEUROLOGICAL EXAM - MYOCLONUS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MYOCLONU
+
+         MYOCLONUS
+
+         .................................................................................
+           798           1.  NORMAL -- absent
+             4           2.  ABNORMAL -- mild  myoclonus
+             5           3.  ABNORMAL -- occasional myoclonus
+             1           4.  ABNORMAL -- frequent myoclonus
+                         5.  ABNORMAL -- severe myoclonus
+                         6.  OTHER (SPECIFY)
+             6           8.  CAN'T EXECUTE
+             5           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJPOSTURE      NEUROLOGICAL EXAM - POSTURE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: POSTURE
+
+         POSTURE
+
+         .................................................................................
+           464           1.  NORMAL -- normal, erect
+           269           2.  ABNORMAL -- slightly stooped
+            38           3.  ABNORMAL -- very stooped
+            21           4.  ABNORMAL -- leans to one side
+             5           5.  OTHER (SPECIFY)
+             6           8.  CAN'T EXECUTE
+            16           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJCOMB         NEUROLOGICAL EXAM - PRAXIS, COMB YOUR HAIR
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: COMB
+
+         PRAXIS TASKS (PRETEND TO COMB YOUR HAIR)
+
+         .................................................................................
+           589           1.  NORMAL, PERFORMS CORRECTLY
+           158           2.  ABNORMAL (SPECIFY)
+                         3.  OTHER (SPECIFY)
+            50           8.  CAN'T EXECUTE
+            22           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJHAMMER       NEUROLOGICAL EXAM - PRAXIS, HAMMER A NAIL
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: HAMMER
+
+         PRAXIS TASKS (PRETEND TO HAMMER A NAIL)
+
+         .................................................................................
+           500           1.  NORMAL, PERFORMS CORRECTLY
+           236           2.  ABNORMAL (SPECIFY)
+             1           3.  OTHER (SPECIFY)
+            57           8.  CAN'T EXECUTE
+            25           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJBRUSH        NEUROLOGICAL EXAM - PRAXIS, BRUSH YOUR TEETH
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: BRUSH
+
+         PRAXIS TASKS (PRETEND TO BRUSH YOUR TEETH)
+
+         .................................................................................
+           591           1.  NORMAL, PERFORMS CORRECTLY
+           147           2.  ABNORMAL (SPECIFY)
+             2           3.  OTHER (SPECIFY)
+            53           8.  CAN'T EXECUTE
+            26           9.  MISSING
+            37       Blank.  Inap
+
+
+==========================================================================================
+
+AJCHKDONE      WHETHER DEMENTIA CHECKLIST COMPLETED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CHKDONE
+
+         DEMENTIA CHECKLIST COMPLETED
+
+         .................................................................................
+           856           1.  YES
+                         2.  NO
+
+
+==========================================================================================
+
+AJA1           DEMENTIA, DSM IV, MEM IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA1
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         1. Memory Impairment 'short or long term)
+
+         .................................................................................
+           592           1.  YES
+           260           2.  NO
+             4           8.  DK
+
+
+==========================================================================================
+
+AJA2           DEMENTIA, DSM IV, APHASIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA2
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         2. Aphasia
+
+         .................................................................................
+           253           1.  YES
+           576           2.  NO
+            27           8.  DK
+
+
+==========================================================================================
+
+AJA3           DEMENTIA, DSM IV, APRAXIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA3
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         3. Apraxia
+
+         .................................................................................
+           237           1.  YES
+           579           2.  NO
+            40           8.  DK
+
+
+==========================================================================================
+
+AJA4           DEMENTIA, DSM IV, AGNOSIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA4
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         4. Agnosia
+
+         .................................................................................
+           126           1.  YES
+           691           2.  NO
+            39           8.  DK
+
+
+==========================================================================================
+
+AJA5           DEMENTIA, DSM IV, EXEC FUNCTION DISTURBANCE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA5
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         5. Disturbance in executive functioning
+
+         .................................................................................
+           382           1.  YES
+           463           2.  NO
+            11           8.  DK
+
+
+==========================================================================================
+
+AJA6           DEMENTIA, DSM IV, SOCIAL OR OCCUP IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA6
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         6. 1 - 5 cause significant impairment in social or occupational functioning
+
+         .................................................................................
+           311           1.  YES
+           136           2.  NO
+             3           8.  DK
+           406       Blank.  Inap
+
+
+==========================================================================================
+
+AJA7           DEMENTIA, DSM IV, SIGNIFICANT DECLINE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA7
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         7. 1 - 5 Represent significant decline from previous level of functioning
+
+         .................................................................................
+           447           1.  YES
+             1           2.  NO
+             1           8.  DK
+           407       Blank.  Inap
+
+
+==========================================================================================
+
+AJA8           DEMENTIA, DSM IV, COG DEFICITS DURING DELIRIUM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA8
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         8. Cognitive deficits occur exclusively during delirium
+
+         .................................................................................
+                         1.  YES
+           449           2.  NO
+                         8.  DK
+           407       Blank.  Inap
+
+
+==========================================================================================
+
+AJA1MET        DEMENTIA - CRITERIA FOR CKA1
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA1MET
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         CHECKLIST IS MET IF CKA1=YES
+
+         .................................................................................
+           264           0.  NO
+           592           1.  YES
+
+
+==========================================================================================
+
+AJA2MET        DEMENTIA -  CRITERIA FOR CKA2 - CKA5
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA2MET
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         CHECKLIST IS MET IF AT LEAST ONE OF CKA2-CKA5=YES
+
+         .................................................................................
+           371           0.  NO
+           485           1.  YES
+
+
+==========================================================================================
+
+AJA3MET        DEMENTIA - CRITERIA FOR CKA6 AND CKA7
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA3MET
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         CHECKLIST IS MET IF BOTH CKA6 AND CKA7=YES
+
+         .................................................................................
+           545           0.  NO
+           311           1.  YES
+
+
+==========================================================================================
+
+AJA4MET        DEMENTIA - CRITERIA FOR CKA8
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKA4MET
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         CHECKLIST IS MET IF CKA8=YES
+
+         .................................................................................
+           408           0.  NO
+           448           1.  YES
+
+
+==========================================================================================
+
+AJAMET         DEMENTIA - WHETHER OVERALL DSM IV CRITERIA MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAMET
+
+         CHECKLIST ONE
+         CHECKLIST FOR DEMENTIA (DSM-IV)
+         OVERALL CHECKLIST ONE CRITERIA MET=YES IF CKA1MET, CKA2MET, CKA3MET AND
+         CKA4MET=YES
+
+         .................................................................................
+           546           0.  NO
+           310           1.  YES
+
+
+==========================================================================================
+
+AJB1           DEMENTIA, DSM III R, SHORT TERM MEMORY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB1
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         1. Short Term Memory
+
+         .................................................................................
+           548           1.  YES
+           304           2.  NO
+             4           8.  DK
+
+
+==========================================================================================
+
+AJB2           DEMENTIA, DSM III R, LONG TERM MEMORY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB2
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         2. Long Term Memory
+
+         .................................................................................
+           428           1.  YES
+           421           2.  NO
+             7           8.  DK
+
+
+==========================================================================================
+
+AJB3           DEMENTIA, DSM III R, ABSTRACT THINKING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB3
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         3. Abstract thinking
+
+         .................................................................................
+           315           1.  YES
+           517           2.  NO
+            24           8.  DK
+
+
+==========================================================================================
+
+AJB4           DEMENTIA, DSM III R, JUDGEMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB4
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         4. Judgement
+
+         .................................................................................
+           306           1.  YES
+           529           2.  NO
+            21           8.  DK
+
+
+==========================================================================================
+
+AJB5           DEMENTIA, DSM III R, OTHER HIGHER CORTICAL FUNCTIONING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB5
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         5. Other Higher Cortical Functioning
+
+         .................................................................................
+           416           1.  YES
+           434           2.  NO
+             6           8.  DK
+
+
+==========================================================================================
+
+AJB6           DEMENTIA, DSM III R, PERSONALITY CHANGE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB6
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         6. Personality Change
+
+         .................................................................................
+           217           1.  YES
+           622           2.  NO
+            12           8.  DK
+             5       Blank.  Inap
+
+
+==========================================================================================
+
+AJB7           DEMENTIA, DSM III R, SOCIAL OR OCCUP IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB7
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         7. 1 - 6 cause significant impairment in social or occupational functioning
+
+         .................................................................................
+           297           1.  YES
+            76           2.  NO
+             2           8.  DK
+           481       Blank.  Inap
+
+
+==========================================================================================
+
+AJB8           DEMENTIA, DSM III R, SIGNIFICANT DECLINE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB8
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         8. 1 - 6 Represent significant decline from previous level of functioning
+
+         .................................................................................
+           374           1.  YES
+             1           2.  NO
+                         8.  DK
+           481       Blank.  Inap
+
+
+==========================================================================================
+
+AJB9           DEMENTIA, DSM III R, COG DEFICITS DURING DELIRIUM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB9
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         9. Cognitive deficits occur exclusively during delirium
+
+         .................................................................................
+                         1.  YES
+           375           2.  NO
+                         8.  DK
+           481       Blank.  Inap
+
+
+==========================================================================================
+
+AJB1MET        DEMENTIA, DSM III R - CRITERIA FOR CKB1 AND CKB2
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB1MET
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         CHECKLIST MET IF CKB1 AND CKB2=YES
+
+         .................................................................................
+           473           0.  NO
+           383           1.  YES
+
+
+==========================================================================================
+
+AJB2MET        DEMENTIA, DSM III R - CRITERIA FOR CKB3 - CKB6
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB2MET
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         CHECKLIST MET IF AT LEAST ONE OF CKB3-CKB6=YES
+
+         .................................................................................
+           376           0.  NO
+           480           1.  YES
+
+
+==========================================================================================
+
+AJB3MET        DEMENTIA, DSM III R - CRITERIA FOR CKB7 AND CKB8
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB3MET
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         CHECKLIST MET IF CKB7 AND CKB8=YES
+
+         .................................................................................
+           559           0.  NO
+           297           1.  YES
+
+
+==========================================================================================
+
+AJB4MET        DEMENTIA, DSM III R - CRITERIA FOR CKB9
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKB4MET
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         CHECKLIST MET IF CKB9=NO
+
+         .................................................................................
+           481           0.  NO
+           375           1.  YES
+
+
+==========================================================================================
+
+AJBMET         DEMENTIA, DSM III R - WHETHER OVERALL DSM III R CRITERIA MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKBMET
+
+         CHECKLIST TWO
+         CHECKLIST FOR DEMENTIA (DSM-III-R)
+         OVERALL CHECKLIST TWO CRITERIA MET=YES IF CKB1MET, CKB2MET, CKB3MET AND
+         CKB4MET=YES
+
+         .................................................................................
+           572           0.  NO
+           284           1.  YES
+
+
+==========================================================================================
+
+AJC1           PROB AD, DEMENTIA, ESTABLISHED BY CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC1
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information
+
+         .................................................................................
+            29           1.  YES
+                         2.  NO
+                         8.  DK
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJC2           PROB AD, PROGRESSION OF COGNITIVE SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC2
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         2. Progression of cognitive symptoms over time.
+
+         .................................................................................
+            29           1.  YES
+                         2.  NO
+                         8.  DK
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJC3           PROB AD, ABSENCE OF OTHER CONDITIONS SUFFICIENT TO CAUSE DEM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC3
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         3. Absence of other conditions or other brain diseases that may alone be
+         sufficient to cause dementia
+
+         .................................................................................
+            29           1.  YES
+                         2.  NO
+                         8.  DK
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJC4           PROB AD, RPT OF MED EVAL TO RULE OUT OTHER CAUSES OF DEMENTIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC4
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         4. Report that a medical evaluation has been done to rule out other causes for
+         the dementia
+
+         .................................................................................
+            28           1.  YES
+                         2.  NO
+             1           8.  DK
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJC5           PROB AD, ONSET AFTER AGE 40
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC5
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         5. Onset after age 40
+
+         .................................................................................
+            29           1.  YES
+                         2.  NO
+                         8.  DK
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJC1MET        PROB AD - CRITERIA FOR CKC1 - CKC5
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKC1MET
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         CHECKLIST IS MET IF CKC1-CKC5=YES
+
+         .................................................................................
+             1           0.  NO
+            28           1.  YES
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJCMET         PROB AD - CRITERIA FOR CKC1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKCMET
+
+         CHECKLIST THREE
+         Checklist for Probable Alzheimer's Disease
+         OVERALL CHECKLIST THREE CRITERIA MET=YES IF CKC1MET=YES
+
+         .................................................................................
+             1           0.  NO
+            28           1.  YES
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AJD1           POSS AD - CRITERIA FOR CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD1
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information)
+
+         .................................................................................
+           147           1.  YES
+             9           2.  NO
+                         8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD2           POSS AD, PROGRESSION OF COGNITIVE SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD2
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         2. Progression of symptoms over time
+
+         .................................................................................
+           155           1.  YES
+             1           2.  NO
+                         8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD3           POSS AD, ONSET AFTER AGE 40
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD3
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         3. Onset after age 40
+
+         .................................................................................
+           156           1.  YES
+                         2.  NO
+                         8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD4           POSS AD, ATYPICAL ONSET, PRESENTATION OR PROGRESSION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD4
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         4. Atypical onset, presentation or progression of cognitive/personality symptoms
+
+         .................................................................................
+            35           1.  YES
+           120           2.  NO
+             1           8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD5           POSS AD, PRESENCE OF SYSTEMIC OR BRAIN DISORDER, NOT SOLE CA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD5
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         5. Presence of another systemic or brain disorder sufficient to cause dementia,
+         but which is not thought to be the sole cause of the dementia
+
+         .................................................................................
+            47           1.  YES
+           108           2.  NO
+             1           8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD6           POSS AD, NO RPT OF MED EVAL TO RULE OUT OTHER DEM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD6
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         6. No report that a medical evaluation has been done to rule out other causes
+         for the dementia
+
+         .................................................................................
+           111           1.  YES
+            38           2.  NO
+             7           8.  DK
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD1MET        POSS AD - CRITERIA FOR CKD1 - CKD3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD1MET
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         CHECKLIST MET IF CKD1-CKD3=YES
+
+         .................................................................................
+             9           0.  NO
+           147           1.  YES
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJD2MET        POSS AD - CRITERIA FOR CKD4 - CKD6
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKD2MET
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         CHECKLIST MET IF CKD4-CKD6=YES
+
+         .................................................................................
+                         0.  NO
+           156           1.  YES
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJDMET         POSS AD - CRITERIA FOR CKD1MET AND CKD2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKDMET
+
+         CHECKLIST FOUR
+         Checklist for Possible Alzheimer's Disease
+         OVERALL CHECKLIST FOUR CRITERIA MET=YES IF CKD1MET AND CKD2MET=YES
+
+         .................................................................................
+             9           0.  NO
+           147           1.  YES
+           700       Blank.  Inap
+
+
+==========================================================================================
+
+AJE1           PROB VASC DEM - CRITERIA FOR CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE1
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         1. Dementia based on DSM-III-R or DSM- IV criteria
+
+         .................................................................................
+            14           1.  YES
+                         2.  NO
+                         8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE2           PROB VASC DEM, IMPAIRMENT IN MEM AND 2 OTHER COG DOMAINS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE2
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         2. Impairment in memory and two other cognitive domains.
+
+         .................................................................................
+            14           1.  YES
+                         2.  NO
+                         8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE3           PROB VASC DEM, SOCIAL OR OCCUP IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE3
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         3. Impairment in occupational and social functioning and in daily activities is
+         not due solely to physical effects of stroke.
+
+         .................................................................................
+            14           1.  YES
+                         2.  NO
+                         8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE4           PROB VASC DEM, CVD BASED ON HIST OR EXAM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE4
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         4. Cerebrovascular disease (CVD) based history or examination. This may include
+         focal signs on neurologic examination that are consistent with stroke (with or
+         without history of stroke).
+
+         .................................................................................
+            14           1.  YES
+                         2.  NO
+                         8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE5           PROB VASC DEM, EVIDENCE OF RELEVANT CVD NOTED ON BRAIN IMAGI
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE5
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         5. Evidence of relevant CVD noted on report of brain imaging.
+
+         .................................................................................
+            11           1.  YES
+                         2.  NO
+             3           8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE6           PROB VASC DEM, ONSET OF DEM WITHIN 3 MOS OF STROKE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE6
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         6. Temporal relationship between stroke and dementia (onset of dementia
+         generally within three months of stroke).
+
+         .................................................................................
+            14           1.  YES
+                         2.  NO
+                         8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE7           PROB VASC DEM, DETERIORATION IN FUNCTION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE7
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         7. Abrupt or stepwise deterioration in mental function or fluctuating course.
+
+         .................................................................................
+            13           1.  YES
+                         2.  NO
+             1           8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE8           PROB VASC DEM, SPECIFIC BRAIN IMAGING INDICATE DAMAGE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE8
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         8. Specific brain imaging findings, indicating damage to regions important for
+         higher cerebral function
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+            13           8.  DK
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE1MET        PROB VASC DEM - CRITERIA FOR CKE1 - CKE5
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE1MET
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         CHECKLIST MET IF CKE1-CKE5=YES
+
+         .................................................................................
+             3           0.  NO
+            11           1.  YES
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJE2MET        PROB VASC DEM - CRITERIA FOR CKE6, CKE7, OR CKE8
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKE2MET
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         CHECKLIST MET IF AT LEAST ONE OF CKE6-CKE8=YES
+
+         .................................................................................
+                         0.  NO
+            14           1.  YES
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJEMET         PROB VASC DEM - CRITERIA FOR CKE1MET AND CKE2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKEMET
+
+         CHECKLIST FIVE
+         Checklist for Probable Vascular Dementia
+         OVERALL CHECKLIST FIVE CRITERIA MET=YES IF CKE1MET AND CKE2MET=YES
+
+         .................................................................................
+             3           0.  NO
+            11           1.  YES
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AJF1           POSS VASC DEM, EST BY CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF1
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         1. Dementia based on DSM-III-R or DSM- IV criteria.
+
+         .................................................................................
+            32           1.  YES
+             3           2.  NO
+                         8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF2           POSS VASC DEM, IMPAIRMENT IN MEM AND 2 OTHER COG DOMAINS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF2
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         2. Impairment in memory and two other cognitive domains
+
+         .................................................................................
+            32           1.  YES
+             3           2.  NO
+                         8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF3           POSS VASC DEM, SOCIAL OR OCCUP IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF3
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         3. Impairment in occupational and social functioning and in daily activities is
+         not due solely to physical effects of stroke
+
+         .................................................................................
+            35           1.  YES
+                         2.  NO
+                         8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF4           POSS VASC DEM, CVD BASED ON HIST OR EXAM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF4
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         4. Cerebrovascular disease (CVD) based history or examination. This may include
+         focal signs on neurologic examination that are consistent with stroke (with or
+         without history of stroke).
+
+         .................................................................................
+            34           1.  YES
+             1           2.  NO
+                         8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF5           POSS VASC DEM, BRAIN IMAGING HAS NOT BEEN DONE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF5
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         5. Brain imaging has not been done.
+
+         .................................................................................
+             7           1.  YES
+            17           2.  NO
+            11           8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF6           POSS VASC DEM, UNCLEAR REL BET STROKE AND DEMENTIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF6
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         6. There is an absence of a clear temporal relationship between stroke and
+         dementia
+
+         .................................................................................
+            24           1.  YES
+            11           2.  NO
+                         8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF7           POSS VASC DEM, SUBTLE ONSET AND VARIABLE COURSE OF COG DEFICITS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF7
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         7. There was a subtle onset and variable course (plateau or improvement) of
+         cognitive deficits.
+
+         .................................................................................
+            13           1.  YES
+            20           2.  NO
+             2           8.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF1MET        PROB VASC DEM - CRITERIA FOR CKF1 - CKF4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF1MET
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         CHECKLIST MET IF CKF1-CKF4=YES
+
+         .................................................................................
+             5           0.  NO
+            30           1.  YES
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJF2MET        PROB VASC DEM - CRITERIA FOR CKF5 - CKF7
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKF2MET
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         CHECKLIST MET IF CKF5-CKF7=YES
+
+         .................................................................................
+             2           0.  NO
+            33           1.  YES
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJFMET         PROB VASC DEM - CRITERIA FOR CKF1MET AND CKF2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKFMET
+
+         CHECKLIST SIX
+         Checklist for Possible Vascular Dementia
+         OVERALL CHECKLIST SIX CRITERIA MET=YES IF CKF1MET AND CKF2MET=YES
+
+         .................................................................................
+             7           0.  NO
+            28           1.  YES
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AJG1           CIND, SHORT TERM OR LONG TERM MEMORY IMPAIRMENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG1
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         1. Short-term and/or long-term impairment based on performance >1.5 standard
+         deviations below appropriate mean on any of the memory measures
+
+         .................................................................................
+           260           1.  YES
+            11           2.  NO
+             6           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG2           CIND, EXECUTIVE FUNCTION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG2
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         2. Executive function (>1.5 s.d. below mean)
+
+         .................................................................................
+           211           1.  YES
+            47           2.  NO
+            19           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG3           CIND, LANGUAGE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG3
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         3. Language (>1.5 s.d. below mean)
+
+         .................................................................................
+           193           1.  YES
+            81           2.  NO
+             3           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG4           CIND, PRAXIS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG4
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         4. Praxis (>1.5 s.d. below mean)
+
+         .................................................................................
+            43           1.  YES
+           216           2.  NO
+            18           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG5           CIND, ORIENTATION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG5
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         5. Orientation (>1.5 s.d. below mean)
+
+         .................................................................................
+            58           1.  YES
+           217           2.  NO
+             2           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG6           CIND, BASED ON DSRS SCORE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG6
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         6. Dementia Severity Rating Scale score >5, but generally < 12
+
+         .................................................................................
+            79           1.  YES
+           183           2.  NO
+            15           8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG7           CIND, DOES NOT MEET CRITERIA FOR CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG7
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         7. Does not meet DSM-III-R or DSM-IV criteria for dementia
+
+         .................................................................................
+           228           1.  YES
+            49           2.  NO
+                         8.  DK
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG1MET        CIND - CRITERIA FOR CKG1 - CKG6
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG1MET
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         CHECKLIST MET IF AT LEAST ONE OF CKG1-CKG6=YES
+
+         .................................................................................
+             4           0.  NO
+           273           1.  YES
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJG2MET        CIND - CRITERIA FOR CKG7
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKG2MET
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         CHECKLIST MET IF CKG7=YES
+
+         .................................................................................
+            49           0.  NO
+           228           1.  YES
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJGMET         CIND - CRITERIA FOR CKG1MET AND CKG2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKGMET
+
+         CHECKLIST SEVEN
+         Checklist for Cognitive Impairment, Not Demented
+         OVERALL CHECKLIST SEVEN CRITERIA MET=YES IF CKG1MET AND CKG2MET=YES
+
+         .................................................................................
+            52           0.  NO
+           225           1.  YES
+           579       Blank.  Inap
+
+
+==========================================================================================
+
+AJH1           MCI, MEMORY COMPLAINT BY INFORMANT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH1
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         1. Memory complaint verified by informant (determined by Memory score on
+         Dementia Severity Rating Scale >2)
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH2           MCI, MEMORY IMPAIRMENT BY MEASUREMENT ON MEMORY TASKS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH2
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         2. Memory impairment based on objective measurement (>1.5 standard deviation
+         below appropriate mean on either Wechsler Memory Scale Revised Logical Memory II
+         or Delayed Recall on CERAD Word List or the Delayed Recall)
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH3           MCI, BASED ON MMSE SCORE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH3
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         3. MMSE > 24
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH4           MCI, BASED ON CDR MEMORY SCORE AND OVERALL CDR
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH4
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         4. Memory score on CDR = 0.5 and overall CDR < 1.0
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH5           MCI, NOT DUE TO MCKOR DEPRESSION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH5
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         5. Major depression as determined by NPI and clinical history can not explain
+         impairment
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH6           MCI, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH6
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         6. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJH1MET        MCI - CRITERIA FOR CKH1 - CKH6
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKH1MET
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         CHECKLIST MET IF CKH1-CKH6=YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJHMET         MCI - CRITERIA FOR CKH1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKHMET
+
+         CHECKLIST EIGHT
+         Checklist for Mild Cognitive Impairment (MCI)
+         OVERALL CHECKLIST EIGHT CRITERIA MET=YES IF CKH1MET=YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJI1           MAJOR DEPRESSION BASED ON NPI, CIDI, OR CLINICAL OR MEDICAL HISTORY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKI1
+
+         CHECKLIST NINE
+         Checklist for Depression
+         1. Presence of Major Depression based on the NPI, CIDI or clinical/medical
+         history
+
+         .................................................................................
+            12           1.  YES
+                         2.  NO
+                         8.  DK
+           844       Blank.  Inap
+
+
+==========================================================================================
+
+AJI2           DEPRESSION, IMPAIRMENT NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKI2
+
+         CHECKLIST NINE
+         Checklist for Depression
+         2. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, Not Demented.
+
+         .................................................................................
+            12           1.  YES
+                         2.  NO
+                         8.  DK
+           844       Blank.  Inap
+
+
+==========================================================================================
+
+AJI3           DEPRESSION, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKI3
+
+         CHECKLIST NINE
+         Checklist for Depression
+         3. Meets criteria for Cognitive Impairment
+
+         .................................................................................
+             9           1.  YES
+             3           2.  NO
+                         8.  DK
+           844       Blank.  Inap
+
+
+==========================================================================================
+
+AJI1MET        DEPRESSION - CRITERIA FOR CKI1, CKI2, AND CKI3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKI1MET
+
+         CHECKLIST NINE
+         Checklist for Depression
+         CHECKLIST MET IF CKI1-CKI3=YES
+
+         .................................................................................
+             3           0.  NO
+             9           1.  YES
+           844       Blank.  Inap
+
+
+==========================================================================================
+
+AJIMET         DEPRESSION - CRITERIA FOR CKI1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKIMET
+
+         CHECKLIST NINE
+         Checklist for Depression
+         OVERALL CHECKLIST NINE CRITERIA MET=YES IF CKI1MET=YES
+
+         .................................................................................
+             3           0.  NO
+             9           1.  YES
+           844       Blank.  Inap
+
+
+==========================================================================================
+
+AJJ1           NEUROPSYCHIATRIC DISORDER  - CLINICAL OR MEDICAL HISTORY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKJ1
+
+         CHECKLIST TEN
+         Checklist for Psychiatric Disorder
+         1. Presence of a neuropsychiatric disorder (includes bipolar disorder,
+         schizophrenia, personality disorder) based on clinical and medical history
+
+         .................................................................................
+             3           1.  YES
+                         2.  NO
+                         8.  DK
+           853       Blank.  Inap
+
+
+==========================================================================================
+
+AJJ2           NEUROPSYCHIATRIC DISORDER, NOT OTHERWISE EXPLAINED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKJ2
+
+         CHECKLIST TEN
+         Checklist for Psychiatric Disorder
+         2. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, Not Demented
+
+         .................................................................................
+             3           1.  YES
+                         2.  NO
+                         8.  DK
+           853       Blank.  Inap
+
+
+==========================================================================================
+
+AJJ3           NEUROPSYCHIATRIC DISORDER, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKJ3
+
+         CHECKLIST TEN
+         Checklist for Psychiatric Disorder
+         3. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+             1           1.  YES
+             2           2.  NO
+                         8.  DK
+           853       Blank.  Inap
+
+
+==========================================================================================
+
+AJJ1MET        NEUROPSYCHIATRIC DISORDER, CRITERIA FOR CKJ1 - CKJ3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKJ1MET
+
+         CHECKLIST TEN
+         Checklist for Psychiatric Disorder
+         CHECKLIST MET IF CKJ1-CKJ3=YES
+
+         .................................................................................
+             2           0.  NO
+             1           1.  YES
+           853       Blank.  Inap
+
+
+==========================================================================================
+
+AJJMET         NEUROPSYCHIATRIC DISORDER, CRITERIA FOR CKJ1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKJMET
+
+         CHECKLIST TEN
+         Checklist for Psychiatric Disorder
+         OVERALL CHECKLIST TEN CRITERIA MET=YES IF CKJ1MET=YES
+
+         .................................................................................
+             2           0.  NO
+             1           1.  YES
+           853       Blank.  Inap
+
+
+==========================================================================================
+
+AJK1           LIFELONG HISTORY OF MENT RET, LD, LOW BASELINE INTELLECT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKK1
+
+         CHECKLIST ELEVEN
+         Checklist for Mental Retardation/ Learning Disorder/Low Baseline Intellect
+         1. Lifelong history of mental retardation of marked learning disorder based
+         clinical, educational, social, and medical history. Performance on the Shipley
+         Vocabulary Test may be used to support this.
+
+         .................................................................................
+             7           1.  YES
+                         2.  NO
+                         8.  DK
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AJK2           MENT RET, LD, LOW BASELINE INTELLECT NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKK2
+
+         CHECKLIST ELEVEN
+         Checklist for Mental Retardation/ Learning Disorder/Low Baseline Intellect
+         2. Impairment can not be explained by another etiology listed under Cognitive
+         Impairment, Not Demented
+
+         .................................................................................
+             7           1.  YES
+                         2.  NO
+                         8.  DK
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AJK3           MENT RET, LD, LOW BASELINE INTELLECT, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKK3
+
+         CHECKLIST ELEVEN
+         Checklist for Mental Retardation/ Learning Disorder/Low Baseline Intellect
+         3 Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+             7           1.  YES
+                         2.  NO
+                         8.  DK
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AJK1MET        MENT RET, LD, LOW BASELINE INTELLECT - CRITERIA FOR CKK1 - CKK3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKK1MET
+
+         CHECKLIST ELEVEN
+         Checklist for Mental Retardation/ Learning Disorder/Low Baseline Intellect
+         CHECKLIST MET IF CKK1-CKK3=YES
+
+         .................................................................................
+                         0.  NO
+             7           1.  YES
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AJKMET         MENT RET, LD, LOW BASELINE INTELLECT - CRITERIA FOR AKJMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKKMET
+
+         CHECKLIST ELEVEN
+         Checklist for Mental Retardation/ Learning Disorder/Low Baseline Intellect
+         OVERALL CHECKLIST ELEVEN CRITERIA MET=YES IF CKK1MET=YES
+
+         .................................................................................
+                         0.  NO
+             7           1.  YES
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AJL1           HISTORY OF PAST ALCOHOL ABUSE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKL1
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         1. History of past abuse of alcohol based on clinical and medical history.
+         History of DUI's, missing work, alcohol-abuse related treatment, alcohol-related
+         medical conditions or neurological signs, and negative effects of alcohol use on
+         personal relationships support this.
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJL2           ALCOHOL ABUSE PAST, DISCONTINUED AT LEAST SIX MONTHS PRIOR TO EVAL
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKL2
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         2. Discontinued alcohol abuse > 6 months prior.
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJL3           PAST ALCOHOL ABUSE, NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKL3
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         3. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, Not Demented.
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJL4           PAST ALCOHOL ABUSE, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKL4
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         4. Meets criteria for Cognitive Impairment, Not Dementia
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJL1MET        PAST ALCOHOL ABUSE - CRITERIA FOR CKL1 - CKL4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKL1MET
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         CHECKLIST MET IF CKL1-CKL4=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJLMET         PAST ALCOHOL ABUSE - CRITERIA FOR CKL1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKLMET
+
+         CHECKLIST TWELVE
+         Checklist for Alcohol Abuse (past)
+         OVERALL CHECKLIST TWELVE CRITERIA MET=YES IF CKL1MET=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJM1           HISTORY OF PAST AND CURRENT ALCOHOL ABUSE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKM1
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         1. Report of past and current abuse of alcohol based on clinical and medical
+         history. History of DUI's, missing work, alcohol-abuse related treatment,
+         alcohol-related medical conditions or neurological signs, and negative effects
+         of alcohol use on personal relationships support this.
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJM2           HAS ABUSED ALCOHOL IN THE PAST SIX MONTHS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKM2
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         2. Has abused alcohol in the past 6 months.
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJM3           CURRENT ALCOHOL ABUSE, NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKM3
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         3. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, Not Demented.
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJM4           CURRENT ALCOHOL ABUSE, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKM4
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         4. Meets criteria for Cognitive Impairment, Not Dementia
+
+         .................................................................................
+                         1.  YES
+             2           2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJM1MET        CURRENT ALCOHOL ABUSE - CRITERIA FOR CKM1 - CKM4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKM1MET
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         CHECKLIST MET IF CKM1-CKM4=YES
+
+         .................................................................................
+             2           0.  NO
+                         1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJMMET         CURRENT ALCOHOL ABUSE - CRITERIA FOR CKM1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKMMET
+
+         CHECKLIST THIRTEEN
+         Checklist for Alcohol Abuse (current)
+         OVERALL CHECKLIST THIRTEEN CRITERIA MET=YES IF CKM1MET=YES
+
+         .................................................................................
+             2           0.  NO
+                         1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJN1           STROKE HIST BASED ON CLINICAL, MED HISTORY, OR NEUROLOGICAL EXAM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKN1
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         1. History of stroke based on clinical or medical history or neurological exam.
+
+         .................................................................................
+            38           1.  YES
+                         2.  NO
+                         8.  DK
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJN2           STROKE SYMPTOM ONSET WITHIN THREE MONTHS AFTER REPORTED STROKE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKN2
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         2. Onset of symptoms within three months after reported stroke
+
+         .................................................................................
+            17           1.  YES
+            14           2.  NO
+             7           8.  DK
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJN3           STROKE, IMPAIRMENT NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKN3
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         3. Impairment can not be explained by another etiology listed under Cognitive
+         Impairment, No Dementia
+
+         .................................................................................
+            38           1.  YES
+                         2.  NO
+                         8.  DK
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJN4           STROKE, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKN4
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         4. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+            33           1.  YES
+             5           2.  NO
+                         8.  DK
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJN1MET        STROKE - CRITERIA FOR CKN1 - CKN4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKN1MET
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         CHECKLIST MET IF CKN1-CKN4=YES
+
+         .................................................................................
+            25           0.  NO
+            13           1.  YES
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJNMET         STROKE - CRITERIA FOR CKN1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKNMET
+
+         CHECKLIST FOURTEEN
+         Checklist for Stroke
+         OVERALL CHECKLIST FOURTEEN CRITERIA MET=YES IF CKN1MET=YES
+
+         .................................................................................
+            25           0.  NO
+            13           1.  YES
+           818       Blank.  Inap
+
+
+==========================================================================================
+
+AJO1           OTHER NEUROL COND, PRESENCE OF NEUROLOGICAL CONDITION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKO1
+
+         CHECKLIST FIFTEEN
+         Checklist for Other Neurological Condition
+         1. Presence of a neurological condition sufficient to cause cognitive
+         impairment. Based on clinical history, medical history or neurological exam. May
+         include: Parkinson's disease, history of head injury, normal pressure
+         hydrocephalus w/out dementia, multiple sclerosis, Parkinsonism, hypoxic episode
+
+         .................................................................................
+            10           1.  YES
+                         2.  NO
+                         8.  DK
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AJO2           OTHER NEUROL COND, NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKO2
+
+         CHECKLIST FIFTEEN
+         Checklist for Other Neurological Condition
+         2. Impairment can not be explained by another etiology listed under Cognitive
+         Impairment, No Dementia
+
+         .................................................................................
+            10           1.  YES
+                         2.  NO
+                         8.  DK
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AJO3           OTHER NEUROL COND, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKO3
+
+         CHECKLIST FIFTEEN
+         Checklist for Other Neurological Condition
+         3. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+             7           1.  YES
+             3           2.  NO
+                         8.  DK
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AJO1MET        OTHER NEUROL COND - CRITERIA FOR CKO1 - CKO3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKO1MET
+
+         CHECKLIST FIFTEEN
+         Checklist for Other Neurological Condition
+         CHECKLIST MET IF CKO1-CK03=YES
+
+         .................................................................................
+             3           0.  NO
+             7           1.  YES
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AJOMET         OTHER NEUROL COND - CRITERIA FOR CKO1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKOMET
+
+         CHECKLIST FIFTEEN
+         Checklist for Other Neurological Condition
+         OVERALL CHECKLIST FIFTEEN CRITERIA MET=YES IF CKO1MET=YES
+
+         .................................................................................
+             3           0.  NO
+             7           1.  YES
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AJP1           OTHER MEDICAL COND, PRESENCE OF MEDICAL CONDITION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKP1
+
+         CHECKLIST SIXTEEN
+         Checklist for Other Medical Condition
+         1. Presence of a medical condition sufficient enough to cause cognitive
+         impairment. Based on clinical history, medical history  May include: medication
+         effects, COPD, delirium, toxic effects of chemotherapy or other chemicals,
+         congestive heart failure, chronic pain, and many other chronic conditions.
+
+         .................................................................................
+            61           1.  YES
+                         2.  NO
+                         8.  DK
+           795       Blank.  Inap
+
+
+==========================================================================================
+
+AJP2           OTHER MEDICAL COND, NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKP2
+
+         CHECKLIST SIXTEEN
+         Checklist for Other Medical Condition
+         2. Impairment can not be explained by another etiology listed under Cognitive
+         Impairment, No Dementia
+
+         .................................................................................
+            60           1.  YES
+                         2.  NO
+             1           8.  DK
+           795       Blank.  Inap
+
+
+==========================================================================================
+
+AJP3           OTHER MEDICAL COND, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKP3
+
+         CHECKLIST SIXTEEN
+         Checklist for Other Medical Condition
+         3. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+            50           1.  YES
+            11           2.  NO
+                         8.  DK
+           795       Blank.  Inap
+
+
+==========================================================================================
+
+AJP1MET        OTHER MEDICAL COND - CRITERIA FOR CKP1 - CKP3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKP1MET
+
+         CHECKLIST SIXTEEN
+         Checklist for Other Medical Condition
+         CHECKLIST MET IF CKP1-CKP3=YES
+
+         .................................................................................
+            11           0.  NO
+            50           1.  YES
+           795       Blank.  Inap
+
+
+==========================================================================================
+
+AJPMET         OTHER MEDICAL COND - CRITERIA FOR CKP1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKPMET
+
+         CHECKLIST SIXTEEN
+         Checklist for Other Medical Condition
+         OVERALL CHECKLIST SIXTEEN CRITERIA MET=YES IF CKP1MET=YES
+
+         .................................................................................
+            11           0.  NO
+            50           1.  YES
+           795       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ1           PRESENCE OF CEREBROVASCULAR OR CARDIOVASCULAR CONDITIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ1
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         1. Presence of a cerebrovascular/cardiovascular conditions thought sufficient to
+         cause cerebrovascular changes. May include: atrial fibrillation, history of
+         possible TIA's history of coronary bypass, diabetes mellitus, and coronary
+         artery disease
+
+         .................................................................................
+            46           1.  YES
+                         2.  NO
+                         8.  DK
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ2           IMPAIRMENT NOT LINKED TO ONE FOCAL VASCULAR LESION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ2
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         2. Impairment was not linked in time to one focal vascular lesion and can not be
+         explained by one focal lesion.
+
+         .................................................................................
+            44           1.  YES
+             2           2.  NO
+                         8.  DK
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ3           GRADUAL ONSET OF CEREBROVASCULAR OR CARDIOVASCULAR SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ3
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         3. Gradual onset of symptoms and history suggests progression of symptoms
+
+         .................................................................................
+            25           1.  YES
+            18           2.  NO
+             3           8.  DK
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ4           CIND SECONDARY TO VASCULAR DISEASE, NOT EXPLAINED BY OTHER ETIOLOGY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ4
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         4. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, No Dementia
+
+         .................................................................................
+            46           1.  YES
+                         2.  NO
+                         8.  DK
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ5           CIND SECONDARY TO VASCULAR DISEASE, MEETS CIND CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ5
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         5. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+            36           1.  YES
+            10           2.  NO
+                         8.  DK
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQ1MET        CIND SECONDARY TO VASCULAR DISEASE, CRITERIA FOR CKQ1 - CKQ5
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQ1MET
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         CHECKLIST MET IF CKQ1-CKQ5=YES
+
+         .................................................................................
+            29           0.  NO
+            17           1.  YES
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJQMET         CIND SECONDARY TO VASC DISEASE - CRITERIA FOR CKQ1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKQMET
+
+         CHECKLIST SEVENTEEN
+         Checklist for Cognitive Impairment Secondary to Vascular Disease
+         OVERALL CHECKLIST SEVENTEEN CRITERIA MET=YES IF CKQ1MET=YES
+
+         .................................................................................
+            29           0.  NO
+            17           1.  YES
+           810       Blank.  Inap
+
+
+==========================================================================================
+
+AJR1           MILD AMBIGUOUS, IMPAIRMENT NOT EXPLAINED BY ETIOLOGY IN CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKR1
+
+         CHECKLIST EIGHTEEN
+         Checklist for Mild Ambiguous
+         1. Impairment can not be better explained by another etiology listed under
+         Cognitive Impairment, No Dementia. Typically is primarily memory impairment, but
+         memory is not always the only impairment
+
+         .................................................................................
+            97           1.  YES
+                         2.  NO
+                         8.  DK
+           759       Blank.  Inap
+
+
+==========================================================================================
+
+AJR2           MILD AMBIGUOUS, GRADUAL ONSET AND PROGRESSION OF SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKR2
+
+         CHECKLIST EIGHTEEN
+         Checklist for Mild Ambiguous
+         2. Gradual onset of symptoms and history suggests progression of symptoms
+
+         .................................................................................
+            67           1.  YES
+            29           2.  NO
+             1           8.  DK
+           759       Blank.  Inap
+
+
+==========================================================================================
+
+AJR3           MILD AMBIGUOUS, MEETS CRITERIA FOR CIND
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKR3
+
+         CHECKLIST EIGHTEEN
+         Checklist for Mild Ambiguous
+         3. Meets criteria for Cognitive Impairment, No Dementia
+
+         .................................................................................
+            81           1.  YES
+            16           2.  NO
+                         8.  DK
+           759       Blank.  Inap
+
+
+==========================================================================================
+
+AJR1MET        MILD AMBIGUOUS - CRITERIA FOR CKR1 - CKR3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKR1MET
+
+         CHECKLIST EIGHTEEN
+         Checklist for Mild Ambiguous
+         CHECKLIST MET IF CKR1-CKR3=YES
+
+         .................................................................................
+            46           0.  NO
+            51           1.  YES
+           759       Blank.  Inap
+
+
+==========================================================================================
+
+AJRMET         MILD AMBIGUOUS - CRITERIA FOR CKR1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKRMET
+
+         CHECKLIST EIGHTEEN
+         Checklist for Mild Ambiguous
+         OVERALL CHECKLIST EIGHTEEN CRITERIA MET=YES IF CKR1MET=YES
+
+         .................................................................................
+            46           0.  NO
+            51           1.  YES
+           759       Blank.  Inap
+
+
+==========================================================================================
+
+AJS1           DEM UNDETERMINED ETIOLOGY, EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKS1
+
+         CHECKLIST NINETEEN
+         Checklist for Dementia Undetermined Etiology
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information
+
+         .................................................................................
+            40           1.  YES
+             8           2.  NO
+                         8.  DK
+           808       Blank.  Inap
+
+
+==========================================================================================
+
+AJS2           DEMENTIA UNDETERMINED ETIOLOGY PROGRESSION OF SYMPTOMS OVER TIME
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKS2
+
+         CHECKLIST NINETEEN
+         Checklist for Dementia Undetermined Etiology
+         2. Progression of symptoms over time
+
+         .................................................................................
+            38           1.  YES
+             7           2.  NO
+             3           8.  DK
+           808       Blank.  Inap
+
+
+==========================================================================================
+
+AJS3           DEMENTIA UNDETERMINED ETIOLOGY, ATYPICAL FEATURES
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKS3
+
+         CHECKLIST NINETEEN
+         Checklist for Dementia Undetermined Etiology
+         3. Atypical features that exceed those usually seen in Possible AD, but they do
+         not clearly meet the criteria for any other type of dementia
+
+         .................................................................................
+            45           1.  YES
+             1           2.  NO
+             2           8.  DK
+           808       Blank.  Inap
+
+
+==========================================================================================
+
+AJS1MET        DEMENTIA UNDETERMINED ETIOLOGY - CRITERIA FOR CKS1 - CKS3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKS1MET
+
+         CHECKLIST NINETEEN
+         Checklist for Dementia Undetermined Etiology
+         CHECKLIST MET IF CKS1-CKS3=YES
+
+         .................................................................................
+            11           0.  NO
+            37           1.  YES
+           808       Blank.  Inap
+
+
+==========================================================================================
+
+AJSMET         DEMENTIA UNDETERMINED ETIOLOGY - CRITERIA FOR CKS1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKSMET
+
+         CHECKLIST NINETEEN
+         Checklist for Dementia Undetermined Etiology
+         OVERALL CHECKLIST NINETEEN CRITERIA MET=YES IF CKS1MET=YES
+
+         .................................................................................
+            11           0.  NO
+            37           1.  YES
+           808       Blank.  Inap
+
+
+==========================================================================================
+
+AJT1           PD, DEM ESTABLISHED BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKT1
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information
+
+         .................................................................................
+             1           1.  YES
+             1           2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJT2           PD, DIAGNOSIS OF PD
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKT2
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         2. Diagnosis of Parkinson's disease
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJT3           PD, COG SYMPTOMS PRIMARILY SUBCORTICAL
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKT3
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         3. Cognitive symptoms primarily subcortical in nature
+
+         .................................................................................
+             1           1.  YES
+             1           2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJT4           PD, ONSET OF COG SYMPTOMS AT LEAST 1 YR PAST MOTOR SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKT4
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         4. Onset of cognitive symptoms at least one year after onset of motor symptoms
+
+         .................................................................................
+             1           1.  YES
+             1           2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJT1MET        PD - CRITERIA FOR CKT1 - CKT4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKT1MET
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         CHECKLIST MET IF CKT1-CKT4=YES
+
+         .................................................................................
+             2           0.  NO
+                         1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJTMET         PD - CRITERIA FOR CKT1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKTMET
+
+         CHECKLIST TWENTY
+         Checklist for Parkinson's Dementia
+         OVERALL CHECKLIST TWENTY CRITERIA MET=YES IF CKT1MET=YES
+
+         .................................................................................
+             2           0.  NO
+                         1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJU1           PROB LEWY BODY DEMENTIA EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU1
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information)
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU2           PROB LEWY BODY DEMENTIA, FLUCTUATING COGNITION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU2
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         2. Fluctuating cognition with pronounced variation in attention and alertness
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU3           PROB LEWY BODY DEMENTIA, RECURRENT VISUAL HALLUCINATIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU3
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         3. Recurrent visual hallucinations that are typically well formed and detailed
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU4           PROB LEWY BODY DEMENTIA, MOTOR FEATURES OF PARKINSONISM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU4
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         4. Spontaneous motor features of parkinsonism
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU5           PROB LEWY BODY DEMENTIA, REPEATED FALLS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU5
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         5. Repeated falls
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU6           PROB LEWY BODY DEMENTIA, SYNCOPE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU6
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         6. Syncope
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU7           PROB LEWY BODY DEMENTIA, LOSS OF CONSCIOUSNESS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU7
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         7. Transient loss of consciousness
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU8           PROB LEWY BODY DEMENTIA, NEUROLEPTIC SENSITIVITY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU8
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         8. Neuroleptic sensitivity
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+             1           8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU9           PROB LEWY BODY DEMENTIA, SYSTEMATIZED DELUSIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU9
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         9. Systematized delusions
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU10          PROB LEWY BODY DEMENTIA, OTHER MODAL HALLUCINATIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU10
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         10. Hallucinations in other modalities
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU11          PROB LEWY BODY DEMENTIA, REM SLEEP DISORDER
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU11
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         11. REM sleep behavior disorder
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+             1           8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU12          PROB LEWY BODY DEMENTIA, DEPRESSIVE SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU12
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         12. Depressive symptoms
+
+         .................................................................................
+                         1.  YES
+             1           2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU1MET        PROB LEWY BODY DEMENTIA - CRITERIA FOR CKU1
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU1MET
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         CHECKLIST MET IF CKU1=YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJU2MET        PROB LEWY BODY DEMENTIA - CRITERIA FOR CKU2 - CKU4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKU2MET
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         CHECKLIST MET IF AT LEAST TWO OF CKU2-CKU4=YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJUMET         PROB LEWY BODY DEM - CRITERIA FOR CKU1MET AND CKU2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKUMET
+
+         CHECKLIST TWENTY ONE
+         Checklist for Probable Lewy Body Dementia
+         OVERALL CHECKLIST TWENTY-ONE CRITERIA MET=YES IF CKU1MET AND CKU2MET=YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJV1           PSP, DEMENTIA EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKV1
+
+         CHECKLIST TWENTY TWO
+         Checklist for Progressive Supranuclear Palsy Dementia
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJV2           PSP, IMPAIRMENT OF VOLUNTARY DOWNWARD GAZE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKV2
+
+         CHECKLIST TWENTY TWO
+         Checklist for Progressive Supranuclear Palsy Dementia
+         2. Impairment of voluntary downward gaze
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJV3           PSP, IMPAIRMENT NOT EXPLAINED BY ANOTHER DEMENTIA TYPE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKV3
+
+         CHECKLIST TWENTY TWO
+         Checklist for Progressive Supranuclear Palsy Dementia
+         3. Impairment can not be better explained by another type of dementia
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJV1MET        PSP, CRITERIA FOR CKV1 - CKV3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKV1MET
+
+         CHECKLIST TWENTY TWO
+         Checklist for Progressive Supranuclear Palsy Dementia
+         CHECKLIST MET IF CKV1-CKV3=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJVMET         PSP, CRITERIA FOR CKV1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKVMET
+
+         CHECKLIST TWENTY TWO
+         Checklist for Progressive Supranuclear Palsy Dementia
+         OVERALL CHECKLIST TWENTY-TWO CRITERIA MET=YES IF CKV1MET =YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJW1           NORMAL PRESSURE HYDROCEPHALUS, EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKW1
+
+         CHECKLIST TWENTY THREE
+         Checklist for Dementia due to Normal Pressure Hydrocephalus
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJW2           NORMAL PRESSURE HYDROCEPHALUS, REPORT FROM NEUROIMAGING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKW2
+
+         CHECKLIST TWENTY THREE
+         Checklist for Dementia due to Normal Pressure Hydrocephalus
+         2. Report of NPH based on neuroimaging
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJW3           NORMAL PRESSURE HYDROCEPHALUS, NOT EXPLAINED BY OTHER DEMENTIA TYPE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKW3
+
+         CHECKLIST TWENTY THREE
+         Checklist for Dementia due to Normal Pressure Hydrocephalus
+         3. Impairment can not be better explained by another type of dementia
+
+         .................................................................................
+             1           1.  YES
+                         2.  NO
+                         8.  DK
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJW1MET        NORMAL PRESSURE HYDROCEPHALUS, CRITERIA FOR CKW1 - CKW3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKW1MET
+
+         CHECKLIST TWENTY THREE
+         Checklist for Dementia due to Normal Pressure Hydrocephalus
+         CHECKLIST MET IF CKW1-CKW3 = YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJWMET         NORMAL PRESSURE HYDROCEPHALUS - CRITERIA FOR CKW1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKWMET
+
+         CHECKLIST TWENTY THREE
+         Checklist for Dementia due to Normal Pressure Hydrocephalus
+         OVERALL CHECKLIST TWENTY-THREE CRITERIA MET=YES IF CKW1MET =YES
+
+         .................................................................................
+                         0.  NO
+             1           1.  YES
+           855       Blank.  Inap
+
+
+==========================================================================================
+
+AJX1           HUNTINGTONS DEMENTIA, EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKX1
+
+         CHECKLIST TWENTY FOUR
+         Checklist for Huntington's Dementia
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJX2           HUNTINGTONS, DIAGNOSIS OF HUNTINGTONS DISEASE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKX2
+
+         CHECKLIST TWENTY FOUR
+         Checklist for Huntington's Dementia
+         2. Diagnosis of Huntington's disease
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJX1MET        HUNTINGTONS DEMENTIA, CRITERIA FOR CKX1 AND CKX2
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKX1MET
+
+         CHECKLIST TWENTY FOUR
+         Checklist for Huntington's Dementia
+         CHECKLIST MET IF CKX1 AND CKX2=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJXMET         HUNTINGTONS DEMENTIA, CRITERIA FOR CKX1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKXMET
+
+         CHECKLIST TWENTY FOUR
+         Checklist for Huntington's Dementia
+         OVERALL CHECKLIST TWENTY-FOUR CRITERIA MET=YES IF CKX1MET =YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY1           FRONTAL LOBE, INSIDIOUS ONSET AND SLOWLY PROGRESSIVE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY1
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         1. Behavioral disorder which is insidious in onset, slowly progressive, and
+         characterized by any of the following early features:
+         a) Loss of personal awareness (neglect of personal hygiene or grooming)
+         b) Loss of social awareness (e.g. loss of social tact, misdemeanors, etc)
+         c) Decreased insight of pathologic changes in their own behavior or mental state
+         d) Disinhibition early in course (e.g. unrestrained sexuality)
+         e) Mental inflexibility
+         f) Hyperorality
+         g) Sterotyped and perseverative behaviors
+         h) Utilization behavior (unrestrained exploration of objects in the environment)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY2           FRONTAL LOBE, PROFOUND FAILURE ON FRONTAL LOBE TESTS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY2
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         2. Neuropsychological findings of profound failure on frontal lobe tests.
+         Absence of severe memory impairments, aphasic disorder, or perceptual spatial
+         disturbance
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY3           FRONTAL LOBE, PERCEPTUAL SPATIAL DISORDERS ARE ABSENT
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY3
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         3. Perceptual spatial disorders are absent. Intact abilities to negotiate the
+         environment
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY4           FRONTAL LOBE, UNIQUE SPEECH DISTURBANCES
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY4
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         4.Speech disturbances characteristic of the disorder uniquely identify it form
+         other common dementias. Symptoms include:
+         a. Progressive reduction of speech (aspontaneity, economy of utterance)
+         b. Sterotyped speech (limited repertoire of words or themes)
+         c. Echolalia or perseveration
+         d. Late mutism
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY5           FRONTAL LOBE, COMMON AFFECTIVE SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY5
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         5. Affective symptoms are common and include any of the following:
+         a. Depression, anxiety, sentimentality, suicidal and fixed ideation of delusions
+         early in the disorder
+         b. Hypochondriasis or bizarre somatic preoccupations early in the illness
+         c. Emotional indifference or lack of empathy, sympathy, apathy
+         Amimia (inertia, aspontaneity)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY6           FRONTAL LOBE SIGNS AND OTHER PHYSICAL SIGNS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY6
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         6. Frontal lobe signs and other physical signs
+         a. Early primitive reflexes
+         b. Early incontinence
+         c. Late akinesia, rigidity, tremor
+         Low and labile blood pressure
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY7           FRONTAL LOBE, NORMAL EEG
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY7
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         7. Normal EEG despite clinically evident dementia
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY8           FRONTAL LOBE, BRAIN IMAGING
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY8
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         8. Brain imaging 'structural or functional or both) that show predominantly
+         frontal or anterior temporal lobe abnormalities
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY9           FRONTAL LOBE, OTHER SUPPORTIVE DIAGNOSTIC FEATURES
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY9
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         9. Supportive Diagnostic Features
+         a) Onset before age 65
+         b) Positive family history of similar disorder in first degree relative (parent,
+         sibling)
+         c) Bulbar palsy, muscular weakness, wasting, fasciculations (motor neuron
+         disease)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY10          FRONTAL LOBE, EXCLUSIONARY FEATURES (LIST)
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY10
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         10. Exclusionary Features
+         Abrupt onset with ictal events
+         Head trauma related to the onset
+         Early severe amnesia
+         Early spatial disorientation or  other signs of agnosia
+         Early severe apraxia
+         Logoclonic speech with rapid
+         Loss of train of thought
+         Myoclonus
+         Corticobulbar and spinal deficits
+         Cerebellar ataxia
+         Coreo-athetosis
+         Early, severe pathological EEG
+         Laboratory tests indicating brain inflammatory process
+         Brain imaging with either:
+         predominant post-central  structural or functional defect
+         or multi-focal cerebral lesions on CT or MRI.
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY1MET        FRONTAL LOBE, CRITERIA FOR CKY1
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY1MET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         CHECKLIST MET IF CKY1=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY2MET        FRONTAL LOBE, CRITERIA FOR CKY2
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY2MET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         CHECKLIST MET IF CHY2=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY3MET        FRONTAL LOBE, CRITERIA FOR CKY3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY3MET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         CHECKLIST MET IF CKY3=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY4MET        FRONTAL LOBE, CRITERIA FOR CKY4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY4MET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         CHECKLIST MET IF CKY4=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJY5MET        FRONTAL LOBE, CRITERIA FOR CKY10
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKY5MET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         CHECKLIST MET IF CKY10=NO
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJYMET         FRONTAL LOBE - CRITERIA FOR CKY1MET - CKY5MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKYMET
+
+         CHECKLIST TWENTY FIVE
+         Checklist for Frontal Lobe Dementia
+         OVERALL CHECKLIST TWENTY-FIVE CRITERIA MET=YES IF CKY1MET-CKY5MET =YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ1           POSS LEWY BODY DEMENTIA EST BY DSM III OR DSM IV CRITERIA
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ1
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information)
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ2           POSS LEWY BODY DEMENTIA, FLUCTUATING COGNITION
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ2
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         2. Fluctuating cognition with pronounced variation in attention and alertness
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ3           POSS LEWY BODY DEMENTIA, RECURRENT VISUAL HALLUCINATIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ3
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         3. Recurrent visual hallucinations that are typically well formed and detailed
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ4           POSS LEWY BODY DEMENTIA, MOTOR FEATURES OF PARKINSONISM
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ4
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         4. Spontaneous motor features of parkinsonism
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ5           POSS LEWY BODY DEMENTIA, REPEATED FALLS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ5
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         5. Repeated falls
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ6           POSS LEWY BODY DEMENTIA, SYNCOPE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ6
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         6. Syncope
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ7           POSS LEWY BODY DEMENTIA, LOSS OF CONSCIOUSNESS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ7
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         7. Transient loss of consciousness
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ8           POSS LEWY BODY DEMENTIA, NEUROLEPTIC SENSITIVITY
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ8
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         8. Neuroleptic sensitivity
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ9           POSS LEWY BODY DEMENTIA, SYSTEMATIZED DELUSIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ9
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         9. Systematized delusions
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ10          POSS LEWY BODY DEMENTIA, OTHER MODAL HALLUCINATIONS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ10
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         10. Hallucinations in other modalities
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ11          POSS LEWY BODY DEMENTIA, REM SLEEP DISORDER
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ11
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         11. REM sleep behavior disorder
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ12          POSS LEWY BODY DEMENTIA, DEPRESSIVE SYMPTOMS
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ12
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         12. Depressive symptoms
+
+         .................................................................................
+                         1.  YES
+                         2.  NO
+                         8.  DK
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ1MET        POSS LEWY BODY DEMENTIA - CRITERIA FOR CKZ1
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ1MET
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         CHECKLIST MET IF CKZ1=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZ2MET        POSS LEWY BODY DEMENTIA - CRITERIA FOR CKZ2 - CKZ4
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZ2MET
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         CHECKLIST MET IF AT LEAST ONE OF CKZ2-CKZ4=YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJZMET         POSS LEWY BODY DEMENTIA - CRITERIA FOR CKZ1MET AND CKZ2MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKZMET
+
+         CHECKLIST TWENTY SIX
+         Checklist for Possible Lewy Body Dementia
+         OVERALL CHECKLIST TWENTY-SIX CRITERIA MET=YES IF CKZ1MET AND CKZ2MET =YES
+
+         .................................................................................
+                         0.  NO
+                         1.  YES
+           856       Blank.  Inap
+
+
+==========================================================================================
+
+AJAA1          SEVERE HEAD TRAUMA, DEM ESTABLISHED BY CKAMET OR CKBMET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAA1
+
+         CHECKLIST TWENTY SEVEN
+         Checklist for Dementia due to Severe Head Trauma
+         1. Dementia established by DSM-III-R or DSM-IV criteria (based on clinical and
+         neuropsychological assessment information
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJAA2          SEVERE HEAD TRAUMA, SEVERE COGNITIVE SEQUELAE
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAA2
+
+         CHECKLIST TWENTY SEVEN
+         Checklist for Dementia due to Severe Head Trauma
+         2. Report of head trauma resulting in severe cognitive sequelae that begins
+         immediately after trauma and does not resolve over time
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJAA3          SEVERE HEAD TRAUMA, IMPAIRMENT NOT OTHERWISE EXPLAINED
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAA3
+
+         CHECKLIST TWENTY SEVEN
+         Checklist for Dementia due to Severe Head Trauma
+         3. Impairment can not be better explained by another type of dementia
+
+         .................................................................................
+             2           1.  YES
+                         2.  NO
+                         8.  DK
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJAA1MET       SEVERE HEAD TRAUMA - CRITERIA FOR CKAA1 - CKAA3
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAA1MET
+
+         CHECKLIST TWENTY SEVEN
+         Checklist for Dementia due to Severe Head Trauma
+         CHECKLIST MET IF CKAA1-CKAA3 =YES
+
+         .................................................................................
+                         0.  NO
+             2           1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AJAAMET        SEVERE HEAD TRAUMA - CRITERIA FOR CKAA1MET
+         Section: AJ    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CKAAMET
+
+         CHECKLIST TWENTY SEVEN
+         Checklist for Dementia due to Severe Head Trauma
+
+         .................................................................................
+                         0.  NO
+             2           1.  YES
+           854       Blank.  Inap
+
+
+==========================================================================================

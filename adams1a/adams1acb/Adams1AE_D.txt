@@ -1,0 +1,903 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AE: MEDICATIONS -  INITIAL VISIT  (Drug)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AE    Level: Drug            Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+          5765           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AE    Level: Drug            Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+          3947         010.  Person Number
+            65         011.  Person Number
+          1278         020.  Person Number
+             1         021.  Person Number
+           196         030.  Person Number
+           270         040.  Person Number
+             8         041.  Person Number
+
+
+==========================================================================================
+
+AEMENNUM       DRUG MENTION
+         Section: AE    Level: Drug            Type: Numeric    Width: 2   Decimals: 0
+         Ref: none
+
+         Drug mention number
+
+         .................................................................................
+          5765                    1-27.  First, second, ..., nth drug mentioned
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AE    Level: Drug            Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+          5765             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AEDCODE        Q1 DRUG NAME CODE
+         Section: AE    Level: Drug            Type: Numeric    Width: 5   Decimals: 0
+         Ref: DT1CD - DT30CD
+
+         Q1.  DRUG NAME - code
+
+         Respondents were mailed a medications form prior to the visit and asked to have
+         this information available when the team arrived.  Information included names
+         and dosages of prescription medication, vitamins/supplements, and other
+         over-the-counter items taken in the previous two weeks.  At the time of the
+         clinical assessment, the nurse examined all medication containers to confirm the
+         medication information.
+         
+         The medication data was coded using Druglook, a computerized database developed
+         at the Duke Aging Center by Joseph T. Hanlon, PharmD, MS and colleagues that
+         assigns unique numeric codes to drugs.  Additionally, in the original database
+         each code had a therapeutic category based on the condition or body system that
+         it treated.  Over the past few years, the staff of the Duke Program in
+         Epidemiology of Dementia and the Cache County Memory and Aging Study have
+         assigned codes for newer medications and nutritional supplements.  Many of these
+         newer codes have not had a therapeutic category code assigned to the
+
+         .................................................................................
+             7           1.  AMOXICILLIN
+             1           9.  PENICILLIN V
+             2          13.  DOXYCYLINE (VIBRATAB)
+             1          15.  MINOCYCLINE (MINOCIN)
+             5          23.  CEPHALEXIN (KEFLEX)
+                        26.  CLINDAMYCIN (CLEOCIN)
+             1          31.  SULFASALAZINE (AZULFIDINE)
+             2          32.  SODIUM SULFACETAMIDE OPHTH SOLUTION
+            34          43.  IBUPROFEN (MOTRIN)
+             3          44.  INDOMETHACIN (INDOCIN)
+             3          47.  MORPHINE SULFATE
+             5          53.  CARBAMAZEPINE (TEGRETOL)
+             4          59.  PHENOBARBITAL
+            16          60.  PHENYTOIN (DILANTIN)
+             1          61.  PRIMIDONE (MYSOLINE)
+             1          70.  LITHIUM (ESKALITH)
+             1          73.  THIORIDAZINE (MELLARIL)
+                        77.  CLORDIAZEPOXIDE (LIBRIUM)
+             5          81.  DIAZEPAM (VALIUM)
+             3          83.  HALOPERIDOL (HALDOL)
+            10          84.  HYDROXYZINE (ATARAX)
+             4          89.  OXAZEPAM (SERAX)
+             1          94.  CARISOPRODOL (SOMA)
+             2          96.  CHLORZOXAZONE (PARAFLEX)
+             2          98.  METHOCARBAMOL (ROBAXIN)
+             1          99.  BETHANECHOL (URECHOLINE)
+             2         100.  BENZTROPINE MESYLATE (COGENTIN)
+             3         108.  TRIHEXYPHENIDYL (ARTANE)
+             1         110.  METAPROTERENOL (ALUPENT)
+             1         113.  TERBUTALINE (BRETHINE)
+            19         117.  AMITRIPTYLINE (ELAVIL)
+             1         118.  DESIPRAMINE (NORPRAMIN)
+             3         119.  DOXEPIN (SINEQUAN)
+             3         120.  IMIPRAMINE (TOFRANIL)
+             2         122.  NORTRIPTYLINE (PAMELOR)
+            85         139.  DIGOXIN (LANOXIN)
+             1         140.  PROCAINAMIDE (PRONESTYL)
+             7         141.  PROPRANOLOL (INDERAL)
+             6         142.  QUINIDINE GLUCONATE (DURAQUIN,QUINAGLUTE)
+             1         144.  METHYLDOPA (ALDOMET)
+            19         145.  CATAPRES (CLONIDINE)
+             8         147.  HYDRALAZINE (APRESOLINE)
+             2         154.  CHLORTHALIDONE (HYGROTON)
+           166         155.  FUROSEMIDE (LASIX)
+            60         156.  HYDROCHLOROTHIAZIDE (ESIDRIX,HYDRODIURIL, MICROZIDE)
+             1         157.  METHYCLOTHIAZIDE (AQUATENSEN)
+             7         158.  METOLAXONE (ZAROXOLYN,MYKROX)
+            13         160.  SPIRONOLACTONE (ALDACTONE)
+             4         163.  DIPYRIDAMOLE (PERSANTINE)
+            56         165.  NITROGLYCERIN, ALL FORMS EXCEPT PATCH
+             8         166.  ISOSORBIDE DINITRATE (ISORDIL)
+            16         170.  ALLOPURINOL (ZYLOPRIM)
+             9         171.  COLCHICINE U.S.P.
+             4         172.  PREDNISOLONE ACETATE (ECONOPRED PLUS)
+             4         173.  POTASSIUM (SLOW K)
+             1         185.  FLUOCINOLONE ACETONIDE (SYNALAR)
+             2         186.  FLUOCINONIDE (LIDEX,TOPSYN)
+             1         190.  METHYLPREDNISOLONE (MEDROL)
+            23         192.  PREDNISONE (DELTASONE)
+           128         195.  LEVOTHYROXINE SODIUM (SYNTHROID)
+             2         207.  THYROID-USP
+             1         211.  ESTROGEN, ESTERIFIED
+            32         212.  CONJUGATED ESTROGENS (PREMARIN)
+             1         213.  PIPERAZINE ESTRONE SULFATE (OGEN)
+             3         218.  TOLAZAMIDE (TOLINASE)
+            62         224.  WARFARIN SODIUM (COUMADIN)
+            25         228.  MECLIZINE (ANTIVERT)
+             3         229.  PROCHLORPERAZINE (COMPAZINE)
+                       230.  TRIMETHOBENZAMIDE (TIGAN)
+             3         233.  NYSTATIN (MYCOSTATIN)
+             1         234.  METHENAMINE (HIPREX)
+             1         239.  NITROFURANTOIN (FURADANTIN)
+             2         249.  METRONIDAZOLE (FLAGYL)
+             1         250.  BROMPHENIRAMINE MALEATE (DIMETAPP)
+             4         253.  CYPROHEPTADINE (PERIACTIN)
+            13         254.  DIPHENHYDRAMINE (BENADRYL)
+             5         255.  PROMETHAZINE (PHENERGAN)
+             1         259.  ACETAZOLAMIDE (DIAMOX)
+             3         262.  PILOCARPINE HCL SOLN  (ISOPTO CARPINE)
+             1         264.  ATROPINE SULFATE (ISOPTO ATROPINE)
+            10         276.  THEOPHYLLINE
+             2         277.  BENZONATATE (TESSALON)
+             7         284.  PHENYTOIN (PHENYTOIN)
+             1         285.  BETAMETHASONE DIPROPIONATE (DIPROBETASONE)
+             6         286.  NITROFURANTOIN (MACRODANTIN)
+             1         288.  LEVODOPA (BENDOPA)
+             7         294.  TRIAMTERENE (DYRENIUM)
+             1         295.  CHOLESTYRAMINE RESIN (QUESTRAN)
+            10         296.  CLONAZEPAM (KLONOPIN)
+             1         343.  METHIMAZOLE (TAPAZOLE)
+                       364.  VITAMIN B12  (BERUBIGEN)
+                       376.  AMANTADINE (SYMMETREL)
+             2         377.  METHOTREXATE
+             1         386.  DESONIDE (TRIDESILON)
+             1         403.  ETHACRYNIC ACID (EDECRIN)
+             1         407.  DAPSONE (AVLOSULFON)
+             7         416.  ESTRADIOL (ESTRACE)
+             2         425.  HYDROXYCHLOROQUINE (PLAQUENIL)
+                       475.  PYRIDOXINE HCL (HEXABATALIN)
+             1         487.  MOLINDONE (MOBANE)
+             1         521.  HYDROXYUREA (HYDREA)
+             1         528.  AZATHIOPRINE (IMURAN)
+             2         550.  MEGESTROL ACETATE (MEGACE)
+             4         618.  GUAIFENESIN (ENTEX)
+             2         630.  CARISOPRODOL COMPOUND (SOMA COMPOUND)
+             1         723.  HC/PRAMOXINE (PRAMOSONE)
+             3         725.  VICON FORTE CAP
+             7         881.  LEVODOPA/CARBIDOPA (SINEMET)
+             1         894.  POTASSIUM BICARBONATE
+             3         904.  TRIMETHOPRIM SULFAMETHOXAZOLE
+            10         908.  ACETAMINOPHEN 300MG/CODEINE 16
+             8         916.  PROPOXYPHENE (DARVON)
+            35         917.  PROPOXYPHENE NAPSYLATE 50MG/AC
+             2         923.  CHLORDIAZEPOXIDE/CLINDINIUM
+             2         939.  CLONIDINE HCL/CHLORTHALIDONE
+             1         945.  METHYLDOPA/HYDROCHLORTHIAZIDE
+                       949.  RESERPINE/CHLOROTHIAZIDE/HYDRALAZINE (SER-AP-ES)
+             2         953.  SPIRONOLACTONE/HYDROCHLORTHIAZIDE
+             1         970.  PREDNISOLONE NAPO4/NA SULFACET
+             4         971.  TRIAMCINOLONE ACETONIDE
+             2         973.  DIPHENOXYLATE/ATROPINE (LOMOTIL)
+            15        1001.  NAPROXEN (NAPROSYN)
+             2        1002.  NAPROXEN SODIUM (ANAPROX)
+             1        1007.  MINIPRESS (PRAZOCIN)
+             4        1044.  BECLOMETHASONE DIPROPIONATE (VANCERIL)
+            19        1084.  CALCITONIN SALMON (CALCIMAR)
+             9        1095.  OXYCODONE HCL 5MG/ACETAMINOPHEN
+                      1098.  BELLADONNA ALKALOIDS/PHENOBARBITAL
+            22        1131.  OXYBUTYNIN (DITROPAN)
+            13        1154.  LOPERAMIDE (IMODIUM)
+            24        1155.  LORAZEPAM (ATIVAN)
+             1        1160.  DISOPYRAMIDE PHOSPHATE (NORPACE)
+             5        1161.  CIMETIDINE (TAGAMET)
+             2        1165.  SALSALATE (DISALCID)
+             4        1166.  CYCLOBENZAPRINE (FLEXERIL)
+             2        1170.  DESOXIMETASONE (TOPICORT)
+             1        1172.  METHADONE HCL (DOLOPHINE)
+             9        1203.  LACTULOSE (CHRONULAC)
+             1        2002.  AMOXIPINE (ASENDIN)
+            13        2009.  CAPTOPRIL (CAPOTEN)
+             9        2010.  HYDROCODONE BITARTRATE 5MG/APA
+            46        2014.  ALBUTEROL (VENTOLIN)
+             1        2020.  ESTERIFIED ESTROGEN/METHYLTEST
+             1        2026.  PROPINE OPHTH. SOLN 0.1% (DIPIVERFRIN HYDROCHLORIDE)
+            17        2030.  TEMAZEPAM (RESTORIL)
+             4        3500.  KETOCONAZOLE (NIZORAL)
+            12        3501.  TRAZODONE (DESYREL)
+            18        3503.  NIFEDIPINE (PROCARDIA)
+            17        3505.  ALPRAZOLAM (XANAX)
+             1        3511.  SCOPALAMINE (TRANSDERMM SCOPE)
+             1        3530.  TIMOLOL (BLOCADREN)
+            63        3535.  ATENOLOL (TENORMIN)
+             6        3555.  TAMOXIFEN (NOLVADEX)
+             1        3560.  DIFLUNISAL (DOLOBID)
+             3        3565.  PIROXICAM  (FELDENE)
+             2        3580.  FLUNISOLIDE (NASALIDE)
+            24        3620.  VERAPAMIL (CALAN)
+             3        3640.  BUMETANIDE (BUMEX)
+             4        3650.  SUCRALFATE (CARAFATE)
+            46        3653.  RANITIDINE (ZANTAC)
+             1        3660.  TRIAZOLAM (HALCION)
+            52        3675.  DILTIAZEM (CARDIZEM)
+            76        3718.  POTASSIUM CHLORIDE (KAOCHLOR)
+            12        3719.  AMIODARONE (CORDARONE)
+            22        3725.  GLIPIZIDE (GLUCOTROL)
+            35        3726.  GLYBURIDE (MICRONASE OR DIABETA)
+             6        3727.  LABETALOL (TRANDATE)
+            11        3730.  PENTOXIFYLLINE (TRENTAL)
+             1        3739.  BUTALBITAL/APAP CAPS
+             6        3742.  GEMFIBROZIL (LOPID)
+             2        3763.  OXYCODONE (ROXICODONE)
+             5        3770.  INDAPAMIDE (LOZOL)
+             1        3771.  BUTALBITAL (BUTISOL)
+             3        3787.  BUTALBITAL/ASA/CAFFEINE (FIORINAL)
+             1        3792.  TESTOSTERONE, TOPICAL
+             1        3798.  MEXILETINE (MEXITIL)
+                      3816.  DIHYDROCODEINE/APAP/CAFFEINE
+             5        3817.  BETAXOLOL OPHTH SOLN (BETOPTIC)
+            25        3820.  ENALAPRIL (VASOTEC)
+             1        3831.  CICLOPIROXOLAMINE (LOPROX)
+             1        3832.  CLOBETASOL PROPIONATE (TEMOVATE)
+             4        3834.  LEVOBUNOLOL OPHTH SOLN (BETAGAN)
+             1        3837.  CAPTOPRIL/HYDROCHLOROTHIAZIDE
+             1        3853.  OPHTHALMIC EYE DROPS, NONSPECIFIC
+                      3859.  ALLERGY SHOT
+             1        3917.  FLECAINIDE (TAMBOCOR)
+             1        3919.  APAP/BUTALBITAL/CAFFEINE (FIORICET)
+             8        3922.  BUSPIRONE (BUSPAR)
+             3        3924.  FAMOTIDINE (PEPCID)
+             1        3925.  GUANFACINE TABLETS (TENEX)
+            11        3929.  IPRATROPIUM INHALER (ATROVENT)
+            27        3930.  TERAZOSIN (HYTRIN)
+            11        3931.  LOVASTATIN (MEVACOR)
+             4        3932.  CIPROFLOXACIN (CIPRO)
+            88        3933.  LISINOPRIL (PRIVINIL, ZESTRIL)
+             2        3934.  MOMETASONE (ELOCON)
+            12        3936.  HYDROCODONE 5/APAP 500 (CO-GESIC)
+             2        3940.  ENALAPRIL 10MG/HCTZ 25MG (VASERETIC)
+             2        3943.  BETAMETHASONE/CLOTRIMAZOLE (LOTRISONE)
+             5        3956.  NIZATIDINE (AXID)
+             1        3957.  DICLOFENAC (VOLTAREN)
+            12        3958.  FLUOXETINE (PROZAC)
+             1        3984.  MISOPROSTOL (CYTOTEC)
+                      3998.  GUAIFENESIN TAB (HUMIBID LA)
+             4        4001.  BAYER ASPIRIN
+           255        4003.  ASA, NONSPECIFIC, ORAL
+             7        4005.  BABY ASPIRIN
+            87        4009.  ACETAMINOPHEN (TYLENOL)
+            14        4010.  EXTRA STRENGTH TYLENOL
+            17        4012.  ACETAMINOPHEN (APAP), NONSPECIFIC, ORAL
+            23        4017.  ENTERIC COATED ASPIRIN (ECOTRIN)
+            18        4018.  ASPIRIN ENSEALS (ENCAPRIN)
+            11        4025.  IBUPROFEN (ADVIL OR NUPRIN)
+             2        4026.  ASPIRIN/CAFFEINE (ANACIN)
+             1        4039.  ASPIRIN/MAGNESIUM/ALUMINUM HYDROXIDE
+             1        4041.  ASA/MG(OH)2/AL(OH)3 (ASCRIPTIN)
+             2        4044.  BUFFERED ASPIRIN (BUFFERIN)
+             1        4047.  BUFFERED ASPIRIN, NONSPECIFIC
+             1        4050.  ASPIRIN/CAFFEINE/ACETAMINOPHEN
+             1        4054.  ASPIRIN/APAP/CAFFEINE/MAGNESIUM/ALUMINUM
+             4        4100.  VITAMIN A
+             3        4101.  VITAMIN B1 (THIAMINE)
+             7        4103.  NIACIN
+             6        4104.  VITAMIN B6 (PYRIDOXINE HCL)
+            35        4105.  VITAMIN B12 (CYANOCOBALAMIN)
+            90        4106.  VITAMIN C (ASCORBIC ACID)
+            11        4107.  VITAMIN D
+           127        4108.  VITAMIN E
+            38        4109.  FOLIC ACID (FOLATE)
+             2        4112.  BIOTIN
+             3        4113.  VITAMIN B
+             3        4129.  ONE-A-DAY
+             1        4135.  THERAGRAN
+             4        4139.  B COMPLEX (THERAPEUTIC M)
+            27        4140.  MULTIVITAMIN/MINERALS, NONSPECIFIC
+             1        4141.  STRESS FORMULA VITAMINS
+            24        4151.  CENTRUM
+             3        4155.  GERITOL
+             1        4163.  STRESS TABS 600 W/IRON
+             8        4165.  THERAGRAN M
+             8        4167.  MULTIVITAMIN/IRON, NONSPECIFIC
+             1        4170.  MULTIVITAMIN/IRON/MINERALS
+           146        4176.  MULTIVITAMIN, NONSPECIFIC
+            54        4182.  VITAMIN D/CALCIUM, NONSPECIFIC
+             2        4186.  VITAMIN D/CALCIUM/PHOSPHATE, NONSPECIFIC
+             3        4201.  FEOSOL
+             1        4205.  FERROUS FUMARATE, NONSPECIFIC
+             2        4206.  FERROUS GLUCONATE, NONSPECIFIC
+            24        4211.  FERROUS SULFATE, NONSPECIFIC
+            14        4212.  IRON, NONSPECIFIC
+             1        4213.  NIFEREX (IRON POLYSACCHARIDE)
+             1        4224.  MINERALS
+            56        4225.  CALCIUM
+             1        4226.  COPPER (CUPRIC SULFATE)
+             8        4228.  MAGNESIUM
+            16        4231.  ZINC
+             1        4232.  BONE MEAL
+             5        4234.  SELENIUM
+             1        4237.  CALCIUM/MAGNESIUM
+             2        4247.  VITAMINS B,C, NONSPECIFIC
+             4        4248.  VITAMINS A, D
+            21        4258.  VITAMIN D/CALCIUM/MAGNESIUM (OS-CAL FORTE)
+             9        4267.  CALCIUM/MAGNESIUM/ZINC
+             1        4270.  VITAMIN C/CALCIUM
+             1        4306.  MAGNESIUM E.C. (SLOW-MAG)
+            34        4309.  MILK OF MAGNESIA
+            18        4315.  CALCIUM CARBONATE (TUMS)
+             5        4316.  CALCIUM CARBONATE
+             1        4320.  CALCIUM CARBONATE (ROLAIDS)
+             6        4323.  SIMETHICONE (MYLICON)
+             2        4328.  ALUMINUM/MAGNESIUM (MAALOX)
+             6        4337.  ALUMINUM/MAGNESIUM/SIMETHICONE
+                      4365.  ALUMINUM/MAGNESIUM (GAVISCON)
+             2        4380.  BAKING SODA (SODIUM BICARBONATE)
+             2        4399.  ANTACID, NONSPECIFIC
+            15        4407.  BISACODYL (DULCOLAX TABLET)
+             3        4408.  BISACODYL SUPP (DULCOLAX SUPP)
+            16        4409.  BISACODYL TABLET, NONSPECIFIC
+             2        4413.  CALCIUM POLYCARBOPHIL (MITROLAN)
+             5        4425.  DOCUSATE CALCIUM (SURFAK)
+            24        4430.  DOCUSATE SODIUM (COLACE CAPSULE)
+            29        4433.  DUCOSATE SODIUM (DSS), NONSPECIFIC
+             3        4455.  SODIUM PHOSPHATE (FLEET ENEMA)
+             2        4461.  METHYLCELLULOSE
+            12        4465.  PSYLLIUM HYDROPHILIC MUCILLOID
+             3        4470.  MINERAL OIL
+            10        4485.  SENNA CONCENTRATE (SENOKOT TABLETS)
+            11        4502.  DOCUSATE/CASANTHRANOL
+             1        4510.  DOCUSATE/SENNA (SENOKOT S)
+             6        4595.  STOOL SOFTENER
+             1        4599.  LAXATIVE
+             1        4629.  LACTAID LIQUID (LACTASE)
+                      4630.  BISMUTH SUBSALICYLATE (PEPTO-BISMOL)
+             1        4710.  PHENYLEPHRINE SPRAY (NEO-SYNEPHRINE)
+             1        4716.  NAPHAZOLINE
+             2        4760.  VICKS, FORM UNSPECIFIED
+                      4800.  CHLORPHENIRAMINE (CHLORTRIMETON)
+             1        4801.  CHLORPHENIRAMINE
+             1        4806.  PSEUDOEPHEDRINE (SUDAFED)
+                      4807.  PSEUDOEPHEDRINE
+             6        4808.  GUAIFENESIN (ROBITUSSIN)
+             1        4818.  DEXBROMPHENIRAMINE/PSEUDOEPHED
+                      4856.  APAP/PSEUDOEPHEDRINE(SINE-AID)
+             3        5011.  ROBITUSSIN DM
+             1        5017.  COUGH DROPS, NONSPECIFIC
+            33        5100.  POTASSIUM
+             3        5101.  POTASSIUM GLUCONATE
+             1        5200.  ACIDOPHILUS
+                      5201.  ALFALFA
+             1        5210.  BEE POLLEN
+             1        5211.  BIOFLAVANOIDS
+             1        5221.  COD LIVER OIL
+             1        5249.  GARLIC/PARSLEY
+            13        5250.  GARLIC
+             1        5278.  L-LYSINE
+             4        5280.  LECITHIN
+             1        5331.  PROTEIN SUPPLEMENTS
+             1        5332.  PRIMROSE OIL
+             2        5355.  DIETARY SUPPLEMENT
+                      5481.  NEOSPORIN
+            11        5700.  INSULIN, NONSPECIFIC
+                      5740.  INSULIN ULTRA LENTE U-100
+            18        5742.  HUMAN INSULIN NPH U-100 (HUMULIN N)
+            13        5743.  HUMAN INSULIN REG U-100 (HUMULIN REG)
+            18        5744.  HUMAN INSULIN 70/30 (NOVOLIN 70/30)
+             1        5745.  HUMAN INSULIN LENTE (HUMULIN L-U100)
+             1        5802.  ASPERCREME
+             1        5806.  METHYLSALICYLATE/MENTHOL (BEN-GAY)
+             2        6011.  VISINE
+             1        6015.  TETRAHYDROZOLINE (VISINE AC)
+             2        6017.  HYDROXYPROPYLMETHYLCELLULOSE OCUCOAT
+             2        6057.  HYPOTEARS
+             3        6065.  TEARS NATURALE
+                      6068.  NAPHAZOLINE OPHTH (CLEAR EYES)
+             5        6079.  ARTIFICIAL TEARS, NONSPECIFIC
+             1        6100.  MECLIZINE (BONINE)
+             1        6245.  EUCERIN
+                      6350.  HYDROCORTISONE ACETATE 0.5%
+             3        6351.  HYDROCORTISONE 0.5%
+             5        6488.  MAGNESIUM OXIDE
+             3        6495.  CARBAMIDE PEROXIDE (MURINE EAR)
+             1        6660.  DIGESTIVE ENZYME TAB
+             1        7012.  SULINDAC (CLINORIL)
+             2        7015.  VALPROATE (DEPAKENE)
+             2        7027.  BACLOFEN (LIORESAL)
+            56        7028.  METOPROLOL (LOPRESSOR)
+            11        7043.  METOCLOPRAMIDE (REGLAN)
+             4        7048.  CALCITRIOL (ROCALTROL)
+            16        7054.  TIMOLOL MALEATE (TIMOPTIC)
+             1        7059.  PRENATAL VITAMINS/IRON/MINERALS
+             3        7075.  NADOLOL (CORGARD)
+             1        7086.  PANCREATIC ENZYMES (PANCREASE)
+             4        7091.  SORBITOL
+             1        7093.  CHOLINE MAGNESIUM TRISALICYLATE
+             1        7094.  TRIMETHOPRIM (PROLOPRIM)
+             1        8086.  PSYLLIUM POWDER (METAMUCIL)
+             1        9030.  NUTRILITE
+             2        9042.  OMEGA 3 POLYUNSATURATED FATTY ACIDS (EPA)
+             4        9085.  CRANBERRY CAPSULE
+             2        9250.  LEUPROLIDE (LUPRON)
+             2        9255.  SELEGLINE (ELDEPRYL)
+            21        9260.  OMEPRAZOLE (PRILOSEC)
+             5        9261.  LISINOPRIL/HCTZ (ZESTORETIC)
+             3        9265.  SUPER POTENCY COENZYME Q10 30M
+             1        9267.  NICARDIPINE (CARDENE)
+             2        9278.  ISRADAPINE (DYNACIRC)
+             2        9285.  PIRBUTEROL (MAXAIR)
+             2        9312.  BUPROPION (WELLBUTRIN)
+            13        9316.  ACETAMINOPHEN/DIPHENHYDRAMINE
+            15        9317.  FELODIPINE (PLENDIL)
+             5        9318.  NABUMETONE (RELAFEN)
+             1        9320.  ETODOLAC (LODINE)
+            28        9322.  DOXAZOCIN (CARDURA)
+            15        9324.  LOTENSIN (BENAZEPRIL)
+             2        9326.  HYDROCODONE/ACETAMINOPHEN (LORTAB)
+             2        9328.  NIFEREX 150 FORTE
+            24        9331.  RAMIPRIL (ALTACE)
+             3        9333.  HYDROCODONE TABLET
+             1        9341.  PROPAFENONE (RYTHMOL)
+             1        9344.  KETOROLAC (TORADOL)
+            15        9350.  FOSINOPRIL (MONOPRIL)
+            17        9351.  PRAVASTATIN (PRAVACHOL)
+            35        9353.  SERTRALINE (ZOLOFT)
+             2        9354.  TICLOPIDINE (TICLID)
+                      9355.  AZITHROMYCIN (ZITHROMAX)
+            69        9356.  SIMVASTATIN (ZOCOR)
+            16        9381.  OCUVITE
+             2        9398.  NITROGLYCERIN (NITRO-DUR), PATCH
+             3        9399.  NITROGLYGERIN PATCH (MINITRAN)
+             1        9400.  ZOSTRIX
+             6        9410.  FINASTERIDE (PROSCAR)
+             1        9425.  PYCNOGENOL
+            15        9429.  QUINAPRIL (ACCUPRIL)
+             1        9433.  FLUTAMIDE (EULEXIN)
+             1        9435.  CHLORHEXIDINE (PERIDEX)
+             2        9448.  TOBRAMYCIN/DEXAMETHASONE (TOBRADEX)
+            12        9450.  CARBIDOPA (LODOSYN)
+            47        9455.  ISOSORBIDE MONONITRATE (MONOKET)
+            71        9456.  AMLODIPINE (NORVASC)
+             1        9464.  CEFZIL
+            40        9482.  CENTRUM SILVER
+             4        9510.  POLYETHYLENE GLYCOL, ELECTROLYTES (GOLYTELY)
+             2        9539.  LACTIC ACID (LAC-HYDRIN)
+             1        9572.  OXAPROZIN (DAYPRO)
+            36        9576.  PAROXETINE (PAXIL)
+            12        9579.  LORATADINE (CLARITIN)
+             2        9589.  CALCIUM/IRON (DICAL-D W/ IRON)
+            10        9651.  ZOLPIDEM (AMBIEN)
+             3        9652.  MESALAMINE (ASACOL)
+             4        9656.  FENTANYL (DURAGESIC)
+            52        9673.  METOPROLOL (TOPROL XL)
+            10        9688.  SALMETEROL  (SEREVENT)
+             2        9947.  SODIUM CHLORIDE INHALATION
+             6        9952.  OMEGA-3 FATTY ACIDS FROM FISH
+            13        9953.  NEURONTIN
+            23        9954.  RISPERIDONE (RISPERDAL)
+             4        9955.  FLUDROCORTISONE ACETATE (FLORINEF)
+            53       10004.  LANSOPRAZOLE (PREVACID SR)
+             5       10005.  CONJUGATED ESTROGENS/MEDROXYPROGESTERONE
+             1       10006.  LORATADINE/PSEUDOEPHEDRINE (CLARITIN D)
+            13       10007.  FLUVASTATIN (LESCOL)
+            35       10008.  ALENDRONATE (FOSAMAX)
+             8       10009.  VENLAFAXINE (EFFEXOR)
+             3       10010.  DORAZOLAMIDE (TRUSOPT)
+            10       10018.  TORSEMIDE (DEMADEX)
+            42       10019.  TRIAMTERENE/HCTZ (MAXZIDE, DYAZIDE)
+             2       10020.  BISOPROLOL/HCTZ (ZIAC)
+             3       10021.  BUDESONIDE (RHINOCORT)
+            35       10024.  METFORMIN (GLUCOPHAGE)
+             6       10025.  CETIRIZINE (ZYRTEC)
+             8       10026.  FLUTICASONE (FLONASE)
+            10       10030.  AMLODIPINE/BENZAPRIL (LOTREL)
+             2       10031.  SOTALOL (BETAPACE)
+             2       10035.  KEOTOROLAC (ACULAR)
+            13       10036.  TRAMADOL (ULTRAM)
+             2       10040.  MOEXIPRIL (UNIVASC)
+             1       10046.  OFLOXACIN (OCUFLOX)
+            22       10047.  LOSARTAN (COZAAR)
+             2       10049.  NEFAZODONE (SERZONE)
+                     10063.  HALOBETASOL (ULTRAVATE)
+             1       10065.  GOSERELIN (ZOLADEX)
+            11       10073.  FLUTICATSONE (CUTIVATE)
+             1       10075.  DHEA 5MG TAB
+             1       10080.  ITRACONAZOLE (SPORANOX)
+            15       20000.  NAPROXEN (ALEVE)
+             6       20014.  FAMOTIDINE (PEPCID AC)
+            37       20035.  GLUCOSAMINE
+             1       20042.  MELATONIN
+             6       20045.  SAW PALMETTO
+             8       20054.  GINKGO BILOBA
+             6       20067.  BETA-CAROTENE (MAX-CARO)
+             1       20070.  ANTIOXIDANT
+             1       20071.  GLUCOSE (INSTA-GLUCOSE)
+             2       20076.  ECHINEA
+             7       20079.  FLAX OIL
+             3       20080.  BILLBERRY
+             2       20083.  THYROID SUPPLEMENT (OTC)
+             1       20094.  CHELATING COMPLEXES
+             1       20115.  MULTIVITAMIN/IRON/MINERALS (CEROVITE)
+             1       20126.  ALPHA-D-GALACTOSIDASE ENZYME (BEANO)
+             2       20150.  GINKOBA
+                     20152.  ANTI-ITCH TOPICAL
+             1       20153.  VALERIAN ROOT
+            40       30000.  ARICEPT
+            70       30001.  ATORVASTATIN (LIPITOR)
+            18       30002.  LATANOPROST (XALATAN)
+            11       30004.  RALOXIFENE (EVISTA)
+             1       30005.  ST. JOHN'S WORT
+             1       30006.  ZAFRILUKAST (ACCOLATE)
+            14       30009.  FEXOFENADINE (ALLEGRA)
+             4       30013.  FISH OIL
+             1       30014.  ROPINOROLE (REQUIP)
+             2       30015.  LOSARTAN/HYDROCHLOROTHIAZIDE (HYZAAR)
+             2       30016.  DICLOFENAC/MISOPROSTOL (ARTHROTEC)
+             1       30019.  RED RICE YEAST (CHOLESTIN)
+             2       30023.  PRAZOSIN
+             1       30025.  SALINE NASAL SPRAY
+            10       30026.  GLIMEPRIDE (AMARYL)
+             4       30029.  HYOSCYAMINE SULFATE (LEVBID)
+             4       30032.  TRANDOLAPRIL (MAVIK)
+            59       30033.  CLOPIDOGREL (PLAVIX)
+             7       30035.  DIVALPROEX (DEPAKOTE)
+            27       30037.  VALSARTAN (DIOVAN)
+            10       30039.  CARVEDILOL (COREG)
+             2       30041.  CHONDROITON SULFATE
+            14       30042.  BRIMONIDINE (ALPHAGAN)
+             2       30045.  METAXALONE (SKELAXIN)
+             3       30047.  VITAMINS A, B2, C, E/ZINC (ICAPS)
+             7       30048.  IRBESARTAN (AVAPRO)
+             1       30053.  ACETASOL
+             1       30056.  LEVOFLOXACIN (LEVAQUIN)
+             1       30060.  OXYGEN
+             1       30062.  COLOSTRUM
+             1       30064.  JUICE PLUS
+             2       30066.  AGED GARLIC EXTRACT (KYOLIC )
+             1       30077.  SOY PROTEIN
+             1       30078.  BELLADONNA
+             3       30083.  LUTEIN
+             1       30090.  TRANDOLAPRIL/VERAPAMIL (TARKA)
+             1       30094.  PRAMIPEXOLE (MIRAPEX)
+             4       30098.  MONTELUKAST( SINGULAIR)
+             1       30101.  CHLORDIAZEPOXIDE
+             1       30104.  VITAMINS B, C/ZINC
+             2       30105.  VITAMIN B12/FOLIC ACID
+            45       30106.  CELECOXIB (CELEBREX)
+            22       30107.  CITALOPRAM HYDROBROMIDE (CELEXA)
+            12       30108.  TOLTERODINE TARTRATE (DETROL)
+             1       30110.  INSULIN LISPRO (HUMALOG)
+            12       30113.  MIRTAZAPINE (REMERON)
+             4       30114.  SILDENAFIL (VIAGRA)
+            25       30115.  ROFECOXIB (VIOXX)
+             1       30118.  ANTI-FUNGAL
+             1       30119.  NIZATIDINE (AXID AR)
+            23       30120.  VITAMINS B COMPLEX, C
+             1       30121.  VITAMIN B COMPLEX/IRON
+             1       30127.  VITAMINS C, D/CALCIUM
+             1       30133.  TERBINAFINE (LAMISIL)
+                     30135.  TIZANIDINE
+             2       30137.  BRINZOLAMIDE (AZOPT)
+             1       30140.  DIPIVEFRIN HCL
+             2       30142.  PROTRIPTYLINE (ANAFRANIL)
+             4       30143.  AZELASTINE HCL (ASTELIN)
+             1       30147.  CASCARA SAGRADA
+             6       30148.  DORZOLAMIDE HCL/TIMOLOL MALEATE (COSOPT)
+             1       30149.  HAWTHORN
+             4       30154.  METHYL-SULFONYL-METHANE (MSM)
+             2       30161.  PROBENCID
+                     30162.  ESTAZOLAM (PROSOM)
+             1       30163.  NISOLDIPINE (SULAR)
+             4       30166.  FENOFIBRATE (TRICOR)
+             4       30171.  ERYTHROMYCIN OPHTHALMIC OINTMENT
+            14       30172.  RABEPRAZOLE (ACIPHEX)
+            13       30173.  ROSIGLITAZONE (AVANDIA)
+             1       30177.  GLUCAGON
+            11       30179.  RIVASTIGMINE (EXELON)
+             1       35002.  IRON/FOLIC ACID
+             3       35006.  HYDROCHLOROTHIAZIDE/AMILORIDE HYDROCHLORIDE (MODURETIC)
+             3       35009.  VITAMIN C/ROSE HIPS (ENDUR-C)
+             1       35012.  HEMORRHOID PREPARATION
+             8       40001.  ACTONEL
+            14       40002.  ACTOS / PIOGLITAZONE
+            10       40003.  ADVAIR DISKUS
+             5       40004.  AGGRENOX
+             7       40005.  BEXTRA
+            16       40006.  (ALBUTEROL/IPRATROPIUM) / COMBIVENT
+             5       40007.  EPOETIN / EPOGEN / PROCRIT
+            16       40008.  FLOMAX / TAMSULOSIN
+             1       40009.  ABILIFY
+             1       40010.  ABSORBASE
+             1       40011.  ACITRETIN
+             1       40012.  ALOCRIL EYE DROPS
+             2       40013.  ALOE VERA
+                     40014.  ANDROID
+             5       40015.  ATACAND / CANDESARTAN / CANDESARTAN CILEXETIL
+             3       40016.  CLARINEX
+             8       40017.  LEXAPRO
+             7       40018.  NEXIUM
+             3       40019.  MOBIC
+                     40020.  NAMENDA
+            15       40021.  ZYPREXA
+             5       40022.  CILOSTAZOL / PLETAL
+            24       40023.  PANTOPRAZOLE / PROTONIX
+             6       40024.  REMINYL
+             6       40025.  SEROQUEL
+             4       40026.  TRAVATAN
+             2       40027.  ULTRACET
+            12       40028.  TYLENOL ARTHRITIS
+             1       40029.  ANTIPYRINE BENZOCAINE
+             1       40030.  AVANDAMET
+                     40031.  AVODART
+             1       40032.  BENICAR
+             1       40033.  CEFAZOLIN
+             1       40034.  CENESTIN
+             1       40035.  COMTAN
+             1       40036.  CREON 10
+             1       40037.  CYCLOGYL
+             1       40038.  DUONEB
+             1       40039.  ELIDEL
+             1       40040.  EPIDURAL INJECTION
+                     40041.  GEODON
+             4       40042.  GLUCOVANCE
+             1       40043.  INDERAL LA
+             1       40044.  KEPPRA
+             1       40045.  LEVALBUTEROL
+             1       40046.  LOVENOX
+                     40047.  LOTEMAX
+             5       40048.  LUMIGAN
+             1       40049.  MICARDIS
+             6       40050.  ADALAT CC / NIFEDIPINE ER
+             1       40051.  PHENYTOIN EXTENDED CAPS
+             5       40052.  PRANDIN / REPAGLINIDE
+             4       40053.  PRINZIDE
+             1       40054.  PROVERA
+             2       40055.  RENAGEL / SEVELAMER
+                     40056.  SONATA
+             1       40057.  STARLIX
+             1       40058.  SULFAMETHOXAZOLE
+             1       40059.  SULFATRIM
+             1       40060.  TEQUIN
+             1       40061.  VISTARIL
+             2       40062.  ZEBETA
+             1       40063.  ZETIA
+             1       40064.  PROVIGIL
+             1       40065.  TOPAMAX
+             1       40066.  TRILEPTAL
+             1       40067.  FEMHRT
+                     40068.  PENLAC
+                     40069.  REVIA
+             1       40070.  WELCHOL
+             1       40071.  MICONAZOLE TOPICAL (BAZA)
+             3       40072.  VITAMINS D, K/CALCIUM (VIACTIV)
+             2       40073.  GUAIFENESIN/DEXTROMETHORPHAN (DURATUSS DM/ROBOFEN DM)
+                     40074.  POLYETHYLENE GLYCOL (GLYCOLAX)
+             2       40075.  MSM AND GLUCOSAMINE
+             5       40076.  OSTEO BI-FLEX
+             1       40077.  VOSPIRE ER
+                     40108.  ZELNORM
+                     40111.  NOVOLOG,ASPART
+             6       40112.  AZMACORT
+             1       40113.  QUINIDINE SULFATE (QUINIDEX)
+            13       40114.  QUININE, QUININE SULFATE
+             1       40115.  SCOPOLAMINE
+             2       40116.  BISMUTH SUBSALICYLATE (KAOPECTATE)
+             1       50178.  CORTISONE, INJECTION
+           113       99999.  Drug cannot be coded - see AEDSPC
+
+
+==========================================================================================
+
+AEDSPC         Q1 DRUG NAME - SPECIFY
+         Section: AE    Level: Drug            Type: Character  Width: 50  Decimals: 0
+         Ref: DT1NAME - DT30NAME
+
+         Q1.  DRUG NAME - specify
+
+         If AECODE has a value of 99999, the value of AEDSPC is the reported medication.
+
+         .................................................................................
+
+
+==========================================================================================
+
+AERX           Q3 DRUG PRESCRIBED OR OTC
+         Section: AE    Level: Drug            Type: Numeric    Width: 1   Decimals: 0
+         Ref: DT1RX - DT30RX
+
+         Q3.  Drug prescribed or over-the-counter
+
+         .................................................................................
+          4190           1.  PRESCRIBED
+          1572           2.  OTC
+             3           8.  DK
+
+
+==========================================================================================
+
+AEAGE          Q4 AT WHAT AGE DID SUBJECT START TAKING DRUG
+         Section: AE    Level: Drug            Type: Numeric    Width: 3   Decimals: 0
+         Ref: DT1AGE - DT30AGE
+
+         Q4.  AT WHAT AGE DID (NAME) START TAKING (DRUG NAME)?
+
+         For medical conditions that are treated episodically, but recur on a regular or
+         frequent basis (e.g., allergies), AEAGE is recorded based on when the respondent
+         first started using the medication regularly if he or she takes it "regularly"
+         for long periods of time each year.  If the respondent takes a drug for an
+         infection that he or she has taken before, but never regularly, AEAGE is coded
+         for most recent course of medication (e.g., an antibiotic for an infection).
+
+         .................................................................................
+          3520                  12-104.  Age of subject
+          2245                     998.  DK
+
+
+==========================================================================================
+
+AESTR          Q5 DRUG STRENGTH
+         Section: AE    Level: Drug            Type: Numeric    Width: 9   Decimals: 3
+         Ref: DT1STR - DT30STR
+
+         Q5.  STRENGTH - amount
+
+         How much of a medication the respondent takes was calculated by multiplying
+         strength, or amount, by how many doses were taken per time period specified. 
+         This total amount may actually be taken as more than one dose of smaller
+         amounts.  For drugs taken in different amounts on alternating days (e.g.,
+         Coumadin), the total amount taken over a given time period was used to calculate
+         the average daily or weekly dose.
+         
+         For example, for a medication taken in two doses of 5 mg. each per day, the
+         total daily dose would be 5 mg. x 2 doses per day = 10 mg per day.  In the data
+         set it would appear as AESTR=10, AEUNIT=2, and AEFREQ=1.
+         
+         For a medication taken in different doses on alternating days, e.g., two 25 mg.
+         pills taken on one day and one 25 mg. pill taken on the alternate day, the daily
+         dose was calculated as follows: (2 pills * 4 days) + (1 pill * 3 days) = 11
+         pills per week * 25 mg. per pill = 275 mg. per week / 7 days per week = 39.3 mg.
+         per day.  In the data set it would appear as AESTR=39.3, AEUNIT=2, an
+
+         .................................................................................
+          5002             0.004-50000.  Reported amount
+           763                   99998.  DK
+
+
+==========================================================================================
+
+AEUNIT         Q5 DRUG STRENGTH UNIT
+         Section: AE    Level: Drug            Type: Numeric    Width: 2   Decimals: 0
+         Ref: DT1SSPC - DT30SSPC
+
+         Q5.  STRENGTH - unit
+
+         .................................................................................
+           163           1.  MCG
+          4230           2.  MG
+            33           3.  GM
+            88           4.  MEQ
+            14           5.  GRAIN
+           132           6.  IU
+            66           7.  UNITS
+            95           8.  ML
+            94           9.  Percent
+            43          10.  PUFFS
+            41          11.  DROP
+           766          98.  DK
+
+
+==========================================================================================
+
+AEFORM         Q6 DRUG DOSAGE FORM
+         Section: AE    Level: Drug            Type: Numeric    Width: 2   Decimals: 0
+         Ref: DT1FORM - DT30FORM
+
+         Q6.  DOSAGE FORM
+
+         .................................................................................
+          5073           1.  PILL
+           163           2.  LIQUID
+            36           3.  POWDER
+            52           4.  TOPICAL
+            93           5.  INJECTION
+           126           6.  OPTHALMIC
+            32           7.  RECTAL/VAGINAL
+           163           8.  INHALED
+            24           9.  OTHER (SPECIFY)
+             3          98.  DK
+
+
+==========================================================================================
+
+AEFSPC         Q6 DRUG DOSAGE FORM - SPECIFY
+         Section: AE    Level: Drug            Type: Character  Width: 10  Decimals: 0
+         Ref: DT1FSPC - DT30FSPC
+
+         Q6.  DOSAGE FORM - specify
+
+         If AEFORM has a value of 98, AEFSPC is the reported form of dosage.
+
+         .................................................................................
+
+
+==========================================================================================
+
+AEFREQ         Q7 DRUG FREQUENCY TAKEN
+         Section: AE    Level: Drug            Type: Numeric    Width: 1   Decimals: 0
+         Ref: DT1FREQ - DT30FREQ
+
+         Q7.  DOES (NAME) TAKE (DRUG) [DAILY, WEEKLY, AS NEEDED]: (IF AS NEEDED, CODE
+         NEXT COLUMN # PILLS/DOSES = 998)
+
+         How much of a medication the respondent takes was calculated by multiplying
+         strength, or amount, by how many doses were taken per time period specified. 
+         This total amount may actually be taken as more than one dose of smaller
+         amounts.  For drugs taken in different amounts on alternating days (e.g.,
+         Coumadin), the total amount taken over a given time period was used to calculate
+         the average daily or weekly dose.
+         
+         For example, for a medication taken in two doses of 5 mg. each per day, the
+         total daily dose would be 5 mg. x 2 doses per day = 10 mg per day.  In the data
+         set it would appear as AESTR=10, AEUNIT=2, and AEFREQ=1.
+         
+         For a medication taken in different doses on alternating days, e.g., two 25 mg.
+         pills taken on one day and one 25 mg. pill taken on the alternate day, the daily
+         dose was calculated as follows: (2 pills * 4 days) + (1 pill * 3 days) = 11
+         pills per week * 25 mg. per pill = 275 mg. per week / 7 days per week = 39.3 mg.
+         per day.  In the data set it would appear as AESTR=39.3, AEUNIT=2, an
+
+         .................................................................................
+          4990           1.  DAILY
+           156           2.  WEEKLY
+           596           3.  AS NEEDED
+            23           8.  DK
+
+
+==========================================================================================
+
+AEPILL         Q8 DRUG HOW MANY TAKEN
+         Section: AE    Level: Drug            Type: Numeric    Width: 5   Decimals: 1
+         Ref: DT1PILL - DT30PILL
+
+         Q8.  HOW MANY (PILLS, DOSES) A (DAY, WEEK) DOES (NAME) TAKE?
+
+         .................................................................................
+          5138                  0.5-25.  Number taken
+           627                     998.  DK
+
+
+==========================================================================================

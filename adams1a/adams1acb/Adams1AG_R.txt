@@ -1,0 +1,2886 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AG: INFORMANT CAREGIVING QUESTIONNAIRE - INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AG    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           746           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AG    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           499         010.  Person Number
+            10         011.  Person Number
+           168         020.  Person Number
+             1         021.  Person Number
+            29         030.  Person Number
+            38         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AG    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           746             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AGQ1           WATCH TV OR NEWS PROGRAM
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         When you see the words "friend or relative" used in this questionnaire, please
+         think only about the person being visited today. 
+         
+         To begin, we have some questions about activities that your friend or relative
+         might do.  Please check the one response per question that fits best.
+         
+         1. How often does your friend or relative watch a TV show or news program?
+
+         .................................................................................
+           630           1.  Daily or almost daily
+            25           2.  Several times a month
+             7           3.  Several times a year
+            75           4.  Rarely or never
+                         8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ2           LISTEN TO RADIO PROGRAM
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         2. How often does your friend or relative listen to a program on the radio?
+
+         .................................................................................
+           258           1.  Daily or almost daily
+            91           2.  Several times a month
+            26           3.  Several times a year
+           358           4.  Rarely or never
+             1           8.  DK (Don't Know)
+            12       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ3           READ NEWSPAPER/MAGAZINE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         3. How often does your friend or relative read a newspaper or magazine?
+
+         .................................................................................
+           407           1.  Daily or almost daily
+            91           2.  Several times a month
+            19           3.  Several times a year
+           219           4.  Rarely or never
+                         8.  DK (Don't Know)
+            10       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ4           READ A BOOK
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q4
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         4. How often does your friend or relative read a book?
+
+         .................................................................................
+           187           1.  Daily or almost daily
+           101           2.  Several times a month
+            71           3.  Several times a year
+           374           4.  Rarely or never
+                         8.  DK (Don't Know)
+            13       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ5           PLAY BOARD OR CARD GAMES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q5
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         5. How often does your friend or relative play board or card games?
+
+         .................................................................................
+            57           1.  Daily or almost daily
+            84           2.  Several times a month
+            92           3.  Several times a year
+           499           4.  Rarely or never
+                         8.  DK (Don't Know)
+            14       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ6           DO JIGSAW OR CROSSWORD PUZZLES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q6
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         6. How often does your friend or relative do jigsaw puzzles or crossword
+         puzzles?
+
+         .................................................................................
+            82           1.  Daily or almost daily
+            39           2.  Several times a month
+            41           3.  Several times a year
+           566           4.  Rarely or never
+                         8.  DK (Don't Know)
+            18       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ7           DO ARTS AND CRAFTS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q7
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         7. How often does your friend or relative do arts and crafts?
+
+         .................................................................................
+            44           1.  Daily or almost daily
+            55           2.  Several times a month
+            89           3.  Several times a year
+           544           4.  Rarely or never
+                         8.  DK (Don't Know)
+            14       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ8           WRITE LETTERS OR CARDS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q8
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         8. How often does your friend or relative write letters or cards?
+
+         .................................................................................
+            29           1.  Daily or almost daily
+           135           2.  Several times a month
+           162           3.  Several times a year
+           408           4.  Rarely or never
+                         8.  DK (Don't Know)
+            12       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ9           USE A COMPUTER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q9
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         9. How often does your friend or relative use a computer?
+
+         .................................................................................
+            73           1.  Daily or almost daily
+            23           2.  Several times a month
+            13           3.  Several times a year
+           620           4.  Rarely or never
+             1           8.  DK (Don't Know)
+            16       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ10          DISCUSS CURRENT EVENTS OR TOPIC
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q10
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ACTIVITIES
+         10. How often does your friend or relative discuss current events or topics of
+         general interest?
+
+         .................................................................................
+           387           1.  Daily or almost daily
+           141           2.  Several times a month
+            43           3.  Several times a year
+           165           4.  Rarely or never
+             1           8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ11          OVERALL MEMORY RATING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q11
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: MEMORY
+         11. How would you rate your friend or relative's memory at the present time?
+
+         .................................................................................
+           117           1.  Excellent
+           175           2.  Very Good
+           173           3.  Good
+           150           4.  Fair
+           116           5.  Poor
+                         8.  DK (Don't Know)
+            15       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ12          ABILITY TO MAKE JUDGMENTS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q12
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: JUDGMENT
+         12. How would you rate your friend or relative in making judgments and
+         decisions?
+
+         .................................................................................
+           139           1.  Excellent
+           178           2.  Very Good
+           159           3.  Good
+           135           4.  Fair
+           119           5.  Poor
+                         8.  DK (Don't Know)
+            16       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ13          ABILITY TO ORGANIZE ACTIVITIES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q13
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ORGANIZATION
+         13. How would you rate your friend or relative's ability to organize his/her
+         daily activities?
+
+         .................................................................................
+           158           1.  Excellent
+           176           2.  Very Good
+           159           3.  Good
+           118           4.  Fair
+           118           5.  Poor
+                         8.  DK (Don't Know)
+            17       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ14          REMEMBERING THINGS ABOUT FAMILY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q14
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         Now we want you to remember what your friend or relative was like two years ago
+         and to compare that with what he/she is like now. Below are situations where
+         your friend or relative has to use his/her memory or intelligence, and we would
+         like you to indicate whether this has improved, stayed the same, or gotten worse
+         in each situation over the past two years.  Note the importance of comparing
+         his/her present performance with two years ago.  So if two years ago your friend
+         or relative always forgot where things were left, and he/she still does, then
+         this would be considered "not much change."
+         
+         14. Compared with two years ago, how is your friend or relative at remembering
+         things about family and friends, such as occupations, birthdays and addresses?
+
+         .................................................................................
+            29           1.  Much better
+            24           2.  A bit better
+           449           3.  Not much change
+           121           4.  A bit worse
+           105           5.  Much worse
+                         8.  DK (Don't Know)
+            18       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ15          REMEMBERING RECENT EVENTS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q15
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         15. Compared with two years ago, how is your friend or relative at remembering
+         things that have happened recently?
+
+         .................................................................................
+            30           1.  Much better
+            32           2.  A bit better
+           426           3.  Not much change
+           132           4.  A bit worse
+           109           5.  Much worse
+                         8.  DK (Don't Know)
+            17       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ16          RECALLING CONVERSATIONS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q16
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         16. Compared with two years ago, how is your friend or relative at recalling
+         conversations a few days later?
+
+         .................................................................................
+            26           1.  Much better
+            36           2.  A bit better
+           409           3.  Not much change
+           141           4.  A bit worse
+           117           5.  Much worse
+                         8.  DK (Don't Know)
+            17       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ17          REMEMBERING ADDRESS/PHONE NUMBER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q17
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         17. Compared with two years ago, how is your friend or relative at remembering
+         his/her address or phone number?
+
+         .................................................................................
+            31           1.  Much better
+            32           2.  A bit better
+           498           3.  Not much change
+            68           4.  A bit worse
+           110           5.  Much worse
+                         8.  DK (Don't Know)
+             7       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ18          REMEMBERING DATE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q18
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         18. Compared with two years ago, how is your friend or relative at remembering
+         what day and month it is?
+
+         .................................................................................
+            30           1.  Much better
+            22           2.  A bit better
+           462           3.  Not much change
+           105           4.  A bit worse
+           119           5.  Much worse
+                         8.  DK (Don't Know)
+             8       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ19          REMEMBERING WHERE THINGS ARE KEPT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q19
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         19. Compared with two years ago, how is your friend or relative at remembering
+         where things are usually kept?
+
+         .................................................................................
+            19           1.  Much better
+            27           2.  A bit better
+           456           3.  Not much change
+           143           4.  A bit worse
+            92           5.  Much worse
+                         8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ20          REMEMBERING WHERE TO FIND THINGS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q20
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         20. Compared with two years ago, how is your friend or relative at remembering
+         where to find things that have been put in a different place than usual?
+
+         .................................................................................
+            17           1.  Much better
+            27           2.  A bit better
+           390           3.  Not much change
+           181           4.  A bit worse
+           121           5.  Much worse
+             1           8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ21          KNOWING HOW TO WORK FAMILIAR THINGS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q21
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         21. Compared with two years ago, how is your friend or relative at knowing how
+         to work familiar machines around the house?
+
+         .................................................................................
+            24           1.  Much better
+            28           2.  A bit better
+           471           3.  Not much change
+            99           4.  A bit worse
+           108           5.  Much worse
+             3           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             1           8.  DK (Don't Know)
+            12       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ22          LEARNING TO USE A NEW GADGETS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q22
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         22. Compared with two years ago, how is your friend or relative at learning to
+         use a new gadget or machine around the house?
+
+         .................................................................................
+            17           1.  Much better
+            28           2.  A bit better
+           402           3.  Not much change
+           131           4.  A bit worse
+           144           5.  Much worse
+             3           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             3           8.  DK (Don't Know)
+            18       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ23          LEARNING NEW THINGS IN GENERAL
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q23
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         23. Compared with two years ago, how is your friend or relative at learning new
+         things in general?
+
+         .................................................................................
+            18           1.  Much better
+            38           2.  A bit better
+           407           3.  Not much change
+           149           4.  A bit worse
+           121           5.  Much worse
+             1           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            12       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ24          FOLLOWING A STORY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q24
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         24. Compared with two years ago, how is your friend or relative at following a
+         story in a book or on TV?
+
+         .................................................................................
+            28           1.  Much better
+            24           2.  A bit better
+           480           3.  Not much change
+           104           4.  A bit worse
+            97           5.  Much worse
+                         7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             2           8.  DK (Don't Know)
+            11       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ25          MAKING EVERYDAY DECISIONS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q25
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         25. Compared with two years ago, how is your friend or relative at making
+         decisions on everyday matters?
+
+         .................................................................................
+            26           1.  Much better
+            22           2.  A bit better
+           469           3.  Not much change
+           119           4.  A bit worse
+           101           5.  Much worse
+                         7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ26          HANDLING MONEY FOR SHOPPING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q26
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         26. Compared with two years ago, how is your friend or relative at handling
+         money for shopping?
+
+         .................................................................................
+            30           1.  Much better
+            24           2.  A bit better
+           511           3.  Not much change
+            55           4.  A bit worse
+           107           5.  Much worse
+             3           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            16       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ27          HANDLING FINANCIAL MATTERS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q27
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         27. Compared with two years ago, how is your friend or relative at handling
+         financial matters, that is, the pension or dealing with the bank?
+
+         .................................................................................
+            27           1.  Much better
+            20           2.  A bit better
+           461           3.  Not much change
+            84           4.  A bit worse
+           129           5.  Much worse
+             4           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             1           8.  DK (Don't Know)
+            20       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ28          EVERYDAY ARITHMETIC PROBLEMS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q28
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         28. Compared with two years ago, how is your friend or relative at handling
+         other everyday arithmetic problems, such as, knowing how much food to buy,
+         knowing how long between visits from family or friends?
+
+         .................................................................................
+            22           1.  Much better
+            17           2.  A bit better
+           486           3.  Not much change
+            82           4.  A bit worse
+           116           5.  Much worse
+             3           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            20       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ29          INTELLIGENCE FOR REASONING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q29
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IQCODE
+         29. Compared with two years ago, how is your friend or relative at using his/her
+         intelligence to understand what's going on and to reason things through?
+
+         .................................................................................
+            23           1.  Much better
+            34           2.  A bit better
+           465           3.  Not much change
+           117           4.  A bit worse
+            98           5.  Much worse
+                         7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+             9       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30A         ADL: GETTING ACROSS A ROOM
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         A. Getting across a room
+
+         .................................................................................
+           215           1.  Yes
+           518           5.  No
+                         8.  DK (Don't Know)
+            13       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30B         ADL: DRESSING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         B. Dressing
+
+         .................................................................................
+           211           1.  Yes
+           519           5.  No
+                         8.  DK (Don't Know)
+            16       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30C         ADL: BATHING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         C. Bathing
+
+         .................................................................................
+           247           1.  Yes
+           486           5.  No
+                         8.  DK (Don't Know)
+            13       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30D         ADL: EATING
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C4
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         D. Eating
+
+         .................................................................................
+           112           1.  Yes
+           615           5.  No
+                         8.  DK (Don't Know)
+            19       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30E         ADL: GETTING OUT OF BED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C5
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         E. Getting out of bed
+
+         .................................................................................
+           173           1.  Yes
+           558           5.  No
+                         8.  DK (Don't Know)
+            15       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30F         ADL: USING THE TOILET
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C6
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: ADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         F. Using the toilet
+
+         .................................................................................
+           152           1.  Yes
+           574           5.  No
+                         8.  DK (Don't Know)
+            20       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30G         IADL: PREPARING A MEAL
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C7
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         G. Preparing meals
+
+         .................................................................................
+           262           1.  Yes
+           442           5.  No
+             2           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             1           8.  DK (Don't Know)
+            39       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30H         IADL: SHOPPING FOR GROCERIES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C8
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         H. Shopping for groceries
+
+         .................................................................................
+           281           1.  Yes
+           428           5.  No
+             2           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+             1           8.  DK (Don't Know)
+            34       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30I         IADL: MAKING TELEPHONE CALLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C9
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         I. Making telephone calls
+
+         .................................................................................
+           234           1.  Yes
+           490           5.  No
+             1           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            21       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30J         IADL: TAKING MEDICATION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C10
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         J. Taking medications
+
+         .................................................................................
+           224           1.  Yes
+           502           5.  No
+                         7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            20       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ30K         IADL: MANAGING MONEY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q30_C11
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: IADLs
+         Now we would like you to think about any difficulties your friend or relative
+         may have.
+         
+         30. Does your friend or relative have any difficulty with the following because
+         of a physical, mental, emotional, or memory problem?
+         
+         K. Managing money
+
+         .................................................................................
+           227           1.  Yes
+           493           5.  No
+             1           7.  Inapplicable (e.g., "doesn't do" or "cannot do")
+                         8.  DK (Don't Know)
+            25       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ31          NEED TO WATCH/SUPERVISE SUBJECT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q31
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: SUPERVISION
+         31. Does your friend or relative need to be watched over or supervised to ensure
+         his/her personal safety or the safety of others?
+
+         .................................................................................
+           208           1.  Yes
+           524           5.  No
+                         8.  DK (Don't Know)
+            14       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ32          NEED TO STAY WITH SUBJECT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q32
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: SUPERVISION
+         32. Must someone stay with him/her to provide reassurance or to make sure that
+         nothing goes wrong?
+
+         .................................................................................
+           189           1.  Yes
+           538           5.  No
+             1           8.  DK (Don't Know)
+            18       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ33          ARE YOU A CARE PROVIDER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q33
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         *IF ALL ANSWERS TO QUESTIONS 30 THROUGH 32 ARE "NO," SKIP TO QUESTION 69
+         
+         We are interested in learning about two types of care that people may provide to
+         individuals with a health or memory problem.  In the questions below, "active
+         help" means tasks that you might perform such as helping your friend or relative
+         get across a room, cooking meals for him/her, or helping him/her with financial
+         matters.  The other type of care, "supervision," means staying nearby your
+         friend or relative to ensure his/her safety, to provide reassurance, or to make
+         sure that nothing goes wrong.
+         
+         33. In the past month, have you provided care to your friend or relative by
+         actively helping with any of the tasks in Question 30 or by supervising him/her
+         to ensure safety, provide reassurance, or to make sure that nothing goes wrong?
+
+         .................................................................................
+           260           1.  Yes (Go to Question 34)
+           143           5.  No ( Go to Question 62)
+           271           6.  Skipped (Not applicable)
+             1           7.  In nursing home or other group facility
+                         8.  DK (Don't Know)
+            71       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ34          PERSON MOST RESPONSIBLE FOR CARE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q34
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         34. Are you the person most responsible for the care of your friend or relative?
+
+         .................................................................................
+           231           1.  Yes (Go to Question 35)
+            74           5.  No (Skip to Question 36)
+                         6.  Skipped (Not applicable)
+             1           7.  In nursing home or other group facility
+                         8.  DK (Don't Know)
+           440       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ35          OTHER CARE PROVIDER AVAILABLE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q35
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         35. If you were unable to provide this care for a week or so, (for example, due
+         to illness), is there someone who would care for your friend or relative?
+
+         This question should have been skipped if the answer to Question 35 was "No"
+         (5).
+
+         .................................................................................
+           229           1.  Yes
+            29           5.  No
+           298           6.  Skipped (Not applicable)
+            51           7.  In nursing home or other group facility
+                         8.  DK (Don't Know)
+           139       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ36          DAYS HELPED DURING LAST MONTH
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q36
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         36. During the last month, on about how many days did you provide active help to
+         your friend or relative because of his/her health or memory problem?
+
+         If answer is "0 days" then skip to Question 39.
+
+         .................................................................................
+           278                    0-31.  Days
+           391                      97.  Skipped (Not applicable)
+             1                      98.  DK (Don't Know)
+            76                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ37          HOURS PER DAY HELPED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q37
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         37. On the days you did this, about how many hours per day was that?
+
+         .................................................................................
+           227                    0-24.  Hours
+           431                      97.  Skipped (Not applicable)
+             3                      98.  DK (Don't Know)
+            85                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ38          LENGTH OF TIME HELPED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q38
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         38. How long have you been providing this level of active help?
+
+         .................................................................................
+             8           1.  Less than 1 month
+            22           2.  Between 1 and 6 months
+            29           3.  Between 6 months and 1 year
+            54           4.  Between 1 and 2 years
+           126           5.  More than 2 years
+           427           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            80       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ39          DAYS OF SUPERVISION IN LAST MONTH
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q39
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         39. During the last month, on about how many days did you supervise your friend
+         or relative to ensure safety, provide reassurance, or to make sure that nothing
+         went wrong?
+
+         If answer is "0 days" then skip to Question 42.
+
+         .................................................................................
+           267                    0-31.  Days
+           307                      97.  Skipped (Not applicable)
+                                    98.  DK (Don't Know)
+           172                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ40          HOURS PER DAY SUPERVISED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q40
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         40. On the days you did this, about how many hours per day was that?
+
+         .................................................................................
+           190                    0-24.  Hours
+           375                      97.  Skipped (Not applicable)
+             2                      98.  DK (Don't Know)
+           179                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ41          LENGTH OF TIME SUPERVISED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q41
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         41. How long have you been providing this level of supervision?
+
+         .................................................................................
+             2           1.  Less than 1 month
+            22           2.  Between 1 and 6 months
+            20           3.  Between 6 months and 1 year
+            43           4.  Between 1 and 2 years
+           121           5.  More than 2 years
+           453           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            85       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ42          PHYSICAL STRAIN: ADLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q42
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         42. How much of a physical strain is it on you to help your friend or relative
+         with any of the following activities: getting across a room, dressing, bathing,
+         eating, getting out of bed, or using the toilet?
+
+         .................................................................................
+           107           1.  No physical strain
+            80           2.  Some physical strain
+            19           3.  A lot of physical strain
+            84           6.  I don't help with any of these
+           321           7.  Skipped (Not applicable)
+             1           8.  DK (Don't Know)
+           134       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ43          PHYSICAL STRAIN: IADLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q43
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         43. How much of a physical strain is it on you to help your friend or relative
+         with any of the following activities: preparing meals, shopping for groceries,
+         making telephone calls, taking medications, or managing money?
+
+         .................................................................................
+           152           1.  No physical strain
+            87           2.  Some physical strain
+            26           3.  A lot of physical strain
+            46           6.  I don't help with any of these
+           381           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            54       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ44          PHYSICAL STRAIN: SUPERVISION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q44
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         44. How much of a physical strain is it on you to stay with or supervise your
+         friend or relative?
+
+         .................................................................................
+           143           1.  No physical strain
+            94           2.  Some physical strain
+            19           3.  A lot of physical strain
+            47           6.  I don't help with any of these
+           391           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            52       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ45          MENTAL/EMOTIONAL STRAIN: ADLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q45
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         45. How much of a mental or emotional strain is it on you to help your friend or
+         relative with any of the following activities -- either directly by doing it
+         yourself, or indirectly by arranging for someone else to do it: getting across a
+         room, dressing, bathing, eating, getting out of bed, or using the toilet?
+
+         .................................................................................
+            86           1.  No mental or emotional strain
+           111           2.  Some mental or emotional strain
+            33           3.  A lot of mental or emotional strain
+            79           6.  I don't help with any of these
+           308           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           129       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ46          MENTAL/EMOTIONAL STRAIN: IADLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q46
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         46. How much of a mental or emotional strain is it on you to help your friend or
+         relative with any of the following activities - either directly by doing it
+         yourself, or indirectly by arranging for someone else to do it: preparing meals,
+         shopping for groceries, making telephone calls, taking medications, managing
+         money?
+
+         .................................................................................
+           118           1.  No mental or emotional strain
+           120           2.  Some mental or emotional strain
+            39           3.  A lot of mental or emotional strain
+            44           6.  I don't help with any of these
+           368           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            57       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ47          MENTAL/EMOT STRAIN: SUPERVISON
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q47
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING STRAIN
+         47. How much of a mental or emotional strain is it on you to stay with or
+         supervise your friend or relative - either directly by doing it yourself or
+         indirectly by arranging for someone else to do it?
+
+         .................................................................................
+           106           1.  No mental or emotional strain
+           122           2.  Some mental or emotional strain
+            39           3.  A lot of mental or emotional strain
+            53           6.  I don't help with any of these
+           297           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           129       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ48          FEEL USEFUL
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q48
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING BENEFITS
+         Now we have a few questions about your feelings about providing care for your
+         friend or relative because of his/her health, mental, emotional, or memory
+         problem. 
+         
+         48. Has providing care made you feel more useful?
+
+         .................................................................................
+           243           1.  Yes
+            66           5.  No
+           296           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           141       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ49          FEEL CLOSER TO FRIEND/RELATIVE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q49
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING BENEFITS
+         49. Has providing care made you feel closer to your friend or relative?
+
+         .................................................................................
+           246           1.  Yes
+            63           5.  No
+           374           7.  Skipped (Not applicable)
+             1           8.  DK (Don't Know)
+            62       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ50          FEEL GOOD ABOUT YOURSELF
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q50
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING BENEFITS
+         50. Has providing care made you feel good about yourself?
+
+         .................................................................................
+           264           1.  Yes
+            42           5.  No
+           302           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           138       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ51          LEARN NEW SKILLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q51
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING BENEFITS
+         51. Has providing care allowed you to learn new skills?
+
+         .................................................................................
+           201           1.  Yes
+           108           5.  No
+           375           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            62       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ52          FEEL ABLE TO HANDLE MOST PROBLEMS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q52
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         52. In general, do you feel able to handle most problems in the care of your
+         friend or relative?
+
+         .................................................................................
+           278           1.  Yes
+            29           5.  No
+           380           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            59       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ53          PREVENT SUBJECT FROM GETTING WORSE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q53
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         53. Do the things you do for your friend or relative keep him/her from getting
+         worse?
+
+         .................................................................................
+           179           1.  Yes
+           121           5.  No
+           301           7.  Skipped (Not applicable)
+             1           8.  DK (Don't Know)
+           144       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ54          CHANGE IN SCHEDULE LAST YEAR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q54
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         54. Sometimes people must make adjustments to their schedules to care for
+         others.  In the last year, did providing help or supervision for your friend or
+         relative cause you to change your daily work schedule, such as going to work
+         late, leaving early, or taking time off?
+
+         .................................................................................
+           111           1.  Yes (Go to Question 55)
+           175           5.  No (Go to Question 56)
+           378           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            82       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ55          HOURS OF WORK MISSED PER WEEK
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q55
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         55. Over the past year, on average, how many hours of work per week did you miss
+         for this reason?
+
+         This question should have been skipped if the answer to Question 55 was "No"
+         (5).
+
+         .................................................................................
+           110                    0-40.  Hours per week
+           538                     997.  Skipped (Not applicable)
+             9                     998.  DK (Don't Know)
+            89                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ56          GIVE UP WORK ENTIRELY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q56
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         56. In the last year, did providing care for your friend or relative cause you
+         to give up work entirely?
+
+         .................................................................................
+            27           1.  Yes
+           266           5.  No
+           304           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           149       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ57          REDUCE LEISURE TIME/VACATIONS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q57
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         57. In the last year, did providing care for your friend or relative cause you
+         to reduce leisure time or vacations?
+
+         .................................................................................
+           154           1.  Yes
+           156           5.  No
+           298           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           138       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ58          REDUCE HOBBY TIME
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q58
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         58. In the last year, did providing care for your friend or relative cause you
+         to reduce the time spent on hobbies or your own activities?
+
+         .................................................................................
+           158           1.  Yes
+           148           5.  No
+           376           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            64       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ59          REDUCE TIME WITH OTHER FAMILY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q59
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         59. In the last year, did providing care for your friend or relative cause you
+         to spend less time helping or being with other family members?
+
+         .................................................................................
+           133           1.  Yes
+           176           5.  No
+           305           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           132       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ60          MARITAL/RELATIONSHIP STRAIN
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q60
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         60. In the last year, did providing care for your friend or relative put a
+         strain on your marriage or other family relationships?
+
+         .................................................................................
+            76           1.  Yes
+           230           5.  No
+           376           7.  Skipped (Not applicable)
+             1           8.  DK (Don't Know)
+            63       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ61          RECEIVED CARE INSTRUCTIONS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q61
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVING
+         61. Have you ever had instruction in how to provide care to someone with a
+         memory problem?
+
+         .................................................................................
+            54           1.  Yes
+           262           5.  No
+           375           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            55       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ62          PAID HELPER ARRANGED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q62
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         The next set of instructions is about paid care that your friend or relative may
+         receive.
+         
+         62. Has anyone ever arranged for a paid helper to care for your friend or
+         relative?
+
+         .................................................................................
+           176           1.  Yes
+           228           5.  No
+           277           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            65       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ63          REASON FOR NO PAID HELPER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q63C_A
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         63. What is the main reason that you haven't arranged for a paid helper to care
+         for your friend or relative? (THEN SKIP TO QUESTION 69)
+
+         .................................................................................
+           102           1.  Paid help is unnecessary
+            16           2.  Paid help is too expensive
+             2           3.  Paid help is not of good enough quality
+             5           4.  Paid help is not available
+            34           5.  My friend of relative would not be comfortable with someone
+                             else
+            24           6.  Other
+           491           7.  Skipped (Not applicable)
+             1           8.  DK (Don't Know)
+            71       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ63S         REASON FOR NO PAID HELPER - SPECIFY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q63C_B
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         63. What is the main reason that you haven't arranged for a paid helper to care
+         for your friend or relative? (THEN SKIP TO QUESTION 69)
+         
+         Other - Specify
+
+         .................................................................................
+                         1.  Nursing Home
+                         2.  Medicaid
+                         3.  No Help Needed
+                     Blank.  Item Left Blank/Not Applicable
+
+
+==========================================================================================
+
+AGQ64A         HELPER TYPE: HOMEMAKER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         A. Homemaker services (for example, help with the cooking or cleaning)
+
+         This question should have been skipped if the answer to Question 62 was not
+         "Yes" (1).
+
+         .................................................................................
+           115           1.  Yes
+           110           5.  No
+           464           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            57       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ64B         HELPER TYPE: PERSONAL SERVICES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         B. Personal services (for example, help with the dressing or bathing)
+
+         This question should have been skipped if the answer to Question 62 was not
+         "Yes" (1).
+
+         .................................................................................
+           107           1.  Yes
+           119           5.  No
+           462           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            58       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ64C         HELPER TYPE: NURSING SERVICES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         C. Nursing services
+
+         This question should have been skipped if the answer to Question 62 was not
+         "Yes" (1).
+
+         .................................................................................
+            92           1.  Yes
+           134           5.  No
+           462           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            58       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ64D         HELPER TYPE: GENERAL SUPERVISION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C4
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         D. General supervision
+
+         This question should have been skipped if the answer to Question 62 was not
+         "Yes" (1).
+
+         .................................................................................
+            73           1.  Yes
+           153           5.  No
+           462           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            58       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ64E         HELPER TYPE: OTHER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C5A
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         E. Other
+
+         This question should have been skipped if the answer to Question 62 was not
+         "Yes" (1).
+
+         .................................................................................
+            72           1.  Yes
+           154           5.  No
+           462           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            58       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ64ES        HELPER TYPE: OTHER SPECIFY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q64_C5B
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What type of help was provided? (CHECK ALL THAT APPLY)
+         
+         E. Other - Specify
+
+         .................................................................................
+            15           1.  Assisted Living Facility
+            23           2.  Nursing Home
+             4           3.  Transportation
+             8           4.  Home Health Care/Medications
+             5           5.  Companionship
+             5           6.  Home Maintenance/Yardwork/etc.
+             8           7.  Other
+           678       Blank.  Item left blank/Not applicable
+
+
+==========================================================================================
+
+AGQ65          OUT OF POCKET EXPENSE: PAID HELP
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q65
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         65. About how much was paid out-of-pocket (that is, the amount paid that was not
+         covered by insurance) for this help in the past year?
+
+         .................................................................................
+            87           0.  $0
+            16           1.  $1 - $250
+            11           2.  $251 - $500
+            29           3.  $501 - $2,500
+            12           4.  $2,501 - $5,000
+            18           5.  $5,001 - $10,000
+            53           6.  More than $10,000
+           446           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            74       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ66          INSURANCE COVERAGE FOR PAID HELP
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q66
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         66. Were any of the costs for a paid helper covered by insurance?
+
+         .................................................................................
+            89           1.  Yes (Go to Question 67)
+           134           5.  No (Go to Question 68)
+           455           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            68       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ67A         INSURANCE TYPE - MEDICARE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q67_C1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What kind of insurance helped pay the costs of a paid helper for your friend or
+         relative? (CHECK ALL THAT APPLY)
+         
+         A. Medicare
+
+         This question should have been skipped if the answer to Question 66 was "No"
+         (5).
+
+         .................................................................................
+           101           1.  Yes
+            25           5.  No
+           559           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            61       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ67B         INSURANCE TYPE - MEDICAID
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q67_C2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What kind of insurance helped pay the costs of a paid helper for your friend or
+         relative? (CHECK ALL THAT APPLY)
+         
+         B. Medicaid
+
+         This question should have been skipped if the answer to Question 66 was "No"
+         (5).
+
+         .................................................................................
+            72           1.  Yes
+            54           5.  No
+           471           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           149       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ67C         INSURANCE TYPE - PRIVATE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q67_C3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What kind of insurance helped pay the costs of a paid helper for your friend or
+         relative? (CHECK ALL THAT APPLY)
+         
+         C. Private Insurance
+
+         This question should have been skipped if the answer to Question 66 was "No"
+         (5).
+
+         .................................................................................
+            37           1.  Yes
+            89           5.  No
+           471           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           149       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ67D         INSURANCE TYPE - OTHER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q67_C4A
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What kind of insurance helped pay the costs of a paid helper for your friend or
+         relative? (CHECK ALL THAT APPLY)
+         
+         D. Other
+
+         This question should have been skipped if the answer to Question 66 was "No"
+         (5).
+
+         .................................................................................
+            10           1.  Yes
+           116           5.  No
+           471           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+           149       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ67DS        INSURANCE TYPE - OTHER SPECIFY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q67_C4B
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         What kind of insurance helped pay the costs of a paid helper for your friend or
+         relative? (CHECK ALL THAT APPLY)
+         
+         D. Other - Specify
+
+         The majority of specified items were types of private insurance and recoded and
+         included in AGQ67C.
+
+         .................................................................................
+                         1.  Other
+                     Blank.  Item left blank/Not applicable
+
+
+==========================================================================================
+
+AGQ68A         PAID HELPER INFO: SOCIAL WORKER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         A. Social worker
+
+         .................................................................................
+            84           1.  Yes
+           116           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68B         PAID HELPER INFO: DOCTOR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         B. Doctor
+
+         .................................................................................
+            55           1.  Yes
+           145           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68C         PAID HELPER INFO: FRIEND
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         C. Friend
+
+         .................................................................................
+            57           1.  Yes
+           143           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68D         PAID HELPER INFO: ORGANIZATION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C4
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         D. Organization
+
+         .................................................................................
+            39           1.  Yes
+           161           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68E         PAID HELPER INFO: RELATIVE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C5
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         E. Relative
+
+         .................................................................................
+            23           1.  Yes
+           177           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68F         PAID HELPER INFO: YELLOW PAGES
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C6
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         F. Yellow pages
+
+         .................................................................................
+             9           1.  Yes
+           191           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68G         PAID HELPER INFO: INTERNET
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C7
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         G. Internet
+
+         .................................................................................
+             2           1.  Yes
+           198           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68H         PAID HELPER INFO: OTHER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C8A
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         H. Other
+
+         .................................................................................
+            15           1.  Yes
+           185           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ68HS        PAID HELPER INFO: OTHER SPECIFY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C8B
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         H. Other - Specify
+
+         .................................................................................
+                         1.  Self knowledge (knew about it him/herself)
+                         2.  Other
+                     Blank.  Item Left Blank/Not Applicable
+
+
+==========================================================================================
+
+AGQ68I         SOMEONE ELSE ARRANGED HELP
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q68_C9
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PAID HELP
+         68. How did you find information on these paid helpers? (CHECK ALL THAT APPLY)
+         
+         I. Someone else arranged help
+
+         .................................................................................
+            19           1.  Yes
+           181           5.  No
+           470           7.  Skipped (Not applicable)
+                         8.  DK (Don't Know)
+            76       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ69          DAYS PROVIDED TRANSPORTATION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q69
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: TRANSPORTATION HELP
+         69. During the last month, on about how many days did you provide transportation
+         (for instance, to a doctor's appointment or to a store) for your friend or
+         relative?
+
+         .................................................................................
+           644                    0-31.  Days
+             1                      98.  DK (Don't Know)
+           101                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ70          HOURS PER DAY FOR TRANSPORTATION
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q70
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: TRANSPORTATION HELP
+         70. On the days you did this, about how many hours per day was that?
+
+         .................................................................................
+           307                    0-24.  Hours
+                                    96.  Other
+           333                      97.  Skipped (Not applicable)
+             2                      98.  DK (Don't Know)
+           104                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ71          NUMBER OF DOCTOR VISITS IN PAST YEAR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q71
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: NUMBER OF DOCTOR VISITS
+         71. How many times has your friend or relative seen a doctor in the past year?
+
+         .................................................................................
+           640                   0-150.  Visits
+             8                     990.  Often; number of times not specified
+            28                     998.  DK (Don't Know)
+            70                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ72          OUT OF POCKET EXPENSE: DOCTOR BILLS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q72
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: COST OF DOCTOR BILLS
+         72. About how much was paid out-of-pocket (that is, the amount paid that was not
+         covered by insurance) for these doctor's bills in the past year?
+
+         .................................................................................
+           227           0.  $0
+           153           1.  $1 - $100
+            88           2.  $101 - $250
+            60           3.  $251 - $500
+            42           4.  $501 - $2,500
+            14           5.  $2,501 - $10,000
+                         6.  More than $10,000
+            31           7.  Skipped (Not applicable)
+             9           8.  DK (Don't Know)
+           122       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ73          HAD MEDICAL TESTS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q73
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: MEDICAL TESTS
+         73. Has your friend or relative had medical tests such as blood tests, X-rays,
+         or CAT scans, in the past year?
+
+         .................................................................................
+           556           1.  Yes
+           150           5.  No
+             4           8.  DK (Don't Know)
+            36       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ74          OUT OF POCKET EXPENSE: MEDICAL TESTS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q74
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: COST OF MEDICAL TESTS
+         74. About how much was paid out-of-pocket for these kinds of tests in the past
+         year?
+
+         .................................................................................
+           276           0.  $0
+           102           1.  $1 - $100
+            50           2.  $101 - $250
+            45           3.  $251 - $500
+            17           4.  $501 - $2,500
+             2           5.  $2,501 - $10,000
+                         6.  More than $10,000
+             4           8.  DK (Don't Know)
+           144          97.  Skipped (Not applicable)
+           106       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ75          OVERNIGHT HOSPITAL STAY IN PAST YEAR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q75
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: HOSPITAL STAYS
+         75. Has your friend or relative been a patient in a hospital overnight in the
+         past year?
+
+         .................................................................................
+           216           1.  Yes
+           499           5.  No
+                         8.  DK (Don't Know)
+            31       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ76          NUMBER OF NIGHTS IN HOSPITAL
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q76
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: HOSPITAL STAYS
+         76. Altogether, how many nights has your friend or relative been a patient in a
+         hospital in the past year?
+
+         .................................................................................
+           209                   1-365.  Nights
+           495                     997.  Skipped (Not applicable)
+                                   998.  DK (Don't Know)
+            42                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ77          OUT OF POCKET EXPENSE: HOSPITAL STAYS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q77
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: COST OF HOSPITAL STAYS
+         77. About how much was paid out-of-pocket (that is, the amount paid that was not
+         covered by insurance) for these hospital stays in the past year?
+
+         .................................................................................
+           202           0.  $0
+            34           1.  $1 - $250
+            18           2.  $251 - $500
+            23           3.  $501 - $2,500
+             3           4.  $2,501 - $5,000
+             3           5.  $5,001 - $10,000
+             1           6.  $10,000 - $25,000
+                         7.  More than $25,000
+             2           8.  DK (Don't Know)
+           460       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ78          NURSING HOME PATIENT IN PAST YEAR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q78
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: NURSING HOME
+         78. Has your friend or relative been a patient in a nursing home or other
+         long-term care facility in the past year?
+
+         .................................................................................
+           128           1.  Yes (Go to Question 79)
+           594           5.  No (Go to Question 81)
+                         8.  DK (Don't Know)
+            24       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ79          NUMBER OF NIGHTS IN NURSING HOME
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q79
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: NURSING HOME
+         79. Altogether, how many nights has your friend or relative been a patient in a
+         nursing home in the past year?
+
+         .................................................................................
+           133                   0-365.  Nights
+           587                     997.  Skipped (Not applicable)
+                                   998.  DK (Don't Know)
+            26                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ80          OUT OF POCKET EXPENSE: NURSING HOME
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q80
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: COST OF NURSING HOME CARE
+         80. About how much was paid out-of-pocket (that is, the amount paid that was not
+         covered by insurance) for these nursing home stays in the past year?
+
+         .................................................................................
+           109           0.  $0
+             6           1.  $1 - $250
+             2           2.  $251 - $500
+             9           3.  $501 - $2,500
+             7           4.  $2,501 - $5,000
+            14           5.  $5,001 - $10,000
+            16           6.  $10,000 - $25,000
+            23           7.  More than $25,000
+             1           8.  DK (Don't Know)
+           559       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ81          PRESCRIPTION MED USE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q81
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: PRESCRIPTION MEDICATIONS
+         81. Has your friend or relative used prescription medications during the past
+         year?
+
+         .................................................................................
+           677           1.  Yes (Go to Question 82)
+            49           5.  No (Skip to Question 83)
+             1           8.  DK (Don't Know)
+            19       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ82          OUT OF POCKET EXPENSE: PRESCRIPTIONS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q82
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: COST OF PRESCRIPTION MEDICATIONS
+         82. On average, about how much was paid out-of-pocket (that is, the amount paid
+         that was not covered by insurance) per month for these prescriptions in the past
+         year?
+
+         .................................................................................
+           120           0.  $0
+            39           1.  $1 - $5 per month
+            42           2.  $6 - $10 per month
+            64           3.  $11 - $20 per month
+           168           4.  $21 - $100 per month
+           148           5.  $101 - $500 per month
+            14           6.  More than $500 per month
+            44           7.  Skipped (Not applicable)
+            11           8.  DK (Don't Know)
+            96       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ83          RATE OVERALL INFORMANT HEALTH
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q83
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         To conclude, we have a few more questions about your own situation.
+         
+         83. Overall, how would you rate your health?
+
+         .................................................................................
+           124           1.  Excellent
+           227           2.  Very Good
+           229           3.  Good
+           125           4.  Fair
+            26           5.  Poor
+                         8.  DK (Don't Know)
+            15       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84A         INFORMANT: FELT MORE STRESSED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C1
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         A. Felt more stressed than usual
+
+         .................................................................................
+           364           1.  Yes
+           349           5.  No
+                         8.  DK (Don't Know)
+            33       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84B         INFORMANT: GOTTEN LESS EXERCISE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C2
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         B. Gotten less exercise than usual
+
+         .................................................................................
+           340           1.  Yes
+           367           5.  No
+                         8.  DK (Don't Know)
+            39       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84C         INFORMANT: GOTTEN LESS SLEEP
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C3
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         C. Gotten less sleep than usual
+
+         .................................................................................
+           257           1.  Yes
+           447           5.  No
+                         8.  DK (Don't Know)
+            42       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84D         INFORMANT: GOTTEN LESS REST
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C4
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         D. Gotten less rest than you needed
+
+         .................................................................................
+           243           1.  Yes
+           455           5.  No
+                         8.  DK (Don't Know)
+            48       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84E         INFORMANT: NOT ENOUGH TIME TO SEE DOCTOR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C5
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         E. Not had enough time to go to a physician
+
+         .................................................................................
+            98           1.  Yes
+           598           5.  No
+                         8.  DK (Don't Know)
+            50       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ84F         INFORMANT: NOT ABLE TO SLOW DOWN
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q84_C6
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CAREGIVER WELL-BEING
+         84. Over the last year, have you: (PLEASE CHECK "YES" OR "NO" FOR EACH ITEM)
+         
+         F. Not been able to slow down when you were sick
+
+         .................................................................................
+           172           1.  Yes
+           523           5.  No
+                         8.  DK (Don't Know)
+            51       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ85          CES-D - DEPRESSED
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q85
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CES-D
+         Now think about the past week and the feelings you have experienced.  Please
+         tell us if each of the following was true for you much of the time this past
+         week. 
+         
+         85. Much of the time during the past week you felt depressed.
+
+         .................................................................................
+            96           1.  Yes
+           630           5.  No
+                         8.  DK (Don't Know)
+            20       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ86          CES-D - HAPPY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q86
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CES-D
+         86. Much of the time during the past week you were happy.
+
+         .................................................................................
+           600           1.  Yes
+           122           5.  No
+             1           8.  DK (Don't Know)
+            23       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ87          CES-D - LONELY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q87
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CES-D
+         87. Much of the time during the past week you felt lonely.
+
+         .................................................................................
+            95           1.  Yes
+           629           5.  No
+                         8.  DK (Don't Know)
+            22       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ88          CES-D - ENJOYED LIFE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q88
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CES-D
+         88. Much of the time during the past week you enjoyed life.
+
+         .................................................................................
+           645           1.  Yes
+            77           5.  No
+             1           8.  DK (Don't Know)
+            23       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ89          CES-D - SAD
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q89
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: CES-D
+         89. Much of the time during the past week you felt sad.
+
+         .................................................................................
+           107           1.  Yes
+           612           5.  No
+             1           8.  DK (Don't Know)
+            26       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ90          CURRENTLY WORKING FOR PAY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q90
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: WORK FOR PAY
+         90. Do you currently do any work for pay?
+
+         .................................................................................
+           260           1.  Yes
+           461           5.  No
+                         8.  DK (Don't Know)
+            25       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ91          WORK HOURS PER WEEK
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q91
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: WORK FOR PAY
+         91. On average, how many hours per week do you work for pay?
+
+         .................................................................................
+           259                   0-168.  Hours
+           461                     997.  Skipped (Not applicable)
+                                   998.  DK (Don't Know)
+            26                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ92          WEEKS WORKED IN PAST YEAR
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q92
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: WORK FOR PAY
+         92. In the past year, about how many weeks did you work for pay?
+
+         .................................................................................
+           303                    0-52.  Hours
+           400                      97.  Skipped (Not applicable)
+             2                      98.  DK (Don't Know)
+            41                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ93          GROSS ANNUAL EARNINGS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 12  Decimals: 0
+         Ref: Q93
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: WORK FOR PAY
+         93. About how much did you earn on all jobs in the last year, before taxes?
+
+         .................................................................................
+           662                0-120000.  Dollars
+                                    97.  Skipped (Not applicable)
+                                   998.  DK (Don't Know)
+            84                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ94          ESTIMATED HOURLY PAY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q94
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: WORK FOR PAY
+         94. If you were to take a job now, what do you think would be your approximate
+         hourly pay?
+
+         .................................................................................
+           388                   0-304.  $ per hour
+             9                     997.  Skipped (Not applicable)
+            46                     998.  DK (Don't Know)
+           303                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ95          INFORMANT AGE
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q95
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         95. What is your age?
+
+         .................................................................................
+           719                   20-95.  Years
+                                   998.  DK (Don't Know)
+            27                   Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ96          INFORMANT GENDER
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q96
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         96. Are you male or female?
+
+         .................................................................................
+           189           1.  Male
+           540           2.  Female
+            17       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ97          INFORMANT EDUCATION LEVEL
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q97
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         97. What is the highest level of education you completed?
+
+         .................................................................................
+            12           1.  No formal education
+            57           2.  Grades 1 - 8
+            70           3.  Some high school
+           223           4.  High school graduate
+           204           5.  Some college
+            88           6.  College graduate
+            85           7.  Post-college
+                         8.  DK (Don't Know)
+             7       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ98          INFORMANT HISPANIC OR LATINO/A
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q98
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         98. Do you consider yourself Hispanic or Latino/Latina?
+
+         .................................................................................
+            77           1.  Yes
+           637           5.  No
+                         8.  DK (Don't Know)
+            32       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ99          INFORMANT RACE/ETHNICITY
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q99
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         99. Do you consider yourself primarily White or Caucasian, Black or
+         African-American, American Indian, Asian, or something else?
+
+         .................................................................................
+           548           1.  White/Causcasian
+           129           2.  Black/African American
+            46           7.  Other
+                         8.  DK (Don't Know)
+            23       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ100         INFORMANT MARITAL STATUS
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q100
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         100. What best describes your current marital status?
+
+         .................................................................................
+           513           1.  Married
+            42           2.  Never married
+            23           3.  Living with partner
+            13           4.  Separated
+            68           5.  Divorced
+            82           6.  Widowed
+                         8.  DK (Don't Know)
+             5       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ101         INFORMANT RELATIONSHIP TO SUBJECT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: Q101
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         101. What is your relationship to the person we are visiting today?
+
+         .................................................................................
+           255           1.  Spouse (husband or wife)
+           283           2.  Child (son or daughter)
+            23           3.  Grandchild (grandson or granddaughter)
+             2           4.  Professional (e.g., paid helper or nurse)
+            25           5.  Child-in-law (son-in-law or daughter-in-law)
+            22           6.  Sibling (brother or sister)
+            15           7.  Niece or nephew
+             4           8.  Sibling of spouse (brother-in-law or sister-on-law)
+             5           9.  Parent or parent-in-law
+            19          10.  Other relative
+            79          13.  Other
+                        14.  DK (Don't Know)
+            14          15.  Item left blank
+
+
+==========================================================================================
+
+AGQ102         WHETHER INFORMANT LIVES WITH SUBJECT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: Q102
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         102. Do you currently live with this friend or relative?
+
+         .................................................................................
+           375           1.  Yes
+           359           5.  No
+                         8.  DK (Don't Know)
+            12       Blank.  Item left blank
+
+
+==========================================================================================
+
+AGQ103         YEARS INFORMANT HAS KNOWN SUBJECT
+         Section: AG    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: Q103
+
+         Category: INFORMANT QUESTIONNAIRE
+         Measure: DEMOGRAPHICS
+         103. About how long have you known him or her?
+
+         .................................................................................
+           730                    1-90.  Years
+                                   998.  DK (Don't Know)
+            16                   Blank.  Item left blank
+
+
+==========================================================================================

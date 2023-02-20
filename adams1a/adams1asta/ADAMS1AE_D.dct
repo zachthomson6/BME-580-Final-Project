@@ -1,0 +1,17 @@
+dictionary using c:\adams1\data\ADAMS1AE_D.da {
+* Note: change location of input file to match your situation.
+ _column(1) str6 HHID %6s "HOUSEHOLD IDENTIFIER"
+ _column(7) str3 PN %3s "PERSON NUMBER"
+ _column(10) byte AEMENNUM %2.0f "DRUG MENTION"
+ _column(12) str5 ADAMSSID %5s "ADAMS SUBJECT IDENTIFIER"
+ _column(17) long AEDCODE %5.0f "Q1 DRUG NAME CODE"
+ _column(22) str50 AEDSPC %50s "Q1 DRUG NAME - SPECIFY"
+ _column(72) byte AERX %1.0f "Q3 DRUG PRESCRIBED OR OTC"
+ _column(73) int AEAGE %3.0f "Q4 AT WHAT AGE DID SUBJECT START TAKING DRUG"
+ _column(76) double AESTR %9.3f "Q5 DRUG STRENGTH"
+ _column(85) byte AEUNIT %2.0f "Q5 DRUG STRENGTH UNIT"
+ _column(87) byte AEFORM %2.0f "Q6 DRUG DOSAGE FORM"
+ _column(89) str10 AEFSPC %10s "Q6 DRUG DOSAGE FORM - SPECIFY"
+ _column(99) byte AEFREQ %1.0f "Q7 DRUG FREQUENCY TAKEN"
+ _column(100) float AEPILL %5.1f "Q8 DRUG HOW MANY TAKEN"
+}

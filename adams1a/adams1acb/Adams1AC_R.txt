@@ -1,0 +1,4368 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AC: CLINICAL HISTORY - INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AC    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           856           010059-213468.  Household Identification Number
+                                 Blank.  Inap
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AC    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           584         010.  Person Number
+            11         011.  Person Number
+           187         020.  Person Number
+             1         021.  Person Number
+            33         030.  Person Number
+            39         040.  Person Number
+             1         041.  Person Number
+                     Blank.  Inap
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AC    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           856             00021-21311.  ADAMS Subject Identification Number
+                                 Blank.  Inap
+
+
+==========================================================================================
+
+ACDONE         WHETHER CLINICAL HISTORY COMPLETED
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CHDONE
+
+         CLINICAL HISTORY SECTION COMPLETED?
+
+         .................................................................................
+           853           1.  YES
+             3           2.  NO
+                     Blank.  Inap
+
+
+==========================================================================================
+
+ACRELATC       INFORMANT RELATIONSHIP TO R - CLIN HX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RELATC
+
+         A1. What is your relationship to (NAME)?
+
+         .................................................................................
+           298           1.  SPOUSE
+           319           2.  CHILD
+            33           3.  SIBLING
+                         4.  PARENT
+            59           5.  FRIEND
+                         6.  GUARDIAN
+             6           7.  NEIGHBOR
+           141           8.  OTHER (SPECIFY)
+                        97.  REFUSED
+                        98.  DON'T KNOW
+                     Blank.  Inap
+
+
+==========================================================================================
+
+ACKNOWNC       HOW LONG INFORMANT HAS KNOWN R -CLIN HX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: KNOWNC
+
+         A2. How long have you known (NAME)?
+
+         .................................................................................
+            91                    1-19.  YEARS
+            42                   20-29.  YEARS
+            72                   30-39.  YEARS
+           144                   40-49.  YEARS
+           278                   50-59.  YEARS
+           166                   60-69.  YEARS
+            49                   70-79.  YEARS
+            11                   80-89.  YEARS
+                                 90-99.  YEARS
+             3                     998.  DON'T KNOW
+                                 Blank.  Inap
+
+
+==========================================================================================
+
+ACSEEC         HOW OFTEN INFORM SAW R LAST YR-CLINHX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SEEC
+
+         A3. On the average, in the past year, how often did you see (NAME)?
+
+         .................................................................................
+           429           1.  LIVES WITH SUBJECT
+           118           2.  DAILY
+           156           3.  SEVERAL TIMES/WEEK
+            77           4.  ONCE A WEEK
+            51           5.  ONE-THREE TIMES A MONTH
+            17           6.  LESS THAN ONCE A MONTH
+                         7.  NEVER
+             8           8.  OTHER (SPECIFY)
+                        97.  REFUSED
+                        98.  DON'T KNOW
+                     Blank.  Inap
+
+
+==========================================================================================
+
+ACRELAT2C      RELATIONSHIP OF 2ND INFORM TO R -CLINHX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RELAT2C
+
+         A1. What is your relationship to (NAME)? RELATIONSHIP #2 FIELDS ARE PRESENT IF
+         MORE THAN ONE INFORMANT INVOLVED IN VISIT.
+
+         .................................................................................
+             1           1.  SPOUSE
+            12           2.  CHILD
+                         3.  SIBLING
+                         4.  PARENT
+                         5.  FRIEND
+                         6.  GUARDIAN
+                         7.  NEIGHBOR
+            20           8.  OTHER (SPECIFY)
+                        97.  REFUSED
+                        98.  DON'T KNOW
+           823       Blank.  Inap
+
+
+==========================================================================================
+
+ACKNOWN2C      HOW LONG 2ND INFORM HAS KNOWN R -CLINHX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: KNOWN2C
+
+         A2. How long have you known (NAME)?
+
+         .................................................................................
+             3                    1-19.  YEARS
+             4                   20-29.  YEARS
+             7                   30-39.  YEARS
+             6                   40-49.  YEARS
+             5                   50-59.  YEARS
+             1                   60-69.  YEARS
+             6                   70-79.  YEARS
+                                 80-89.  YEARS
+             1                   90-99.  YEARS
+                                   998.  DON'T KNOW
+           823                   Blank.  Inap
+
+
+==========================================================================================
+
+ACSEE2C        HOW OFTEN 2ND INFORM SAW R LAST YR-CLINHX
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SEE2C
+
+         A3. On the average, in the past year, how often did you see (NAME)?
+
+         .................................................................................
+            11           1.  LIVES WITH SUBJECT
+             7           2.  DAILY
+             2           3.  SEVERAL TIMES/WEEK
+             3           4.  ONCE A WEEK
+             2           5.  ONE-THREE TIMES A MONTH
+             1           6.  LESS THAN ONCE A MONTH
+                         7.  NEVER
+             7           8.  OTHER (SPECIFY)
+                        97.  REFUSED
+                        98.  DON'T KNOW
+           823       Blank.  Inap
+
+
+==========================================================================================
+
+AC1            MORE DIFFICULTY WITH MEMORY OR THINKING
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH1
+
+         1. Have you noticed that (s/he) has had more difficulty with memory or thinking
+         than in the past?
+
+         .................................................................................
+           578           1.  YES
+           274           2.  NO (GO TO 3)
+                         7.  RF (GO TO 3)
+             1           8.  DK (GO TO 3)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC2            IS C1 A CONSISTENT PROBLEM
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH2
+
+         2. Is this a consistent problem?
+
+         .................................................................................
+           376           1.  YES
+           200           2.  NO
+                         7.  RF
+             2           8.  DK
+                         9.  (SKIP ERROR OR N/A)
+           278       Blank.  Inap
+
+
+==========================================================================================
+
+AC3            CAN RECALL RECENT EVENTS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH3
+
+         3. Let(s talk about her/his memory for day to day happenings and events that
+         happened recently. Can (s/he) recall recent events?
+
+         .................................................................................
+           527           1.  USUALLY
+           191           2.  SOMETIMES
+           133           3.  RARELY
+                         7.  RF
+             2           8.  DK
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC4            CAN RECALL DAY TO DAY EVENTS AT HOME
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH4
+
+         4. Can (s/he) recall day to day happenings around the house?
+
+         .................................................................................
+           423           1.  USUALLY
+           289           2.  SOMETIMES
+           140           3.  RARELY
+                         7.  RF
+             1           8.  DK
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC5            CAN REMEMBER SHORT LIST OF ITEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH5
+
+         5. Can (s/he) remember a short list of items (shopping or things (s/he) needs to
+         do)?
+
+         .................................................................................
+           491           1.  USUALLY
+           164           2.  SOMETIMES
+           181           3.  RARELY
+                         7.  RF
+            16           8.  DK
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC7MO          MONTH NOTICED CHANGES IN SHORT TERM MEM
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH7MO
+
+         7. When did you first notice these changes in her/his memory for day to day
+         happenings [or her/his ability to remember a short list of items]
+
+         .................................................................................
+            36           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             5          98.  DON'T KNOW
+           815       Blank.  Inap
+
+
+==========================================================================================
+
+AC7YR          YEAR NOTICED CHANGES IN SHORT TERM MEM
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH7YR
+
+         7. When did you first notice these changes in her/his memory for day to day
+         happenings [or her/his ability to remember a short list of items]
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             2               1980-1989.  YEAR
+            11               1990-1999.  YEAR
+            27               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           815                   Blank.  Inap
+
+
+==========================================================================================
+
+AC7AGE         AGE NOTICED CHANGES IN SHORT TERM MEMORY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH7AGE
+
+         7. When did you first notice these changes in her/his memory for day to day
+         happenings [or her/his ability to remember a short list of items]
+
+         .................................................................................
+                                 20-29.  AGE
+             1                   30-39.  AGE
+             2                   40-49.  AGE
+             7                   50-59.  AGE
+            60                   60-69.  AGE
+           224                   70-79.  AGE
+           194                   80-89.  AGE
+            37                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+            30                     998.  DON'T KNOW
+           296                   Blank.  Inap
+
+
+==========================================================================================
+
+AC8            MEMORY FOR PAST MAJOR EVENTS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH8
+
+         8. Now how about her/his memory for events that happened a while ago. Does
+         (s/he) completely forget a major event (e.g. a trip, party, family wedding)
+         within a few weeks of the event?
+
+         .................................................................................
+           137           1.  USUALLY
+           102           2.  SOMETIMES
+           603           3.  RARELY
+                         7.  REFUSED
+            11           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC9            FORGET PERTINENT DETAILS OF MAJOR EVENTS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH9
+
+         9. Does (s/he) forget pertinent details of the major event?
+
+         .................................................................................
+           162           1.  USUALLY
+           165           2.  SOMETIMES
+           514           3.  RARELY
+                         7.  REFUSED
+            12           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC10           FORGET IMPORTANT INFO OF DISTANT PAST
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH10
+
+         10. Does (s/he) completely forget important information of the distant past
+         about (him/herself) or family and friends (e.g. birth date, wedding date,
+         employment, historical events, things that happened to (her/him) when young?
+
+         .................................................................................
+           107           1.  USUALLY
+           114           2.  SOMETIMES
+           624           3.  RARELY
+                         7.  REFUSED
+             8           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC11           CAN REMEMBER OWN PHONE NUMBER
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH11
+
+         11. Can (s/he) remember her/his phone number?
+
+         .................................................................................
+           574           1.  USUALLY
+            34           2.  SOMETIMES
+           191           3.  RARELY
+                         7.  REFUSED
+            52           8.  DON'T KNOW
+             2           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC12MO         MONTH NOTICED CHANGES IN LONG TERM MEM
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH13MO
+
+         13. When did you first notice these changes in memory for events that happened a
+         while ago or information (s/he) learned some time ago?
+
+         .................................................................................
+            25           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AC12YR         YEAR NOTICED CHANGES IN LONG TERM MEM
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH13YR
+
+         13. When did you first notice these changes in memory for events that happened a
+         while ago or information (s/he) learned some time ago?
+
+         .................................................................................
+             1               1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            22               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           827                   Blank.  Inap
+
+
+==========================================================================================
+
+AC12AGE        AGE NOTICED CHANGES IN LONG TERM MEMORY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH13AGE
+
+         13. When did you first notice these changes in memory for events that happened a
+         while ago or information (s/he) learned some time ago?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             5                   50-59.  AGE
+            32                   60-69.  AGE
+           131                   70-79.  AGE
+           134                   80-89.  AGE
+            25                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+            24                     998.  DON'T KNOW
+           500                   Blank.  Inap
+
+
+==========================================================================================
+
+AC13           MORE DIFFICULTY REMEMBERING NAMES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH14
+
+         14. How about her/his memory for people(s names. Does (s/he) have more
+         difficulty now than in the past remembering people(s names?
+
+         .................................................................................
+           388           1.  YES
+           457           2.  NO
+                         7.  REFUSED
+             8           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC14           CAN REMEMBER NAMES OF FAMILY AND FRIENDS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH15
+
+         15. Can (s/he) remember the names of family and friends?
+
+         .................................................................................
+           684           1.  USUALLY
+           106           2.  SOMETIMES
+            58           3.  RARELY
+                         7.  REFUSED
+             5           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC15           CAN RECALL NAMES OF DISTANT ACQUAINTANCES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH16
+
+         16. Can (s/he) remember the names of more distant acquaintances?
+
+         .................................................................................
+           426           1.  USUALLY
+           265           2.  SOMETIMES
+           146           3.  RARELY
+             1           7.  REFUSED
+            15           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC17MO         MONTH NOTICED CHANGES REMEMBERING NAMES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH18MO
+
+         18. When did you first notice changes in remembering people(s names?
+
+         .................................................................................
+            19           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           834       Blank.  Inap
+
+
+==========================================================================================
+
+AC17YR         YEAR NOTICED CHANGES REMEMBERING NAMES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH18YR
+
+         18. When did you first notice changes in remembering people(s names?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+             1               1970-1979.  YEAR
+                             1980-1989.  YEAR
+             5               1990-1999.  YEAR
+            15               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           834                   Blank.  Inap
+
+
+==========================================================================================
+
+AC17AGE        AGE NOTICED CHANGES REMEMBERING NAMES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH18AGE
+
+         18. When did you first notice changes in remembering people(s names?
+
+         .................................................................................
+                                 20-29.  AGE
+             1                   30-39.  AGE
+             1                   40-49.  AGE
+             5                   50-59.  AGE
+            34                   60-69.  AGE
+           146                   70-79.  AGE
+           157                   80-89.  AGE
+            27                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            48                     998.  DON'T KNOW
+           434                   Blank.  Inap
+
+
+==========================================================================================
+
+AC18           MORE DIFFICULTY RECOGNIZING FACES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH19
+
+         19. And how about memory for people(s faces. Does (s/he) have more difficulty
+         than in the past recognizing familiar faces?
+
+         .................................................................................
+           187           1.  YES
+           642           2.  NO
+                         7.  REFUSED
+            24           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC20MO         MONTH NOTICED CHANGES RECOGNIZING FACES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH21MO
+
+         21. When did you first notice changes in recognizing people(s faces?
+
+         .................................................................................
+             9           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             1          98.  DON'T KNOW
+           846       Blank.  Inap
+
+
+==========================================================================================
+
+AC20YR         YEAR NOTICED CHANGES RECOGNIZING FACES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH21YR
+
+         21. When did you first notice changes in recognizing people(s faces?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             4               1990-1999.  YEAR
+             6               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           846                   Blank.  Inap
+
+
+==========================================================================================
+
+AC20AGE        AGE NOTICED CHANGES RECOGNIZING FACES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH21AGE
+
+         21. When did you first notice changes in recognizing people(s faces?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             2                   50-59.  AGE
+            10                   60-69.  AGE
+            53                   70-79.  AGE
+            72                   80-89.  AGE
+            20                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+            15                     998.  DON'T KNOW
+           679                   Blank.  Inap
+
+
+==========================================================================================
+
+AC21           MEMORY PROBLEMS BEGIN SUDDENLY/SLOWLY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH22
+
+         22. Did [all of] these memory problems we talked about begin suddenly or slowly?
+
+         .................................................................................
+           528           1.  SLOWLY
+            98           2.  SUDDENLY
+                         7.  REFUSED
+            16           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           213       Blank.  Inap
+
+
+==========================================================================================
+
+AC23           MEMORY PROBLEMS PROGRESSED OR STABLE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH24
+
+         24. Have these memory problems progressed or stayed stable over time?
+
+         .................................................................................
+           322           1.  PROGRESSED
+           310           2.  STABLE
+                         7.  REFUSED
+            10           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           213       Blank.  Inap
+
+
+==========================================================================================
+
+AC25           MEM PROBLEMS INTERFERE WITH DAILY LIFE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH25
+
+         25. Do these memory problems interfere with her/his activities of daily life?
+         For example, have they caused (her/him) to change daily activities, caused
+         difficulty in social activities, or in the way (s/he) relates to other people?
+
+         .................................................................................
+            54           1.  LITTLE
+            74           2.  SOME
+           161           3.  MUCH
+           351           4.  NO (Go to 28)
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           212       Blank.  Inap
+
+
+==========================================================================================
+
+AC26MO         MONTH BEGAN TO INTERFERE WITH DAILY LIFE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH26MO
+
+         26. When did they begin to interfere with her/his daily life?
+
+         .................................................................................
+            27           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           826       Blank.  Inap
+
+
+==========================================================================================
+
+AC26YR         YEAR BEGAN TO INTERFERE WITH DAILY LIFE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH26YR
+
+         26. When did they begin to interfere with her/his daily life?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            21               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           826                   Blank.  Inap
+
+
+==========================================================================================
+
+AC26AGE        AGE BEGANE TO INTERFERE WITH DAILY LIFE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH26AGE
+
+         26. When did they begin to interfere with her/his daily life?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             4                   50-59.  AGE
+            16                   60-69.  AGE
+            95                   70-79.  AGE
+           113                   80-89.  AGE
+            20                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+             7                     998.  DON'T KNOW
+           597                   Blank.  Inap
+
+
+==========================================================================================
+
+AC28           MORE DIFFICULTY WITH AWARENESS OF DATE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH28
+
+         28. Have you noticed that (s/he) has more difficulty than in the past with
+         [awareness of what the date is]
+
+         .................................................................................
+           355           1.  YES
+           483           2.  NO
+                         7.  REFUSED
+            15           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC29           HOW OFTEN KNOWS EXACT DATE OF MONTH
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH29
+
+         29. How often does (s/he) know the exact date of the month?
+
+         .................................................................................
+           483           1.  USUALLY
+           129           2.  SOMETIMES
+           216           3.  RARELY
+                         7.  REFUSED
+            25           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC30           HOW OFTEN KNOWS EXACT MONTH
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH30
+
+         30. How often does (s/he) know the exact month?
+
+         .................................................................................
+           613           1.  USUALLY
+            59           2.  SOMETIMES
+           167           3.  RARELY
+                         7.  REFUSED
+            14           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC31           HOW OFTEN KNOWS EXACT YEAR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH31
+
+         31. How often does (s/he) know the day of the week?
+
+         .................................................................................
+           626           1.  USUALLY
+            46           2.  SOMETIMES
+           158           3.  RARELY
+                         7.  REFUSED
+            23           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC32           HOW OFTEN KNOWS DAY OF THE WEEK
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH32
+
+         32. How often does (s/he) know the day of the week?
+
+         .................................................................................
+           543           1.  USUALLY
+           117           2.  SOMETIMES
+           182           3.  RARELY
+                         7.  REFUSED
+            11           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC33           DIFFICULTY WITH AWARENESS OF TIME
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH33
+
+         33. Does (s/he) have difficulty with time relationships (when events happened in
+         relation to each other)?
+
+         .................................................................................
+           150           1.  USUALLY
+           119           2.  SOMETIMES
+           556           3.  RARELY
+                         7.  REFUSED
+            28           8.  DON'T KNOW
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC35MO         MONTH NOTICED CHANGES IN KNOWING DATE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH35MO
+
+         35. When did you first notice these changes in knowing what the date is?
+
+         .................................................................................
+            32           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AC35YR         YEAR NOTICED CHANGES IN KNOWING DATE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH35YR
+
+         35. When did you first notice these changes in knowing what the date is?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            28               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           821                   Blank.  Inap
+
+
+==========================================================================================
+
+AC35AGE        AGE NOTICED CHANGES IN KNOWING DATE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH35AGE
+
+         35. When did you first notice these changes in knowing what the date is?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             4                   50-59.  AGE
+            34                   60-69.  AGE
+           114                   70-79.  AGE
+           143                   80-89.  AGE
+            24                   90-99.  AGE
+             3                 100-109.  AGE
+             1                 110-119.  AGE
+            47                     998.  DON'T KNOW
+           485                   Blank.  Inap
+
+
+==========================================================================================
+
+AC36           MORE DIFFICULTY FINDING WAY AROUND
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH36
+
+         36. Let(s talk about her/his ability to find her/his way around places. Does
+         (s/he) have more difficulty than in the past with finding his/her way around
+         familiar streets outside the neighborhood?
+
+         .................................................................................
+           288           1.  YES
+           535           2.  NO (go to 38)
+                         7.  REFUSED
+            26           8.  DON'T KNOW
+             4           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC37           PROB FINDING WAY AROUND FAMILIAR STREETS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH37
+
+         37. How often does (s/he) have problems finding her/his way around familiar
+         streets outside his/her neighborhood?
+
+         .................................................................................
+           197           1.  USUALLY
+            71           2.  SOMETIMES
+             9           3.  RARELY
+                         7.  REFUSED
+            10           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           568       Blank.  Inap
+
+
+==========================================================================================
+
+AC38           PROB GETTING TO A PLACE IN NEIGHBORHOOD
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH38
+
+         38. Does (s/he) have trouble getting from one place to another in her/his
+         neighborhood?
+
+         .................................................................................
+           215           1.  YES
+           617           2.  NO
+                         7.  REFUSED
+            19           8.  DON'T KNOW
+             2           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC39           HOW OFTEN TROUBLE GETTING PLACE TO PLACE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH39
+
+         39. How often does (s/he) have trouble getting from one place in her/his
+         neighborhood?
+
+         .................................................................................
+           171           1.  USUALLY
+            34           2.  SOMETIMES
+             6           3.  RARELY
+                         7.  REFUSED
+             3           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           641       Blank.  Inap
+
+
+==========================================================================================
+
+AC41MO         MONTH NOTICED CHANGE FINDING WAY OUTDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH41MO
+
+         41. When did you first notice this change in her/his ability to find her/his way
+         around places outdoors?
+
+         .................................................................................
+            19           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           833       Blank.  Inap
+
+
+==========================================================================================
+
+AC41YR         YEAR NOTICED CHANGE FINDING WAY OUTDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH41YR
+
+         41. When did you first notice this change in her/his ability to find her/his way
+         around places outdoors?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             9               1990-1999.  YEAR
+            14               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           833                   Blank.  Inap
+
+
+==========================================================================================
+
+AC41AGE        AGE NOTICED CHANGE FINDING WAY OUTDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH41AGE
+
+         41. When did you first notice this change in her/his ability to find her/his way
+         around places outdoors?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+                                 50-59.  AGE
+            18                   60-69.  AGE
+            89                   70-79.  AGE
+           124                   80-89.  AGE
+            25                   90-99.  AGE
+             1                 100-109.  AGE
+                               110-119.  AGE
+            17                     998.  DON'T KNOW
+           581                   Blank.  Inap
+
+
+==========================================================================================
+
+AC42           MORE DIFFICULTY FINDING WAY INDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH42
+
+         42. And now how about her/his ability to find her/his way around places indoors.
+         Does (s/he) have more difficulty now than in the past finding her/his way about
+         indoors, such as at the mall, in stores, or in her/his home?
+
+         .................................................................................
+           174           1.  YES
+           669           2.  NO
+                         7.  REFUSED
+            10           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC43           HOW OFTEN FIND WAY ABOUT INDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH43
+
+         43. How often can (s/he) find her/his way about indoors? (Code for most impaired
+         environment)
+
+         .................................................................................
+            13           1.  USUALLY
+            63           2.  SOMETIMES
+            97           3.  RARELY
+                         7.  REFUSED
+             1           8.  DON'T KNOW
+           682       Blank.  Inap
+
+
+==========================================================================================
+
+AC45MO         MONTH NOTICED CHANGE FINDING WAY INDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH45MO
+
+         45. When did you first notice this change in her/his ability to find her/his way
+         around indoors?
+
+         .................................................................................
+            16           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             2          98.  DON'T KNOW
+           838       Blank.  Inap
+
+
+==========================================================================================
+
+AC45YR         YEAR NOTICED CHANGE FINDING WAY INDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH45YR
+
+         45. When did you first notice this change in her/his ability to find her/his way
+         around indoors?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             5               1990-1999.  YEAR
+            13               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           838                   Blank.  Inap
+
+
+==========================================================================================
+
+AC45AGE        AGE NOTICED CHANGE FINDING WAY INDOORS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH45AGE
+
+         45. When did you first notice this change in her/his ability to find her/his way
+         around indoors?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+                                 50-59.  AGE
+             5                   60-69.  AGE
+            49                   70-79.  AGE
+            65                   80-89.  AGE
+            24                   90-99.  AGE
+             1                 100-109.  AGE
+                               110-119.  AGE
+            12                     998.  DON'T KNOW
+           700                   Blank.  Inap
+
+
+==========================================================================================
+
+AC46           PROBLEM WITH DATE/FINDING WAY PROGRESSED
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH46
+
+         46. Have these problems with knowing the date or finding (her/his) way outdoors
+         or indoors gotten worse over time? (Or if problems have recently started ask
+         (Have these problems gotten worse in the past year?()
+
+         .................................................................................
+           271           1.  YES
+           145           2.  NO
+             1           7.  REFUSED
+            23           8.  DON'T KNOW
+             4           9.  (SKIP ERROR OR N/A)
+           412       Blank.  Inap
+
+
+==========================================================================================
+
+AC48           PROB WITH DATE/FINDING WAY INTERFERE DAILY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH47
+
+         47. Do these problems interfere with her/his activities of daily life? For
+         example, have they caused (her/him) to change their daily activities, caused
+         difficulty in social activities, or in the way they relate to other people?
+
+         .................................................................................
+            31           1.  LITTLE
+            54           2.  SOME
+           163           3.  MUCH
+           181           4.  NO (go to 50)
+             1           7.  REFUSED
+            10           8.  DON'T KNOW
+             4           9.  (SKIP ERROR OR N/A)
+           412       Blank.  Inap
+
+
+==========================================================================================
+
+AC49MO         MONTH DATE/FINDING WAY BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH48MO
+
+         48. When did these problems begin to interfere with her/his daily life?
+
+         .................................................................................
+            21           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           831       Blank.  Inap
+
+
+==========================================================================================
+
+AC49YR         YEAR DATE/FINDING WAY BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH48YR
+
+         48. When did these problems begin to interfere with her/his daily life?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             8               1990-1999.  YEAR
+            16               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           831                   Blank.  Inap
+
+
+==========================================================================================
+
+AC49AGE        AGE DATE/FINDING WAY BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH48AGE
+
+         48. When did these problems begin to interfere with her/his daily life?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             1                   50-59.  AGE
+            13                   60-69.  AGE
+            70                   70-79.  AGE
+           106                   80-89.  AGE
+            25                   90-99.  AGE
+             2                 100-109.  AGE
+                               110-119.  AGE
+             6                     998.  DON'T KNOW
+           633                   Blank.  Inap
+
+
+==========================================================================================
+
+AC51           MORE TROUBLE FINDING WORDS/EXPRESSION
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH50
+
+         50. Let(s now talk about her/his language and her/his ability to understand what
+         (s/he) hears and sees.  Does (s/he) have more trouble than in the past finding
+         the right word or expressing himself clearly?
+
+         .................................................................................
+           265           1.  YES
+           587           2.  NO
+                         7.  REFUSED
+             1           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC52           TALKS LESS THAN BEFORE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH51
+
+         51. Have you noticed that (s/he) talks less than before?
+
+         .................................................................................
+           125           1.  LITTLE LESS
+           134           2.  MUCH LESS
+           589           3.  NO
+                         7.  REFUSED
+             5           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC53           MORE OFTEN SUBSTITUTES OR MAKES UP WORDS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH52
+
+         52. Compared to the past, does (s/he) more often substitute words or make up
+         words as (s/he) talks?
+
+         .................................................................................
+           129           1.  YES
+           712           2.  NO
+                         7.  REFUSED
+            11           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC54           STUTTER/BREAK OFF/LOSE TRAIN OF THOUGHT
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH53
+
+         53. Does (s/he) stutter, break off in the middle of a sentence, or show other
+         signs of losing her/his train of thought?
+
+         .................................................................................
+           257           1.  YES
+           590           2.  NO
+                         7.  REFUSED
+             5           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC55           HOW OFTEN LOSE TRAIN OF THOUGHT
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH54
+
+         54. If yes, how often does (s/he) show signs of losing her/his train of thought?
+
+         .................................................................................
+            96           1.  USUALLY
+           147           2.  SOMETIMES
+            13           3.  RARELY
+             1           7.  REFUSED
+                         8.  DON'T KNOW
+           599       Blank.  Inap
+
+
+==========================================================================================
+
+AC57MO         MONTH NOTICED CHANGES IN SPEECH/LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH56MO
+
+         56. When did you first notice these changes in her/his speech and language?
+
+         .................................................................................
+            31           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           821       Blank.  Inap
+
+
+==========================================================================================
+
+AC57YR         YEAR NOTICED CHANGES IN SPEECH/LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH56YR
+
+         56. When did you first notice these changes in her/his speech and language?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             8               1990-1999.  YEAR
+            27               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           821                   Blank.  Inap
+
+
+==========================================================================================
+
+AC57AGE        AGE NOTICED CHANGES IN SPEECH/LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH56AGE
+
+         56. When did you first notice these changes in her/his speech and language?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             7                   50-59.  AGE
+            20                   60-69.  AGE
+           140                   70-79.  AGE
+           146                   80-89.  AGE
+            28                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+            26                     998.  DON'T KNOW
+           484                   Blank.  Inap
+
+
+==========================================================================================
+
+AC58           EVER LEARN TO READ IN HIS/HER LIFE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH57A
+
+         57A. Did (s/he) learn to read during his/her life?  This question was added to
+         the interview in late 2002.  For Respondents assessed prior to the addition of
+         these questions, these variables were coded '9'.
+
+         .................................................................................
+           388           1.  YES
+            24           2.  NO
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+           438           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC59           ABLE TO READ BOOKS OR NEWSPAPERS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH57B
+
+         57B. Has (s/he) been able to read newspapers, books, or magazines, either now or
+         at any earlier time?  Note:  This question was added to the interview in late
+         2002.  For Respondents assessed prior to the addition of these questions, these
+         variables were coded '9'.
+
+         .................................................................................
+           383           1.  YES
+            28           2.  NO
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+           438           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC60           ABLE TO READ ENOUGH TO COMPLETE FORMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH57C
+
+         57C. Has (s/he) been able to read well enough to fill out forms such as a job
+         application, insurance form or taxes either now or at an earlier time?  Note:
+         This question was added to the interview in late 2002.  For Respondents assessed
+         prior to the addition of these questions, these variables were coded '9'.
+
+         .................................................................................
+           359           1.  YES
+            47           2.  NO
+             1           7.  REFUSED
+             6           8.  DON'T KNOW
+           440           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC61           READ LESS OFTEN THAN BEFORE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH57
+
+         57. Now let(s talk about how well (s/he) understands language. Does (s/he) read
+         books, magazines, or the newspaper less than (s/he) used to?
+
+         .................................................................................
+            92           1.  LITTLE LESS
+           208           2.  MUCH LESS
+           524           3.  NO
+             1           7.  REFUSED
+            21           8.  DON'T KNOW
+             7           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC62           LESS ABLE TO UNDERSTAND WHAT IS READ
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH58
+
+         58. Does (s/he) seem less able to understand what (s/he) reads?
+
+         .................................................................................
+            59           1.  LITTLE LESS
+           126           2.  MUCH LESS
+           599           3.  NO
+             1           7.  REFUSED
+            59           8.  DON'T KNOW
+             9           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC63           LESS ABLE TO UNDERSTAND TV
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH59
+
+         59. Does (s/he) seem less able to understand what (s/he) sees on TV?
+
+         .................................................................................
+            89           1.  LITTLE LESS
+           116           2.  MUCH LESS
+           610           3.  NO
+             2           7.  REFUSED
+            35           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC64           MORE PROB FOLLOWING SPOKEN INSTRUCTION
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH60
+
+         60. Does (s/he) have more difficulty than in the past understanding or following
+         spoken instructions?
+
+         .................................................................................
+           152           1.  LITTLE MORE
+           121           2.  MUCH MORE
+           575           3.  NO
+             1           7.  REFUSED
+             4           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC66MO         MONTH NOTICED CHANGES UNDERSTANDING LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH62MO
+
+         62. When did you first notice these changes in her/his ability to understand
+         language?
+
+         .................................................................................
+            20           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           832       Blank.  Inap
+
+
+==========================================================================================
+
+AC66YR         YEAR NOTICED CHANGES UNDERSTANDING LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH62YR
+
+         62. When did you first notice these changes in her/his ability to understand
+         language?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            16               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           832                   Blank.  Inap
+
+
+==========================================================================================
+
+AC66AGE        AGE NOTICED CHANGES UNDERSTANDING LANGUAGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH62AGE
+
+         62. When did you first notice these changes in her/his ability to understand
+         language?
+
+         .................................................................................
+             1                   20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             7                   50-59.  AGE
+            23                   60-69.  AGE
+            93                   70-79.  AGE
+           141                   80-89.  AGE
+            21                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            23                     998.  DON'T KNOW
+           543                   Blank.  Inap
+
+
+==========================================================================================
+
+AC67           HAVE VISION PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH63
+
+         63. Does (s/he) have any problems with vision?
+
+         .................................................................................
+           197           1.  SOME
+           162           2.  MUCH
+           488           3.  NO (or adequately corrected)
+             1           7.  REFUSED
+             5           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC68           DEGREE VISION PROB AFFECT LANGUAGE PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH64
+
+         64. How much are her/his problems with understanding what (s/he) reads and sees
+         due to problems with vision?
+
+         .................................................................................
+            73           1.  SOME
+            47           2.  MUCH
+            49           3.  NOT AT ALL
+                         7.  REFUSED
+            14           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           672       Blank.  Inap
+
+
+==========================================================================================
+
+AC69           HAVE HEARING PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH65
+
+         65. Does (s/he) have any problems with his/her hearing?
+
+         .................................................................................
+            55           1.  YES, but hearing aids correct
+           232           2.  SOME
+           142           3.  MUCH
+           421           4.  NO
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC70           DEGREE HEARING PROB AFFECT LANGUAGE PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH66
+
+         66. How much are her/his problems with language and understanding what (s/he)
+         hears due to problems with hearing?
+
+         .................................................................................
+            79           1.  SOME
+            67           2.  MUCH
+            31           3.  NOT AT ALL
+                         7.  REFUSED
+             8           8.  DON'T KNOW
+           671       Blank.  Inap
+
+
+==========================================================================================
+
+AC71           LANGUAGE/COMP PROB BEGIN SUDDENLY/SLOWLY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH67
+
+         67. Did these problems with language and comprehension begin suddenly or slowly?
+
+         .................................................................................
+            63           1.  SUDDENLY
+           261           2.  SLOWLY
+                         7.  REFUSED
+            13           8.  DON'T KNOW
+           519       Blank.  Inap
+
+
+==========================================================================================
+
+AC72           LANGUAGE/COMP PROB PROGRESSED OR STABLE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH68
+
+         68. Have they gotten worse over time?  Or if problems have recently started ask
+         (Have these problems gotten worse in the past year?(
+
+         .................................................................................
+           259           1.  YES
+            71           2.  NO
+             1           7.  REFUSED
+             6           8.  DON'T KNOW
+           519       Blank.  Inap
+
+
+==========================================================================================
+
+AC75           LANGUAGE/COMP PROB INTERFERE DAILY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH70
+
+         70. Do these problems with language and comprehension interfere with her/his
+         daily life? For example, have they caused (her/him) to change her/his daily
+         activities, caused difficulty in social activities or in the way (s/he) relates
+         to other people?
+
+         .................................................................................
+            46           1.  LITTLE
+            56           2.  SOME
+           133           3.  MUCH
+            98           4.  NO (go to 73)
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+           519       Blank.  Inap
+
+
+==========================================================================================
+
+AC76MO         MONTH LANG/COMP PROB BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH71MO
+
+         71. When did they begin to interfere with her/his daily activities?
+
+         .................................................................................
+            16           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           836       Blank.  Inap
+
+
+==========================================================================================
+
+AC76YR         YEAR LANG/COMP PROB BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH71YR
+
+         71. When did they begin to interfere with her/his daily activities?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            12               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           836                   Blank.  Inap
+
+
+==========================================================================================
+
+AC76AGE        AGE LANGUAGE/COMP PROB BEGAN TO INTERFERE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH71AGE
+
+         71. When did they begin to interfere with her/his daily activities?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             3                   50-59.  AGE
+            11                   60-69.  AGE
+            70                   70-79.  AGE
+           102                   80-89.  AGE
+            20                   90-99.  AGE
+             2                 100-109.  AGE
+                               110-119.  AGE
+             7                     998.  DON'T KNOW
+           641                   Blank.  Inap
+
+
+==========================================================================================
+
+AC78           MORE DIFFICULTY WITH HOUSEHOLD TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH73
+
+         73. These next questions are about daily activities. First, does (s/he) have
+         more difficulty than in the past carrying out routine household tasks, such as
+         cooking, cleaning, laundry, taking out garbage, yard work, simple maintenance
+         and home repair?
+
+         .................................................................................
+           102           1.  LITTLE
+            99           2.  SOME
+           289           3.  MUCH
+           359           4.  NO
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC78A          GIVEN UP PREVIOUS TASKS/RESPONSIBILITIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH75
+
+         75. If changes in abilities reported, ask (Has (s/he) given up previous tasks or
+         responsibilities?
+
+         .................................................................................
+           420           1.  YES
+            70           2.  NO
+                         7.  REFUSED
+                         8.  DON'T KNOW
+           366       Blank.  Inap
+
+
+==========================================================================================
+
+AC93           MORE DIFFICULTY USING FAMILIAR APPLIANCES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH77
+
+         Does (s/he) have more difficulty than in the past using familiar gadgets and
+         appliances such as the VCR, microwave or tools?
+
+         .................................................................................
+            42           1.  LITTLE
+            43           2.  SOME
+           193           3.  MUCH
+           551           4.  NO
+             1           7.  REFUSED
+            22           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC94           MORE DIFFICULTY LEARNING NEW APPLIANCES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH78
+
+         78. Does (s/he) have more difficulty than in the past figuring out how to use
+         new appliances or gadgets?
+
+         .................................................................................
+            67           1.  LITTLE
+            50           2.  SOME
+           225           3.  MUCH
+           453           4.  NO
+             1           7.  REFUSED
+            56           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC95           DAILY LIVING PROB DUE TO COG OR PHYS PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH79
+
+         79. Are these changes due to problems with thinking and memory or to physical
+         health problems?
+
+         .................................................................................
+           170           1.  THINKING AND MEMORY
+           207           2.  PHYSICAL HEALTH (specify)
+           159           3.  BOTH (specify)
+            10           4.  NEITHER
+                         7.  REFUSED
+             4           8.  DON'T KNOW
+           306       Blank.  Inap
+
+
+==========================================================================================
+
+AC96MO         MONTH NOTICED CHANGES IN HOUSEHOLD TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH80MO
+
+         80. When did you first notice these changes in her/his ability to do household
+         tasks?
+
+         .................................................................................
+            25           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           827       Blank.  Inap
+
+
+==========================================================================================
+
+AC96YR         YEAR NOTICED CHANGES IN HOUSEHOLD TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH80YR
+
+         80. When did you first notice these changes in her/his ability to do household
+         tasks?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            22               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           827                   Blank.  Inap
+
+
+==========================================================================================
+
+AC96AGE        AGE NOTICED CHANGES IN HOUSEHOLD TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH80AGE
+
+         80. When did you first notice these changes in her/his ability to do household
+         tasks?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+            11                   50-59.  AGE
+            45                   60-69.  AGE
+           192                   70-79.  AGE
+           211                   80-89.  AGE
+            34                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+            22                     998.  DON'T KNOW
+           335                   Blank.  Inap
+
+
+==========================================================================================
+
+AC99           MORE DIFFICULTY PERFORMING HOBBIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH81
+
+         81. Now I have a few questions about her/his hobbies.  Does (s/he) have more
+         difficulty than in the past performing her/his hobbies?  Hobbies may include
+         things like sewing, painting, handicrafts, reading, entertaining, photography,
+         gardening, going to theater or symphony, woodworking, participating in sports.
+
+         .................................................................................
+           118           1.  LITTLE
+            96           2.  SOME
+           263           3.  MUCH
+           372           4.  NO
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC102          CHANGES IN HOBBIES DUE TO COG OR PHYS PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH84
+
+         84. Are these changes due to problems with thinking and memory or physical
+         health problems?
+
+         .................................................................................
+           124           1.  THINKING AND MEMORY
+           225           2.  PHYSICAL HEALTH (specify)
+           116           3.  BOTH (specify)
+             9           4.  NEITHER
+                         7.  REFUSED
+             3           8.  DON'T KNOW
+           379       Blank.  Inap
+
+
+==========================================================================================
+
+AC103MO        MONTH FIRST NOTICED CHANGES IN HOBBIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH85MO
+
+         85. When did you first notice these changes in her/his hobbies?
+
+         .................................................................................
+            26           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           826       Blank.  Inap
+
+
+==========================================================================================
+
+AC103YR        YEAR FIRST NOTICED CHANGES IN HOBBIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH85YR
+
+         85. When did you first notice these changes in her/his hobbies?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+             1               1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             9               1990-1999.  YEAR
+            20               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           826                   Blank.  Inap
+
+
+==========================================================================================
+
+AC103AGE       AGE NOTICED CHANGES IN HOBBIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH85AGE
+
+         85. When did you first notice these changes in her/his hobbies?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             7                   50-59.  AGE
+            44                   60-69.  AGE
+           181                   70-79.  AGE
+           166                   80-89.  AGE
+            26                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+            18                     998.  DON'T KNOW
+           409                   Blank.  Inap
+
+
+==========================================================================================
+
+AC104          EVER DRIVE A CAR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH86
+
+         86. I am now going to ask you about some activities outside the home.  Did
+         (s/he) ever drive a car?
+
+         .................................................................................
+           696           1.  YES
+           151           2.  NO
+             1           7.  REFUSED
+             5           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC105          DRIVE A CAR NOW
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH87
+
+         87. Does (s/he) drive a car now?
+
+         .................................................................................
+           374           1.  YES
+           322           2.  NO
+                         7.  REFUSED
+                         8.  DON'T KNOW
+           160       Blank.  Inap
+
+
+==========================================================================================
+
+AC106MO        MONTH WHEN STOPPED DRIVING
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH88MO
+
+         88. When did (s/he) stop driving?
+
+         .................................................................................
+            15           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           837       Blank.  Inap
+
+
+==========================================================================================
+
+AC106YR        YEAR WHEN STOPPED DRIVING
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH88YR
+
+         88. When did (s/he) stop driving?
+
+         .................................................................................
+             1               1930-1939.  YEAR
+                             1940-1949.  YEAR
+             1               1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            10               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           837                   Blank.  Inap
+
+
+==========================================================================================
+
+AC106AGE       AGE WHEN STOPPED DRIVING
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH88AGE
+
+         88. When did (s/he) stop driving?
+
+         .................................................................................
+             1                   20-29.  AGE
+             2                   30-39.  AGE
+             8                   40-49.  AGE
+             8                   50-59.  AGE
+            35                   60-69.  AGE
+           110                   70-79.  AGE
+           115                   80-89.  AGE
+            13                   90-99.  AGE
+                               100-109.  AGE
+                               110-119.  AGE
+            11                     998.  DON'T KNOW
+           553                   Blank.  Inap
+
+
+==========================================================================================
+
+AC107          STOP DRIVING DUE TO MEM OR THINKING PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH89
+
+         89. Did (s/he) stop because of memory or thinking problems?
+
+         .................................................................................
+           111           1.  YES
+           202           2.  NO
+                         7.  REFUSED
+             9           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           533       Blank.  Inap
+
+
+==========================================================================================
+
+AC108          HAVE DIFFICULTY DRIVING DUE TO MEM PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH90
+
+         90. Does (s/he) have difficulty driving or take risks driving because of
+         difficulties with memory or thinking?
+
+         .................................................................................
+            49           1.  YES
+           317           2.  NO
+                         7.  REFUSED
+             6           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           483       Blank.  Inap
+
+
+==========================================================================================
+
+AC112          ABLE TO SHOP INDEPENDENTLY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH92
+
+         92. Is (s/he) able to independently shop for her/his needs?
+
+         .................................................................................
+           518           1.  USUALLY
+            51           2.  SOMETIMES (Shops for limited number of items, buys duplicate
+                             items or forgets needed items)
+           279           3.  RARELY (Needs to be accompanied on any shopping trip)
+             1           7.  REFUSED
+             4           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC114MO        MONTH NOTICED CHANGES IN ABILITY TO SHOP
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH94MO
+
+         94. When did you first notice changes in her/his ability to shop independently?
+
+         .................................................................................
+            16           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             6          98.  DON'T KNOW
+           834       Blank.  Inap
+
+
+==========================================================================================
+
+AC114YR        YEAR NOTICED CHANGES IN ABILITY TO SHOP
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH94YR
+
+         94. When did you first notice changes in her/his ability to shop independently?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+             1               1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            13               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           834                   Blank.  Inap
+
+
+==========================================================================================
+
+AC114AGE       AGE NOTICED CHANGES IN ABILITY TO SHOP
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH94AGE
+
+         94. When did you first notice changes in her/his ability to shop independently?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             4                   50-59.  AGE
+            26                   60-69.  AGE
+            99                   70-79.  AGE
+           136                   80-89.  AGE
+            23                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            17                     998.  DON'T KNOW
+           548                   Blank.  Inap
+
+
+==========================================================================================
+
+AC115          CAN CARRY OUT SOCIAL ACTIVITIES OUTSIDE HOME
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH95
+
+         95. Can (s/he) independently carry out social activities outside her/his home,
+         such as going to church, visiting with friends or family, political activities,
+         professional organizations, social clubs, service organizations, educational
+         programs?
+
+         .................................................................................
+           516           1.  USUALLY (meaningful participation in activities, e.g.
+                             voting)
+            94           2.  SOMETIMES (limited and/or routine, e.g. superficial
+                             participation in church or meetings, trips to beauty parlor)
+           239           3.  RARELY OR NEVER (generally unable to perform activities
+                             without help)
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC117MO        MONTH NOTICED CHANGES IN SOCIAL ACTIVITIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH97MO
+
+         97. When did you first notice these changes in her/his ability to independently
+         do social activities?
+
+         .................................................................................
+            13           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             6          98.  DON'T KNOW
+           837       Blank.  Inap
+
+
+==========================================================================================
+
+AC117YR        YEAR NOTICED CHANGES IN SOCIAL ACTIVITIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH97YR
+
+         97. When did you first notice these changes in her/his ability to independently
+         do social activities?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+             1               1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            11               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           837                   Blank.  Inap
+
+
+==========================================================================================
+
+AC117AGE       AGE NOTICED CHANGES IN SOCIAL ACTIVITIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH97AGE
+
+         97. When did you first notice these changes in her/his ability to independently
+         do social activities?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             4                   50-59.  AGE
+            23                   60-69.  AGE
+           107                   70-79.  AGE
+           140                   80-89.  AGE
+            21                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            16                     998.  DON'T KNOW
+           542                   Blank.  Inap
+
+
+==========================================================================================
+
+AC118          CHANGES IN SOC ACTIVITIES DUE TO MEM/PHYS PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH98
+
+         98. Are these changes due to problems with thinking and memory or physical
+         health problems?
+
+         .................................................................................
+           122           1.  THINKING AND MEMORY
+           106           2.  PHYSICAL HEALTH (specify)
+            97           3.  BOTH (specify)
+             6           4.  NEITHER
+                         7.  REFUSED
+             2           8.  DON'T KNOW
+           523       Blank.  Inap
+
+
+==========================================================================================
+
+AC119          TAKEN TO SOCIAL FUNCTIONS OUTSIDE HOME
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH99
+
+         99. (If significantly impaired) Is (s/he) taken to social functions outside the
+         home?
+
+         .................................................................................
+           115           1.  YES
+            88           2.  NO
+                         7.  REFUSED
+             1           8.  DON'T KNOW
+            16           9.  (SKIP ERROR OR N/A)
+           636       Blank.  Inap
+
+
+==========================================================================================
+
+AC121          WOULD CASUAL OBSERVER THINK SUBJ IS ILL
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH101
+
+         101. (Ask only when answer not evident) Would a casual observer think that
+         (NAME) was ill?
+
+         .................................................................................
+           115           1.  YES
+            90           2.  NO
+                         7.  REFUSED
+             6           8.  DON'T KNOW
+             9           9.  (SKIP ERROR OR N/A)
+           636       Blank.  Inap
+
+
+==========================================================================================
+
+AC122          IF NH, PARTICIPATE WELL IN SOC FUNCTIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH102
+
+         102. (If in nursing home) Does (s/he) participate well in social functions?
+
+         .................................................................................
+            47           1.  YES
+            61           2.  NO
+                         7.  REFUSED
+             2           8.  DON'T KNOW
+           110           9.  (SKIP ERROR OR N/A)
+           636       Blank.  Inap
+
+
+==========================================================================================
+
+AC122A         IWER RATING, HOUSEHOLD CHORES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH103
+
+         103.(Interviewer rating - no need to ask informant)  At which of the levels
+         below is (s/he) able to perform household chores?
+
+         .................................................................................
+           303           1.  Normal function in usual activities
+           215           2.  Functions in usual activities but not at usual level
+            77           3.  Functions independently in some activities
+            89           4.  (operates appliances, such as vacuum, prepares simple meals)
+                             Functions in limited activities only
+           166           5.  (with some supervision washes dishes with acceptable
+                             cleanliness, sets table) No meaningful function
+                         6.  (performs simple activities such as making a bed, only with
+                             much supervision)
+             1           7.  Refused
+             1           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC123          MORE DIFFICULTY WITH FINANCIAL TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH104
+
+         104. Does (s/he) have more difficulty than in the past taking care of financial
+         tasks such as paying bills?
+
+         .................................................................................
+           323           1.  YES
+           512           2.  NO
+             1           7.  REFUSED
+            16           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC124          ABILITY WITH COMPLICATED FINANCIAL TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH105
+
+         105. Rate her/his ability to handle complicated financial or business
+         transactions (e.g. balancing a checkbook, paying bills, doing banking, handling
+         investments)?
+
+         .................................................................................
+           477           1.  NO LOSS
+           126           2.  SOME LOSS
+           221           3.  SEVERE LOSS
+             1           7.  REFUSED
+            27           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC125          WHO HANDLES BILLS NOW IN HOME
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH106
+
+         106. Who handles the bills now in (his/her) house?
+
+         .................................................................................
+           341           1.  RESPONDENT
+           376           2.  INORMANT
+            78           3.  OTHER RELATIVE
+            52           4.  OTHER (specify)
+             1           7.  REFUSED
+             5           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC126          IS WHO HANDLES BILLS A CHANGE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH107
+
+         107. Is this a change and, if so, why was the change made?
+
+         .................................................................................
+           343           1.  R NO CHANGE
+           240           2.  OTHER NO CHANGE
+           263           3.  CHANGE FROM R (specify)
+             1           7.  REFUSED
+             6           8.  DON'T KNOW
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC127MO        MONTH BILL CHANGE WAS MADE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH108MO
+
+         108. (If change from R) When did this change occur?
+
+         .................................................................................
+            14           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           839       Blank.  Inap
+
+
+==========================================================================================
+
+AC127YR        YEAR BILL CHANGE WAS MADE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH108YR
+
+         108. (If change from R) When did this change occur?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            10               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           839                   Blank.  Inap
+
+
+==========================================================================================
+
+AC127AGE       AGE BILL CHANGE WAS MADE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH108AGE
+
+         108. (If change from R) When did this change occur?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+                                 50-59.  AGE
+            17                   60-69.  AGE
+            78                   70-79.  AGE
+           123                   80-89.  AGE
+            21                   90-99.  AGE
+             2                 100-109.  AGE
+                               110-119.  AGE
+             8                     998.  DON'T KNOW
+           607                   Blank.  Inap
+
+
+==========================================================================================
+
+AC128          RATE ABILITY WITH SMALL SUMS OF MONEY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH109
+
+         109. Rate her/his ability to handle small sums of money (e.g. making change,
+         leaving a small tip, shopping)
+
+         .................................................................................
+           642           1.  NO LOSS
+            52           2.  SOME LOSS
+           143           3.  SEVERE LOSS
+             1           7.  REFUSED
+            15           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC130MO        MONTH NOTICED CHANGES IN HANDLING MONEY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH111MO
+
+         111. When did you first notice changes in her/his ability to handle money?
+
+         .................................................................................
+            19           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             6          98.  DON'T KNOW
+           831       Blank.  Inap
+
+
+==========================================================================================
+
+AC130YR        YEAR NOTICED CHANGES IN HANDLING MONEY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH111YR
+
+         111. When did you first notice changes in her/his ability to handle money?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            16               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           831                   Blank.  Inap
+
+
+==========================================================================================
+
+AC130AGE       AGE NOTICED CHANGES IN HANDLING MONEY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH111AGE
+
+         111. When did you first notice changes in her/his ability to handle money?
+
+         .................................................................................
+                                 20-29.  AGE
+             1                   30-39.  AGE
+             1                   40-49.  AGE
+             3                   50-59.  AGE
+            21                   60-69.  AGE
+            99                   70-79.  AGE
+           144                   80-89.  AGE
+            28                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            44                     998.  DON'T KNOW
+           512                   Blank.  Inap
+
+
+==========================================================================================
+
+AC133          RATE ABILITY TO PRESENTLY SOLVE PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH112
+
+         112. In general, if you had to rate her/his abilities to solve problems at the
+         present time, would you consider them
+
+         .................................................................................
+           341           1.  AS GOOD AS THEY HAVE EVER BEEN
+           205           2.  GOOD, BUT NOT AS GOOD AS BEFORE
+           118           3.  FAIR
+            77           4.  POOR
+           105           5.  NO ABILITY AT ALL
+             1           7.  REFUSED
+             6           8.  DON'T KNOW
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC134          IDEAS SEEM LESS LOGICAL/MAKE LESS SENSE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH113
+
+         113. Do her/his ideas seem to be less logical, or does (s/he) make less sense
+         then (s/he) used to?
+
+         .................................................................................
+           161           1.  SOME LESS
+           137           2.  MUCH LESS
+           547           3.  NO
+             1           7.  REFUSED
+             7           8.  DON'T KNOW
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC135          MORE DIFFICULTY MAKING DAILY DECISIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH114
+
+         114. Does (she) have more difficulty than in the past making decisions on
+         everyday matters? Using her/his intelligence to understand what(s going on and
+         to reason things through?  (e.g. knowing how much food to buy or making
+         decisions about car maintenance)?
+
+         .................................................................................
+           122           1.  SOME MORE
+           163           2.  MUCH MORE
+           556           3.  NO
+             1           7.  REFUSED
+            11           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC136          MORE TROUBLE TRUSTING SUBJ JUDGEMENT
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH115
+
+         115. Do you have more trouble than in the past trusting her/his judgment? 
+         Trusting her/his ability to make sound decisions about personal safety, family
+         or financial matters?
+
+         .................................................................................
+           151           1.  SOME TROUBLE
+           192           2.  MUCH TROUBLE
+           504           3.  NO TROUBLE
+             1           7.  REFUSED
+             5           8.  DON'T KNOW
+                         9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC138MO        MONTH NOTICED CHANGE IN TRUST
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH117MO
+
+         117. When did you first notice these changes?
+
+         .................................................................................
+            21           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             5          98.  DON'T KNOW
+           830       Blank.  Inap
+
+
+==========================================================================================
+
+AC138YR        YEAR NOTICED CHANGE IN TRUST
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH117YR
+
+         117. When did you first notice these changes?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             8               1990-1999.  YEAR
+            17               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           830                   Blank.  Inap
+
+
+==========================================================================================
+
+AC138AGE       AGE NOTICED CHANGE IN TRUST
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH117AGE
+
+         117. When did you first notice these changes?
+
+         .................................................................................
+                                 20-29.  AGE
+             1                   30-39.  AGE
+             1                   40-49.  AGE
+             3                   50-59.  AGE
+            30                   60-69.  AGE
+           146                   70-79.  AGE
+           137                   80-89.  AGE
+            26                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+            28                     998.  DON'T KNOW
+           479                   Blank.  Inap
+
+
+==========================================================================================
+
+AC140          CAN HANDLE A HOUSEHOLD EMERGENCY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH118
+
+         118. Can (s/he) handle a household emergency (e.g. small fire, plumbing leak)?
+         Do they know how to handle the situation - not can they fix it themselves.
+
+         .................................................................................
+           563           1.  AS WELL AS BEFORE
+           197           2.  WORSE THAN BEFORE BECAUSE OF TROUBLE TNINKING
+            81           3.  WORSE THAN BEFORE, ANOTHER REASON WHY
+             2           7.  REFUSED
+            10           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC142MO        MONTH NOTICED CHANGES HOUSEHOLD EMERGENCIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH120MO
+
+         120. When did you first notice changes in her/his ability to handle household
+         emergencies?
+
+         .................................................................................
+            16           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           837       Blank.  Inap
+
+
+==========================================================================================
+
+AC142YR        YEAR NOTICED CHANGES HOUSEHOLD EMERGENCIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH120YR
+
+         120. When did you first notice changes in her/his ability to handle household
+         emergencies?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             5               1990-1999.  YEAR
+            13               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           837                   Blank.  Inap
+
+
+==========================================================================================
+
+AC142AGE       AGE NOTICED CHANGES HOUSEHOLD EMERGENCIES
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH120AGE
+
+         120. When did you first notice changes in her/his ability to handle household
+         emergencies?
+
+         .................................................................................
+                                 20-29.  AGE
+             1                   30-39.  AGE
+                                 40-49.  AGE
+             2                   50-59.  AGE
+            17                   60-69.  AGE
+            87                   70-79.  AGE
+           109                   80-89.  AGE
+            23                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+            16                     998.  DON'T KNOW
+           597                   Blank.  Inap
+
+
+==========================================================================================
+
+AC143          CAN UNDERSTAND SITUATIONS/EXPLANATIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH121
+
+         122. Can (s/he) understand situations or explanations? (Does (s/he) understand
+         what is going on around them?)
+
+         .................................................................................
+           666           1.  USUALLY
+           117           2.  SOMETIMES
+            65           3.  RARELY
+             2           7.  REFUSED
+             3           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC145MO        MONTH NOTICED CHANGE UNDERSTANDING SITUATIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH123MO
+
+         123 When did you first notice changes in her/his ability to understand
+         situations or explanations?
+
+         .................................................................................
+             6           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             1          98.  DON'T KNOW
+           849       Blank.  Inap
+
+
+==========================================================================================
+
+AC145YR        YEAR NOTICED CHANGE UNDERSTANDING SITUATIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH123YR
+
+         123 When did you first notice changes in her/his ability to understand
+         situations or explanations?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             3               1990-1999.  YEAR
+             4               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           849                   Blank.  Inap
+
+
+==========================================================================================
+
+AC145AGE       AGE NOTICED CHANGE UNDERSTANDING SITUATIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH123AGE
+
+         123 When did you first notice changes in her/his ability to understand
+         situations or explanations?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             1                   50-59.  AGE
+            11                   60-69.  AGE
+            60                   70-79.  AGE
+            72                   80-89.  AGE
+            18                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+            10                     998.  DON'T KNOW
+           681                   Blank.  Inap
+
+
+==========================================================================================
+
+AC147          BEHAVE APPROPRIATELY SOCIAL SITUATIONS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH124
+
+         124. Does (s/he) behave appropriately (i.e. the way (s/he) has always behaved
+         during her/his adult life) in social situations and interactions with people?
+
+         .................................................................................
+           715           1.  USUALLY
+            88           2.  SOMETIMES
+            45           3.  RARELY
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC149MO        MONTH NOTICED CHANGES IN APPROPRIATE BEHAVIOR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH126MO
+
+         126. When did you first notice these changes?
+
+         .................................................................................
+             7           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             2          98.  DON'T KNOW
+           847       Blank.  Inap
+
+
+==========================================================================================
+
+AC149YR        YEAR NOTICED CHANGES IN APPROPRIATE BEHAVIOR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH126YR
+
+         126. When did you first notice these changes?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             3               1990-1999.  YEAR
+             6               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           847                   Blank.  Inap
+
+
+==========================================================================================
+
+AC149AGE       AGE NOTICED CHANGES IN APPROPRIATE BEHAVIOR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH126AGE
+
+         126. When did you first notice these changes?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             2                   50-59.  AGE
+             8                   60-69.  AGE
+            43                   70-79.  AGE
+            52                   80-89.  AGE
+            11                   90-99.  AGE
+             1                 100-109.  AGE
+                               110-119.  AGE
+             8                     998.  DON'T KNOW
+           731                   Blank.  Inap
+
+
+==========================================================================================
+
+ACINFPHONE     INFORM. QUESTIONS ANSWERED VIA PHONE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: INFPHONE
+
+         CLINICAL HISTORY INFORMATION OBTAINED VIA TELEPHONE
+
+         .................................................................................
+            51           1.  YES, TELEPHONE INTERVIEW
+           805       Blank.  Inap
+
+
+==========================================================================================
+
+AC150          DIFFICULTY DRESSING SELF
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH127
+
+         127. Does (s/he) have difficulty with dressing himself/herself?
+
+         .................................................................................
+           250           1.  YES
+           602           2.  NO
+             1           7.  REFUSED
+                         8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC152          DRESSING PROB DUE TO COGNITIVE/PHYSICAL PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH129
+
+         129. Is this due to physical/health problems or memory/thinking problems?
+
+         .................................................................................
+            75           1.  THINKING AND MEMORY
+           100           2.  PHYSICAL HEALTH (specify)
+            75           3.  BOTH (specify)
+                         4.  NEITHER
+                         7.  REFUSED
+                         8.  DON'T KNOW
+           606       Blank.  Inap
+
+
+==========================================================================================
+
+AC153          DIFFICULTY FEEDING SELF
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH130
+
+         130. Does (s/he) have difficulty with feeding her/himself?
+
+         .................................................................................
+           114           1.  YES
+           737           2.  NO
+             1           7.  REFUSED
+             1           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC155          FEEDING PROB DUE TO COGNITIVE/PHYSICAL PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH132
+
+         132. Is this due to physical/health problems or memory/thinking problems?
+
+         .................................................................................
+            41           1.  THINKING AND MEMORY
+            34           2.  PHYSICAL HEALTH (specify)
+            37           3.  BOTH (specify)
+                         4.  NEITHER
+                         7.  REFUSED
+             2           8.  DON'T KNOW
+           742       Blank.  Inap
+
+
+==========================================================================================
+
+AC156          DIFFICULTY BATHING OR WASHING
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH133
+
+         133. Does (s/he) have difficulty with bathing or washing?
+
+         .................................................................................
+           256           1.  YES
+           593           2.  NO
+             1           7.  REFUSED
+             3           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC158          BATHING PROB DUE TO COGNITIVE/PHYSICAL PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH135
+
+         135. Is this due to physical/health problems or memory/thinking problems?
+
+         .................................................................................
+            60           1.  THINKING AND MEMORY
+           122           2.  PHYSICAL HEALTH (specify)
+            74           3.  BOTH (specify)
+                         4.  NEITHER
+                         7.  REFUSED
+                         8.  DON'T KNOW
+           600       Blank.  Inap
+
+
+==========================================================================================
+
+AC159          NEED PROMPTING FOR HYGIENE TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH136
+
+         136. Does (s/he) need prompting to get dressed, to wash or do other hygiene
+         tasks?
+
+         .................................................................................
+           202           1.  YES
+           639           2.  NO
+             1           7.  REFUSED
+             8           8.  DON'T KNOW
+             3           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC160          DIFFICULTY PERFORMING WELL LEARNED TASKS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH137
+
+         137. Does (s/he) have difficulty performing well-learned tasks such as tying
+         shoes, tying a tie, putting on clothes in the correct order or brushing teeth?
+
+         .................................................................................
+           162           1.  YES
+           679           2.  NO
+             1           7.  REFUSED
+            11           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC161AMO       MONTH PROBLEMS WITH DRESSING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH138AMO
+
+         138. When did these [DRESSING] difficulties begin?
+
+         .................................................................................
+            20           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             4          98.  DON'T KNOW
+           832       Blank.  Inap
+
+
+==========================================================================================
+
+AC161AYR       YEAR PROBLEMS WITH DRESSING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH138AYR
+
+         138. When did these [DRESSING] difficulties begin?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             6               1990-1999.  YEAR
+            18               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           832                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161AAGE      AGE PROBLEMS WITH DRESSING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH138AAGE
+
+         138. When did these [DRESSING] difficulties begin?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             2                   50-59.  AGE
+            10                   60-69.  AGE
+            69                   70-79.  AGE
+           104                   80-89.  AGE
+            29                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+             8                     998.  DON'T KNOW
+           630                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161BMO       MONTH PROBLEMS WITH FEEDING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH138BMO
+
+         138. When did these [FEEDING] difficulties begin?
+
+         .................................................................................
+             4           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             2          98.  DON'T KNOW
+           850       Blank.  Inap
+
+
+==========================================================================================
+
+AC161BYR       YEAR PROBLEMS WITH FEEDING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH138BYR
+
+         138. When did these [FEEDING] difficulties begin?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             2               1990-1999.  YEAR
+             4               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           850                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161BAGE      AGE PROBLEMS WITH FEEDING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH138BAGE
+
+         138. When did these [FEEDING] difficulties begin?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             1                   50-59.  AGE
+             6                   60-69.  AGE
+            30                   70-79.  AGE
+            45                   80-89.  AGE
+            17                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+             5                     998.  DON'T KNOW
+           748                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161CMO       MONTH PROBLEMS WITH BATHING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH138CMO
+
+         138. When did these [BATHING] difficulties begin?
+
+         .................................................................................
+            23           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           830       Blank.  Inap
+
+
+==========================================================================================
+
+AC161CYR       YEAR PROBLEMS WITH BATHING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH138CYR
+
+         138. When did these [BATHING] difficulties begin?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             7               1990-1999.  YEAR
+            19               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           830                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161CAGE      AGE PROBLEMS WITH BATHING BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH138CAGE
+
+         138. When did these [BATHING] difficulties begin?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             1                   50-59.  AGE
+            11                   60-69.  AGE
+            61                   70-79.  AGE
+           114                   80-89.  AGE
+            30                   90-99.  AGE
+             5                 100-109.  AGE
+                               110-119.  AGE
+             8                     998.  DON'T KNOW
+                                   999.  NA
+           626                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161DMO       MONTH PROB WITH WELL LEARNED TASKS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH138DMO
+
+         138. When did these [WELL LEARNED TASKS] difficulties begin?
+
+         .................................................................................
+            15           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             3          98.  DON'T KNOW
+           838       Blank.  Inap
+
+
+==========================================================================================
+
+AC161DYR       YEAR PROB WITH WELL LEARNED TASKS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH138DYR
+
+         138. When did these [WELL LEARNED TASKS] difficulties begin?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             5               1990-1999.  YEAR
+            13               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           838                   Blank.  Inap
+
+
+==========================================================================================
+
+AC161DAGE      AGE PROB WITH WELL LEARNED TASKS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH138DAGE
+
+         138. When did these [WELL LEARNED TASKS] difficulties begin?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             1                   50-59.  AGE
+             5                   60-69.  AGE
+            47                   70-79.  AGE
+            53                   80-89.  AGE
+            17                   90-99.  AGE
+             2                 100-109.  AGE
+                               110-119.  AGE
+            18                     998.  DON'T KNOW
+             1                     999.  NA
+           712                   Blank.  Inap
+
+
+==========================================================================================
+
+AC162          DIFFICULTY CONTROLLING BLADDER
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH139
+
+         139. Does (s/he) have difficulties controlling her/his bladder?
+
+         .................................................................................
+           298           1.  YES
+           544           2.  NO
+             2           7.  REFUSED
+             9           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC163          FREQUENCY OF BLADDER CONTROL PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH140
+
+         140. How frequently does (s/he) have problems?
+
+         .................................................................................
+           180           1.  DAILY
+            63           2.  ONCE A WEEK
+            20           3.  1-3 TIMES/MONTH
+            20           4.  LESS THAN 1 TIME/MONTH
+                         7.  REFUSED
+            15           8.  DON'T KNOW
+           558       Blank.  Inap
+
+
+==========================================================================================
+
+AC164MO        MONTH NOTICED PROB CONTROLLING BLADDER
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH141MO
+
+         141. When did you first notice this difficulty with controlling her/his bladder?
+
+         .................................................................................
+            19           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             2          98.  DON'T KNOW
+           835       Blank.  Inap
+
+
+==========================================================================================
+
+AC164YR        YEAR NOTICED PROB CONTROLLING BLADER
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH141YR
+
+         141. When did you first notice this difficulty with controlling her/his bladder?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             4               1990-1999.  YEAR
+            17               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           835                   Blank.  Inap
+
+
+==========================================================================================
+
+AC164AGE       AGE NOTICED PROB CONTROLLING BLADDER
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH141AGE
+
+         141. When did you first notice this difficulty with controlling her/his bladder?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             3                   40-49.  AGE
+             3                   50-59.  AGE
+            15                   60-69.  AGE
+            84                   70-79.  AGE
+           116                   80-89.  AGE
+            35                   90-99.  AGE
+             4                 100-109.  AGE
+                               110-119.  AGE
+            17                     998.  DON'T KNOW
+           579                   Blank.  Inap
+
+
+==========================================================================================
+
+AC165          BLADDER DIFFICULTY DUE TO PHY OR COG PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH142
+
+         142. Do you think this difficulty is due to physical/health reasons or due to
+         problems with memory and thinking?
+
+         .................................................................................
+            48           1.  THINKING/MEMORY
+           191           2.  PHYSICAL HEALTH (specify)
+            43           3.  BOTH (specify)
+             1           4.  NEITHER
+                         7.  REFUSED
+            14           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           558       Blank.  Inap
+
+
+==========================================================================================
+
+AC166          DIFFICULTY CONTROLLING BOWELS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH143
+
+         143. Does (s/he) have difficulties controlling her/his bowels?
+
+         .................................................................................
+           157           1.  YES
+           680           2.  NO
+             2           7.  REFUSED
+            14           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC167          FREQUENCY OF BOWEL CONTROL PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH144
+
+         144. How frequently does (s/he) have problems?
+
+         .................................................................................
+           157           1.  DAILY
+                         2.  ONCE A WEEK
+                         3.  1-3 TIMES/MONTH
+                         4.  LESS THAN 1 TIME/MONTH
+                         7.  REFUSED
+                         8.  DON'T KNOW
+           699       Blank.  Inap
+
+
+==========================================================================================
+
+AC168MO        MONTH NOTICED PROBLEM CONTROLLING BOWELS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH145MO
+
+         145. When did you first notice this difficulty with controlling her/his bowels?
+
+         .................................................................................
+             8           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             1          98.  DON'T KNOW
+           847       Blank.  Inap
+
+
+==========================================================================================
+
+AC168YR        YEAR NOTICED PROBLEM CONTROLLING BOWELS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH145YR
+
+         145. When did you first notice this difficulty with controlling her/his bowels?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+                             1980-1989.  YEAR
+             1               1990-1999.  YEAR
+             7               2000-2009.  YEAR
+             1                    9998.  DON'T KNOW
+           847                   Blank.  Inap
+
+
+==========================================================================================
+
+AC168AGE       AGE NOTICED PROBLEM CONTROLLING BOWELS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH145AGE
+
+         145. When did you first notice this difficulty with controlling her/his bowels?
+
+         .................................................................................
+             1                   20-29.  AGE
+                                 30-39.  AGE
+             1                   40-49.  AGE
+             1                   50-59.  AGE
+             5                   60-69.  AGE
+            37                   70-79.  AGE
+            65                   80-89.  AGE
+            26                   90-99.  AGE
+             3                 100-109.  AGE
+                               110-119.  AGE
+             9                     998.  DON'T KNOW
+           708                   Blank.  Inap
+
+
+==========================================================================================
+
+AC169          BOWEL PROBLEM DUE TO PHY OR COG PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH146
+
+         146. Do you think this problem is due to physical/health reasons or due to
+         problems with memory and thinking?
+
+         .................................................................................
+            40           1.  THINKING/MEMORY
+            73           2.  PHYSICAL HEALTH (specify)
+            39           3.  BOTH (specify)
+                         4.  NEITHER
+                         7.  REFUSED
+             5           8.  DON'T KNOW
+           699       Blank.  Inap
+
+
+==========================================================================================
+
+AC170          NOTICED CHANGES IN PERSONALITY/BEHAVIOR
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH147
+
+         147. In addition to the changes we have already discussed, have you noticed any
+         changes in (NAMES) personality or behavior over time? For example, has (s/he)
+         been less conscientious, considerate, sociable, flexible, more irritable, more
+         suspicious or argumentative?
+
+         .................................................................................
+           235           1.  A LITTLE CHANGE
+           143           2.  A BIG CHANGE
+           472           3.  NO CHANGE
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC173MO        MONTH NOTICED CHANGES IN PERSONALITY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH149MO
+
+         149. When did you first notice changes in her/his personality or behavior?
+
+         .................................................................................
+            21           1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             6          98.  DON'T KNOW
+           829       Blank.  Inap
+
+
+==========================================================================================
+
+AC173YR        YEAR NOTICED CHANGES IN PERSONALITY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH149YR
+
+         149. When did you first notice changes in her/his personality or behavior?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             8               1990-1999.  YEAR
+            18               2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           829                   Blank.  Inap
+
+
+==========================================================================================
+
+AC173AGE       AGE NOTICED CHANGES IN PERSONALITY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH149AGE
+
+         149. When did you first notice changes in her/his personality or behavior?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+             2                   40-49.  AGE
+             5                   50-59.  AGE
+            35                   60-69.  AGE
+           143                   70-79.  AGE
+           138                   80-89.  AGE
+            19                   90-99.  AGE
+                               100-109.  AGE
+                               110-119.  AGE
+             9                     998.  DON'T KNOW
+           505                   Blank.  Inap
+
+
+==========================================================================================
+
+AC174          BECOME MORE DEPENDENT ON INFORMANT
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH150
+
+         150.  Has (s/he) become more dependent on you?
+
+         .................................................................................
+           220           1.  A LITTLE MORE
+           302           2.  A LOT MORE
+           326           3.  NO
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+             2           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC176          DOES INFORM DO MORE FOR SUB THAN IN PAST
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH152
+
+         152. Do you do more for (her/him) than you used to do?
+
+         .................................................................................
+           219           1.  A LITTLE MORE
+           291           2.  A LOT MORE
+           338           3.  NO
+             1           7.  REFUSED
+             2           8.  DON'T KNOW
+             2           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC177          DO MORE BECAUSE OF SUB PHY OR COG HEALTH
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH153
+
+         153. Do you do more for her/him now than you used to because of:
+
+         .................................................................................
+           107           1.  THINKING/MEMORY
+           168           2.  PHYSICAL HEALTH (specify)
+           188           3.  BOTH (specify)
+            44           4.  NEITHER
+                         7.  REFUSED
+             2           8.  DON'T KNOW
+             1           9.  (SKIP ERROR OR N/A)
+           346       Blank.  Inap
+
+
+==========================================================================================
+
+AC179          MORE NERVOUS/FRUSTRATED WITH MEM TROUBLE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH155
+
+         155. When (s/he) seems to be having trouble with her/his memory or other
+         problems does it make (her/him) more nervous or frustrated than in the past?
+
+         .................................................................................
+           199           1.  A LITTLE MORE
+           110           2.  A LOT MORE
+           292           3.  NO
+             1           7.  REFUSED
+             9           8.  DON'T KNOW
+            19           9.  (SKIP ERROR OR N/A)
+           226       Blank.  Inap
+
+
+==========================================================================================
+
+AC181          FIRST PERSON TO NOTICE R MEM PROBLEMS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH157
+
+         157. Were you the first person to notice (NAMEs) problems with memory and
+         thinking?
+
+         .................................................................................
+           398           1.  YES
+           166           2.  NO
+             1           7.  REFUSED
+            44           8.  DON'T KNOW
+            21           9.  (SKIP ERROR OR N/A)
+           226       Blank.  Inap
+
+
+==========================================================================================
+
+AC183          RELATIONSHIP TO SUBJECT
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH159
+
+         159. Relationship to Respondent
+
+         .................................................................................
+            26           1.  SPOUSE
+            72           2.  CHILD
+             7           3.  SIBLING
+                         4.  PARENT
+             9           5.  FRIEND
+                         6.  GUARDIAN
+             5           7.  NEIGHBOR
+            40           8.  OTHER (SPECIFY)
+                        97.  REFUSED
+            10          98.  DON'T KNOW
+           687       Blank.  Inap
+
+
+==========================================================================================
+
+AC184          MEMORY PROBLEMS FLUCTUATE DAY TO DAY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH160
+
+         160. Do the memory (language) problems fluctuate from day-to-day to such an
+         extent that some days (s/he) seems normal and other days (s/he) has very marked
+         problems?
+
+         .................................................................................
+           133           1.  YES
+           321           2.  NO
+             1           7.  REFUSED
+            10           8.  DON'T KNOW
+             7           9.  (SKIP ERROR OR N/A)
+           384       Blank.  Inap
+
+
+==========================================================================================
+
+AC186          LEVEL OF ALERTNESS FLUCTUATE DAY TO DAY
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH162
+
+         162. Does (her/his) level of alertness fluctuate day-to-day to the extent that
+         some days (s/he) can barely stay awake and some days (s/he) is quite awake and
+         alert?
+
+         .................................................................................
+           151           1.  YES
+           308           2.  NO
+             1           7.  REFUSED
+             8           8.  DON'T KNOW
+             7           9.  (SKIP ERROR OR N/A)
+           381       Blank.  Inap
+
+
+==========================================================================================
+
+AC189          IS SUBJECT CURRENTLY EMPLOYED
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH164
+
+         164. Is (Name) currently employed?
+
+         .................................................................................
+            54           1.  YES
+           722           2.  NO
+            75           3.  NA (never worked outside the home)
+             1           7.  REFUSED
+             1           8.  DON'T KNOW
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+AC191          WORK TROUBLE DUE TO MEMORY/THINKING PROB
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH166
+
+         166. Is (s/he) having significant trouble at work because of memory or thinking
+         problems? (e.g. missed promotions, poorer evaluations, or anything that might
+         indicate (s/he) is not working as well as in the past).
+
+         .................................................................................
+                         1.  USUALLY
+             3           2.  SOMETIMES
+            50           3.  RARELY OR NEVER
+             1           7.  REFUSED
+             1           8.  DON'T KNOW
+           801       Blank.  Inap
+
+
+==========================================================================================
+
+AC192          AT WHAT AGE DID SUBJECT RETIRE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH167
+
+         167. At what age did (s/he) retire?
+
+         .................................................................................
+             7                   20-29.  AGE
+            11                   30-39.  AGE
+            16                   40-49.  AGE
+            82                   50-59.  AGE
+           426                   60-69.  AGE
+            86                   70-79.  AGE
+            20                   80-89.  AGE
+                                 90-99.  AGE
+                               100-109.  AGE
+                               110-119.  AGE
+            74                     998.  DON'T KNOW
+           134                   Blank.  Inap
+
+
+==========================================================================================
+
+AC195          MEM PROB CONTRIBUTE TO DECISION TO RETIRE
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH170
+
+         170. Did memory or thinking problems contribute to her/his decision to retire?
+
+         .................................................................................
+            18           1.  YES
+           684           2.  NO
+                         7.  REFUSED
+            18           8.  DON'T KNOW
+           136       Blank.  Inap
+
+
+==========================================================================================
+
+AC196MO        MONTH MEMORY/THINKING PROBLEMS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CH171MO
+
+         171. When did these problems begin?
+
+         .................................................................................
+                         1.  January
+                         2.  February
+                         3.  March
+                         4.  April
+                         5.  May
+                         6.  June
+                         7.  July
+                         8.  August
+                         9.  September
+                        10.  October
+                        11.  November
+                        12.  December
+             2          98.  DON'T KNOW
+           854       Blank.  Inap
+
+
+==========================================================================================
+
+AC196YR        YEAR MEMORY/THINKING PROBLEMS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: CH171YR
+
+         171. When did these problems begin?
+
+         .................................................................................
+                             1930-1939.  YEAR
+                             1940-1949.  YEAR
+                             1950-1959.  YEAR
+                             1960-1969.  YEAR
+                             1970-1979.  YEAR
+             1               1980-1989.  YEAR
+             1               1990-1999.  YEAR
+                             2000-2009.  YEAR
+                                  9998.  DON'T KNOW
+           854                   Blank.  Inap
+
+
+==========================================================================================
+
+AC196AGE       AGE MEMORY/THINKING PROBLEMS BEGAN
+         Section: AC    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CH171AGE
+
+         171. When did these problems begin?
+
+         .................................................................................
+                                 20-29.  AGE
+                                 30-39.  AGE
+                                 40-49.  AGE
+             4                   50-59.  AGE
+             7                   60-69.  AGE
+             3                   70-79.  AGE
+             2                   80-89.  AGE
+                                 90-99.  AGE
+                               100-109.  AGE
+                               110-119.  AGE
+             3                     998.  DON'T KNOW
+           837                   Blank.  Inap
+
+
+==========================================================================================
+
+AC199          ANY MAJOR CHANGE IN ACTIVITIES/INTERESTS
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CH174
+
+         174. Have there been any major change in her/his activities or interests?
+
+         .................................................................................
+           308           1.  YES
+           537           2.  NO
+             1           7.  REFUSED
+             5           8.  DON'T KNOW
+             2           9.  (SKIP ERROR OR N/A)
+             3       Blank.  Inap
+
+
+==========================================================================================
+
+ACSPANVIS      CLINICAL HISTORY SECTION DONE IN SPANISH
+         Section: AC    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SPANVIS
+
+         SPANISH VERSION OF CLINICAL HISTORY FORM USED
+
+         .................................................................................
+            54           1.  SPANISH VERSION OF FORM
+           802       Blank.  Inap
+
+
+==========================================================================================

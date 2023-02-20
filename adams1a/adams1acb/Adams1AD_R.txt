@@ -1,0 +1,2323 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AD: ASSESSMENT DATA PART II: DEMENTIA DIAGNOSES/SUMMARY SCORES - INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AD    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           856           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AD    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           584         010.  Person Number
+            11         011.  Person Number
+           187         020.  Person Number
+             1         021.  Person Number
+            33         030.  Person Number
+            39         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AD    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           856             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+ADCCDX1        INITIAL VISIT PRIMARY DX (NO MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCDX1
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         .................................................................................
+            86           1.  Probable AD
+           142           2.  Possible AD
+            11           3.  Probable Vascular Dementia
+            38           4.  Possible Vascular Dementia
+             2           5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+             1           8.  Normal pressure hydrocephalus
+            23          10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+             2          14.  Severe head trauma (with residual)
+             1          15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+             1          18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+            96          20.  Mild-ambiguous
+            21          21.  Cognitive impairment secondary to vascular disease
+             4          22.  Mild Cognitive Impairment
+             8          23.  Depression
+             2          24.  Psychiatric Disorder
+             8          25.  Mental Retardation
+             3          26.  Alcohol Abuse (past)
+             3          27.  Alcohol Abuse (current)
+            33          28.  Stroke
+            10          29.  Other Neurological conditions
+            52          30.  Other Medical conditions
+           309          31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+
+
+==========================================================================================
+
+ADCCDX2        INITIAL VISIT SECONDARY DX (NO MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCDX2
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         Not all subjects were assigned a secondary diagnosis.
+
+         .................................................................................
+                         1.  Probable AD
+            10           2.  Possible AD
+                         3.  Probable Vascular Dementia
+             5           4.  Possible Vascular Dementia
+                         5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+             1          15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+             2          18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+             1          20.  Mild-ambiguous
+             3          21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+            19          23.  Depression
+             3          24.  Psychiatric Disorder
+             1          25.  Mental Retardation
+             9          26.  Alcohol Abuse (past)
+             1          27.  Alcohol Abuse (current)
+            21          28.  Stroke
+             8          29.  Other Neurological conditions
+            16          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           756       Blank.  Subject not assigned a secondary diagnosis
+
+
+==========================================================================================
+
+ADCCDX3        INITIAL VISIT TERTIARY DX (NO MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCDX3
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         Not all subjects were assigned a tertiary diagnosis.
+
+         .................................................................................
+                         1.  Probable AD
+                         2.  Possible AD
+                         3.  Probable Vascular Dementia
+                         4.  Possible Vascular Dementia
+                         5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+                        15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+                        18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+                        20.  Mild-ambiguous
+                        21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+             5          23.  Depression
+                        24.  Psychiatric Disorder
+                        25.  Mental Retardation
+             1          26.  Alcohol Abuse (past)
+                        27.  Alcohol Abuse (current)
+                        28.  Stroke
+             2          29.  Other Neurological conditions
+             1          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           847       Blank.  Subject not assigned a tertiary diagnosis
+
+
+==========================================================================================
+
+ADCCMDX1       INITIAL VISIT PRIMARY DX (W/ MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCMDX1
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         Medical records were not sought or obtained for all subjects.  If medical
+         records were not used in making a consensus diagnosis, then the subject was
+         assigned a value of 97 (No diagnosis assigned based on med record review) for
+         this variable.
+
+         .................................................................................
+            71           1.  Probable AD
+            60           2.  Possible AD
+            20           3.  Probable Vascular Dementia
+            17           4.  Possible Vascular Dementia
+             2           5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+            12          10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+             1          13.  Frontal lobe dementia
+             1          14.  Severe head trauma (with residual)
+                        15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+                        18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+            14          20.  Mild-ambiguous
+             6          21.  Cognitive impairment secondary to vascular disease
+             1          22.  Mild Cognitive Impairment
+             1          23.  Depression
+                        24.  Psychiatric Disorder
+             1          25.  Mental Retardation
+             1          26.  Alcohol Abuse (past)
+             2          27.  Alcohol Abuse (current)
+            17          28.  Stroke
+             2          29.  Other Neurological conditions
+            18          30.  Other Medical conditions
+            30          31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           579          97.  No diagnosis assigned based on med record review
+
+
+==========================================================================================
+
+ADCCMDX2       INITIAL VISIT SECONDARY DX (W/ MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCMDX2
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         Medical records were not sought or obtained for all subjects.  If medical
+         records were not used in making a consensus diagnosis, then the subject was
+         assigned a value of 97 (No diagnosis assigned based on med record review) for
+         this variable.  In addition, not all subjects were assigned a secondary
+         diagnosis.
+
+         .................................................................................
+                         1.  Probable AD
+             9           2.  Possible AD
+                         3.  Probable Vascular Dementia
+             7           4.  Possible Vascular Dementia
+             1           5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+                        15.  Alcoholic dementia
+                        16.  ALS with dementia
+             1          17.  Hypoperfusion dementia
+             3          18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+             1          20.  Mild-ambiguous
+             5          21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+             5          23.  Depression
+             1          24.  Psychiatric Disorder
+             1          25.  Mental Retardation
+             4          26.  Alcohol Abuse (past)
+                        27.  Alcohol Abuse (current)
+            12          28.  Stroke
+             4          29.  Other Neurological conditions
+             2          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           579          97.  No diagnosis assigned based on med record review
+           221       Blank.  Subject not assigned a secondary diagnosis
+
+
+==========================================================================================
+
+ADCCMDX3       INITIAL VISIT TERTIARY DX (W/ MED RECS)
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ACCMDX3
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         Medical records were not sought or obtained for all subjects.  If medical
+         records were not used in making a consensus diagnosis, then the subject was
+         assigned a value of 97 (No diagnosis assigned based on med record review) for
+         this variable.  In addition, not all subjects were assigned a tertiary
+         diagnosis.
+
+         .................................................................................
+                         1.  Probable AD
+                         2.  Possible AD
+                         3.  Probable Vascular Dementia
+                         4.  Possible Vascular Dementia
+                         5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+                        15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+                        18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+                        20.  Mild-ambiguous
+                        21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+             2          23.  Depression
+                        24.  Psychiatric Disorder
+                        25.  Mental Retardation
+                        26.  Alcohol Abuse (past)
+                        27.  Alcohol Abuse (current)
+                        28.  Stroke
+                        29.  Other Neurological conditions
+             1          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           578          97.  No diagnosis assigned based on med record review
+           275       Blank.  Subject not assigned a tertiary diagnosis
+
+
+==========================================================================================
+
+ADFDX1         INITIAL VISIT FINAL PRIMARY DIAGNOSIS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: AFDX1
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         This is recommended as the "final" primary research diagnosis following the
+         initial assessment.  This research diagnosis takes the medical record review (if
+         applicable) into account.
+
+         .................................................................................
+           122           1.  Probable AD
+           107           2.  Possible AD
+            22           3.  Probable Vascular Dementia
+            26           4.  Possible Vascular Dementia
+             2           5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+             1           8.  Normal pressure hydrocephalus
+            23          10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+             1          13.  Frontal lobe dementia
+             2          14.  Severe head trauma (with residual)
+             1          15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+             1          18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+            94          20.  Mild-ambiguous
+            20          21.  Cognitive impairment secondary to vascular disease
+             4          22.  Mild Cognitive Impairment
+             8          23.  Depression
+             2          24.  Psychiatric Disorder
+             8          25.  Mental Retardation
+             3          26.  Alcohol Abuse (past)
+             3          27.  Alcohol Abuse (current)
+            34          28.  Stroke
+            10          29.  Other Neurological conditions
+            55          30.  Other Medical conditions
+           307          31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+
+
+==========================================================================================
+
+ADFDX2         INITIAL VISIT FINAL SECONDARY DIAGNOSIS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: AFDX2
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         This is recommended as the "final" secondary research diagnosis following the
+         initial assessment.  This research diagnosis takes the medical record review (if
+         applicable) into account.
+
+         .................................................................................
+                         1.  Probable AD
+            12           2.  Possible AD
+                         3.  Probable Vascular Dementia
+             8           4.  Possible Vascular Dementia
+             1           5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+             1          15.  Alcoholic dementia
+                        16.  ALS with dementia
+             1          17.  Hypoperfusion dementia
+             3          18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+             1          20.  Mild-ambiguous
+             5          21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+            19          23.  Depression
+             3          24.  Psychiatric Disorder
+             1          25.  Mental Retardation
+            10          26.  Alcohol Abuse (past)
+             1          27.  Alcohol Abuse (current)
+            21          28.  Stroke
+             7          29.  Other Neurological conditions
+            17          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           745       Blank.  Subject not assigned a secondary diagnosis
+
+
+==========================================================================================
+
+ADFDX3         INITIAL VISIT FINAL TERTIARY DIAGNOSIS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: AFDX3
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CONSENSUS CONFERENCE DEMENTIA RESEARCH DIAGNOSIS
+         
+
+         This is recommended as the "final" tertiary research diagnosis following the
+         initial assessment.  This research diagnosis takes the medical record review (if
+         applicable) into account.
+
+         .................................................................................
+                         1.  Probable AD
+                         2.  Possible AD
+                         3.  Probable Vascular Dementia
+                         4.  Possible Vascular Dementia
+                         5.  Parkinson's
+                         6.  Huntington's
+                         7.  Progressive Supranuclear Palsy
+                         8.  Normal pressure hydrocephalus
+                        10.  Dementia of undetermined etiology
+                        11.  Pick's disease
+                        13.  Frontal lobe dementia
+                        14.  Severe head trauma (with residual)
+                        15.  Alcoholic dementia
+                        16.  ALS with dementia
+                        17.  Hypoperfusion dementia
+                        18.  Probable Lewy Body dementia
+                        19.  Post encephalitic dementia
+                        20.  Mild-ambiguous
+                        21.  Cognitive impairment secondary to vascular disease
+                        22.  Mild Cognitive Impairment
+             5          23.  Depression
+                        24.  Psychiatric Disorder
+                        25.  Mental Retardation
+             1          26.  Alcohol Abuse (past)
+                        27.  Alcohol Abuse (current)
+                        28.  Stroke
+             1          29.  Other Neurological conditions
+             1          30.  Other Medical conditions
+                        31.  Normal/Non-case
+                        32.  Possible Lewy Body dementia
+                        33.  CIND, non-specified
+           848       Blank.  Subject not assigned a tertiary diagnosis
+
+
+==========================================================================================
+
+ADONSET        AGE OF ONSET FOR SUBJECT WITH DEMENTIA
+         Section: AD    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: CURRONSET
+
+         This variable is the age of onset for dementia and was assigned if a subject was
+         assigned a diagnosis of dementia based on the initial assessment (in section AD)
+         or at the follow-up assessment (in section BD).  Onset is the age at which we
+         estimate that the individual met DSM criteria for dementia based on review of
+         the chronological history of cognitive and functional symptoms.  This
+         information is based
+         primarily on informant report.
+
+         .................................................................................
+           301                  52-105.  Age of onset of dementia
+           555                   Blank.  Inapplicable or no age assigned
+
+
+==========================================================================================
+
+ADCDRCP        CDR SCALE COMPLETED
+         Section: AD    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: CDRCOMP
+
+         Category: INITIAL ASSESSMENT DATA
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         Whether the CDR Scale was completed.
+
+         The CDR quantifies severity of dementia in several different areas of
+         functioning.  The CDR reflects an indirect evaluation of cognition and
+         functional performance based on information obtained from both the informant and
+         subject during the course of the evaluation.  The CDR rating was assigned for
+         all subjects, regardless of dementia status.  More information about the CDR and
+         how scores were assigned can be found in the data description.
+
+         .................................................................................
+           852           1.  Yes
+             4           5.  No
+
+
+==========================================================================================
+
+ADCDRS1        CDR ITEM 1 SCORE, MEMORY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SUBITEM1
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           238           0.  No Dementia
+           309         0.5.  Mild Impairment
+           145           1.  Mild Dementia
+            87           2.  Moderate Dementia
+            46           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRS2        CDR ITEM 2 SCORE, ORIENTATION
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SUBITEM2
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           384           0.  No Dementia
+           188         0.5.  Mild Impairment
+           135           1.  Mild Dementia
+            81           2.  Moderate Dementia
+            37           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRS3        CDR ITEM 3 SCORE, JUDGEMENT
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SUBITEM3
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           357           0.  No Dementia
+           207         0.5.  Mild Impairment
+           146           1.  Mild Dementia
+            55           2.  Moderate Dementia
+            60           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRS4        CDR ITEM 4 SCORE, COMM AFFAIRS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SUBITEM4
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           437           0.  No Dementia
+           156         0.5.  Mild Impairment
+           101           1.  Mild Dementia
+            82           2.  Moderate Dementia
+            49           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRS5        CDR ITEM 5 SCORE, HOME/HOBBY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SUBITEM5
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           444           0.  No Dementia
+           138         0.5.  Mild Impairment
+           107           1.  Mild Dementia
+            68           2.  Moderate Dementia
+            68           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRS6        CDR ITEM 6 SCORE, PERSONAL CARE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SUBITEM6
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           643           0.  No Dementia
+            61           1.  Mild Dementia
+            51           2.  Moderate Dementia
+            70           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADCDRSTG       CDR - CALCULATED OVERALL SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: STAGING
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: CDR - CLINICAL DEMENTIA RATING
+         
+
+         .................................................................................
+           228           0.  No Dementia
+           365         0.5.  Mild Impairment
+           108           1.  Mild Dementia
+            66           2.  Moderate Dementia
+            58           3.  Severe Dementia
+            18           4.  Profound Dementia
+             9           5.  Terminal Dementia
+             4          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACHCP       HACHINSKI SCALE COMPLETED
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: HACHCOMP
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Whether the Hachinski Scale was completed.
+
+         The Modified Hachinski Scale is designed to assess a number of risk factors for
+         vascular dementia.  This form was only completed if a diagnosis of dementia was
+         assigned to a subject. More information about this scale and how scores were
+         assigned can be found in the data description.
+
+         .................................................................................
+           295           1.  Yes
+           561           5.  No
+
+
+==========================================================================================
+
+ADHACH1        HACHINSKI ITEM 1, ABRUPT DEMENTIA ONSET
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ABRUPT
+
+         Category: INITIAL ASSESSMENT DATA
+         Measure: HACHINSKI SCALE
+         Only complete this form if diagnosis = Dementia
+         Circle each feature as to its presence or absence. 
+         
+         1.  Abrupt onset
+
+         .................................................................................
+           249           0.  Absent
+            46           2.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH2        HACHINSKI ITEM 2, STEPWISE DETERIORATION
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: STEPWISE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Only complete this form if diagnosis = Dementia
+         Circle each feature as to its presence or absence. 
+         
+         2. Stepwise deterioration
+
+         .................................................................................
+           270           0.  Absent
+            25           1.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH3        HACHINSKI ITEM 3, SOMATIC COMPLAINTS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SOMATIC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Somatic complaints
+
+         .................................................................................
+           293           0.  Absent
+             2           1.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH4        HACHINSKI ITEM 4, EMOTIONAL INCONTINENCE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: E_INCONT
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Emotional incontinence
+
+         .................................................................................
+           290           0.  Absent
+             5           1.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH5        HACHINSKI ITEM 5, HYPERTENSION HISTORY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: HYPERHX
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         History of hypertension
+
+         .................................................................................
+           105           0.  Absent
+           190           1.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH6        HACHINSKI ITEM 6, STROKE/TIA HISTORY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: STROKEHX
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         History of stroke or TIA
+
+         .................................................................................
+           187           0.  Absent
+           108           2.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH7        HACHINSKI ITEM 7, FOCAL NEUROL SYMPTOMS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: FOCALSX
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Focal neurological symptoms
+
+         .................................................................................
+           217           0.  Absent
+            78           2.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACH8        HACHINSKI ITEM 8, FOCAL NEUROL SIGNS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: NEURSIGN
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         Focal neurological signs
+
+         .................................................................................
+           209           0.  Absent
+            86           2.  Present
+           561          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADHACHSC       HACHINSKI  - CALCULATED SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: HSCORE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: HACHINSKI SCALE
+         
+
+         .................................................................................
+           295                    0-12.  Total score
+           561                      97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADDRSCP        DSRS - WHETHER COMPLETED
+         Section: AD    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRSCOMP
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         Whether the DSRS was completed
+
+         The DSRS is an informant-completed multiple-choice questionnaire that assesses
+         severity of cognitive and functional impairment in domains that are typically
+         affected by Alzheimer's disease (AD).  There are 12 items assessing the
+         following domains: memory, orientation, judgment, social interactions/ community
+         affairs, home activities/responsibilities, personal care, speech/language,
+         recognition of others, feeding, incontinence, mobility/walking, and
+         informant-perceived stress.  More information about this scale and how scores
+         were assigned can be found in the data description.
+
+         .................................................................................
+           808           1.  Yes
+            48           5.  No
+
+
+==========================================================================================
+
+ADDRSSPN       DSRS - DONE IN SPANISH
+         Section: AD    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRSSPAN
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         Whether the DSRS was conducted in Spanish.
+
+         .................................................................................
+            38           1.  Yes
+           818           5.  No
+
+
+==========================================================================================
+
+ADINFGEN       DSRS GENDER OF INFORMANT
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: GENDER
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         
+
+         .................................................................................
+           201           1.  Male
+           607           2.  Female
+            48          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADDRSREL       DSRS INFORMANT RELATIONSHIP TO SUBJECT
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RELDSRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         
+
+         .................................................................................
+           284           1.  Spouse
+           306           2.  Child
+            32           3.  Sibling
+                         4.  Parent
+            59           5.  Friend
+                         6.  Guardian
+             4           7.  Neighbor
+           123           8.  Other
+            48          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRSRLS       DSRS SPECIFY IF ADDRSREL=OTHER
+         Section: AD    Level: Respondent      Type: Character  Width: 50  Decimals: 0
+         Ref: RELSPDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADDRS1         DSRS MEMORY SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MEMDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.
+
+         .................................................................................
+           201           1.  Normal
+           321           2.  Occasional forgetfulness of no real significance
+            98           3.  Frequent noticeable forgetfulness, but still has partial
+                             recollection of events
+            54           4.  Moderate memory loss, more marked for recent events, and
+                             severe enough to interfere with everyday activities
+            24           5.  Severe memory loss; only well-learned material retained,
+                             with newly-learned material rapidly lost
+            71           6.  Usually unable to remember simple facts such as the day of
+                             the week, month and/or year, when last meal eaten or name of
+                             next meal
+            20           7.  Unable to evaluate memory because of speech or language
+                             difficulty and/or inability to follow instructions
+            19           8.  Questions about memory not meaningful; makes no attempt to
+                             communicate and is no longer aware of surroundings
+            48          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS2         DSRS ORIENTATION SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ORIENDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           336           1.  Normal
+           300           2.  Some difficulty keeping track of dates and times, but not
+                             severe enough to interfere with everyday activities
+            75           3.  Frequently disoriented in time and sometimes disoriented to
+                             new place
+            26           4.  Almost always disoriented in time and usually disoriented to
+                             place
+            50           5.  Unable to understand or answer questions about time of day
+                             or name of present location
+            21           6.  Is unaware of questions and makes no attempt to respond
+            48          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS3         DSRS JUDGEMENT SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: JUDGDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           426           1.  Normal
+           103           2.  Only questionable impairment in problem solving ability
+           163           3.  Moderate difficulty in handling complex problems, but social
+                             judgment is usually maintained
+            54           4.  Severe impairment in handling problems, social judgment
+                             impaired
+            62           5.  Unable to exercise judgment in either problem solving or
+                             social situations
+            48          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS4         DSRS SOCIAL INTERACTIONS SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SOCDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           410           1.  No alteration in ability to participate in community affairs
+           146           2.  Only mild impairment, of no practical consequence but
+                             clearly different from previous years.  Still able to work
+                             (if applicable) but performance not up to previous standards
+            90           3.  Unable to function independently in community activities
+                             although still able to participate to some extent and, to
+                             casual observer, may appear normal.  Unable to hold a job
+                             or, if still working, requires constant supervision
+            63           4.  Clearly incapable of independent function outside of the
+                             home.  Unable to hold a job but still participates in home
+                             activities with friends.  Casual acquaintances are aware of
+                             a problem
+            99           5.  No longer participates in any meaningful way in home-based
+                             social activities involving people other than the primary
+                             caregiver
+            48          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADDRS5         DSRS HOME ACTIVITIES, RESPONSIBILITIES
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: HOMEDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           385           1.  Normal
+           174           2.  Some impairment in activities such as money management and
+                             house maintenance, but no effect on ability to shop, cook or
+                             clean.  Still watches TV and reads newspaper with interest
+                             and some understanding
+            92           3.  Unable to perform activities related to money management
+                             (bill paying, etc.) or complex household tasks
+                             (maintenance).  Some difficulty  with shopping, cooking
+                             and/or cleaning. Losing interest in the newspaper and TV
+            36           4.  No longer able to shop, cook or clean without considerable
+                             help and supervision.  No longer able to read the newspaper
+                             or watch TV with comprehension
+           120           5.  No longer engages in any purposeful home-based activities,
+                             dependent on others for these tasks
+            48          97.  Not assessed/Not asked
+             1          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS6         DSRS PERSONAL CARE SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: PERSDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           500           1.  Normal
+           107           2.  Needs occasional prompting but washes and dresses
+                             independently
+            45           3.  Able to dress and groom self but requires supervision to
+                             avoid embarrassing errors or omissions
+            58           4.  Able to participate in dressing or personal hygiene but
+                             requires constant supervision
+            97           5.  Totally dependent on help for dressing or grooming.  Does
+                             not initiate personal care activities
+            49          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS7         DSRS SPEECH LANGUAGE SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: LANGDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           452           1.  Normal
+           201           2.  Occasional trouble finding words or other speech errors, but
+                             able to carry on conversations
+            46           3.  Frequently unable to think of words, may make inappropriate
+                             word substitutions or use nonsense expressions.  Has
+                             difficulty following complex conversations
+            44           4.  No longer able to hold extended conversations because of
+                             difficulties comprehending others or expressing self.  Can
+                             usually answer questions using simple sentences
+            31           5.  Answers questions, but the responses are often
+                             unintelligible or nonsensical. Able to follow only simple
+                             instructions
+            24           6.  Speech usually unintelligible or irrelevant.  Unable to
+                             understand or answer questions or to follow verbal
+                             instructions
+             9           7.  No response, no longer attempts to communicate
+            49          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS8         DSRS RECOGNITION OF OTHERS SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RECOGDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           472           1.  Normal
+           135           2.  Occasionally fails to recognize distant acquaintances or
+                             casual friends
+           107           3.  Always recognizes family and close friends but frequently
+                             fails to recognize others
+            58           4.  Occasionally fails to recognize family members and/or close
+                             friends
+            24           5.  Only occasionally recognizes spouse or caregiver
+             8           6.  No recognition or awareness of the presence of others
+            49          97.  Not assessed/Not asked
+             3          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS9         DSRS FEEDING SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: FEEDDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           615           1.  Normal
+           108           2.  May require help cutting food but otherwise able to eat
+                             independently
+            38           3.  Mostly able to eat independently but may require some
+                             assistance.  Occasionally uses fingers or wrong utensils
+            18           4.  Requires assistance.  Uses fingers more than utensils
+            28           5.  Totally dependent on others for feeding.  May have
+                             difficulty swallowing or require feeding tube
+            48          97.  Not assessed/Not asked
+             1          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS10        DSRS INCONTINENCE SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: INCONDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           515           1.  Normal
+           110           2.  Loses control of bladder rarely (generally less than one
+                             accident per month)
+            49           3.  Loses control of bladder an average of two or more times a
+                             month
+            59           4.  Frequently loses control of bladder despite help to toilet
+                             (more than once a week)
+            72           5.  Total loss of bladder control
+            48          97.  Not assessed/Not asked
+             3          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS11        DSRS MOBILITY, WALKING SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MOBILDRS
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         (Please circle one item in each category that best describes how your
+         (RELATIONSHIP OF SUBJECT TO INFORMANT) is doing at the present time.  Please
+         feel free to ask questions if any items are unclear.)
+
+         .................................................................................
+           412           1.  Normal
+            66           2.  May occasionally have some difficulty driving or taking
+                             public transportation but fully independent for walking
+                             without supervision
+            55           3.  Able to walk outside without supervision for short distances
+                             but unable to drive or take public transportation
+            45           4.  Able to walk within the home without supervision but cannot
+                             go outside unaccompanied
+            31           5.  Requires supervision within the home but able to walk
+                             without assistance (may use cane or walker)
+            28           6.  Generally confined to a bed or chair.  May be able to walk a
+                             few steps with help
+            16           7.  Essentially bedridden.  Unable to sit or stand
+            48          97.  Not assessed/Not asked
+           155          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRS12        DSRS DEGREE ILLNESS AFFECTS INFORM ABIL
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RDEGREE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         12.  By placing a mark on the line please rate the degree that this illness
+         affects your ability to carry on a normal life style.
+         
+           -------------------------------------------------------------------------
+           1      2       3        4       5       6       7       8       9      10
+           no             some stress           highly                     can no
+           problem       but tolerable         stressful                 longer cope
+
+         .................................................................................
+           807                    1-10.  Rating
+            48                      97.  Not assessed/Not asked
+             1                      98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADDRSSCR       DSRS SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: DRSSCOR
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: DEMENTIA SEVERITY RATING SCALE
+         
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADBLCP         BLESSED DEMENTIA RATING SCALE COMPLETED
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: BLESSDON
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         The Blessed Dementia Rating Scale - CERAD is a standardized research instrument
+         that characterizes performance of activities of daily living that are often
+         affected by dementia.  The informant was instructed to rate whether the subject
+         had no loss, some loss or severe loss of ability in a number of areas of
+         cognition and everyday activities.  For three items assessing activities of
+         daily living (i.e., eating, dressing, toileting), the informant reported the
+         level of assistance the subject needed on a three-point scale. For all items,
+         the informant also noted whether the loss of ability or the need for assistance
+         in each area was due to Mental (i.e. cognitive) and/or Physical reasons.  The
+         score is weighted based on the severity of the loss.  The only items counted in
+         the score are losses for which the cause is 'Mental' or 'Both' (Mental and
+         Physical).  More information about this scale and how scores were assigned can
+         be found in the data description.
+
+         .................................................................................
+           844           1.  Yes
+            12           5.  No
+
+
+==========================================================================================
+
+ADBL1A         BLESSED SCORE-PERFORM HOUSEHOLD TASKS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: TASKSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Perform household tasks
+
+         .................................................................................
+           352           0.  None
+           230         0.5.  Some
+           262           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1AR        REASON FOR BLESSED SCORE - ADBL1A
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: TASKRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+           253           0.  Physical
+            98           1.  Mental
+           141           2.  Both physical and mental
+           352          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1B         BLESSED SCORE-COPE WITH SMALL SUMS MONEY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: CASHSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Cope with small sums of money
+
+         .................................................................................
+           620           0.  None
+            77         0.5.  Some
+           147           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1BR        BLESSED REASON FOR SCORE - ADBL1B
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CASHRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            18           0.  Physical
+           172           1.  Mental
+            34           2.  Both physical and mental
+           620          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1C         BLESSED SCORE-REMEMBER SHORT LIST ITEMS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: LISTSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Remember a short list of items (e.g., shopping list)
+
+         .................................................................................
+           483           0.  None
+           192         0.5.  Some
+           169           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1CR        REASON FOR BLESSED SCORE - ADBL1C
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: LISTRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+             2           0.  Physical
+           339           1.  Mental
+            20           2.  Both physical and mental
+           483          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1D         BLESSED SCORE-FIND WAY ABOUT INDOORS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: HOMESC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Find way about indoors (home or other familiar locations)
+
+         .................................................................................
+           675           0.  None
+            89         0.5.  Some
+            80           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1DR        REASON FOR BLESSED SCORE - ADBL1D
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: HOMERE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            14           0.  Physical
+           124           1.  Mental
+            31           2.  Both physical and mental
+           675          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1E         BLESSED SCORE-FIND WAY FAMILIAR STREETS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: STRTSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Find way around familiar streets
+
+         .................................................................................
+           576           0.  None
+           104         0.5.  Some
+           164           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1ER        REASON FOR BLESSED SCORE - ADBL1E
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: STRTRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            29           0.  Physical
+           200           1.  Mental
+            39           2.  Both physical and mental
+           576          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1F         BLESSED SCORE-GRASP SITUATIONS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: GRASPSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Grasp situations or explanations
+
+         .................................................................................
+           534           0.  None
+           220         0.5.  Some
+            90           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1FR        REASON FOR BLESSED SCORE - ADBL1F
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: GRASPRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            15           0.  Physical
+           266           1.  Mental
+            29           2.  Both physical and mental
+           534          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1G         BLESSED SCORE-RECALL RECENT EVENTS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: EVENTSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Recall recent events
+
+         .................................................................................
+           433           0.  None
+           263         0.5.  Some
+           148           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1GR        REASON FOR BLESSED SCORE - ADBL1G
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: EVENTRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+                         0.  Physical
+           381           1.  Mental
+            30           2.  Both physical and mental
+           433          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1H         BLESSED SCORE-DWELL IN THE PAST
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: PASTSC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Memory and performance of everyday activities: rate subject's LOSS of ability to
+         do the tasks listed below.
+         
+         Tendency to dwell in the past
+
+         .................................................................................
+           608           0.  None
+           155         0.5.  Some
+            81           1.  Severe
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL1HR        REASON FOR BLESSED SCORE - ADBL1H
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: PASTRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+                         0.  Physical
+           229           1.  Mental
+             7           2.  Both physical and mental
+           608          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2EA        BLESSED SCORE - EATING
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: EATING
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         For three items assessing activities of daily living (i.e., eating, dressing,
+         toileting), the informant reported the level of assistance the subject needed on
+         a three-point scale. For all items, the informant also noted whether the loss of
+         ability or the need for assistance in each area was due to Mental (i.e.
+         cognitive) and/or Physical reasons.  The score is weighted based on the severity
+         of the loss.  The only items counted in the score are losses for which the cause
+         is 'Mental' or 'Both' (Mental and Physical).
+
+         .................................................................................
+           733           0.  Feeds self without assistance
+            59           1.  Feeds self with minor assistance
+            12           2.  Feeds self with much assistance
+            40           3.  Has to be fed
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2EAR       REASON FOR BLESSED SCORE - ADBL2EA
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: EATRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            35           0.  Physical
+            38           1.  Mental
+            38           2.  Both physical and mental
+           733          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2DRE       BLESSED SCORE - DRESSING
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: DRESSING
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         For three items assessing activities of daily living (i.e., eating, dressing,
+         toileting), the informant reported the level of assistance the subject needed on
+         a three-point scale. For all items, the informant also noted whether the loss of
+         ability or the need for assistance in each area was due to Mental (i.e.
+         cognitive) and/or Physical reasons.  The score is weighted based on the severity
+         of the loss.  The only items counted in the score are losses for which the cause
+         is 'Mental' or 'Both' (Mental and Physical).
+
+         .................................................................................
+           608           0.  Unaided
+            99           1.  Occasionally misplaces buttons, etc., requires minor help
+            44           2.  Wrong sequences, forgets items, requires much assistance
+            93           3.  Unable to dress
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2DRR       REASON FOR BLESSED SCORE - ADBL2DRE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: DRESSRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+            98           0.  Physical
+            74           1.  Mental
+            64           2.  Both physical and mental
+           608          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2TO        BLESSED SCORE - TOILET
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: TOILET
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         For three items assessing activities of daily living (i.e., eating, dressing,
+         toileting), the informant reported the level of assistance the subject needed on
+         a three-point scale. For all items, the informant also noted whether the loss of
+         ability or the need for assistance in each area was due to Mental (i.e.
+         cognitive) and/or Physical reasons.  The score is weighted based on the severity
+         of the loss.  The only items counted in the score are losses for which the cause
+         is 'Mental' or 'Both' (Mental and Physical).
+
+         .................................................................................
+           543           0.  Clean, cares for self at toilet
+           127           1.  Occasional incontinence, or needs to be reminded
+            94           2.  Frequent incontinence, or needs much assistance
+            80           3.  Little or no control
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL2TOR       REASON FOR BLESSED SCORE - ADBL2TO
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: TOILRE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+           186           0.  Physical
+            52           1.  Mental
+            63           2.  Both physical and mental
+           543          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBLSCOR       BLESSED SCALE SCORE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 1
+         Ref: SCORE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+           844                    0-17.  Total score of all Blessed dementia items
+            12                      97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBLPG2S       BLESSED PAGE 2 OF SCALE NOT APPROPRIATE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: PG2CK
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         Page 2 of the Blessed Dementia Scale was completed only if the respondent had
+         advanced dementia.  The nurse determined whether to administer this section
+         based on his/her clinical judgment whether these behaviors were relevant for a
+         respondent given his/her level of impairment.   This variable is a checkpoint
+         for whether Page 2 was skipped (inapplicable) or not.
+
+         .................................................................................
+           706           1.  Page 2 of Blessed not completed
+           138           5.  Page 2 of Blessed completed
+            12          97.  Not assessed/Not asked
+
+
+==========================================================================================
+
+ADBL31         BLESSED SCORE-LOSS RECOGNITION CAREGIVER
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: LOSSREC
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Loss of recognition of immediate caregiver
+
+         .................................................................................
+            65           0.  None/Normal
+            30           1.  Occasional
+            21           2.  Frequent
+            18           3.  Consistent
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             4          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL32         BLESSED SCORE-IMPAIRED AMBULATION
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: AMBULAT
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Impaired ambulation (for non-physical reasons)
+
+         .................................................................................
+            90           0.  None/Normal
+             6           1.  Occasional
+             4           2.  Frequent
+            27           3.  Consistent
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+            11          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL33         BLESSED SCORE-WANDERING
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: WANDER
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Wandering
+
+         .................................................................................
+            85           0.  None/Normal
+            20           1.  Occasional
+            12           2.  Frequent
+            12           3.  Consistent
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             8          98.  DK (Don't Know)
+             1          99.  RF (Refused)
+
+
+==========================================================================================
+
+ADBL34         BLESSED SCORE-LOSS OF AWARE/COMPR/COMM
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: AWARENES
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Overall loss of awareness, comprehension, or communication (underscore which)
+
+         .................................................................................
+            36           0.  None/Normal
+            36           1.  Occasional
+            32           2.  Frequent
+            34           3.  Consistent
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL35         BLESSED SCORE-SERIOUS BEHAVIORAL PX
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: NOISY
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Serious behavioral problem (noisy, angry, combative, etc.)
+
+         .................................................................................
+            95           0.  None/Normal
+            23           1.  Occasional
+            12           2.  Frequent
+             6           3.  Consistent
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             2          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL36         BLESSED SCORE-INABILITY FIND WAY IN HOME
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: OWNHOME
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Inability to find way in own home
+
+         .................................................................................
+            71           1.  Yes
+            64           5.  No
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             3          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL37         BLESSED SCORE-INABILITY TO USE TELEPHONE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: USEPHONE
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Inability to telephone (at least one number)
+
+         .................................................................................
+           100           1.  Yes
+            37           5.  No
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             1          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL38         BLESSED SCORE-MONITOR WHAT/HOW EAT FOOD
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MONFOOD
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Need for monitoring what and how food is eaten (e.g., to prevent eating spoiled
+         foods, choking on bulky foods)
+
+         .................................................................................
+            85           1.  Yes
+            52           5.  No
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             1          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL39         BLESSED SCORE-SLEEP DISTURBANCES
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: SLEEP
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Sleep disturbances that keep caregiver awake
+
+         .................................................................................
+            31           1.  Yes
+            94           5.  No
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+            13          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL310        BLESSED SCORE-LEFT ALONE ALL DAY/NIGHT
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ALONEALL
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         If necessary, could patient be left alone for entire day and night?
+
+         .................................................................................
+            14           1.  Yes
+           123           5.  No
+           706          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             1          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL311        BLESSED SCORE-LEFT ALONE AT NIGHT
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: ALONEPM
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         Could he or she usually be left alone at night?
+
+         .................................................................................
+            16           1.  Yes
+           112           5.  No
+           714          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             2          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBL312        BLESSED SCORE-HOW LONG LEFT ALONE IN DAY
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: LONGALON
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         For how long could subjects be left alone during day?
+
+         .................................................................................
+            81           0.  Not at all
+            22           1.  Less than 2 hours (permitting caregiver to run errands)
+            18           2.  2-8 hours (permitting caregiver to hold job)
+             7           3.  More than 8 hours
+           714          96.  Skipped (Not applicable)
+            12          97.  Not assessed/Not asked
+             2          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADBLCOMM       BLESSED DEMENTIA SCALE COMMENTS
+         Section: AD    Level: Respondent      Type: Character  Width: 100 Decimals: 0
+         Ref: BLESSCOM
+
+         Category: DEMENTIA RATINGS/OUTCOMES
+         Measure: BLESSED DEMENTIA SCALE
+         
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADAPOE         APOLIPOPROTEIN E GENOTYPE
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: APOE
+
+         Category: BIOMARKER
+         Measure: APOE
+         
+
+         The APOE variable indicates the Apolipoprotein E genotype.  The DNA for the
+         genotypic analysis were collected from the ADAMS participant via buccal sample. 
+         A code of 96 indicates that the ApoE genotype could not be determined from the
+         buccal samples collected.  A few participants refused buccal swab collection of
+         DNA, though the overall participation rate was 98.7%  Valid results were
+         obtained for 98.4% of participants.
+
+         .................................................................................
+             4          22.  e2 / e2
+           104          23.  e2 / e3
+            24          24.  e2 / e4
+           499          33.  e3 / e3
+           187          34.  e3 / e4
+            24          44.  e4 / e4
+             3          96.  Genotype Could Not be Determined from DNA Samples Collected
+            11          99.  Subject Refused DNA Sample Collection
+
+
+==========================================================================================
+
+ADMH1          EVER SEEN DOCTOR FOR MEMORY PROBLEMS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH1
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         The next few questions are about (SUBJECT NAME's) medical history.  First, has
+         (SUBJECT NAME) ever seen a doctor for any of the memory problems we have
+         discussed?  (If no memory problems endorsed, ask if subject has seen a doctor
+         for any concerns with her/his memory or thinking).
+
+         If answer is "No," "Don't Know," or "Refused," then skip the remainder of the
+         following medical history questions pertaining to memory problem evaluation.
+
+         .................................................................................
+           163           1.  Yes
+           677           5.  No (Skip Medical History Items 3-9)
+             2          97.  Not assessed/Not asked
+            14          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH3          SPECIALTY OF DOCTOR FOR ADMH1
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH3
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+            36           1.  Neurologist
+            14           2.  Psychiatrist
+            91           3.  Family Practitioner/Internal Med
+            13           4.  Other (Specify)
+           691          96.  Not applicable
+             2          97.  Not assessed/Not asked
+             9          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH4MO        MONTH OF EXAM FOR ADMH1
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH4MO
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+             6           1.  January
+             3           2.  February
+             8           3.  March
+             7           4.  April
+             6           5.  May
+             3           6.  June
+             4           7.  July
+             4           8.  August
+             6           9.  September
+             6          10.  October
+             8          11.  November
+             7          12.  December
+           691          96.  Not applicable
+             2          97.  Not assessed/Not asked
+            95          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH4YR        YEAR  OF EXAM FOR ADMH1
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: MH4YR
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+           148               1966-2003.  Year
+           691                    9996.  Not applicable
+             2                    9997.  Not assessed/Not asked
+            15                    9998.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH5          CAUSE OF MEMORY PROBLEM AS PER DOCTOR
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH5
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         What did the doctor say was the cause of the memory trouble?
+
+         .................................................................................
+             5           1.  Normal Aging
+            41           2.  AD
+            25           3.  Strokes or TIAS
+            41           4.  Dementia
+            20           5.  Other (Specify)
+             5           6.  Parkinson's Disease
+             2           7.  Depression
+           691          96.  Not applicable
+             2          97.  Not assessed/Not asked
+            24          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH5SP        SPECIFY CAUSE IF OTHER FOR ADMH5
+         Section: AD    Level: Respondent      Type: Character  Width: 50  Decimals: 0
+         Ref: MH5SPEC
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADMH6          SEE OTHER SPECIALIST FOR MEMORY PROBLEMS
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH6
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         Did (SUBJECT NAME) ever have an examination with a specialist such as a
+         neurologist or psychiatrist for memory problems?
+
+         This question was asked if the doctor asked about in ADMH1 is not a specialist.
+
+         .................................................................................
+            27           1.  Yes
+            66           5.  No
+           745          96.  Not applicable
+             2          97.  Not assessed/Not asked
+            16          98.  DK (Don't Know)
+                        99.  RF (Refused)
+
+
+==========================================================================================
+
+ADMH8          SPECIALTY OF DOCTOR IN ADMH6
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH8
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+            11           1.  Neurologist
+            11           2.  Psychiatrist
+             3           4.  Other (Specify)
+             2           8.  DK (Don't Know)
+           827          96.  Not applicable
+             2          97.  Not assessed/Not asked
+                        98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH8SP        SPECIFY SPECIALTY IF OTHER FOR ADMH8
+         Section: AD    Level: Respondent      Type: Character  Width: 50  Decimals: 0
+         Ref: MH8SPEC
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+
+
+==========================================================================================
+
+ADMH8MO        MONTH OF SPECIALTY EXAM
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH8MO
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+             1           1.  January
+             1           2.  February
+             2           3.  March
+                         4.  April
+             1           5.  May
+             1           6.  June
+                         7.  July
+             1           8.  August
+                         9.  September
+             2          10.  October
+             1          11.  November
+                        12.  December
+           827          96.  Not applicable
+             2          97.  Not assessed/Not asked
+            17          98.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH8YR        YEAR OF SPECIALTY EXAM
+         Section: AD    Level: Respondent      Type: Numeric    Width: 4   Decimals: 0
+         Ref: MH8YR
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+            21               1966-2003.  Year
+           827                    9996.  Not applicable
+             2                    9997.  Not assessed/Not asked
+             6                    9998.  DK (Don't Know)
+
+
+==========================================================================================
+
+ADMH9          CAUSE OF MEMORY PROB. AS PER SPECIALIST
+         Section: AD    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: MH9
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         What diagnosis was given for the cause of the problems?
+
+         .................................................................................
+                         1.  Normal Aging
+            11           2.  AD
+             3           3.  Strokes or TIAS
+             8           4.  Dementia
+             2           5.  Other (Specify)
+             1           6.  Parkinson's Disease
+           825          96.  Not applicable
+             2          97.  Not assessed/Not asked
+             4          98.  DK (Don't Know)
+                        99.  RF (Refused)
+
+
+==========================================================================================
+
+ADMH9SP        SPECIFY CAUSE IF OTHER FOR ADMH9
+         Section: AD    Level: Respondent      Type: Character  Width: 50  Decimals: 0
+         Ref: MH9SPEC
+
+         Category: MEDICAL HISTORY
+         Measure: EVAL FOR MEMORY PROBLEM
+         
+
+         .................................................................................
+
+
+==========================================================================================

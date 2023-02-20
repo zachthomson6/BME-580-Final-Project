@@ -1,0 +1,327 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AF: FAMILYI HISTORY - INITIAL VISIT  (Sibling)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AF    Level: Sibling         Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+          4215           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AF    Level: Sibling         Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+          2938         010.  Person Number
+            56         011.  Person Number
+           860         020.  Person Number
+             1         021.  Person Number
+           173         030.  Person Number
+           185         040.  Person Number
+             2         041.  Person Number
+
+
+==========================================================================================
+
+AFSNUM         SIBLING NUMBER
+         Section: AF    Level: Sibling         Type: Numeric    Width: 2   Decimals: 0
+         Ref: CNUM
+
+         Sibling mention number.
+
+         .................................................................................
+          3201                     1-5.  First, second, ..., sibling mentioned
+           928                    6-10.  Sixth, seventh, ..., sibling mentioned
+            85                   11-15.  Eleventh, twelfth, ..., sibling mentioned
+             1                   16-20.  Sixteenth, seventeenth, ..., sibling mentioned
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AF    Level: Sibling         Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+          4215             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AFSIB          SIBLING NUMBER AS CODED ON CHART
+         Section: AF    Level: Sibling         Type: Character  Width: 5   Decimals: 0
+         Ref: SIB1-SIB16
+
+         BIRTH ORDER CODE FOR SIBLINGS 1-16, INCLUDING SUBJECT.
+         BLANK=NO MORE SIBLINGS
+
+         .................................................................................
+           841       00001.  Sibling number as coded on chart
+           759       00002.  Sibling number as coded on chart
+           645       00003.  Sibling number as coded on chart
+           531       00004.  Sibling number as coded on chart
+           425       00005.  Sibling number as coded on chart
+           327       00006.  Sibling number as coded on chart
+           248       00007.  Sibling number as coded on chart
+           166       00008.  Sibling number as coded on chart
+           114       00009.  Sibling number as coded on chart
+            73       00010.  Sibling number as coded on chart
+            44       00011.  Sibling number as coded on chart
+            22       00012.  Sibling number as coded on chart
+            11       00013.  Sibling number as coded on chart
+             6       00014.  Sibling number as coded on chart
+             2       00015.  Sibling number as coded on chart
+             1       00016.  Sibling number as coded on chart
+
+
+==========================================================================================
+
+AFSRELAT       RELATIONSHIP OF SIBLING TO SUBJECT
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: RELAT1-RELAT16
+
+         SIBLING OR SUBJECT RELATIONSHIP CODE
+
+         .................................................................................
+          1712           1.  BROTHER
+          1659           2.  SISTER
+           839           3.  SELF
+             5           9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFSLIVING      IS SIBLING LIVING OR DECEASED
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIVING1-LIVING1
+
+         IS (SIBLING/SUBJ) LIVING?
+
+         .................................................................................
+          2117           1.  YES
+          2028           2.  NO
+            70           8.  DON'T KNOW
+                         9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFSAGE         CURRENT AGE OR AGE AT DEATH OF SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGE1-AGE16
+
+         WHAT IS (SIBLING/SUBJ) APPROXIMATE AGE OR AGE AT TIME OF DEATH?
+
+         .................................................................................
+             3                       0.  Age
+           155                    1-19.  Age
+            53                   20-29.  Age
+            69                   30-39.  Age
+           106                   40-49.  Age
+           254                   50-59.  Age
+           584                   60-69.  Age
+          1274                   70-79.  Age
+          1028                   80-89.  Age
+           260                   90-99.  Age
+            11                 100-109.  Age
+             1                 110-119.  Age
+           417                     998.  DON'T KNOW
+
+
+==========================================================================================
+
+AFSMEDPX       DID SIBLING HAVE A MEDICAL PROBLEM
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEDPX1-MEDPX16
+
+         DID (SIBLING/SUBJ) EVER HAVE A HEART ATTACK, STROKE OR OTHER CARDIOVASCULAR
+         PROBLEM?
+
+         .................................................................................
+          1132           1.  YES
+          2656           2.  NO
+                         6.  NOT ASKED BECAUSE INDIVIDUAL PREVIOUSLY REPORTED AS DECEASED
+           423           8.  DON'T KNOW
+             4           9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFSMEMPX       DID SIBLING EVER HAVE MEMORY PROBLEMS
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEMPX1-MEMPX16
+
+         DID (SIBLING/SUBJ) EVER HAVE MEMORY PROBLEMS?
+
+         .................................................................................
+           557           1.  YES
+          3286           2.  NO
+                         6.  NOT ASKED BECAUSE INDIVIDUAL PREVIOUSLY REPORTED AS DECEASED
+           369           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFSAGEPX       AGE MEMORY PROBLEMS BEGAN - SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEPX1-AGEPX16
+
+         HOW OLD WAS (SIBLING/SUBJ) WHEN SHE/HE STARTED HAVING MEMORY PROBLEMS?
+
+         NOTE: THIS SERIES OF QUESTIONS ARE ONLY ASKED IF THE PERSON HAD MEMORY PROBLEMS
+         ENDORSED (MEMPX1-MEMPX16).  THERE WILL NOT BE RESPONSES FOR ALL INDIVIDUALS
+         LISTED IN THE FAMILY HISTORY VARIABLES (SIB1-SIB16).
+
+         .................................................................................
+             2                    1-19.  Age
+             4                   20-29.  Age
+                                 30-39.  Age
+             8                   40-49.  Age
+            10                   50-59.  Age
+            68                   60-69.  Age
+           190                   70-79.  Age
+           179                   80-89.  Age
+            30                   90-99.  Age
+             4                 100-109.  Age
+            62                     998.  DON'T KNOW
+          3658                   Blank.  Inap
+
+
+==========================================================================================
+
+AFSSUDDEN      MEM PROBLEM BEGAN SUDDENLY/SLOWLY-SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: SUDDEN1-SUDDEN1
+
+         Did the memory problems begin suddenly or slowly?
+
+         .................................................................................
+           113           1.  SUDDENLY
+           392           2.  SLOWLY
+            51           8.  DON'T KNOW
+             1           9.  Not Asked/Not Assessed
+          3658       Blank.  Inap
+
+
+==========================================================================================
+
+AFSWORSEN      MEMORY PROBLEMS WORSEN OVER TIME-SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: WORSEN1-WORSEN1
+
+         Did the memory problems get worse over time?
+
+         .................................................................................
+           430           1.  YES
+            89           2.  NO
+            37           8.  DON'T KNOW
+             1           9.  Not Asked/Not Assessed
+          3658       Blank.  Inap
+
+
+==========================================================================================
+
+AFSLIMITS      MEM PROB CAUSE DAILY LIMITATIONS-SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIMITS1-LIMITS1
+
+         Did the memory problems cause limitations with daily activities?
+
+         .................................................................................
+           373           1.  YES
+           137           2.  NO
+            46           8.  DON'T KNOW
+             1           9.  Not Asked/Not Assessed
+          3658       Blank.  Inap
+
+
+==========================================================================================
+
+AFSDRDX        DR DIAGNOSED CAUSE OF MEM TROUBLE-SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRDX1-DRDX16
+
+         Did a doctor ever give a diagnosis for the cause of the memory trouble?
+
+         .................................................................................
+           218           1.  YES
+           246           2.  NO
+            91           8.  DON'T KNOW
+             2           9.  Not Asked/Not Assessed
+          3658       Blank.  Inap
+
+
+==========================================================================================
+
+AFSDXSPECCD    MEMORY TROUBLE DIAGNOSIS - SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 2   Decimals: 0
+         Ref: DXSPECCD1-DXSPE
+
+         Doctor's Diagnosis:
+
+         .................................................................................
+           103           1.  Alzheimer's Disease alone or in combination with other
+                             conditions
+            35           2.  Dementia alone or in combination with other conditions
+            43           3.  Stroke/Possible stroke/TIA alone or in combination with
+                             other conditions
+             3           4.  Alcoholism/Alcohol Abuse
+             2           5.  Brain Tumor/Brain Cancer
+             6           6.  Parkinson's Disease
+             1           7.  Hypoxia
+             1           8.  Aneurysm
+             2           9.  Diabetes
+             2          10.  Head Injury/trauma alone or in combination with other
+                             conditions
+                        11.  Heart Attack
+            12          12.  Artery blockage/poor circulation/hardening of
+                             arteries/cardiac related issues
+                        13.  Medication(s), chemical exposure
+             2          14.  Neuropsychiatric or Mental Retardation
+             6          15.  Other, Specify
+          3997       Blank.  Inap
+
+
+==========================================================================================
+
+AFSAUTOP       AUTOPSY PERFORMED ON SIBLING
+         Section: AF    Level: Sibling         Type: Numeric    Width: 1   Decimals: 0
+         Ref: AUTOP1-AUTOP16
+
+         Was an autopsy performed?
+
+         .................................................................................
+             4           1.  YES
+            90           2.  NO
+            53           8.  DON'T KNOW
+                         9.  Not Asked/Not Assessed
+          4068       Blank.  Inap
+
+
+==========================================================================================

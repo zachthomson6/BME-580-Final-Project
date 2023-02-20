@@ -1,0 +1,810 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AF: FAMILY HISTORY - INITIAL VISIT  (Respondent)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AF    Level: Respondent      Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+           856           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AF    Level: Respondent      Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+           584         010.  Person Number
+            11         011.  Person Number
+           187         020.  Person Number
+             1         021.  Person Number
+            33         030.  Person Number
+            39         040.  Person Number
+             1         041.  Person Number
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AF    Level: Respondent      Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+           856             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AFCOMP         WHETHER FAMILY HISTORY FORM COMPLETED
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: FHXCOMP
+
+         FAMILY HISTORY COMPLETED?
+
+         .................................................................................
+           841           1.  COMPLETED
+            15           2.  NOT COMPLETED
+
+
+==========================================================================================
+
+AFADOPT        WHETHER SUBJECT WAS ADOPTED
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: ADOPTED
+
+         IS SUBJECT ADOPTED?
+
+         .................................................................................
+             6           1.  YES
+           835           2.  NO
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFREL1         INFORMANT RELATIONSHIP TO R - FAMILY HX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: REL1FHX
+
+         WHAT IS (INFORMANTS) RELATIONSHIP TO SUBJECT?
+
+         .................................................................................
+           280           1.  SPOUSE
+           279           2.  CHILD
+            30           3.  SIBLING
+                         4.  PARENT
+            42           5.  FRIEND
+                         6.  GUARDIAN
+             2           7.  NEIGHBOR
+           110           8.  OTHER (SPECIFY)
+            98           9.  SELF
+                        97.  REFUSED
+                        98.  DON'T KNOW
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFLONG1        HOW LONG INFORM HAS KNOWN SUBJECT-FHX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: LONG1FHX
+
+         HOW LONG HAS INFORMANT KNOWN THE SUBJECT (IN YEARS)?
+
+         .................................................................................
+            56                    1-19.  Years
+            36                   20-29.  Years
+            64                   30-39.  Years
+           126                   40-40.  Years
+           254                   50-59.  Years
+           154                   60-69.  Years
+            88                   70-79.  Years
+            47                   80-89.  Years
+            15                   90-99.  Years
+                                   998.  DON'T KNOW
+            16                   Blank.  Inap
+
+
+==========================================================================================
+
+AFSEE1         HOW OFTEN INFORM SEEN R LAST YEAR-FHX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: OFT1FHX
+
+         ON THE AVERAGE, IN THE PAST YEAR, HOW OFTEN DID INFORMANT SEE (SUBJECT)?
+
+         .................................................................................
+           405           1.  LIVES WITH SUBJECT
+            93           2.  DAILY
+           135           3.  SEVERAL TIMES/WK
+            63           4.  1-3 TIMES/WK
+            36           5.  ONCE A WEEK
+             9           6.  LESS THAN ONCE A WEEK
+                         7.  NEVER
+             2           8.  OTHER (SPECIFY)
+            98           9.  SELF
+                        98.  DON'T KNOW
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFREL2         RELATIONSHIP OF 2ND INFORM TO R - FAM HX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: REL2FHX
+
+         WHAT IS (SECOND INFORMANTS) RELATIONSHIP TO SUBJECT?
+
+         .................................................................................
+             1           1.  SPOUSE
+            15           2.  CHILD
+             1           3.  SIBLING
+                         4.  PARENT
+                         5.  FRIEND
+                         6.  GUARDIAN
+                         7.  NEIGHBOR
+             6           8.  OTHER (SPECIFY)
+           106           9.  SELF
+                        97.  REFUSED
+                        98.  DON'T KNOW
+           727       Blank.  Inap
+
+
+==========================================================================================
+
+AFLONG2        HOW LONG 2ND INFORM KNOWN SUBJECT-FHX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: LONG2FHX
+
+         HOW LONG HAS INFORMANT KNOWN THE SUBJECT (IN YEARS)?
+
+         .................................................................................
+             1                    1-19.  Years
+             3                   20-29.  Years
+             3                   30-39.  Years
+             3                   40-49.  Years
+             9                   50-59.  Years
+             3                   60-69.  Years
+            55                   70-79.  Years
+            40                   80-89.  Years
+            10                   90-99.  Years
+             2                     998.  DON'T KNOW
+           727                   Blank.  Inap
+
+
+==========================================================================================
+
+AFSEE2         OFTEN 2ND INFORM SEEN R LAST YEAR-FHX
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: OFT2FHX
+
+         ON THE AVERAGE, IN THE PAST YEAR, HOW OFTEN DID INFORMANT SEE (SUBJECT)?
+
+         .................................................................................
+             5           1.  LIVES WITH SUBJECT
+             5           2.  DAILY
+             4           3.  SEVERAL TIMES/WK
+             4           4.  1-3 TIMES/WK
+             3           5.  ONCE A WEEK
+             2           6.  LESS THAN ONCE A WEEK
+                         7.  NEVER
+                         8.  OTHER (SPECIFY)
+           106           9.  SELF
+                        98.  DON'T KNOW
+           727       Blank.  Inap
+
+
+==========================================================================================
+
+AFRLF          RELATIONSHIP CODE FOR FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RELATF
+
+         RELATIONSHIP CODE FOR FATHER
+
+         Note:  This variable will be blank for the inital visit if the subject was
+         adopted.  In addition, it will be blank for followup visits if the parent was
+         reported deceased at the initial visit.
+
+         .................................................................................
+           835          77.  FATHER
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFLIVF         IS FATHER LIVING OR DECEASED
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIVINGF
+
+         IS (FATHER) LIVING?
+
+         .................................................................................
+             3           1.  YES
+           817           2.  NO
+            15           8.  DON'T KNOW
+                         9.  Not Asked/Not Assessed
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFAGF          FATHER CURRENT AGE OR AGE AT DEATH
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEF
+
+         WHAT IS (FATHER'S) APPROXIMATE AGE OR AGE AT TIME OF DEATH?
+
+         .................................................................................
+             6                   20-29.  Age
+            26                   30-39.  Age
+            26                   40-49.  Age
+            69                   50-59.  Age
+           126                   60-69.  Age
+           181                   70-79.  Age
+           172                   80-89.  Age
+            71                   90-99.  Age
+             4                 100-109.  Age
+           154                     998.  DON'T KNOW
+            21                   Blank.  Inap
+
+
+==========================================================================================
+
+AFMDSF         DID FATHER EVER HAVE MEDICAL PROBLEM
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEDPXF
+
+         DID (FATHER) EVER HAVE A HEART ATTACK, STROKE OR OTHER CARDIOVASCULAR PROBLEM?
+
+         .................................................................................
+           273           1.  YES
+           402           2.  NO
+           160           8.  DON'T KNOW
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFMMF          DID FATHER EVER HAVE MEMORY PROBLEMS
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEMPXF
+
+         DID (FATHER) EVER HAVE MEMORY PROBLEMS?
+
+         .................................................................................
+            59           1.  YES
+           617           2.  NO
+           159           8.  DON'T KNOW
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFAPF          FATHER AGE MEMORY PROBLEMS BEGAN
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEPXF
+
+         How old was (FATHER) when he started having memory problems?
+
+         NOTE: THIS SERIES OF QUESTIONS ARE ONLY ASKED IF THE FATHER HAD MEMORY PROBLEMS
+         ENDORSED.
+
+         .................................................................................
+             1                   20-29.  Age
+                                 30-39.  Age
+             1                   40-49.  Age
+             2                   50-59.  Age
+             5                   60-69.  Age
+            17                   70-79.  Age
+            21                   80-89.  Age
+             5                   90-99.  Age
+             7                     998.  DON'T KNOW
+           797                   Blank.  Inap
+
+
+==========================================================================================
+
+AFSDF          MEM PROB BEGAN SUDDENLY/SLOWLY -FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SUDDENF
+
+         Did the memory problems begin suddenly or slowly?
+
+         .................................................................................
+            16           1.  SUDDENLY
+            34           2.  SLOWLY
+             9           8.  DON'T KNOW
+           797       Blank.  Inap
+
+
+==========================================================================================
+
+AFWRF          MEMORY PROBLEMS WORSEN OVER TIME-FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: WORSENF
+
+         Did the memory problems get worse over time?
+
+         .................................................................................
+            52           1.  YES
+             3           2.  NO
+             4           8.  DON'T KNOW
+           797       Blank.  Inap
+
+
+==========================================================================================
+
+AFLMF          MEM PROB CAUSE DAILY LIMITATIONS-REL 16
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIMITSF
+
+         Did the memory problems cause limitations with daily activities?
+
+         .................................................................................
+            51           1.  YES
+             4           2.  NO
+             4           8.  DON'T KNOW
+           797       Blank.  Inap
+
+
+==========================================================================================
+
+AFDDF          DR DIAGNOSED CAUSE OF MEM TROUBLE-FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRDXF
+
+         Did a doctor ever give a diagnosis for the cause of the memory trouble?
+
+         .................................................................................
+            14           1.  YES
+            30           2.  NO
+            15           8.  DON'T KNOW
+           797       Blank.  Inap
+
+
+==========================================================================================
+
+AFDXSPECCDF    MEMORY TROUBLE DIAGNOSIS - FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: DXSPECCDF
+
+         Doctor's Diagnosis:
+
+         .................................................................................
+             2           1.  Alzheimer's Disease alone or in combination with other
+                             conditions
+             3           2.  Dementia alone or in combination with other conditions
+             2           3.  Stroke/Possible stroke/TIA alone or in combination with
+                             other conditions
+                         4.  Alcoholism/Alcohol Abuse
+             2           5.  Brain Tumor/Brain Cancer
+             1           6.  Parkinson's Disease
+             1           7.  Hypoxia
+                         8.  Aneurysm
+                         9.  Diabetes
+                        10.  Head Injury/trauma alone or in combination with other
+                             conditions
+                        11.  Heart Attack
+             1          12.  Artery blockage/poor circulation/hardening of
+                             arteries/cardiac related issues
+                        13.  Medication(s), chemical exposure
+             1          14.  Neuropsychiatric or Mental Retardation
+             1          15.  Other, Specify
+           842       Blank.  Inap
+
+
+==========================================================================================
+
+AFAUTF         AUTOPSY PERFORMED ON FATHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: AUTOPF
+
+         Was an autopsy performed?
+
+         .................................................................................
+                         1.  YES
+            45           2.  NO
+            14           8.  DON'T KNOW
+           797       Blank.  Inap
+
+
+==========================================================================================
+
+AFRLM          RELATIONSHIP CODE FOR MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: RELATM
+
+         RELATIONSHIP CODE FOR MOTHER
+
+         Note:  This variable will be blank for the inital visit if the subject was
+         adopted.  In addition, it will be blank for followup visits if the parent was
+         reported deceased at the initial visit.
+
+         .................................................................................
+           835          88.  MOTHER
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFLIVM         IS MOTHER LIVING OR DECEASED
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIVINGM
+
+         IS (MOTHER) LIVING?
+
+         .................................................................................
+            15           1.  YES
+           814           2.  NO
+             6           8.  DON'T KNOW
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFAGM          MOTHER CURRENT AGE OR AGE AT DEATH
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEM
+
+         WHAT IS (MOTHER'S) APPROXIMATE AGE OR AGE AT TIME OF DEATH?
+
+         .................................................................................
+            19                   20-29.  Age
+            37                   30-39.  Age
+            37                   40-49.  Age
+            41                   50-59.  Age
+            83                   60-69.  Age
+           152                   70-79.  Age
+           218                   80-89.  Age
+           121                   90-99.  Age
+            17                 100-109.  Age
+           110                     998.  DON'T KNOW
+            21                   Blank.  Inap
+
+
+==========================================================================================
+
+AFMDSM         DID MOTHER EVER HAVE MEDICAL PROBLEMS
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEDPXM
+
+         DID (MOTHER) EVER HAVE A HEART ATTACK, STROKE OR OTHER CARDIOVASCULAR PROBLEM?
+
+         .................................................................................
+           266           1.  YES
+           460           2.  NO
+           109           8.  DON'T KNOW
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFMMM          DID MOTHER EVER HAVE MEMORY PROBLEMS
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEMPXM
+
+         DID (MOTHER) EVER HAVE MEMORY PROBLEMS?
+
+         .................................................................................
+           103           1.  YES
+           629           2.  NO
+           103           8.  DON'T KNOW
+            21       Blank.  Inap
+
+
+==========================================================================================
+
+AFAPM          MOTHER AGE MEMORY PROBLEMS BEGAN
+         Section: AF    Level: Respondent      Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEPXM
+
+         How old was (MOTHER) when she started having memory problems?
+
+         NOTE: THIS SERIES OF QUESTIONS ARE ONLY ASKED IF THE MOTHER HAD MEMORY PROBLEMS
+         ENDORSED.
+
+         .................................................................................
+             1                   40-49.  Age
+             2                   50-59.  Age
+             8                   60-69.  Age
+            26                   70-79.  Age
+            33                   80-89.  Age
+            11                   90-99.  Age
+             1                 100-109.  Age
+            21                     998.  DON'T KNOW
+           753                   Blank.  Inap
+
+
+==========================================================================================
+
+AFSDM          MEM PROB BEGAN SUDDENLY/SLOWLY -MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SUDDENM
+
+         Did the memory problems begin suddenly or slowly?
+
+         .................................................................................
+            18           1.  SUDDENLY
+            69           2.  SLOWLY
+            16           8.  DON'T KNOW
+           753       Blank.  Inap
+
+
+==========================================================================================
+
+AFWRM          MEMORY PROBLEMS WORSEN OVER TIME-MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: WORSENM
+
+         Did the memory problems get worse over time?
+
+         .................................................................................
+            79           1.  YES
+            13           2.  NO
+            11           8.  DON'T KNOW
+           753       Blank.  Inap
+
+
+==========================================================================================
+
+AFLMM          MEM PROB CAUSE DAILY LIMITATIONS-REL
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIMITSM
+
+         Did the memory problems cause limitations with daily activities?
+
+         .................................................................................
+            73           1.  YES
+            19           2.  NO
+            11           8.  DON'T KNOW
+           753       Blank.  Inap
+
+
+==========================================================================================
+
+AFDDM          DR DIAGNOSED CAUSE OF MEM TROUBLE-MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRDXM
+
+         Did a doctor ever give a diagnosis for the cause of the memory trouble?
+
+         .................................................................................
+            30           1.  YES
+            51           2.  NO
+            22           8.  DON'T KNOW
+           753       Blank.  Inap
+
+
+==========================================================================================
+
+AFDXSPECCDM    MEMORY TROUBLE DIAGNOSIS - MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: DXSPECCDM
+
+         Doctor's Diagnosis:
+
+         .................................................................................
+            11           1.  Alzheimer's Disease alone or in combination with other
+                             conditions
+             7           2.  Dementia alone or in combination with other conditions
+             6           3.  Stroke/Possible stroke/TIA alone or in combination with
+                             other conditions
+                         4.  Alcoholism/Alcohol Abuse
+                         5.  Brain Tumor/Brain Cancer
+             2           6.  Parkinson's Disease
+                         7.  Hypoxia
+                         8.  Aneurysm
+                         9.  Diabetes
+                        10.  Head Injury/trauma alone or in combination with other
+                             conditions
+                        11.  Heart Attack
+             2          12.  Artery blockage/poor circulation/hardening of
+                             arteries/cardiac related issues
+                        13.  Medication(s), chemical exposure
+             1          14.  Neuropsychiatric or Mental Retardation
+             1          15.  Other, Specify
+           826       Blank.  Inap
+
+
+==========================================================================================
+
+AFAUTM         AUTOPSY PERFORMED ON MOTHER
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: AUTOPM
+
+         Was an autopsy performed?
+
+         .................................................................................
+             5           1.  YES
+            74           2.  NO
+            20           8.  DON'T KNOW
+           757       Blank.  Inap
+
+
+==========================================================================================
+
+AFADDX         ANY RELATIVES WITH ALZHEIMERS DISEASE
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: ADFHX
+
+         Now I am going to read you a list of problems people sometimes have. For those
+         relatives we've been talking about, (NAME'S) full brothers and sisters,
+         biological parents and offspring, please tell me if any of them have been told
+         by a doctor that they had:
+         ALZHEIMER'S DISEASE?
+
+         .................................................................................
+            60           1.  YES
+           733           2.  NO
+            46           8.  DON'T KNOW
+             2           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFPDDX         ANY RELATIVES WITH PARKINSONS DISEASE
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: PDFHX
+
+         PARKINSON'S DISEASE?
+
+         .................................................................................
+            41           1.  YES
+           757           2.  NO
+            40           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFDWNDX        ANY RELATIVES WITH DOWNS SYNDROME
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: DOWNFHX
+
+         DOWN'S SYNDROME?
+
+         .................................................................................
+             6           1.  YES
+           796           2.  NO
+            36           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFSENDX        ANY RELATIVES WITH SENILE DEMENTIA
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SENILFHX
+
+         SENILE DEMENTIA?
+
+         .................................................................................
+            36           1.  YES
+           734           2.  NO
+            68           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFARTDX        ANY RELATIVES HAVE HARDENING OF ARTERIES
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: ARTERFHX
+
+         AHARDENING OF THE ARTERIES?
+
+         .................................................................................
+           127           1.  YES
+           598           2.  NO
+           112           8.  DON'T KNOW
+             4           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFTIADX        ANY RELATIVES HAVE MINI-STROKES OR TIAS
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: TIAFHX
+
+         MINI-STROKES OR TIA'S?
+
+         .................................................................................
+           168           1.  YES
+           600           2.  NO
+            71           8.  DON'T KNOW
+             2           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFSCLDX        ANY RELATIVES, ARTERIOSCLEROSIS OF BRAIN
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: SCLERFHX
+
+         AARTERIOSCLEROSIS OF THE BRAIN?
+
+         .................................................................................
+            11           1.  YES
+           768           2.  NO
+            59           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFOTHDX        ANY RELATIVES HAVE OTHER NEURO CONDITION
+         Section: AF    Level: Respondent      Type: Numeric    Width: 1   Decimals: 0
+         Ref: OTHERFHX
+
+         ANY OTHER NEUROLOGICAL CONDITION?
+
+         .................................................................................
+            40           1.  YES
+           747           2.  NO
+            51           8.  DON'T KNOW
+             3           9.  Not Asked/Not Assessed
+            15       Blank.  Inap
+
+
+==========================================================================================
+
+AFCNTSB        COUNT OF SIBLINGS
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CNTSIB
+
+         Count of number of sibling records
+
+         .................................................................................
+            15                       0.  None
+           514                     1-5.  Count of siblings
+           283                    6-10.  Count of siblings
+            44                   11-15.  Count of siblings
+
+
+==========================================================================================
+
+AFCNTCH        COUNT OF CHILDREN
+         Section: AF    Level: Respondent      Type: Numeric    Width: 2   Decimals: 0
+         Ref: CNTCHILD
+
+         Count of number of child records
+
+         .................................................................................
+           191                       0.  None
+           547                     1-5.  Count of children
+            97                    6-10.  Count of children
+            21                   11-15.  Count of children
+
+
+==========================================================================================

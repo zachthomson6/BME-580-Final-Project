@@ -1,0 +1,314 @@
+==========================================================================================
+
+ADAMS Wave A: August 2001 through January 2004 (Early Release, Version 6.0, September 2009)
+
+Note to Users: This program is designed to create a codebook that matches the 
+distribution dataset. Codebook content is derived from the data collection
+system used to gather information for this study, e.g. Blaise. If you have any 
+questions or suggestions concerning codebook layout or content please bring 
+them to the attention of the HRS staff at hrsquest@isr.umich.edu.
+
+Printing recommendation: Set margins (left/right/top/bottom) to .5 inch; print
+in portrait orientation using a mono-space 10-point font.
+
+==========================================================================================
+
+Section AF: FAMILY HISTORY - INITIAL VISIT  (Child)
+
+==========================================================================================
+
+HHID           HRS HOUSEHOLD IDENTIFIER
+         Section: AF    Level: Child           Type: Character  Width: 6   Decimals: 0
+
+         This variable uniquely identifies an original HRS household across waves.
+
+         .................................................................................
+          2443           010059-213468.  Household Identification Number
+
+
+==========================================================================================
+
+PN             HRS PERSON NUMBER
+         Section: AF    Level: Child           Type: Character  Width: 3   Decimals: 0
+
+         Each HRS respondent has a Person Number, PN, unique within an original
+         household.  In combination, HHID and PN uniquely identify a respondent across
+         all waves of the study.
+
+         .................................................................................
+          1642         010.  Person Number
+            28         011.  Person Number
+           500         020.  Person Number
+             3         021.  Person Number
+           126         030.  Person Number
+           142         040.  Person Number
+             2         041.  Person Number
+
+
+==========================================================================================
+
+AFCNUM         CHILD NUMBER
+         Section: AF    Level: Child           Type: Numeric    Width: 2   Decimals: 0
+         Ref: CNUM
+
+         Child mention number.
+
+         .................................................................................
+          2075                     1-5.  First, second, ..., child mentioned
+           319                    6-10.  Sixth, seventh, ..., child mentioned
+            47                   11-15.  Eleventh, twelfth, ..., child mentioned
+             2                   16-20.  Sixteenth, seventeenth, ..., child mentioned
+
+
+==========================================================================================
+
+ADAMSSID       ADAMS SUBJECT IDENTIFIER
+         Section: AF    Level: Child           Type: Character  Width: 5   Decimals: 0
+
+         This variable identifies an ADAMS subject in the ADAMS data files.
+
+         .................................................................................
+          2443             00021-21311.  ADAMS Subject Identification Number
+
+
+==========================================================================================
+
+AFCHILD        CHILD NUMBER AS CODED ON CHART
+         Section: AF    Level: Child           Type: Character  Width: 5   Decimals: 0
+         Ref: CHILD31-CHILD50
+
+         BIRTH ORDER CODE FOR OFFSPRING
+         BLANK=NO MORE OFFSPRING
+
+         .................................................................................
+           665       00031.  Child number as coded on chart
+           572       00032.  Child number as coded on chart
+           404       00033.  Child number as coded on chart
+           265       00034.  Child number as coded on chart
+           169       00035.  Child number as coded on chart
+           118       00036.  Child number as coded on chart
+            76       00037.  Child number as coded on chart
+            55       00038.  Child number as coded on chart
+            40       00039.  Child number as coded on chart
+            30       00040.  Child number as coded on chart
+            21       00041.  Child number as coded on chart
+            10       00042.  Child number as coded on chart
+             7       00043.  Child number as coded on chart
+             6       00044.  Child number as coded on chart
+             3       00045.  Child number as coded on chart
+             2       00046.  Child number as coded on chart
+
+
+==========================================================================================
+
+AFCRELAT       RELATIONSHIP OF CHILD TO SUBJECT
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: RELAT31-RELAT50
+
+         OFFSPRING RELATIONSHIP CODE
+
+         .................................................................................
+          1220           4.  SON
+          1216           5.  DAUGHTER
+             1           8.  DON'T KNOW
+             6           9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFCLIVING      IS CHILD LIVING OR DECEASED
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIVING31-LIVING
+
+         IS (SON/DAUGHTER) LIVING?
+
+         .................................................................................
+          2181           1.  YES
+           259           2.  NO
+             3           8.  DON'T KNOW
+
+
+==========================================================================================
+
+AFCAGE         CURRENT AGE OR AGE AT DEATH OF CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGE31-AGE50
+
+         WHAT IS (SON/DAUGHTER) APPROXIMATE AGE OR AGE AT TIME OF DEATH?
+
+         .................................................................................
+            87                    1-19.  Age
+            40                   20-29.  Age
+           268                   30-39.  Age
+           807                   40-49.  Age
+           838                   50-59.  Age
+           325                   60-69.  Age
+            46                   70-79.  Age
+             1                   80-89.  Age
+            31                     998.  DON'T KNOW
+
+
+==========================================================================================
+
+AFCMEDPX       DID CHILD HAVE A MEDICAL PROBLEM
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEDPX31-MEDPX50
+
+         DID (SON/DAUGHTER) EVER HAVE A HEART ATTACK, STROKE OR OTHER CARDIOVASCULAR
+         PROBLEM?
+
+         .................................................................................
+           186           1.  YES
+          2191           2.  NO
+                         6.  NOT ASKED BECAUSE INDIVIDUAL PREVIOUSLY REPORTED AS DECEASED
+            66           8.  DON'T KNOW
+                         9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFCMEMPX       DID CHILD EVER HAVE MEMORY PROBLEMS
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: MEMPX31-MEMPX50
+
+         DID (SON/DAUGHTER) EVER HAVE MEMORY PROBLEMS?
+
+         .................................................................................
+            48           1.  YES
+          2334           2.  NO
+                         6.  NOT ASKED BECAUSE INDIVIDUAL PREVIOUSLY REPORTED AS DECEASED
+            61           8.  DON'T KNOW
+                         9.  Not Asked/Not Assessed
+
+
+==========================================================================================
+
+AFCAGEPX       AGE MEMORY PROBLEMS BEGAN - CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 3   Decimals: 0
+         Ref: AGEPX31-AGEPX50
+
+         HOW OLD WAS (SON/DAUGHTER) WHEN SHE/HE STARTED HAVING MEMORY PROBLEMS?
+
+         NOTE: THIS SERIES OF QUESTIONS ARE ONLY ASKED IF THE PERSON HAD MEMORY PROBLEMS
+         ENDORSED (MEMPX31-MEMPX50).  THERE WILL NOT BE RESPONSES FOR ALL INDIVIDUALS
+         LISTED IN THE FAMILY HISTORY VARIABLES (CHILD31-CHILD50).
+
+         .................................................................................
+             3                    1-19.  Age
+             5                   20-29.  Age
+            12                   30-39.  Age
+             5                   40-49.  Age
+            11                   50-59.  Age
+             8                   60-69.  Age
+             1                   70-79.  Age
+             3                     998.  DON'T KNOW
+          2395                   Blank.  Inap
+
+
+==========================================================================================
+
+AFCSUDDEN      MEM PROBLEM BEGAN SUDDENLY/SLOWLY-CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: SUDDEN31-SUDDEN
+
+         Did the memory problems begin suddenly or slowly?
+
+         .................................................................................
+            18           1.  SUDDENLY
+            26           2.  SLOWLY
+             4           8.  DON'T KNOW
+          2395       Blank.  Inap
+
+
+==========================================================================================
+
+AFCWORSEN      MEMORY PROBLEMS WORSEN OVER TIME-CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: WORSEN31-WORSEN
+
+         Did the memory problems get worse over time?
+
+         .................................................................................
+            33           1.  YES
+            14           2.  NO
+             1           8.  DON'T KNOW
+          2395       Blank.  Inap
+
+
+==========================================================================================
+
+AFCLIMITS      MEM PROB CAUSE DAILY LIMITATIONS-CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: LIMITS31-LIMITS
+
+         Did the memory problems cause limitations with daily activities?
+
+         .................................................................................
+            24           1.  YES
+            22           2.  NO
+             2           8.  DON'T KNOW
+          2395       Blank.  Inap
+
+
+==========================================================================================
+
+AFCDRDX        DR DIAGNOSED CAUSE OF MEM TROUBLE-CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: DRDX31-DRDX50
+
+         Did a doctor ever give a diagnosis for the cause of the memory trouble?
+
+         .................................................................................
+            22           1.  YES
+            19           2.  NO
+             7           8.  DON'T KNOW
+          2395       Blank.  Inap
+
+
+==========================================================================================
+
+AFCDXSPECCD    MEMORY TROUBLE DIAGNOSIS - CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 2   Decimals: 0
+         Ref: DXSPECCD31-DXSP
+
+         Doctor's Diagnosis:
+
+         .................................................................................
+             1           1.  Alzheimer's Disease alone or in combination with other
+                             conditions
+             2           2.  Dementia alone or in combination with other conditions
+                         3.  Stroke/Possible stroke/TIA alone or in combination with
+                             other conditions
+             1           4.  Alcoholism/Alcohol Abuse
+                         5.  Brain Tumor/Brain Cancer
+                         6.  Parkinson's Disease
+                         7.  Hypoxia
+             1           8.  Aneurysm
+             1           9.  Diabetes
+             9          10.  Head Injury/trauma alone or in combination with other
+                             conditions
+                        11.  Heart Attack
+                        12.  Artery blockage/poor circulation/hardening of
+                             arteries/cardiac related issues
+             1          13.  Medication(s), chemical exposure
+             2          14.  Neuropsychiatric or Mental Retardation
+             4          15.  Other, Specify
+          2421       Blank.  Inap
+
+
+==========================================================================================
+
+AFCAUTOP       AUTOPSY PERFORMED ON CHILD
+         Section: AF    Level: Child           Type: Numeric    Width: 1   Decimals: 0
+         Ref: AUTOP31-AUTOP50
+
+         Was an autopsy performed?
+
+         .................................................................................
+             1           1.  YES
+             4           2.  NO
+             2           8.  DON'T KNOW
+          2436       Blank.  Inap
+
+
+==========================================================================================

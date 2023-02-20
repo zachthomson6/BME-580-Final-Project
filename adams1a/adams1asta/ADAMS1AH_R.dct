@@ -1,0 +1,8 @@
+dictionary using c:\adams1\data\ADAMS1AH_R.da {
+* Note: change location of input file to match your situation.
+ _column(1) str6 HHID %6s "HOUSEHOLD IDENTIFIER"
+ _column(7) str3 PN %3s "PERSON NUMBER"
+ _column(10) str5 ADAMSSID %5s "ADAMS SUBJECT IDENTIFIER"
+ _column(15) byte AHCONDITIONS %1.0f "MEDICAL CONDITIONS PRESENT"
+ _column(16) byte AHTOTCOND %2.0f "TOTAL NUMBER OF CONDITIONS OR PROCEDURES REPORTED"
+}
