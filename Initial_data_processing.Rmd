@@ -22,10 +22,10 @@ library(DescTools)
 ## Functions
 ```{r}
 # importing data files
+# The read_data function incorporates code from (https://stackoverflow.com/questions/45109400/how-can-i-read-a-da-file-directly-into-r), which is a script that loads .da and .dct files into R as dataframes
 
 read_data <- function(da_filepath, dict_filepath) {
-  # Set path to the data file "*.DA"
-  data.file <- da_filepath
+re
 
   # Set path to the dictionary file "*.DCT"
   dict.file <- dict_filepath
@@ -193,7 +193,6 @@ scaled_neuro_box = ggplot(data = melt(scaled_neuro), aes(x=variable, y=value)) +
 scaled_neuro_box
 
 # Remove outliers (Winsorization Method)
-# neuro_score_winsor = winsor(scaled_neuro, trim = 0.05)
 neuro_score_winsor = lapply(scaled_neuro, Winsorize, probs = c(0.05,0.95))
 neuro_score_winsor = data.frame(neuro_score_winsor)
 
@@ -213,10 +212,10 @@ neuro_score_sd_box
 ```
 
 ```{r}
-# PCA
+# PCA neuro tests
 
 # Scale and unscaled data
-ivs = data %>% select(-fetal_health)
+ivs = neuro_rawscores
 pr_unscale = prcomp(ivs)
 pr_scale = prcomp(ivs, scale=TRUE) # Note: output is a list, not a dataframe
 
@@ -231,5 +230,30 @@ fviz_eig(pr_unscale, addlabels = T, ncp = 16)
 
 fviz_pca_biplot(pr_scale)
 ```
+```{r}
+# Histograms - Frequency
 
+# PhysExam across Initial visit primary diagnosis
+
+# Create 3x1 subplot
+par(mfrow = c(3,1))
+hist(df_consolidated_physexam$Delusions,
+     main = "Delusions",
+     xlab = "Delusions",
+     breaks = "FD")
+
+hist(df_consolidated_physexam$Lose_Interest,
+     main = "Loss of Interest",
+     xlab = "Loss of Interest",
+     breaks = "FD")
+
+hist(df_consolidated_physexam$SleepProblems,
+     main = "Sleep Problems",
+     xlab = "Sleep Problems",
+     breaks = "FD")
+
+# NeuroExam across Initial visit primary diagnosis
+
+
+```
 
