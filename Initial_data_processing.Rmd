@@ -14,10 +14,13 @@ library(corrplot)
 library(ggplot2)
 install.packages('psych', repos='http://cran.us.r-project.org')
 library(psych) # Contains the winsor function and other helpful statistical tools
+install.packages('patchwork', repos='http://cran.us.r-project.org')
 library(patchwork)
 library(readr)
 library(reshape2)
+install.packages('robustHD', repos='http://cran.us.r-project.org')
 library(robustHD)
+install.packages('DescTools', repos='http://cran.us.r-project.org')
 library(DescTools)
 ```
 
