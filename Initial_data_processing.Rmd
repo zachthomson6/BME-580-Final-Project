@@ -85,7 +85,7 @@ tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1T
 
 ```{r} 
 # Consolidating Data: adding dementia score as a column 
-df_consolidated_dailyactivities = merge(df_dailyactivities, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+df_consolidated_dailyactivities = merge(df_dailyactivities, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 # str(df_consolidated_dailyactivities, list.len=ncol(df_consolidated_dailyactivities))
 
 # Rename columns in df_consolidated_dailyactivites
@@ -102,7 +102,7 @@ df_consolidated_dailyactivities <- df_consolidated_dailyactivities %>%
 
 # summary(df_consolidated_dailyactivities)
 
-df_consolidated_neuroexam = merge(df_neuroexam, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+df_consolidated_neuroexam = merge(df_neuroexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 # str(df_consolidated_neuroexam, list.len=ncol(df_consolidated_neuro))
 
 # Rename columns in df_consolidated_neuroexam
@@ -119,7 +119,7 @@ df_consolidated_neuroexam <- df_consolidated_neuroexam %>%
                "Benton_vis_reten"="ANVRTCOR")
 
 # Rename columns in df_consolidated_physexam
-df_consolidated_physexam = merge(df_physexam, df_score[,c("ADAMSSID","ADCCDX1")], by="ADAMSSID", how = 'left', all.x = TRUE)
+df_consolidated_physexam = merge(df_physexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 # str(df_consolidated_physexam, list.len=ncol(df_consolidated_physexam))
 
 df_consolidated_physexam <- df_consolidated_physexam %>% 
@@ -231,9 +231,7 @@ fviz_eig(pr_unscale, addlabels = T, ncp = 16)
 fviz_pca_biplot(pr_scale)
 ```
 ```{r}
-# Histograms - Frequency
-
-# PhysExam across Initial visit primary diagnosis
+# Histogram - PhysExam across Initial visit primary diagnosis (frequency)
 
 # Create 3x1 subplot
 par(mfrow = c(3,1))
@@ -252,7 +250,19 @@ hist(df_consolidated_physexam$SleepProblems,
      xlab = "Sleep Problems",
      breaks = "FD")
 
-# NeuroExam across Initial visit primary diagnosis
+# NeuroExam across Initial visit primary diagnosis (CSD staging score)
+
+# Factor 
+df_consolidated_neuroexam = as.numeric(df_consolidated_neuroexam$ADCDRSTG)
+
+hist(df_consolidated_neuroexam$ADCDRSTG,
+     xlab = "CSD Staging Score",
+     breaks = "FD")
+
+#df_consolidated_dailyactivities$ADCDRSTG = factor(df_consolidated_dailyactivities$ADCDRSTG, 
+                               #   levels = c(0,0.5,1,1.5,2,2.5,3,3.5,4,4.5,5))
+
+
 
 
 ```
