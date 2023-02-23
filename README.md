@@ -2,7 +2,7 @@
 
 ## Dementia Severity Prediction Model 
 
-Authors: Rebecca Hogewood, Jia Yu Cheung, Zach Thomson
+Authors: Rebecca Hogewood, Jia Yu Cheung, Zach Thomson  
 Date: 02-23-2023
 
 This repository contains our dataset and exploratory data analysis for our final project. We will be focusing on studying dementia and its predictors using this dataset.
