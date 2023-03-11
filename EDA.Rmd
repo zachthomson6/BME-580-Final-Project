@@ -92,6 +92,7 @@ raw_data = merge(df_dailyactivities,df_neuroexam,by="ADAMSSID")
 raw_data = merge(raw_data,df_physexam,by="ADAMSSID")
 raw_data = merge(raw_data, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 
+# Consolidating the data separately (i.e. daily activities, neuroexam, physexam)
 df_consolidated_dailyactivities = merge(df_dailyactivities, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 df_consolidated_neuroexam = merge(df_neuroexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 df_consolidated_physexam = merge(df_physexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
@@ -116,13 +117,72 @@ split_phys = splitdata(0.7, df_consolidated_physexam)
 train_phys = split_phys[[1]]
 test_phys = split_phys[[2]]
 ```
-#EDA: Histograms
+#Rename Columns of interest
 ```{r}
+train_daily <- train_daily %>% 
+        rename("Television" = "AGQ1",
+               "BoardGames" = "AGQ5",
+               "ArtsCraft" = "AGQ7",
+               "Write" = "AGQ8",
+               "Computer" = "AGQ9",
+               "Memory" = "AGQ11",
+               "DecisionMaking" = "AGQ12",
+               "Organization" = "AGQ13",
+               "Learning" = "AGQ23")
+```
+#EDA: Missingness
+```{r}
+# Quantify missingness
+```
+#EDA: Histograms/Density
+```{r}
+train_neuro = filter(train_neuro, ADCDRSTG<6)
+train_neuro$ADCDRSTG = as.numeric(train_neuro$ADCDRSTG)
 
+hist(train_neuro$ADCDRSTG,
+     main = "Frequency of CSD Staging Score",
+     xlab = "CSD Staging Score",
+     breaks = "FD")
+
+# Memory Across CSD Staging score
+train_daily$ADCDRSTG = factor(train_daily$ADCDRSTG, 
+                                                  levels = c(0,0.5,1,2,3,4,5))
+
+no_NA = train_daily %>% drop_na(ADCDRSTG)
+
+density_plot = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
+  geom_density(alpha = 0.2) + 
+  labs(title = 'Density Function of Memory Ability',
+     x = 'Memory Function',
+     y = 'Density',
+     fill = 'CDR staging score')
+
+density_plot
 ```
 
 #EDA: Correlation
+```{r}
+dailyactivities_noNA = train_daily %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning)
 
+dailyactivities_noNA$Television <- as.numeric(dailyactivities_noNA$Television)
+dailyactivities_noNA$BoardGames <- as.numeric(dailyactivities_noNA$BoardGames)
+dailyactivities_noNA$ArtsCraft <- as.numeric(dailyactivities_noNA$ArtsCraft)
+dailyactivities_noNA$Write <- as.numeric(dailyactivities_noNA$Write)
+dailyactivities_noNA$Computer <- as.numeric(dailyactivities_noNA$Computer)
+dailyactivities_noNA$Memory <- as.numeric(dailyactivities_noNA$Memory)
+dailyactivities_noNA$DecisionMaking <- as.numeric(dailyactivities_noNA$DecisionMaking)
+dailyactivities_noNA$Organization <- as.numeric(dailyactivities_noNA$Organization)
+dailyactivities_noNA$Learning <- as.numeric(dailyactivities_noNA$Learning)
+
+var_daily = dailyactivities_noNA %>% select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,Learning)
+
+pairs.panels(var_daily)
+#cor = cor(var_daily)
+#corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.cex = .8)
+```
 #EDA: PCA
+```{r}
+
+```
 
 #EDA: Clustering (k-means and hierarchical)
