@@ -251,7 +251,7 @@ vioplot(Wechsler_logical_memory~ADCDRSTG,
 
 #EDA: Correlation
 ```{r}
-dailyactivities_noNA = train_daily %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning)
+dailyactivities_noNA = train_daily %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
 
 dailyactivities_noNA$Television <- as.numeric(dailyactivities_noNA$Television)
 dailyactivities_noNA$BoardGames <- as.numeric(dailyactivities_noNA$BoardGames)
@@ -262,12 +262,25 @@ dailyactivities_noNA$Memory <- as.numeric(dailyactivities_noNA$Memory)
 dailyactivities_noNA$DecisionMaking <- as.numeric(dailyactivities_noNA$DecisionMaking)
 dailyactivities_noNA$Organization <- as.numeric(dailyactivities_noNA$Organization)
 dailyactivities_noNA$Learning <- as.numeric(dailyactivities_noNA$Learning)
+dailyactivities_noNA$CurrentEvents <- as.numeric(dailyactivities_noNA$CurrentEvents)
+dailyactivities_noNA$Judgement <- as.numeric(dailyactivities_noNA$Judgement)
+dailyactivities_noNA$RecallConvo <- as.numeric(dailyactivities_noNA$RecallConvo)
+dailyactivities_noNA$RememberUsingThings <- as.numeric(dailyactivities_noNA$RememberUsingThings)
+dailyactivities_noNA$FollowingStory <- as.numeric(dailyactivities_noNA$FollowingStory)
+dailyactivities_noNA$Arithmetic <- as.numeric(dailyactivities_noNA$Arithmetic)
+dailyactivities_noNA$Reasoning <- as.numeric(dailyactivities_noNA$Reasoning)
+dailyactivities_noNA$GetAcrossRoom <- as.numeric(dailyactivities_noNA$GetAcrossRoom)
+dailyactivities_noNA$Bathing <- as.numeric(dailyactivities_noNA$Bathing)
+dailyactivities_noNA$Eating <- as.numeric(dailyactivities_noNA$Eating)
+dailyactivities_noNA$GetOutOfBed <- as.numeric(dailyactivities_noNA$GetOutOfBed)
 
-var_daily = dailyactivities_noNA %>% dplyr::select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,Learning)
+var_daily = dailyactivities_noNA %>% dplyr::select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,
+                                                   Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, 
+                                                   Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
 
 pairs.panels(var_daily)
-#cor = cor(var_daily)
-#corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.cex = .8)
+cor = cor(var_daily)
+corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.cex = .4)
 ```
 #EDA: PCA
 ```{r}
