@@ -129,6 +129,32 @@ train_daily <- train_daily %>%
                "DecisionMaking" = "AGQ12",
                "Organization" = "AGQ13",
                "Learning" = "AGQ23")
+
+train_neuro <- train_neuro %>% 
+        rename("MMSE_score" = "ANMSETOT",
+               "Animal_fluency_score" = "ANAFTOT",
+               "Boston_naming_test"="ANBNTTOT",
+               "Construction_praxis_score"="ANDCPTOT",
+               "Del_word_list_memory"="ANDELCOR",
+               "IMM_word_list_recog"="ANIMMCR2",
+               "Word_list_recognition"="ANRECYES",
+               "Wechsler_logical_memory"="ANWM1TOT",
+               "Fuld_object_memory"="ANFULSC2",
+               "Benton_vis_reten"="ANVRTCOR")
+
+train_phys <- train_phys %>% 
+        rename("Weight" = "ABWEIGHT",
+               "Height" = "ABHEIGHT",
+               "Pulse_obliteration_pressure" = "ABPULSE",
+               "BPM" = "ABBPBEAT",
+               "SystolicBP" = "ABBPSYS1",
+               "DiastolicBP" = "ABBPDIA1",
+               "FeelsBlue_Sad" = "ABC1",
+               "Tired_LowEnergy" = "ABC5",
+               "Lose_Interest" = "ABC4",
+               "SleepProblems" = "ABC9",
+               "Trouble_Concentrating" = "ABC10",
+               "Delusions" = "ABNPA")
 ```
 #EDA: Missingness
 ```{r}
@@ -159,6 +185,53 @@ density_plot = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
 
 density_plot
 ```
+#Violin Plots
+```{r}
+# Create subplot of 2 rows and 3 columns
+par(mfrow = c(2,3))
+
+# violin for MMSE_score
+vioplot(MMSE_score~ADCDRSTG,
+        data = train_neuro,
+        main="MMSE Score across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="MMSE Score")
+
+# violin for Animal_fluency_score
+vioplot(Animal_fluency_score~ADCDRSTG,
+        data = train_neuro,
+        main="Animal Fluency Score across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="Animal Fluency Score")
+
+# violin for Boston_naming_test
+vioplot(Boston_naming_test~ADCDRSTG,
+        data = train_neuro,
+        main="Boston Naming Test across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="Boston Naming Test")
+
+# violin for Construction_praxis_score
+vioplot(Construction_praxis_score~ADCDRSTG,
+        data = train_neuro,
+        main="Construction Praxis Score across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="Construction Praxis Score")
+
+# violin for Del_word_list_memory
+vioplot(Del_word_list_memory~ADCDRSTG,
+        data = train_neuro,
+        main="Word List Memory across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="Word List Memory")
+
+# violin for Wechsler_logical_memory
+vioplot(Wechsler_logical_memory~ADCDRSTG,
+        data = train_neuro,
+        main="Logical Memory across CDR Staging Score",
+        xlab="CDR Score",
+        ylab="Logical Memory")
+```
 
 #EDA: Correlation
 ```{r}
@@ -174,7 +247,7 @@ dailyactivities_noNA$DecisionMaking <- as.numeric(dailyactivities_noNA$DecisionM
 dailyactivities_noNA$Organization <- as.numeric(dailyactivities_noNA$Organization)
 dailyactivities_noNA$Learning <- as.numeric(dailyactivities_noNA$Learning)
 
-var_daily = dailyactivities_noNA %>% select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,Learning)
+var_daily = dailyactivities_noNA %>% dplyr::select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,Learning)
 
 pairs.panels(var_daily)
 #cor = cor(var_daily)
@@ -182,7 +255,77 @@ pairs.panels(var_daily)
 ```
 #EDA: PCA
 ```{r}
+neuro_rawscores = train_neuro[ , c("MMSE_score", "Animal_fluency_score","Boston_naming_test","Construction_praxis_score",
+                                                 "Del_word_list_memory","IMM_word_list_recog","Word_list_recognition",
+                                                 "Wechsler_logical_memory","Fuld_object_memory","Benton_vis_reten","ADCDRSTG")]
 
+ivs = neuro_rawscores %>% dplyr::select(-ADCDRSTG)
+pr_unscale = prcomp(ivs)
+pr_scale = prcomp(ivs, scale=TRUE) # Note: output is a list, not a dataframe
+
+names(pr_scale)
+dim(pr_scale$x)
+pr_scale$x
+
+pr_scale$rotation
+
+fviz_eig(pr_scale, addlabels = T, ncp = 16)
+fviz_eig(pr_unscale, addlabels = T, ncp = 16) 
+
+#fviz_pca_biplot(pr_scale)
+fviz_pca_biplot(pr_scale, habillage = neuro_rawscores$ADCDRSTG)
+fviz_pca_ind(pr_scale,
+             col.ind = 'coord',
+             habillage = neuro_rawscores$ADCDRSTG)
 ```
 
 #EDA: Clustering (k-means and hierarchical)
+```{r}
+#Scale data
+data_scaled = as.data.frame(sapply(neuro_rawscores, function(x) scale(x)))
+
+# K-means clustering
+kmeans2 = kmeans(data_scaled, center = 7,iter.max = 70)
+
+fviz_cluster(kmeans2, data = data_scaled,
+             geom = "point",
+             ellipse.type = "convex", 
+             ggtheme = theme_bw()
+             )
+
+kmeans_table = table(kmeans2$cluster, neuro_rawscores$ADCDRSTG)
+kmeans_table
+
+# Elbow method
+fviz_nbclust(data_scaled, kmeans, method = "wss") +
+  labs(subtitle = "Elbow Method")
+
+# Silhouette method
+fviz_nbclust(data_scaled, kmeans, method = "silhouette") +
+  labs(subtitle = "Elbow Method")
+```
+
+```{r}
+# Hierarchical clustering
+dis_mat = dist(data_scaled, method = 'euclidean')
+
+# Compute hclust
+hc = hclust(dis_mat, method = 'median')
+
+# methods = complete, average, centroid, mcquitty, single, median
+
+# Plot Dendrogram
+plot(hc, cex = 0.6, hang = -1)
+rect.hclust(hc, k=7, border = 'red')
+
+# Evaluated accuracy 
+cutHcl = cutree(hc, k=7)
+clusterTab = table(cutHcl, neuro_rawscores$ADCDRSTG)
+clusterTab
+
+for (n in 5:10){ # n = number of clusters 
+  cutHcl = cutree(hc, k = n)
+  out = table(cutHcl, neuro_rawscores$ADCDRSTG)
+  print(paste("Number of Clusters =", n))
+  print(out) }
+```
