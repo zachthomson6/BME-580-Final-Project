@@ -226,9 +226,10 @@ data = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Write, Comp
 #EDA: Missingness
 ```{r}
 # Quantify missingness 
+summary(data)
 
 # Mean Imputation
-
+#cholData$thal[is.na(cholData$thal)] <- mean(cholData$thal, na.rm = TRUE)
 ```
 #EDA: Histograms/Density
 ```{r}
