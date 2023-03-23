@@ -18,6 +18,7 @@ library(reshape2)
 library(robustHD)
 library(DescTools)
 library(caTools)
+set.seed(580)
 ```
 
 ## Functions
@@ -100,77 +101,12 @@ df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adam
 raw_data = merge(df_dailyactivities,df_neuroexam,by="ADAMSSID")
 raw_data = merge(raw_data,df_physexam,by="ADAMSSID")
 raw_data = merge(raw_data, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
-
-# Consolidating the data separately (i.e. daily activities, neuroexam, physexam)
-df_consolidated_dailyactivities = merge(df_dailyactivities, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
-df_consolidated_neuroexam = merge(df_neuroexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
-df_consolidated_physexam = merge(df_physexam, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
 ```
 
 #Split Data into Training and Test data
-```{r}
-#use 70% of dataset as training set and 30% as test set
-split_raw = splitdata(0.7, raw_data)
-train_raw = split_raw[[1]]
-test_raw = split_raw[[2]]
 
-split_neuro = splitdata(0.7, df_consolidated_neuroexam)
-train_neuro = split_neuro[[1]]
-test_neuro = split_neuro[[2]]
-
-split_daily = splitdata(0.7, df_consolidated_dailyactivities)
-train_daily = split_daily[[1]]
-test_daily = split_daily[[2]]
-
-split_phys = splitdata(0.7, df_consolidated_physexam)
-train_phys = split_phys[[1]]
-test_phys = split_phys[[2]]
-```
 #Rename Columns of interest
 ```{r}
-train_daily <- train_daily %>% 
-        rename("Television" = "AGQ1",
-               "BoardGames" = "AGQ5",
-               "ArtsCraft" = "AGQ7",
-               "Write" = "AGQ8",
-               "Computer" = "AGQ9",
-               "CurrentEvents" = "AGQ10",
-               "Memory" = "AGQ11",
-               "Judgement" = "AGQ12",
-               "Organization" = "AGQ13",
-               "RecallConvo" = "AGQ16",
-               "RememberUsingThings" = "AGQ21",
-               "Learning" = "AGQ23",
-               "FollowingStory" = "AGQ24",
-               "DecisionMaking" = "AGQ25",
-               "Arithmetic" = "AGQ28",
-               "Reasoning" = "AGQ29",
-               "GetAcrossRoom" = "AGQ30A",
-               "Bathing" = "AGQ30C",
-               "Eating" = "AGQ30D",
-               "GetOutOfBed" = "AGQ30E")
-
-train_neuro <- train_neuro %>% 
-        rename("MMSE_score" = "ANMSETOT",
-               "Animal_fluency_score" = "ANAFTOT",
-               "Boston_naming_test"="ANBNTTOT",
-               "Construction_praxis_score"="ANDCPTOT",
-               "Del_word_list_memory"="ANDELCOR",
-               "IMM_word_list_recog"="ANIMMCR2",
-               "Word_list_recognition"="ANRECYES",
-               "Wechsler_logical_memory"="ANWM1TOT",
-               "Fuld_object_memory"="ANFULSC2",
-               "Benton_vis_reten"="ANVRTCOR")
-
-train_phys <- train_phys %>% 
-        rename("Weight" = "ABWEIGHT",
-               "Height" = "ABHEIGHT",
-               "Pulse_obliteration_pressure" = "ABPULSE",
-               "Vision" = "ABVISN2",
-               "BPM" = "ABBPBEAT",
-               "SystolicBP" = "ABBPSYS1",
-               "DiastolicBP" = "ABBPDIA1")
-
 raw_data <- raw_data %>% 
   rename("Television" = "AGQ1",
                "BoardGames" = "AGQ5",
@@ -213,12 +149,13 @@ raw_data <- raw_data %>%
 
 ```{r}
 # Isolate subset of raw data
-data = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Write, Computer, CurrentEvents, Memory, Judgement, Organization, 
+data_subset = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Write, Computer, CurrentEvents, Memory, Judgement, Organization, 
                                   RecallConvo, RememberUsingThings, Learning, FollowingStory, DecisionMaking, Arithmetic, Reasoning,
                                   GetAcrossRoom, Bathing, Eating, GetOutOfBed, MMSE_score, Animal_fluency_score, Boston_naming_test,
                                   Construction_praxis_score, Del_word_list_memory, IMM_word_list_recog, Word_list_recognition,
                                   Wechsler_logical_memory, Fuld_object_memory, Benton_vis_reten, Weight, Height, Pulse_obliteration_pressure,
                                   Vision, BPM, SystolicBP, DiastolicBP,ADCDRSTG)
+
 ```
 
 # Section 1: EDA
@@ -226,26 +163,51 @@ data = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Write, Comp
 #EDA: Missingness
 ```{r}
 # Quantify missingness 
-summary(data)
+summary(data_subset)
 
-# Mean Imputation
-#cholData$thal[is.na(cholData$thal)] <- mean(cholData$thal, na.rm = TRUE)
+# Mean Imputation (https://www.geeksforgeeks.org/replace-missing-values-by-column-mean-in-r-dataframe/)
+m <- c()
+for(i in colnames(data_subset)){
+  # compute mean for all columns
+  mean_value <- mean(data_subset[,i],na.rm = TRUE)
+  m <- append(m,mean_value)
+}
+  
+# adding column names to matrix
+a <- matrix(m,nrow=1)
+colnames(a) <- colnames(data_subset)
+a
+
+data = data_subset 
+
+for(i in colnames(data))
+    data[,i][is.na(data[,i])] <- a[,i]
+data
+
+summary(data)
 ```
+# Split Data into Train and Test
+```{r}
+split_data2 = splitdata(0.7, data)
+train_data = split_data2[[1]]
+test_data = split_data2[[2]]
+```
+
 #EDA: Histograms/Density
 ```{r}
-train_neuro = filter(train_neuro, ADCDRSTG<6)
-train_neuro$ADCDRSTG = as.numeric(train_neuro$ADCDRSTG)
+train_data = filter(train_data, ADCDRSTG<6)
+train_data$ADCDRSTG = as.numeric(train_data$ADCDRSTG)
 
-hist(train_neuro$ADCDRSTG,
+hist(train_data$ADCDRSTG,
      main = "Frequency of CDR Staging Score",
      xlab = "CDR Staging Score",
      breaks = "FD")
 
 # Memory Across CDR Staging score
-train_daily$ADCDRSTG = factor(train_daily$ADCDRSTG, 
+train_data$ADCDRSTG = factor(train_data$ADCDRSTG, 
                                                   levels = c(0,0.5,1,2,3,4,5))
 
-no_NA = train_daily %>% drop_na(ADCDRSTG)
+no_NA = train_data %>% drop_na(ADCDRSTG)
 
 density_plot_CDR = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
   geom_density(alpha = 0.2) + 
@@ -265,42 +227,42 @@ par(mfrow = c(2,3))
 
 # violin for MMSE_score
 vioplot(MMSE_score~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="MMSE Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="MMSE Score")
 
 # violin for Animal_fluency_score
 vioplot(Animal_fluency_score~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="Animal Fluency Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Animal Fluency Score")
 
 # violin for Boston_naming_test
 vioplot(Boston_naming_test~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="Boston Naming Test across CDR Staging Score",
         xlab="CDR Score",
         ylab="Boston Naming Test")
 
 # violin for Construction_praxis_score
 vioplot(Construction_praxis_score~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="Construction Praxis Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Construction Praxis Score")
 
 # violin for Del_word_list_memory
 vioplot(Del_word_list_memory~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="Word List Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Word List Memory")
 
 # violin for Wechsler_logical_memory
 vioplot(Wechsler_logical_memory~ADCDRSTG,
-        data = train_neuro,
+        data = train_data,
         main="Logical Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Logical Memory")
@@ -314,40 +276,40 @@ vioplot(Wechsler_logical_memory~ADCDRSTG,
 #train_phys$ADCDRSTG = factor(train_phys$ADCDRSTG, levels = c(0,0.5,1,2,3,4,5))
 
 # Remove outliers
-sd_weight = 3*sd(train_phys$Weight)
-weight_mean = mean(train_phys$Weight)
+sd_weight = 3*sd(train_data$Weight)
+weight_mean = mean(train_data$Weight)
 
-weight_no_out = filter(train_phys,
+weight_no_out = filter(train_data,
                      Weight <= weight_mean + sd_weight &
                      Weight >= weight_mean - sd_weight)
 
-sd_height = 3*sd(train_phys$Height)
-height_mean = mean(train_phys$Height)
+sd_height = 3*sd(train_data$Height)
+height_mean = mean(train_data$Height)
 
-height_no_out = filter(train_phys,
+height_no_out = filter(train_data,
                      Height <= height_mean + sd_height &
                      Height >= height_mean - sd_height)
 
 
 
-sd_pulse = 3*sd(train_phys$Pulse_obliteration_pressure,na.rm=TRUE)
-pulse_mean = mean(train_phys$Pulse_obliteration_pressure,na.rm=TRUE)
+sd_pulse = 3*sd(train_data$Pulse_obliteration_pressure,na.rm=TRUE)
+pulse_mean = mean(train_data$Pulse_obliteration_pressure,na.rm=TRUE)
 
-pulse_no_out = filter(train_phys,
+pulse_no_out = filter(train_data,
                      Pulse_obliteration_pressure <= pulse_mean + sd_pulse &
                      Pulse_obliteration_pressure >= pulse_mean - sd_pulse)
 
-sd_vision = 3*sd(train_phys$Vision,na.rm=TRUE)
-vision_mean = mean(train_phys$Vision,na.rm=TRUE)
+sd_vision = 3*sd(train_data$Vision,na.rm=TRUE)
+vision_mean = mean(train_data$Vision,na.rm=TRUE)
 
-vision_no_out = filter(train_phys,
+vision_no_out = filter(train_data,
                      Vision <= vision_mean + sd_vision &
                      Vision >= vision_mean - sd_vision)
 
-sd_bpm = 3*sd(train_phys$BPM,na.rm=TRUE)
-bpm_mean = mean(train_phys$BPM,na.rm=TRUE)
+sd_bpm = 3*sd(train_data$BPM,na.rm=TRUE)
+bpm_mean = mean(train_data$BPM,na.rm=TRUE)
 
-bpm_no_out = filter(train_phys,
+bpm_no_out = filter(train_data,
                      BPM <= bpm_mean + sd_bpm &
                      BPM >= bpm_mean - sd_bpm)
 
@@ -387,7 +349,7 @@ grid.arrange(boxplot_weight, boxplot_height, boxplot_pulse, boxplot_vision, boxp
         
 #EDA: Correlation
 ```{r}
-dailyactivities_noNA = train_daily %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
+dailyactivities_noNA = train_data %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
 
 dailyactivities_noNA$Television <- as.numeric(dailyactivities_noNA$Television)
 dailyactivities_noNA$BoardGames <- as.numeric(dailyactivities_noNA$BoardGames)
@@ -420,34 +382,35 @@ corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.c
 ```
 #EDA: PCA
 ```{r}
-neuro_rawscores = train_neuro[ , c("MMSE_score", "Animal_fluency_score","Boston_naming_test","Construction_praxis_score",
-                                                 "Del_word_list_memory","IMM_word_list_recog","Word_list_recognition",
-                                                 "Wechsler_logical_memory","Fuld_object_memory","Benton_vis_reten","ADCDRSTG")]
+# Convert to numeric
+train_data <- train_data %>% mutate_if(is.integer, as.numeric)
 
-ivs = neuro_rawscores %>% dplyr::select(-ADCDRSTG)
-pr_unscale = prcomp(ivs)
-pr_scale = prcomp(ivs, scale=TRUE) # Note: output is a list, not a dataframe
+# Calculate principal components
+pca <- prcomp(train_data[, 1:37], center=TRUE, scale=TRUE)
 
-names(pr_scale)
-dim(pr_scale$x)
-pr_scale$x
+names(pca)
+dim(pca$x)
+pca$x
 
-pr_scale$rotation
+pca$rotation
 
-fviz_eig(pr_scale, addlabels = T, ncp = 16)
-fviz_eig(pr_unscale, addlabels = T, ncp = 16) 
+fviz_eig(pca, addlabels = T, ncp = 16)
 
-#fviz_pca_biplot(pr_scale)
-fviz_pca_biplot(pr_scale, habillage = neuro_rawscores$ADCDRSTG)
-fviz_pca_ind(pr_scale,
+fviz_pca_biplot(pca, habillage = train_data$ADCDRSTG)
+fviz_pca_ind(pca,
              col.ind = 'coord',
-             habillage = neuro_rawscores$ADCDRSTG)
+             habillage = train_data$ADCDRSTG)
+
+# print PCA loadings
+pca.loadings <- pca$rotation
+pca.loadings
 ```
 
 #EDA: Clustering (k-means and hierarchical)
 ```{r}
 #Scale data
-data_scaled = as.data.frame(sapply(neuro_rawscores, function(x) scale(x)))
+numvar = train_data[,1:37]
+data_scaled = as.data.frame(sapply(numvar, function(x) scale(x)))
 
 # K-means clustering
 kmeans2 = kmeans(data_scaled, center = 7,iter.max = 70)
@@ -458,7 +421,7 @@ fviz_cluster(kmeans2, data = data_scaled,
              ggtheme = theme_bw()
              )
 
-kmeans_table = table(kmeans2$cluster, neuro_rawscores$ADCDRSTG)
+kmeans_table = table(kmeans2$cluster, train_data$ADCDRSTG)
 kmeans_table
 
 # Elbow method
@@ -485,12 +448,12 @@ rect.hclust(hc, k=7, border = 'red')
 
 # Evaluated accuracy 
 cutHcl = cutree(hc, k=7)
-clusterTab = table(cutHcl, neuro_rawscores$ADCDRSTG)
+clusterTab = table(cutHcl, train_data$ADCDRSTG)
 clusterTab
 
 for (n in 5:10){ # n = number of clusters 
   cutHcl = cutree(hc, k = n)
-  out = table(cutHcl, neuro_rawscores$ADCDRSTG)
+  out = table(cutHcl, train_data$ADCDRSTG)
   print(paste("Number of Clusters =", n))
   print(out) }
 ```
@@ -498,19 +461,35 @@ for (n in 5:10){ # n = number of clusters
 
 #Logistic Model/ Logit
 ```{r}
-#logMod = glm(outcome~., family = binomial, data = cardio_train)
-#summary(logMod)
+logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
+summary(logMod)
 ```
 
 #Linear Discrimminant Analysis
 ```{r}
-#ldaMod = lda(outcome~., data = cardio_train)
-#ldaMod
+ldaMod = lda(ADCDRSTG~., data = train_data)
+ldaMod
+
+# create confusion matrix for training set
+ldaPred = predict(ldaMod, train_data)
+confusionTab = table(Predicted = ldaPred$class,
+                      Actual = train_data$ADCDRSTG)
+confusionTab
+
+# create confusion matrix for test set
+ldaPred_test = predict(ldaMod, test_data)
+confusionTab_test = table(Predicted = ldaPred_test$class,
+                      Actual = test_data$ADCDRSTG)
+confusionTab_test
 ```
 
 #KNN
 ```{r}
-#knn2 = knn(cardio_train, cardio_test, cl = as.factor(cardio_train$outcome), k = 2)
-#tab2 = table(knn2,as.factor(cardio_test$outcome))
-#tab2
+knn3 = knn(train_data, test_data, cl = as.factor(train_data$ADCDRSTG), k = 3)
+tab3 = table(knn5,as.factor(test_data$ADCDRSTG))
+tab3
+```
+
+#GAMS
+```{r}
 ```
