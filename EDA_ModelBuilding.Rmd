@@ -64,6 +64,15 @@ splitdata <- function(probability,df) {
   test   <- subset(df, sample == FALSE)
   return(list(train,test))
 }
+
+remove3SD <- function(df,col,colname){
+  sd = 3*sd(col)
+  mean = mean(col)
+  df_no_out = filter(df,
+                    colname <= mean + sd &
+                    colname >= mean - sd)
+  return(df_no_out)
+}
 ```
 
 #Import Data Sets
@@ -157,16 +166,63 @@ train_phys <- train_phys %>%
         rename("Weight" = "ABWEIGHT",
                "Height" = "ABHEIGHT",
                "Pulse_obliteration_pressure" = "ABPULSE",
+               "Vision" = "ABVISN2",
                "BPM" = "ABBPBEAT",
                "SystolicBP" = "ABBPSYS1",
-               "DiastolicBP" = "ABBPDIA1",
-               "FeelsBlue_Sad" = "ABC1",
-               "Tired_LowEnergy" = "ABC5",
-               "Lose_Interest" = "ABC4",
-               "SleepProblems" = "ABC9",
-               "Trouble_Concentrating" = "ABC10",
-               "Delusions" = "ABNPA")
+               "DiastolicBP" = "ABBPDIA1")
+
+raw_data <- raw_data %>% 
+  rename("Television" = "AGQ1",
+               "BoardGames" = "AGQ5",
+               "ArtsCraft" = "AGQ7",
+               "Write" = "AGQ8",
+               "Computer" = "AGQ9",
+               "CurrentEvents" = "AGQ10",
+               "Memory" = "AGQ11",
+               "Judgement" = "AGQ12",
+               "Organization" = "AGQ13",
+               "RecallConvo" = "AGQ16",
+               "RememberUsingThings" = "AGQ21",
+               "Learning" = "AGQ23",
+               "FollowingStory" = "AGQ24",
+               "DecisionMaking" = "AGQ25",
+               "Arithmetic" = "AGQ28",
+               "Reasoning" = "AGQ29",
+               "GetAcrossRoom" = "AGQ30A",
+               "Bathing" = "AGQ30C",
+               "Eating" = "AGQ30D",
+               "GetOutOfBed" = "AGQ30E",
+              "MMSE_score" = "ANMSETOT",
+               "Animal_fluency_score" = "ANAFTOT",
+               "Boston_naming_test"="ANBNTTOT",
+               "Construction_praxis_score"="ANDCPTOT",
+               "Del_word_list_memory"="ANDELCOR",
+               "IMM_word_list_recog"="ANIMMCR2",
+               "Word_list_recognition"="ANRECYES",
+               "Wechsler_logical_memory"="ANWM1TOT",
+               "Fuld_object_memory"="ANFULSC2",
+               "Benton_vis_reten"="ANVRTCOR",
+              "Weight" = "ABWEIGHT",
+               "Height" = "ABHEIGHT",
+               "Pulse_obliteration_pressure" = "ABPULSE",
+               "Vision" = "ABVISN2",
+               "BPM" = "ABBPBEAT",
+               "SystolicBP" = "ABBPSYS1",
+               "DiastolicBP" = "ABBPDIA1")
 ```
+
+```{r}
+# Isolate subset of raw data
+data = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Write, Computer, CurrentEvents, Memory, Judgement, Organization, 
+                                  RecallConvo, RememberUsingThings, Learning, FollowingStory, DecisionMaking, Arithmetic, Reasoning,
+                                  GetAcrossRoom, Bathing, Eating, GetOutOfBed, MMSE_score, Animal_fluency_score, Boston_naming_test,
+                                  Construction_praxis_score, Del_word_list_memory, IMM_word_list_recog, Word_list_recognition,
+                                  Wechsler_logical_memory, Fuld_object_memory, Benton_vis_reten, Weight, Height, Pulse_obliteration_pressure,
+                                  Vision, BPM, SystolicBP, DiastolicBP,ADCDRSTG)
+```
+
+# Section 1: EDA
+
 #EDA: Missingness
 ```{r}
 # Quantify missingness 
@@ -249,6 +305,85 @@ vioplot(Wechsler_logical_memory~ADCDRSTG,
         ylab="Logical Memory")
 ```
 
+#EDA: Boxplot
+```{r}
+
+#Physical Metrics - Boxplots
+#train_phys = filter(train_phys, ADCDRSTG<6)
+#train_phys$ADCDRSTG = factor(train_phys$ADCDRSTG, levels = c(0,0.5,1,2,3,4,5))
+
+# Remove outliers
+sd_weight = 3*sd(train_phys$Weight)
+weight_mean = mean(train_phys$Weight)
+
+weight_no_out = filter(train_phys,
+                     Weight <= weight_mean + sd_weight &
+                     Weight >= weight_mean - sd_weight)
+
+sd_height = 3*sd(train_phys$Height)
+height_mean = mean(train_phys$Height)
+
+height_no_out = filter(train_phys,
+                     Height <= height_mean + sd_height &
+                     Height >= height_mean - sd_height)
+
+
+
+sd_pulse = 3*sd(train_phys$Pulse_obliteration_pressure,na.rm=TRUE)
+pulse_mean = mean(train_phys$Pulse_obliteration_pressure,na.rm=TRUE)
+
+pulse_no_out = filter(train_phys,
+                     Pulse_obliteration_pressure <= pulse_mean + sd_pulse &
+                     Pulse_obliteration_pressure >= pulse_mean - sd_pulse)
+
+sd_vision = 3*sd(train_phys$Vision,na.rm=TRUE)
+vision_mean = mean(train_phys$Vision,na.rm=TRUE)
+
+vision_no_out = filter(train_phys,
+                     Vision <= vision_mean + sd_vision &
+                     Vision >= vision_mean - sd_vision)
+
+sd_bpm = 3*sd(train_phys$BPM,na.rm=TRUE)
+bpm_mean = mean(train_phys$BPM,na.rm=TRUE)
+
+bpm_no_out = filter(train_phys,
+                     BPM <= bpm_mean + sd_bpm &
+                     BPM >= bpm_mean - sd_bpm)
+
+# Plot
+boxplot_weight = ggplot(data = weight_no_out, aes(x=ADCDRSTG, y=Weight)) +
+  geom_boxplot() + 
+  labs(title = "Weight Across Outcome",
+       xlab="Outcome",
+        ylab="Weight")
+
+boxplot_height = ggplot(data = height_no_out, aes(x=ADCDRSTG, y=Height)) +
+  geom_boxplot() + 
+  labs(title = "Height Across Outcome",
+       xlab="Outcome",
+        ylab="Height")
+
+boxplot_pulse = ggplot(data = pulse_no_out, aes(x=ADCDRSTG, y=Pulse_obliteration_pressure)) +
+  geom_boxplot() + 
+  labs(title = "Pulse Pressure Across Outcome",
+       xlab="Outcome",
+        ylab="Pulse Pressure")
+
+boxplot_vision = ggplot(data = vision_no_out, aes(x=ADCDRSTG, y=Vision)) +
+  geom_boxplot() + 
+  labs(title = "Vision Across Outcome",
+       xlab="Outcome",
+        ylab="Vision")
+
+boxplot_bpm = ggplot(data = bpm_no_out, aes(x=ADCDRSTG, y=BPM)) +
+  geom_boxplot() + 
+  labs(title = "BPM Across Outcome",
+       xlab="Outcome",
+      ylab="BPM")
+
+grid.arrange(boxplot_weight, boxplot_height, boxplot_pulse, boxplot_vision, boxplot_bpm, ncol = 2)
+```
+        
 #EDA: Correlation
 ```{r}
 dailyactivities_noNA = train_daily %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
@@ -358,6 +493,7 @@ for (n in 5:10){ # n = number of clusters
   print(paste("Number of Clusters =", n))
   print(out) }
 ```
+# Section 2: Model Building
 
 #Logistic Model/ Logit
 ```{r}
