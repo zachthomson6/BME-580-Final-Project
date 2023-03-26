@@ -467,7 +467,7 @@ for (n in 5:10){ # n = number of clusters
 ```
 # Section 2: Model Building
 
-#Logistic Model/ Logit
+#Logistic Model
 ```{r}
 logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
 #summary(logMod)
@@ -491,7 +491,7 @@ tab_multinom
 
 # Calculating accuracy - sum of diagonal elements divided by total obs
 acc_multimod = round((sum(diag(tab_multinom))/sum(tab_multinom))*100,2)
-
+print(paste("The accuracy of multinomial logistic regression is", acc_multimod))
 ```
 
 #Linear Discrimminant Analysis
@@ -501,22 +501,80 @@ ldaMod
 
 # create confusion matrix for training set
 ldaPred = predict(ldaMod, train_data)
-confusionTab = table(Predicted = ldaPred$class,
+confusionTab_LDA_train = table(Predicted = ldaPred$class,
                       Actual = train_data$ADCDRSTG)
-confusionTab
+confusionTab_LDA_train
 
 # create confusion matrix for test set
 ldaPred_test = predict(ldaMod, test_data)
-confusionTab_test = table(Predicted = ldaPred_test$class,
+confusionTab_LDA_test = table(Predicted = ldaPred_test$class,
                       Actual = test_data$ADCDRSTG)
-confusionTab_test
+confusionTab_LDA_test
+
+# Calculating accuracy - sum of diagonal elements divided by total obs
+acc_LDA = round((sum(diag(confusionTab_LDA_test))/sum(confusionTab_LDA_test))*100,2)
+print(paste("The accuracy of multinomial logistic regression is", acc_LDA))
+
 ```
 
 #KNN
 ```{r}
-knn3 = knn(train_data, test_data, cl = as.factor(train_data$ADCDRSTG), k = 3)
-tab3 = table(knn5,as.factor(test_data$ADCDRSTG))
-tab3
+
+for (i in seq(15, 40 , 5)) {
+  knn = knn(train_data, test_data, cl = as.factor(train_data$ADCDRSTG), k = i)
+  tab = table(knn,as.factor(test_data$ADCDRSTG))
+  print(paste("k =",i))
+  print(tab)
+  
+  accuracy = round((sum(diag(tab))/sum(tab))*100,2)
+  print(paste("Accuracy:", accuracy))
+} # Chose the optimal model to be k=20
+```
+
+```{r}
+# K-fold cross validation
+data = filter(data, ADCDRSTG<6)
+
+folds = createFolds(data$ADCDRSTG, k = 4, list = FALSE)
+df_folded = cbind(data, folds)
+
+# Isolate each fold
+fold1 = filter(df_folded, folds == 1) %>% subset(select = -c(folds))
+fold2 = filter(df_folded, folds == 2) %>% subset(select = -c(folds))
+fold3 = filter(df_folded, folds == 3) %>% subset(select = -c(folds))
+fold4 = filter(df_folded, folds == 4) %>% subset(select = -c(folds))
+
+knnf1 = knn(fold1, test_data, 
+            cl = as.factor(fold1$ADCDRSTG), 
+            k=sqrt(nrow(fold1)))
+knnf2 = knn(fold2, test_data, 
+            cl = as.factor(fold2$ADCDRSTG), 
+            k=sqrt(nrow(fold2)))
+knnf3 = knn(fold3, test_data, 
+            cl = as.factor(fold3$ADCDRSTG), 
+            k=sqrt(nrow(fold3)))
+knnf4 = knn(fold4, test_data, 
+            cl = as.factor(fold4$ADCDRSTG), 
+            k=sqrt(nrow(fold4)))
+
+tabknnf1 = table(knnf1, as.factor(test_data$ADCDRSTG))
+tabknnf1
+tabknnf2 = table(knnf2, as.factor(test_data$ADCDRSTG))
+tabknnf2
+tabknnf3 = table(knnf3, as.factor(test_data$ADCDRSTG))
+tabknnf3
+tabknnf4 = table(knnf4, as.factor(test_data$ADCDRSTG))
+tabknnf4
+
+# Calculate accuracy
+accuracyf1 = (tabknnf1[1]+tabknnf1[4]) / nrow(test_data)
+accuracyf2 = (tabknnf2[1]+tabknnf2[4]) / nrow(test_data)
+accuracyf3 = (tabknnf3[1]+tabknnf3[4]) / nrow(test_data)
+accuracyf4 = (tabknnf4[1]+tabknnf4[4]) / nrow(test_data)
+
+average = (accuracyf1+accuracyf2+accuracyf3+accuracyf4)/4
+
+print(paste("Average accuracy of four groups is ",round(average,2)))
 ```
 
 #GAMS
