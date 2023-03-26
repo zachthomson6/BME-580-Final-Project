@@ -18,6 +18,8 @@ library(reshape2)
 library(robustHD)
 library(DescTools)
 library(caTools)
+library(gam)
+library(nnet)
 set.seed(580)
 ```
 
@@ -404,6 +406,12 @@ fviz_pca_ind(pca,
 # print PCA loadings
 pca.loadings <- pca$rotation
 pca.loadings
+
+# Scree plot for eigenvalues
+fviz_eig(pca,
+         choice = "eigenvalue",
+         addlabels = T) +
+  geom_hline(yintercept=1, size=1, color='green', linetype="dashed")
 ```
 
 #EDA: Clustering (k-means and hierarchical)
@@ -462,7 +470,28 @@ for (n in 5:10){ # n = number of clusters
 #Logistic Model/ Logit
 ```{r}
 logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
-summary(logMod)
+#summary(logMod)
+
+logMod = predict(logMod, newdata = test_data, type = 'response')
+
+# Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
+multinom_model <- multinom(ADCDRSTG ~ ., data = train_data)
+#summary(multinom_model)
+
+exp(coef(multinom_model)) # convert coefficients to odds
+head(round(fitted(multinom_model), 2))
+
+# Predicting the values for train dataset
+multiMod <- predict(multinom_model, newdata = train_data, "class")
+
+tab_multinom <- table(Predicted = multiMod,
+                      Actual = train_data$ADCDRSTG)
+
+tab_multinom
+
+# Calculating accuracy - sum of diagonal elements divided by total obs
+acc_multimod = round((sum(diag(tab_multinom))/sum(tab_multinom))*100,2)
+
 ```
 
 #Linear Discrimminant Analysis
@@ -492,4 +521,8 @@ tab3
 
 #GAMS
 ```{r}
+gamMod = gam(ADCDRSTG ~ s(DecisionMaking) + s(Arithmetic) + s(MMSE_score), data = train_data)
+summary(gamMod)
 ```
+
+# Section 3: Model Evaluation Criteria
