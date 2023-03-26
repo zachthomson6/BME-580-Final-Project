@@ -20,6 +20,8 @@ library(DescTools)
 library(caTools)
 library(gam)
 library(nnet)
+library(randomForest)
+library(ISLR)
 set.seed(580)
 ```
 
@@ -414,6 +416,19 @@ fviz_eig(pca,
   geom_hline(yintercept=1, size=1, color='green', linetype="dashed")
 ```
 
+# EDA: Feature Importance: Random Forest 
+#(https://www.r-bloggers.com/2021/07/feature-importance-in-random-forest/)
+#(https://www.listendata.com/2014/11/random-forest-with-r.html#id-b53c14)
+```{r}
+RFmodel <- randomForest(ADCDRSTG~., data = train_data, importance=TRUE) 
+
+# Evaluate variable important
+importance(RFmodel)
+
+# Plot the variable importance measures
+varImpPlot(RFmodel)
+```
+
 #EDA: Clustering (k-means and hierarchical)
 ```{r}
 #Scale data
@@ -583,4 +598,4 @@ gamMod = gam(ADCDRSTG ~ s(DecisionMaking) + s(Arithmetic) + s(MMSE_score), data 
 summary(gamMod)
 ```
 
-# Section 3: Model Evaluation Criteria
+# Section 3: Model Evaluation Criteria (Cp, AIC, BIC)
