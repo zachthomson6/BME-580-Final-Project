@@ -24,6 +24,10 @@ library(randomForest)
 library(ISLR)
 library(pROC)
 library(mgcv)
+library(caret)
+library(segmented)
+library(rpart)
+library(rpart.plot)
 set.seed(580)
 ```
 
@@ -197,6 +201,9 @@ summary(data)
 split_data2 = splitdata(0.7, data)
 train_data = split_data2[[1]]
 test_data = split_data2[[2]]
+
+test_data$ADCDRSTG = factor(test_data$ADCDRSTG, 
+                                                  levels = c(0,0.5,1,2,3,4,5))
 ```
 
 #EDA: Histograms/Density
@@ -487,13 +494,8 @@ for (n in 5:10){ # n = number of clusters
 
 #Logistic Model
 ```{r}
-#logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
-#summary(logMod)
-
-#logMod = predict(logMod, newdata = test_data, type = 'response')
-
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
-multinom_model <- multinom(ADCDRSTG ~ ., data = train_data)
+multinom_model <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
 #summary(multinom_model)
 
 exp(coef(multinom_model)) # convert coefficients to odds
@@ -512,13 +514,20 @@ acc_multimod = round((sum(diag(tab_multinom))/sum(tab_multinom))*100,2)
 print(paste("The accuracy of multinomial logistic regression is", acc_multimod))
 ```
 ```{r}
-# Generate ROC curve for multinomial logistic regression
-roc_prob <- data.frame(probs = predict(multinom_model, newdata = train_data, type = "prob"))
-predict_roc = prediction(roc_probs$probs, train_data$ADCDRSTG)
-performance_roc = performance(predict)
+# Generate performance stats for multinomial logistic regression
+roc_prob <- data.frame(probs = predict(multinom_model, newdata = test_data, type = "prob"))
+predict_multinom = colnames(roc_prob)[apply(roc_prob, 1, which.max)]
 
-roc <- roc(train_data$ADCDRSTG, roc_prob$prob)
-plot(roc, main = "ROC Curve for Multinomial Logistic Regression")
+# Overall performance stats of classification decision tree model
+predict_multinom = factor(predict_multinom,levels = c(0,0.5,1,2,3,4,5))
+tab_multinom <- confusionMatrix(predict_multinom, test_data$ADCDRSTG)
+tab_multinom
+
+#predict_roc = prediction(roc_prob$probs, train_data$ADCDRSTG)
+#performance_roc = performance(predict)
+
+#roc <- roc(train_data$ADCDRSTG, roc_prob$prob)
+#plot(roc, main = "ROC Curve for Multinomial Logistic Regression")
 ```
 
 #Linear Discrimminant Analysis
@@ -540,7 +549,7 @@ confusionTab_LDA_test
 
 # Calculating accuracy - sum of diagonal elements divided by total obs
 acc_LDA = round((sum(diag(confusionTab_LDA_test))/sum(confusionTab_LDA_test))*100,2)
-print(paste("The accuracy of multinomial logistic regression is", acc_LDA))
+print(paste("The accuracy of LDA is", acc_LDA))
 
 ```
 
@@ -608,26 +617,32 @@ average = (accuracyf1+accuracyf2+accuracyf3+accuracyf4)/4
 print(paste("Average accuracy of four groups is ",round(average,2)))
 ```
 
-# Polynomial Logistic Regression
+# Polynomial Logistic Regression 
 ```{r}
 # Create a polynomial logistic regression model
-polyLogModel <- multinom(Species ~ poly(Sepal.Length, 2) + poly(Sepal.Width, 2) + 
-                         poly(Petal.Length, 2) + poly(Petal.Width, 2), 
-                         data = trainData)
+polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Del_word_list_memory, 2) + poly(MMSE_score, 2) + 
+                         poly(Memory, 2) + poly(Organization, 2), 
+                         data = train_data)
 
 # Make predictions on test data
-predicted <- predict(polyLogModel, testData)
+polyLog_prob <- predict(polyLogModel, newdata = test_data, type = "prob")
+predict_polyLog <- colnames(polyLog_prob)[apply(polyLog_prob, 1, which.max)]
 
-# Evaluate model performance
-confusionMatrix(predicted, testData$Species)
+# Overall performance stats of classification decision tree model
+predict_polyLog = factor(predict_polyLog,levels = c(0,0.5,1,2,3,4,5))
+tab_polyLog <- confusionMatrix(predict_polyLog, test_data$ADCDRSTG)
+tab_polyLog
 ```
 
 # Piecewise Logistic Regression
 ```{r}
+pwMod <- segmented(glm(ADCDRSTG~., data = train_data))
 
+# Make predictions on test data
+probabilities <- predict(pw_model, newdata = test_data, type = "response")
 ```
 
-#GAMS
+#GAMS (error)
 ```{r}
 #gamMod = gam(ADCDRSTG ~ s(Del_word_list_memory) + s(MMSE_score) + s(Memory) +
  #              s(Organization) + s(Judgement) + s(Construction_praxis_score),
@@ -648,7 +663,18 @@ print(paste("Accuracy:", accuracy))
 ```
 # Classification Decision Tree
 ```{r}
+treeMod <- rpart(ADCDRSTG ~ ., data = train_data, method = "class")
 
+# Plot decision tree
+rpart.plot(treeMod, type = 4)
+
+probs_tree <- predict(treeMod, newdata = test_data, type = "prob")
+predict_tree <- colnames(probs_tree)[apply(probs_tree, 1, which.max)]
+
+# Overall performance stats of classification decision tree model
+predict_tree = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
+tab_tree <- confusionMatrix(predict_tree, test_data$ADCDRSTG)
+tab_tree
 ```
 
 # Section 3: Model Evaluation Criteria 
