@@ -22,6 +22,8 @@ library(gam)
 library(nnet)
 library(randomForest)
 library(ISLR)
+library(pROC)
+library(mgcv)
 set.seed(580)
 ```
 
@@ -426,7 +428,8 @@ RFmodel <- randomForest(ADCDRSTG~., data = train_data, importance=TRUE)
 importance(RFmodel)
 
 # Plot the variable importance measures
-varImpPlot(RFmodel)
+varImpPlot(RFmodel, cex.lab=0.5, 
+           main = "Random Forest: Variable Importance")
 ```
 
 #EDA: Clustering (k-means and hierarchical)
@@ -484,10 +487,10 @@ for (n in 5:10){ # n = number of clusters
 
 #Logistic Model
 ```{r}
-logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
+#logMod = glm(ADCDRSTG~., family = binomial, data = train_data)
 #summary(logMod)
 
-logMod = predict(logMod, newdata = test_data, type = 'response')
+#logMod = predict(logMod, newdata = test_data, type = 'response')
 
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
 multinom_model <- multinom(ADCDRSTG ~ ., data = train_data)
@@ -507,6 +510,15 @@ tab_multinom
 # Calculating accuracy - sum of diagonal elements divided by total obs
 acc_multimod = round((sum(diag(tab_multinom))/sum(tab_multinom))*100,2)
 print(paste("The accuracy of multinomial logistic regression is", acc_multimod))
+```
+```{r}
+# Generate ROC curve for multinomial logistic regression
+roc_prob <- data.frame(probs = predict(multinom_model, newdata = train_data, type = "prob"))
+predict_roc = prediction(roc_probs$probs, train_data$ADCDRSTG)
+performance_roc = performance(predict)
+
+roc <- roc(train_data$ADCDRSTG, roc_prob$prob)
+plot(roc, main = "ROC Curve for Multinomial Logistic Regression")
 ```
 
 #Linear Discrimminant Analysis
@@ -561,16 +573,20 @@ fold4 = filter(df_folded, folds == 4) %>% subset(select = -c(folds))
 
 knnf1 = knn(fold1, test_data, 
             cl = as.factor(fold1$ADCDRSTG), 
-            k=sqrt(nrow(fold1)))
+            #k=sqrt(nrow(fold1)))
+            k=20)
 knnf2 = knn(fold2, test_data, 
             cl = as.factor(fold2$ADCDRSTG), 
-            k=sqrt(nrow(fold2)))
+            #k=sqrt(nrow(fold2)))
+            k=20)
 knnf3 = knn(fold3, test_data, 
             cl = as.factor(fold3$ADCDRSTG), 
-            k=sqrt(nrow(fold3)))
+            #k=sqrt(nrow(fold3)))
+            k=20)
 knnf4 = knn(fold4, test_data, 
             cl = as.factor(fold4$ADCDRSTG), 
-            k=sqrt(nrow(fold4)))
+            #k=sqrt(nrow(fold4)))
+            k=20)
 
 tabknnf1 = table(knnf1, as.factor(test_data$ADCDRSTG))
 tabknnf1
@@ -582,20 +598,66 @@ tabknnf4 = table(knnf4, as.factor(test_data$ADCDRSTG))
 tabknnf4
 
 # Calculate accuracy
-accuracyf1 = (tabknnf1[1]+tabknnf1[4]) / nrow(test_data)
-accuracyf2 = (tabknnf2[1]+tabknnf2[4]) / nrow(test_data)
-accuracyf3 = (tabknnf3[1]+tabknnf3[4]) / nrow(test_data)
-accuracyf4 = (tabknnf4[1]+tabknnf4[4]) / nrow(test_data)
+accuracyf1 = round((sum(diag(tabknnf1))/sum(tabknnf1))*100,3)
+accuracyf2 = round((sum(diag(tabknnf2))/sum(tabknnf2))*100,3)
+accuracyf3 = round((sum(diag(tabknnf3))/sum(tabknnf3))*100,3)
+accuracyf4 = round((sum(diag(tabknnf4))/sum(tabknnf4))*100,3)
 
 average = (accuracyf1+accuracyf2+accuracyf3+accuracyf4)/4
 
 print(paste("Average accuracy of four groups is ",round(average,2)))
 ```
 
-#GAMS
+# Polynomial Logistic Regression
 ```{r}
-gamMod = gam(ADCDRSTG ~ s(DecisionMaking) + s(Arithmetic) + s(MMSE_score), data = train_data)
-summary(gamMod)
+# Create a polynomial logistic regression model
+polyLogModel <- multinom(Species ~ poly(Sepal.Length, 2) + poly(Sepal.Width, 2) + 
+                         poly(Petal.Length, 2) + poly(Petal.Width, 2), 
+                         data = trainData)
+
+# Make predictions on test data
+predicted <- predict(polyLogModel, testData)
+
+# Evaluate model performance
+confusionMatrix(predicted, testData$Species)
 ```
 
-# Section 3: Model Evaluation Criteria (Cp, AIC, BIC)
+# Piecewise Logistic Regression
+```{r}
+
+```
+
+#GAMS
+```{r}
+#gamMod = gam(ADCDRSTG ~ s(Del_word_list_memory) + s(MMSE_score) + s(Memory) +
+ #              s(Organization) + s(Judgement) + s(Construction_praxis_score),
+  #           data = train_data, family = multinom(K=7))
+
+gamMod = gam(ADCDRSTG ~ Del_word_list_memory + MMSE_score + Memory +
+               Organization + Judgement + Construction_praxis_score,
+             data = train_data, family = multinom(K=6))
+
+summary(gamMod)
+
+# Make predictions
+predictions <- predict(gam_model, newdata = test_data)
+
+# Compute accuracy
+accuracy <- mean(predictions == test_data$ADCDRSTG)
+print(paste("Accuracy:", accuracy))
+```
+# Classification Decision Tree
+```{r}
+
+```
+
+# Section 3: Model Evaluation Criteria 
+```{r}
+# Cp, AIC, BIC
+
+```
+
+```{r}
+# Lasso/ Ridge Regression
+```
+
