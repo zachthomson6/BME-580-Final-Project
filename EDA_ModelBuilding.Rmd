@@ -423,6 +423,9 @@ fviz_eig(pca,
          choice = "eigenvalue",
          addlabels = T) +
   geom_hline(yintercept=1, size=1, color='green', linetype="dashed")
+
+# Get table to determine how many PCs needed for 80% variance
+get_eig(pca)
 ```
 
 # EDA: Feature Importance: Random Forest 
@@ -492,7 +495,7 @@ for (n in 5:10){ # n = number of clusters
 ```
 # Section 2: Model Building
 
-#Logistic Model
+#Multonomial Logistic Model
 ```{r}
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
 multinom_model <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
@@ -620,6 +623,12 @@ print(paste("Average accuracy of four groups is ",round(average,2)))
 # Polynomial Logistic Regression 
 ```{r}
 # Create a polynomial logistic regression model
+
+# Isolate first 13 principal components
+pca_var = data.frame(pca.loadings[,1:13])
+
+poly_reg <- polr(train_data$ADCDRSTG ~ .^2, data=data.frame(pca_var, train_data$ADCDRSTG), Hess=TRUE)
+
 polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Del_word_list_memory, 2) + poly(MMSE_score, 2) + 
                          poly(Memory, 2) + poly(Organization, 2), 
                          data = train_data)
@@ -634,33 +643,6 @@ tab_polyLog <- confusionMatrix(predict_polyLog, test_data$ADCDRSTG)
 tab_polyLog
 ```
 
-# Piecewise Logistic Regression
-```{r}
-pwMod <- segmented(glm(ADCDRSTG~., data = train_data))
-
-# Make predictions on test data
-probabilities <- predict(pw_model, newdata = test_data, type = "response")
-```
-
-#GAMS (error)
-```{r}
-#gamMod = gam(ADCDRSTG ~ s(Del_word_list_memory) + s(MMSE_score) + s(Memory) +
- #              s(Organization) + s(Judgement) + s(Construction_praxis_score),
-  #           data = train_data, family = multinom(K=7))
-
-gamMod = gam(ADCDRSTG ~ Del_word_list_memory + MMSE_score + Memory +
-               Organization + Judgement + Construction_praxis_score,
-             data = train_data, family = multinom(K=6))
-
-summary(gamMod)
-
-# Make predictions
-predictions <- predict(gam_model, newdata = test_data)
-
-# Compute accuracy
-accuracy <- mean(predictions == test_data$ADCDRSTG)
-print(paste("Accuracy:", accuracy))
-```
 # Classification Decision Tree
 ```{r}
 treeMod <- rpart(ADCDRSTG ~ ., data = train_data, method = "class")
@@ -677,13 +659,18 @@ tab_tree <- confusionMatrix(predict_tree, test_data$ADCDRSTG)
 tab_tree
 ```
 
+# Ridge/ Lasso 
+```{r}
+6
+```
+
 # Section 3: Model Evaluation Criteria 
 ```{r}
-# Cp, AIC, BIC
+# Accuracy 
 
 ```
 
 ```{r}
-# Lasso/ Ridge Regression
+# Cp, AIC, BIC
 ```
 
