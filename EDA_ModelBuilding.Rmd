@@ -28,6 +28,7 @@ library(caret)
 library(segmented)
 library(rpart)
 library(rpart.plot)
+library(glmnet)
 set.seed(580)
 ```
 
@@ -696,8 +697,31 @@ tab_tree
 ```
 
 # Ridge/ Lasso 
-```{r}
+```{r} 
+# Using multinomial logistic regression (multinom_model)
+# Using StepwiseAIC to select the variables
+fit1 <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
 
+#step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
+step.fit1$aic
+
+summary(step.fit1)
+```
+
+```{r}
+# Using Ridge to select variables
+x <-  model.matrix(ADCDRSTG ~., data=train_data)[,-1]
+y <- train_data[,"ADCDRSTG"]
+
+# Fit Ridge to logistic regression
+lambda_seq <- 10^seq(-4, 2, by = 0.1)
+
+cv <- cv.glmnet(x, y, family = "multinomial", alpha = 0, lambda = lambda_seq)
+best_lambda <- cv$lambda.min
+
+fit <- glmnet(x, y, family = "multinomial", alpha = 0, lambda = best_lambda)
+
+# Prediction on test set
 ```
 
 # Section 3: Model Evaluation Criteria 
