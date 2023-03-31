@@ -427,6 +427,17 @@ fviz_eig(pca,
 # Get table to determine how many PCs needed for 80% variance
 get_eig(pca)
 ```
+```{r}
+# Aggregate variance explained
+plot(summary(pca)$importance[3,])
+
+pcs <- as.data.frame(pca$x)
+pcs_x = pcs[,1:13]
+y = train_data$ADCDRSTG
+plot(y, pcs_x$PC1)
+
+pcaData <- cbind(y, pcs_x)
+```
 
 # EDA: Feature Importance: Random Forest 
 #(https://www.r-bloggers.com/2021/07/feature-importance-in-random-forest/)
@@ -624,11 +635,36 @@ print(paste("Average accuracy of four groups is ",round(average,2)))
 ```{r}
 # Create a polynomial logistic regression model
 
-# Isolate first 13 principal components
-pca_var = data.frame(pca.loadings[,1:13])
+# Combine PCA loadings with outcome variable in dataframe pcaData (for training data)
+pcs_x = pcs[,1:14]
+pcaData <- cbind(y, pcs_x)
 
-poly_reg <- polr(train_data$ADCDRSTG ~ .^2, data=data.frame(pca_var, train_data$ADCDRSTG), Hess=TRUE)
+# Combine PCA loadings with outcome variable in dataframe pcaData (for test data)
+pca_test <- prcomp(test_data[, 1:37], center=TRUE, scale=TRUE)
+pcs_test <- as.data.frame(pca_test$x)
+pcs_test_x = pcs_test[,1:14]
+y_test = test_data$ADCDRSTG
 
+pcaData <- cbind(y, pcs_x)
+pcaData_test <- cbind(y_test, pcs_test_x)
+
+polyLogModel_pca <- nnet::multinom(y ~ poly(PC1, 3) + poly(PC2, 2) + poly(PC3, 2) + poly(PC4, 2) +  poly(PC5, 2) + poly(PC6, 2) + 
+                                 poly(PC7, 2) + poly(PC8, 2) +  poly(PC9, 2) + poly(PC10, 2) + poly(PC11, 2) + poly(PC12, 2) + 
+                                 poly(PC13, 2) + poly(PC14, 2),
+                         data = pcaData)
+
+# Make predictions on test data
+polyLog_prob <- predict(polyLogModel_pca, newdata = pcaData_test, type = "prob")
+predict_polyLog <- colnames(polyLog_prob)[apply(polyLog_prob, 1, which.max)]
+
+# Overall performance stats of classification decision tree model
+predict_polyLog = factor(predict_polyLog,levels = c(0,0.5,1,2,3,4,5))
+tab_polyLog <- confusionMatrix(predict_polyLog, pcaData_test$y_test)
+tab_polyLog
+```
+
+```{r}
+# Polynomial Logistic Model with original variables
 polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Del_word_list_memory, 2) + poly(MMSE_score, 2) + 
                          poly(Memory, 2) + poly(Organization, 2), 
                          data = train_data)
@@ -661,7 +697,7 @@ tab_tree
 
 # Ridge/ Lasso 
 ```{r}
-6
+
 ```
 
 # Section 3: Model Evaluation Criteria 
