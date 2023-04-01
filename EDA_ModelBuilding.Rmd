@@ -615,6 +615,8 @@ ldaPred = predict(ldaMod, train_data)
 confusionTab_LDA_train = table(Predicted = ldaPred$class,
                       Actual = train_data$ADCDRSTG)
 confusionTab_LDA_train
+acc_LDA = round((sum(diag(confusionTab_LDA_train))/sum(confusionTab_LDA_train))*100,2)
+print(paste("The accuracy of LDA (train) is", acc_LDA))
 
 # create confusion matrix for test set
 ldaPred_test = predict(ldaMod, test_data)
@@ -623,8 +625,8 @@ confusionTab_LDA_test = table(Predicted = ldaPred_test$class,
 confusionTab_LDA_test
 
 # Calculating accuracy - sum of diagonal elements divided by total obs
-acc_LDA = round((sum(diag(confusionTab_LDA_test))/sum(confusionTab_LDA_test))*100,2)
-print(paste("The accuracy of LDA is", acc_LDA))
+acc_LDA_test = round((sum(diag(confusionTab_LDA_test))/sum(confusionTab_LDA_test))*100,2)
+print(paste("The accuracy of LDA (test) is", acc_LDA_test))
 
 #ROC for severe versus mild dementia
 lda.fit = predict(ldaMod, newdata = test_data, type='response')
@@ -743,9 +745,6 @@ print(paste("Average accuracy of four groups is ",round(average,2)))
 ```{r}
 # Create a polynomial logistic regression model
 
-degree_range <- 1:2
-
-
 # Combine PCA loadings with outcome variable in dataframe pcaData (for training data)
 pcs_x = pcs[,1:14]
 pcaData <- cbind(y, pcs_x)
@@ -768,7 +767,7 @@ polyLogModel_pca <- nnet::multinom(y ~ poly(PC1, 2) + poly(PC2, 2) + poly(PC3, 2
 polyLog_prob <- predict(polyLogModel_pca, newdata = pcaData_test, type = "prob")
 predict_polyLog <- colnames(polyLog_prob)[apply(polyLog_prob, 1, which.max)]
 
-# Overall performance stats of classification decision tree model
+# Overall performance stats 6
 predict_polyLog = factor(predict_polyLog,levels = c(0,0.5,1,2,3,4,5))
 tab_polyLog <- confusionMatrix(predict_polyLog, pcaData_test$y_test)
 tab_polyLog
@@ -777,19 +776,43 @@ tab_polyLog
 
 
 ```{r}
-# Polynomial Logistic Model with original variables
-polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Del_word_list_memory, 2) + poly(MMSE_score, 2) + 
-                         poly(Memory, 2) + poly(Organization, 2) + poly(Boston_naming_test) + poly(Arithmetic),
-                         data = train_data)
+# Polynomial Logistic Model with variables chosen using RF
+polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(MMSE_score, 2) + poly(Animal_fluency_score, 2) + 
+                         poly(Memory, 2) + poly(Organization, 2) + poly(Del_word_list_memory,2) + poly(Judgement,2) +
+                           poly(Word_list_recognition,2),
+                         data = train_data, raw = FALSE)
 
 # Make predictions on test data
 polyLog_prob <- predict(polyLogModel, newdata = test_data, type = "prob")
 predict_polyLog <- colnames(polyLog_prob)[apply(polyLog_prob, 1, which.max)]
 
-# Overall performance stats of classification decision tree model
+# Overall performance stats
 predict_polyLog = factor(predict_polyLog,levels = c(0,0.5,1,2,3,4,5))
 tab_polyLog <- confusionMatrix(predict_polyLog, test_data$ADCDRSTG)
 tab_polyLog
+
+#ROC for severe versus mild dementia
+polylog.fit = predict(polyLogModel, newdata = test_data, type='class')
+polylog.fit = ifelse(as.integer(polylog.fit) > 3, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
+
+
+pred = prediction(polylog.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Polynomial Logistic Regression (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
 ```
 
 # Classification Decision Tree
@@ -806,16 +829,42 @@ predict_tree <- colnames(probs_tree)[apply(probs_tree, 1, which.max)]
 predict_tree = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
 tab_tree <- confusionMatrix(predict_tree, test_data$ADCDRSTG)
 tab_tree
+
+#ROC for severe versus mild dementia
+ct.fit = predict(treeMod, newdata = test_data, type='class')
+ct.fit = ifelse(as.integer(ct.fit) > 3, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
+
+
+pred = prediction(ct.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Classification Tree (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
 ```
 
-# Stepwide / Ridge
+# Stepwise / Ridge
 ```{r} 
 ########################################### 
 #Using StepwiseAIC to select the variables#
 ########################################### 
 
 # Using multinomial logistic regression (multinom_model)
-fit1 <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
+fit1 <- nnet::multinom(formula = ADCDRSTG~ MMSE_score +
+                                   Memory + Organization + Animal_fluency_score + Del_word_list_memory + 
+                                   Judgement + Word_list_recognition, data = train_data)
 
 #step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
 step.fit1$aic
