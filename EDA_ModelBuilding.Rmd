@@ -817,6 +817,11 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 
 # Classification Decision Tree
 ```{r}
+
+#control <- rpart.control(minsplit = 20,
+#    minbucket = round(minsplit/3),
+#    maxdepth = 30)
+
 treeMod <- rpart(ADCDRSTG ~ ., data = train_data, method = "class")
 
 # Plot decision tree
@@ -852,10 +857,23 @@ text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
 abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
+```
+
+```{r}
+#Prune Tree
+treeMod_pruned <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control=rpart.control(minsplit=45, cp=0.001))
+
+probs_tree_pruned <- predict(treeMod_pruned, newdata = test_data, type = "prob")
+predict_tree_pruned <- colnames(probs_tree)[apply(probs_tree, 1, which.max)]
+
+# Overall performance stats of classification decision tree model
+predict_tree_pruned = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
+tab_tree <- confusionMatrix(predict_tree_pruned, test_data$ADCDRSTG)
+tab_tree
 
 ```
 
-# Stepwise / Ridge
+# Stepwise / Ridge to enhance model features
 ```{r} 
 ########################################### 
 #Using StepwiseAIC to select the variables#
@@ -866,7 +884,7 @@ fit1 <- nnet::multinom(formula = ADCDRSTG~ MMSE_score +
                                    Memory + Organization + Animal_fluency_score + Del_word_list_memory + 
                                    Judgement + Word_list_recognition, data = train_data)
 
-#step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
+# step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
 step.fit1$aic
 # summary(step.fit1)
 
@@ -882,12 +900,12 @@ print(paste("The accuracy of Multinomial Logistic Regression from stepwise is", 
 
 ```{r}
 # Polynomial Logistic Regression
-fit2 <- nnet::multinom(y ~ poly(PC1, 3) + poly(PC2, 2) + poly(PC3, 2) + poly(PC4, 2) +  poly(PC5, 2) + poly(PC6, 2) + 
-                                 poly(PC7, 2) + poly(PC8, 2) +  poly(PC9, 2) + poly(PC10, 2) + poly(PC11, 2) + poly(PC12, 2) + 
-                                 poly(PC13, 2) + poly(PC14, 2),
-                         data = pcaData)
+fit2 <- nnet::multinom(ADCDRSTG ~ poly(MMSE_score, 2) + poly(Animal_fluency_score, 2) + 
+                         poly(Memory, 2) + poly(Organization, 2) + poly(Del_word_list_memory,2) + poly(Judgement,2) +
+                           poly(Word_list_recognition,2),
+                         data = train_data, raw = FALSE)
 
-#step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
+# step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
 step.fit2$aic
 #summary(step.fit2)
 
@@ -906,23 +924,9 @@ print(paste("The accuracy of Polynomial Logistic Regression from stepwise is", a
 ####Using Ridge to select the variables####
 ########################################### 
 # Using Ridge to select variables
-x <-  model.matrix(ADCDRSTG ~., data=train_data)[,-1]
-y <- train_data[,"ADCDRSTG"]
 
-# Fit Ridge to logistic regression
-seq <- 10^seq(10, -2, length = 100)
-ridge_mod = glmnet(x, y, alpha = 0, lambda = seq)
+#
 
-cv <- cv.glmnet(x, y, family = "multinomial", alpha = 0, lambda = lambda_seq)
-bestlam = cv$lambda.min
-
-fit <- glmnet(x, y, family = "multinomial", alpha = 0, lambda = bestlam)
-
-# Prediction on test set
-#predict_ridge = predict(fit, newdata = test_data)
-#confusion= table(Predicted = predict_ridge,
-#                      Actual = test_data$ADCDRSTG)
-#confusion
 ```
 
 # Section 3: Model Evaluation Criteria 
