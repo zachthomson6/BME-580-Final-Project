@@ -923,19 +923,41 @@ print(paste("The accuracy of Polynomial Logistic Regression from stepwise is", a
 ########################################### 
 ####Using Ridge to select the variables####
 ########################################### 
-# Using Ridge to select variables
+# Multinomial Logistic Regression
+x <-  model.matrix(ADCDRSTG ~., data=train_data)[,-1]
+y <- train_data[,"ADCDRSTG"]
 
-#
+x_test <-  model.matrix(ADCDRSTG ~., data=test_data)[,-1]
+y_test <- test_data[,"ADCDRSTG"]
 
+lambdas <- 10^seq(2, -3, by = -.1)
+ridge_reg = glmnet(x, y, nlambda = 25, alpha = 0, family = 'multinom', lambda = lambdas)
+
+cv_ridge <- cv.glmnet(x, y, alpha = 0, lambda = lambdas, family = "multinom")
+optimal_lambda <- cv_ridge$lambda.min
+optimal_lambda
+
+plot(ridge_reg)
+
+predictions_train <- predict(ridge_reg, s = optimal_lambda, newx = x, type = "class")
+predictions_test <- predict(ridge_reg, s = optimal_lambda, newx = x_test, type = "class")
+
+predictions_train = factor(predictions_train,levels = c(0,0.5,1,2,3,4,5))
+tab_ridge <- confusionMatrix(predictions_train, train_data$ADCDRSTG)
+tab_ridge
+
+predictions_test = factor(predictions_test,levels = c(0,0.5,1,2,3,4,5))
+tab_ridge <- confusionMatrix(predictions_test, test_data$ADCDRSTG)
+tab_ridge
+
+## Test Accuracy: 67.06
+## Train Accuracy: 63.4
 ```
 
 # Section 3: Model Evaluation Criteria 
-```{r}
-# Accuracy 
-
-```
 
 ```{r}
 # Cp, AIC, BIC
+
 ```
 
