@@ -29,10 +29,6 @@ library(segmented)
 library(rpart)
 library(rpart.plot)
 library(glmnet)
-library(vioplot)
-library(grid)
-library(gridExtra)
-library(ROCR)
 set.seed(580)
 ```
 
@@ -94,18 +90,18 @@ remove3SD <- function(df,col,colname){
 #Import Data Sets
 ```{r}
  # Study Data Sets
-df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
+df_physexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AB_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AB_R.dct")
 #df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
-df_score = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AD_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AD_R.dct")
+df_score = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AD_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AD_R.dct")
 #df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
 #df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
 #df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
-df_dailyactivities = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AG_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AG_R.dct")
+df_dailyactivities = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AG_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AG_R.dct")
 #df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
 #df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
 #df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
 #df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
-df_neuroexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AN_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AN_R.dct")
+df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AN_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AN_R.dct")
 
 #tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
 ```
@@ -444,20 +440,6 @@ plot(y, pcs_x$PC1)
 pcaData <- cbind(y, pcs_x)
 ```
 
-# EDA: Feature Importance: Random Forest 
-#(https://www.r-bloggers.com/2021/07/feature-importance-in-random-forest/)
-#(https://www.listendata.com/2014/11/random-forest-with-r.html#id-b53c14)
-```{r}
-RFmodel <- randomForest(ADCDRSTG~., data = train_data, importance=TRUE) 
-
-# Evaluate variable important
-importance(RFmodel)
-
-# Plot the variable importance measures
-varImpPlot(RFmodel, cex.lab=0.5, 
-           main = "Random Forest: Variable Importance")
-```
-
 #EDA: Clustering (k-means and hierarchical)
 ```{r}
 #Scale data
@@ -511,10 +493,29 @@ for (n in 5:10){ # n = number of clusters
 ```
 # Section 2: Model Building
 
+# EDA: Feature Importance: Random Forest 
+#(https://www.r-bloggers.com/2021/07/feature-importance-in-random-forest/)
+#(https://www.listendata.com/2014/11/random-forest-with-r.html#id-b53c14)
+
+```{r}
+RFmodel <- randomForest(ADCDRSTG~., data = train_data, importance=TRUE) 
+
+# Evaluate variable important
+var_imp <- importance(RFmodel, type = 1) #How much model accuracy decreases if we leave out that variable
+var_imp
+
+# Plot the variable importance measures
+varImpPlot(RFmodel, cex.lab=0.5, 
+           main = "Random Forest: Variable Importance")
+```
+
+
 #Multonomial Logistic Model
 ```{r}
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
-multinom_model <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
+multinom_model <- nnet::multinom(formula = ADCDRSTG~ MMSE_score +
+                                   Memory + Organization + Animal_fluency_score + Del_word_list_memory + 
+                                   Judgement + Word_list_recognition, data = train_data)
 #summary(multinom_model)
 
 exp(coef(multinom_model)) # convert coefficients to odds
@@ -530,24 +531,79 @@ tab_multinom
 
 # Calculating accuracy - sum of diagonal elements divided by total obs
 acc_multimod = round((sum(diag(tab_multinom))/sum(tab_multinom))*100,2)
-print(paste("The accuracy of multinomial logistic regression is", acc_multimod))
+print(paste("The accuracy of multinomial logistic regression (train) is", acc_multimod))
+
+# Predicting the values for test dataset
+multiMod_test <- predict(multinom_model, newdata = test_data, "class")
+
+tab_multinom_test <- table(Predicted = multiMod_test,
+                      Actual = test_data$ADCDRSTG)
+
+tab_multinom_test
+
+# Calculating accuracy - sum of diagonal elements divided by total obs
+acc_multimod_test = round((sum(diag(tab_multinom_test))/sum(tab_multinom_test))*100,2)
+print(paste("The accuracy of multinomial logistic regression (test) is", acc_multimod_test))
+
 ```
 ```{r}
-# Generate performance stats for multinomial logistic regression
-roc_prob <- data.frame(probs = predict(multinom_model, newdata = test_data, type = "prob"))
-predict_multinom = colnames(roc_prob)[apply(roc_prob, 1, which.max)]
+#ROC for severe versus mild dementia
+log.fit = predict(multinom_model, newdata = test_data, type='class')
+log.fit = ifelse(as.integer(log.fit) > 3, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
 
-# Overall performance stats of classification decision tree model
-predict_multinom = factor(predict_multinom,levels = c(0,0.5,1,2,3,4,5))
-tab_multinom <- confusionMatrix(predict_multinom, test_data$ADCDRSTG)
-tab_multinom
 
-#predict_roc = prediction(roc_prob$probs, train_data$ADCDRSTG)
-#performance_roc = performance(predict)
+pred = prediction(log.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
 
-#roc <- roc(train_data$ADCDRSTG, roc_prob$prob)
-#plot(roc, main = "ROC Curve for Multinomial Logistic Regression")
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Multinomial Logistic Regression (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
+#ROC for presence of dementia
+log.fit = predict(multinom_model, newdata = test_data, type='class')
+log.fit = ifelse(as.integer(log.fit) > 1, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 1, 1, 0)
+
+
+pred = prediction(log.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Multinomial Logistic Regression (Mild/No Dementia vs Moderate/Severe Dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
+
 ```
+
 
 #Linear Discrimminant Analysis
 ```{r}
@@ -569,18 +625,54 @@ confusionTab_LDA_test
 # Calculating accuracy - sum of diagonal elements divided by total obs
 acc_LDA = round((sum(diag(confusionTab_LDA_test))/sum(confusionTab_LDA_test))*100,2)
 print(paste("The accuracy of LDA is", acc_LDA))
-```
 
-```{r}
-#ROC
+#ROC for severe versus mild dementia
 lda.fit = predict(ldaMod, newdata = test_data, type='response')
 lda.fit = ifelse(as.integer(lda.fit$class) > 3, 1, 0)
 test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
+
+
 pred = prediction(lda.fit, test.fit)
 perf = performance(pred, 'tpr','fpr')
-plot(perf)
-area = performance(pred, "auc")
-area@y.values[[1]]
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for LDA (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
+
+#ROC for presence of dementia
+lda.fit = predict(ldaMod, newdata = test_data, type='response')
+lda.fit = ifelse(as.integer(lda.fit$class) > 1, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 1, 1, 0)
+
+
+pred = prediction(lda.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for LDA (Mild/No Dementia vs Moderate/Severe Dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
 ```
 
 #KNN
@@ -651,6 +743,9 @@ print(paste("Average accuracy of four groups is ",round(average,2)))
 ```{r}
 # Create a polynomial logistic regression model
 
+degree_range <- 1:2
+
+
 # Combine PCA loadings with outcome variable in dataframe pcaData (for training data)
 pcs_x = pcs[,1:14]
 pcaData <- cbind(y, pcs_x)
@@ -664,10 +759,10 @@ y_test = test_data$ADCDRSTG
 pcaData <- cbind(y, pcs_x)
 pcaData_test <- cbind(y_test, pcs_test_x)
 
-polyLogModel_pca <- nnet::multinom(y ~ poly(PC1, 3) + poly(PC2, 2) + poly(PC3, 2) + poly(PC4, 2) +  poly(PC5, 2) + poly(PC6, 2) + 
+polyLogModel_pca <- nnet::multinom(y ~ poly(PC1, 2) + poly(PC2, 2) + poly(PC3, 2) + poly(PC4, 2) +  poly(PC5, 2) + poly(PC6, 2) + 
                                  poly(PC7, 2) + poly(PC8, 2) +  poly(PC9, 2) + poly(PC10, 2) + poly(PC11, 2) + poly(PC12, 2) + 
                                  poly(PC13, 2) + poly(PC14, 2),
-                         data = pcaData)
+                         data = pcaData, raw = FALSE) #Raw determines whether computing orthogonal polynomial
 
 # Make predictions on test data
 polyLog_prob <- predict(polyLogModel_pca, newdata = pcaData_test, type = "prob")
@@ -679,10 +774,12 @@ tab_polyLog <- confusionMatrix(predict_polyLog, pcaData_test$y_test)
 tab_polyLog
 ```
 
+
+
 ```{r}
 # Polynomial Logistic Model with original variables
 polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Del_word_list_memory, 2) + poly(MMSE_score, 2) + 
-                         poly(Memory, 2) + poly(Organization, 2), 
+                         poly(Memory, 2) + poly(Organization, 2) + poly(Boston_naming_test) + poly(Arithmetic),
                          data = train_data)
 
 # Make predictions on test data
@@ -711,32 +808,72 @@ tab_tree <- confusionMatrix(predict_tree, test_data$ADCDRSTG)
 tab_tree
 ```
 
-# Ridge/ Lasso 
+# Stepwide / Ridge
 ```{r} 
+########################################### 
+#Using StepwiseAIC to select the variables#
+########################################### 
+
 # Using multinomial logistic regression (multinom_model)
-# Using StepwiseAIC to select the variables
 fit1 <- nnet::multinom(formula = ADCDRSTG~., data = train_data)
 
 #step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
 step.fit1$aic
+# summary(step.fit1)
 
-summary(step.fit1)
+# Prediction on test set
+predict_aic_multi = predict(step.fit1, newdata = test_data)
+confusionTab_aic_multi_test = table(Predicted = predict_aic_multi,
+                      Actual = test_data$ADCDRSTG)
+confusionTab_aic_multi_test
+
+acc_aic_multi = round((sum(diag(confusionTab_aic_multi_test))/sum(confusionTab_aic_multi_test))*100,2)
+print(paste("The accuracy of Multinomial Logistic Regression from stepwise is", acc_aic_multi))
 ```
 
 ```{r}
+# Polynomial Logistic Regression
+fit2 <- nnet::multinom(y ~ poly(PC1, 3) + poly(PC2, 2) + poly(PC3, 2) + poly(PC4, 2) +  poly(PC5, 2) + poly(PC6, 2) + 
+                                 poly(PC7, 2) + poly(PC8, 2) +  poly(PC9, 2) + poly(PC10, 2) + poly(PC11, 2) + poly(PC12, 2) + 
+                                 poly(PC13, 2) + poly(PC14, 2),
+                         data = pcaData)
+
+#step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
+step.fit2$aic
+#summary(step.fit2)
+
+predict_aic_poly = predict(step.fit1, newdata = test_data)
+confusionTab_aic_poly_test = table(Predicted = predict_aic_poly,
+                      Actual = test_data$ADCDRSTG)
+confusionTab_aic_poly_test
+
+acc_aic_poly = round((sum(diag(confusionTab_aic_poly_test))/sum(confusionTab_aic_poly_test))*100,2)
+print(paste("The accuracy of Polynomial Logistic Regression from stepwise is", acc_aic_poly))
+
+```
+
+```{r}
+########################################### 
+####Using Ridge to select the variables####
+########################################### 
 # Using Ridge to select variables
 x <-  model.matrix(ADCDRSTG ~., data=train_data)[,-1]
 y <- train_data[,"ADCDRSTG"]
 
 # Fit Ridge to logistic regression
-lambda_seq <- 10^seq(-4, 2, by = 0.1)
+seq <- 10^seq(10, -2, length = 100)
+ridge_mod = glmnet(x, y, alpha = 0, lambda = seq)
 
 cv <- cv.glmnet(x, y, family = "multinomial", alpha = 0, lambda = lambda_seq)
-best_lambda <- cv$lambda.min
+bestlam = cv$lambda.min
 
-fit <- glmnet(x, y, family = "multinomial", alpha = 0, lambda = best_lambda)
+fit <- glmnet(x, y, family = "multinomial", alpha = 0, lambda = bestlam)
 
 # Prediction on test set
+#predict_ridge = predict(fit, newdata = test_data)
+#confusion= table(Predicted = predict_ridge,
+#                      Actual = test_data$ADCDRSTG)
+#confusion
 ```
 
 # Section 3: Model Evaluation Criteria 
