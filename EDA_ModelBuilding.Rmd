@@ -90,18 +90,19 @@ remove3SD <- function(df,col,colname){
 #Import Data Sets
 ```{r}
  # Study Data Sets
-df_physexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AB_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AB_R.dct")
+df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
 #df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
-df_score = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AD_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AD_R.dct")
+df_score = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AD_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AD_R.dct")
 #df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
 #df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
 #df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
-df_dailyactivities = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AG_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AG_R.dct")
+df_dailyactivities = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AG_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AG_R.dct")
 #df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
 #df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
 #df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
 #df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
-df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AN_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AN_R.dct")
+df_neuroexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AN_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AN_R.dct")
+
 
 #tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
 ```
@@ -954,10 +955,51 @@ tab_ridge
 ## Train Accuracy: 63.4
 ```
 
-# Section 3: Model Evaluation Criteria 
+# Section 3: Model Evaluation Criteria  (AIC and BIC)
 
 ```{r}
-# Cp, AIC, BIC
+# Polynomial Logistic Regression - PCA
+plr_pca_aic = AIC(polyLogModel_pca)
+plr_pca_bic = BIC(polyLogModel_pca)
+```
 
+```{r}
+# Polynomial Logistic Regression - based on best RF variables
+plr_aic = AIC(polyLogModel)
+plr_bic = BIC(polyLogModel)
+```
+
+```{r}
+# Multinomial Logistic Regression
+mlr_aic = AIC(multiMod)
+mlr_bic = BIC(multiMod)
+```
+
+```{r}
+# Classification Decision Tree
+cdt_aic = AIC(treeMod)
+cdt_bic = BIC(treeMod)
+```
+
+
+```{r}
+# Linear Discriminant Analysis
+lda_aic = AIC(ldaMod)
+lda_bic = BIC(ldaMod)
+```
+
+
+```{r}
+# K Nearest Neighbors
+knn_aic1 = AIC(knnf1)
+knn_bic1 = BIC(knnf1)
+knn_aic2 = AIC(knnf2)
+knn_bic2 = BIC(knnf2)
+knn_aic3 = AIC(knnf3)
+knn_bic3 = BIC(knnf3)
+knn_aic4 = AIC(knnf4)
+knn_bic4 = BIC(knnf4)
+avg_aic =(knn_aic1+knn_aic2+knn_aic3+knn_aic4)/4
+avg_bic =(knn_bic1+knn_bic2+knn_bic3+knn_bic4)/4
 ```
 
