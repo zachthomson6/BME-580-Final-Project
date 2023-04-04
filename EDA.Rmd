@@ -69,13 +69,20 @@ remove3SD <- function(df,col,colname){
 
 #Import Data Sets
 ```{r}
- df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
-
-df_score = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AD_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AD_R.dct")
-
-df_dailyactivities = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AG_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AG_R.dct")
-
-df_neuroexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AN_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AN_R.dct")
+ # Study Data Sets
+df_physexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AB_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AB_R.dct")
+#df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
+df_score = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AD_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AD_R.dct")
+#df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
+#df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
+#df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
+df_dailyactivities = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AG_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AG_R.dct")
+#df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
+#df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
+#df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
+#df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
+df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AN_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AN_R.dct")
+#tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
 ```
 
 # Consolidate dataframes 
@@ -233,6 +240,15 @@ vioplot(Wechsler_logical_memory~ADCDRSTG,
         main="Logical Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Logical Memory")
+```
+#EDA: Scatterplots
+```{r}
+colors <- as.integer(as.factor(train_data$ADCDRSTG))
+d <- dist(train_data[,1:4])
+fit <- cmdscale(d,k=2)# k is the resulting dimension # Multidimensional Scaling
+x <- fit[,1]
+y <- fit[,2]
+plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2", main="Scatterplot of Multidimensional Scaled Data based on Severity", pch=19, col=colors)
 ```
 
 #EDA: Boxplot
