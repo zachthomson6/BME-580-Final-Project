@@ -18,6 +18,9 @@ library(reshape2)
 library(robustHD)
 library(DescTools)
 library(caTools)
+library(vioplot)
+library(gridExtra)
+library(grid)
 library(gam)
 library(nnet)
 library(randomForest)
@@ -29,6 +32,10 @@ library(segmented)
 library(rpart)
 library(rpart.plot)
 library(glmnet)
+library(class)
+library(ROCR)
+library(regclass)
+library(RSSL)
 set.seed(580)
 ```
 
@@ -36,37 +43,27 @@ set.seed(580)
 ```{r}
 # importing data files
 # The read_data function incorporates code from (https://stackoverflow.com/questions/45109400/how-can-i-read-a-da-file-directly-into-r), which is a script that loads .da and .dct files into R as dataframes
-
 read_data <- function(da_filepath, dict_filepath) {
   # Set path to the data file "*.DA"
   data.file <- da_filepath
-
   # Set path to the dictionary file "*.DCT"
   dict.file <- dict_filepath
-
   # Read the dictionary file
   df.dict <- read.table(dict.file, skip = 2, fill = TRUE, stringsAsFactors = FALSE)
-
   # Set column names for dictionary dataframe
   colnames(df.dict) <- c("col.num","col.type","col.name","col.width","col.lbl")
-
   # Remove last row which only contains a closing }
   df.dict <- df.dict[-nrow(df.dict),]
-
   # Extract numeric value from column width field
   df.dict$col.width <- as.integer(sapply(df.dict$col.width, gsub, pattern = "[^0-9\\.]", replacement = ""))
-
   # Convert column types to format to be used with read_fwf function
   df.dict$col.type <- sapply(df.dict$col.type, function(x) ifelse(x %in% c("int","byte","long"), "i", ifelse(x == "float", "n", ifelse(x == "double", "d", "c"))))
-
   # Read the data file into a dataframe
   df <- read_fwf(file = data.file, fwf_widths(widths = df.dict$col.width, col_names = df.dict$col.name), col_types = paste(df.dict$col.type, collapse = ""))
-
   # Add column labels to headers
   attributes(df)$variable.labels <- df.dict$col.lbl
   return(df)
 }
-
 splitdata <- function(probability,df) {
   #sample = sample(c(TRUE, FALSE), nrow(df), replace=TRUE, probs=c(0.7,0.3))
   #train =  df[sample, ]
@@ -76,7 +73,6 @@ splitdata <- function(probability,df) {
   test   <- subset(df, sample == FALSE)
   return(list(train,test))
 }
-
 remove3SD <- function(df,col,colname){
   sd = 3*sd(col)
   mean = mean(col)
@@ -89,22 +85,13 @@ remove3SD <- function(df,col,colname){
 
 #Import Data Sets
 ```{r}
- # Study Data Sets
-df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
-#df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
+ df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
+
 df_score = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AD_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AD_R.dct")
-#df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
-#df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
-#df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
+
 df_dailyactivities = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AG_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AG_R.dct")
-#df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
-#df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
-#df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
-#df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
+
 df_neuroexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AN_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AN_R.dct")
-
-
-#tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
 ```
 
 # Consolidate dataframes 
@@ -167,7 +154,6 @@ data_subset = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Writ
                                   Construction_praxis_score, Del_word_list_memory, IMM_word_list_recog, Word_list_recognition,
                                   Wechsler_logical_memory, Fuld_object_memory, Benton_vis_reten, Weight, Height, Pulse_obliteration_pressure,
                                   Vision, BPM, SystolicBP, DiastolicBP,ADCDRSTG)
-
 ```
 
 # Section 1: EDA
@@ -176,7 +162,6 @@ data_subset = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Writ
 ```{r}
 # Quantify missingness 
 summary(data_subset)
-
 # Mean Imputation (https://www.geeksforgeeks.org/replace-missing-values-by-column-mean-in-r-dataframe/)
 m <- c()
 for(i in colnames(data_subset)){
@@ -189,13 +174,10 @@ for(i in colnames(data_subset)){
 a <- matrix(m,nrow=1)
 colnames(a) <- colnames(data_subset)
 a
-
 data = data_subset 
-
 for(i in colnames(data))
     data[,i][is.na(data[,i])] <- a[,i]
 data
-
 summary(data)
 ```
 # Split Data into Train and Test
@@ -203,7 +185,6 @@ summary(data)
 split_data2 = splitdata(0.7, data)
 train_data = split_data2[[1]]
 test_data = split_data2[[2]]
-
 test_data$ADCDRSTG = factor(test_data$ADCDRSTG, 
                                                   levels = c(0,0.5,1,2,3,4,5))
 ```
@@ -212,69 +193,56 @@ test_data$ADCDRSTG = factor(test_data$ADCDRSTG,
 ```{r}
 train_data = filter(train_data, ADCDRSTG<6)
 train_data$ADCDRSTG = as.numeric(train_data$ADCDRSTG)
-
 hist(train_data$ADCDRSTG,
      main = "Frequency of CDR Staging Score",
      xlab = "CDR Staging Score",
      breaks = "FD")
-
 # Memory Across CDR Staging score
 train_data$ADCDRSTG = factor(train_data$ADCDRSTG, 
                                                   levels = c(0,0.5,1,2,3,4,5))
-
 no_NA = train_data %>% drop_na(ADCDRSTG)
-
 density_plot_CDR = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
   geom_density(alpha = 0.2) + 
   labs(title = 'Density Function of Memory Ability',
      x = 'Memory Function',
      y = 'Density',
      fill = 'CDR staging score')
-
 density_plot_CDR
-
-
 ```
 #Violin Plots
 ```{r}
 # Create subplot of 2 rows and 3 columns
 par(mfrow = c(2,3))
-
 # violin for MMSE_score
 vioplot(MMSE_score~ADCDRSTG,
         data = train_data,
         main="MMSE Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="MMSE Score")
-
 # violin for Animal_fluency_score
 vioplot(Animal_fluency_score~ADCDRSTG,
         data = train_data,
         main="Animal Fluency Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Animal Fluency Score")
-
 # violin for Boston_naming_test
 vioplot(Boston_naming_test~ADCDRSTG,
         data = train_data,
         main="Boston Naming Test across CDR Staging Score",
         xlab="CDR Score",
         ylab="Boston Naming Test")
-
 # violin for Construction_praxis_score
 vioplot(Construction_praxis_score~ADCDRSTG,
         data = train_data,
         main="Construction Praxis Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Construction Praxis Score")
-
 # violin for Del_word_list_memory
 vioplot(Del_word_list_memory~ADCDRSTG,
         data = train_data,
         main="Word List Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Word List Memory")
-
 # violin for Wechsler_logical_memory
 vioplot(Wechsler_logical_memory~ADCDRSTG,
         data = train_data,
@@ -285,87 +253,67 @@ vioplot(Wechsler_logical_memory~ADCDRSTG,
 
 #EDA: Boxplot
 ```{r}
-
 #Physical Metrics - Boxplots
 #train_phys = filter(train_phys, ADCDRSTG<6)
 #train_phys$ADCDRSTG = factor(train_phys$ADCDRSTG, levels = c(0,0.5,1,2,3,4,5))
-
 # Remove outliers
 sd_weight = 3*sd(train_data$Weight)
 weight_mean = mean(train_data$Weight)
-
 weight_no_out = filter(train_data,
                      Weight <= weight_mean + sd_weight &
                      Weight >= weight_mean - sd_weight)
-
 sd_height = 3*sd(train_data$Height)
 height_mean = mean(train_data$Height)
-
 height_no_out = filter(train_data,
                      Height <= height_mean + sd_height &
                      Height >= height_mean - sd_height)
-
-
-
 sd_pulse = 3*sd(train_data$Pulse_obliteration_pressure,na.rm=TRUE)
 pulse_mean = mean(train_data$Pulse_obliteration_pressure,na.rm=TRUE)
-
 pulse_no_out = filter(train_data,
                      Pulse_obliteration_pressure <= pulse_mean + sd_pulse &
                      Pulse_obliteration_pressure >= pulse_mean - sd_pulse)
-
 sd_vision = 3*sd(train_data$Vision,na.rm=TRUE)
 vision_mean = mean(train_data$Vision,na.rm=TRUE)
-
 vision_no_out = filter(train_data,
                      Vision <= vision_mean + sd_vision &
                      Vision >= vision_mean - sd_vision)
-
 sd_bpm = 3*sd(train_data$BPM,na.rm=TRUE)
 bpm_mean = mean(train_data$BPM,na.rm=TRUE)
-
 bpm_no_out = filter(train_data,
                      BPM <= bpm_mean + sd_bpm &
                      BPM >= bpm_mean - sd_bpm)
-
 # Plot
 boxplot_weight = ggplot(data = weight_no_out, aes(x=ADCDRSTG, y=Weight)) +
   geom_boxplot() + 
   labs(title = "Weight Across Outcome",
        xlab="Outcome",
         ylab="Weight")
-
 boxplot_height = ggplot(data = height_no_out, aes(x=ADCDRSTG, y=Height)) +
   geom_boxplot() + 
   labs(title = "Height Across Outcome",
        xlab="Outcome",
         ylab="Height")
-
 boxplot_pulse = ggplot(data = pulse_no_out, aes(x=ADCDRSTG, y=Pulse_obliteration_pressure)) +
   geom_boxplot() + 
   labs(title = "Pulse Pressure Across Outcome",
        xlab="Outcome",
         ylab="Pulse Pressure")
-
 boxplot_vision = ggplot(data = vision_no_out, aes(x=ADCDRSTG, y=Vision)) +
   geom_boxplot() + 
   labs(title = "Vision Across Outcome",
        xlab="Outcome",
         ylab="Vision")
-
 boxplot_bpm = ggplot(data = bpm_no_out, aes(x=ADCDRSTG, y=BPM)) +
   geom_boxplot() + 
   labs(title = "BPM Across Outcome",
        xlab="Outcome",
       ylab="BPM")
-
 grid.arrange(boxplot_weight, boxplot_height, boxplot_pulse, boxplot_vision, boxplot_bpm, ncol = 2)
 ```
         
 #EDA: Correlation
 ```{r}
 dailyactivities_noNA = train_data %>% drop_na(Television, BoardGames, ArtsCraft, Write, Computer, Memory, DecisionMaking, Organization, Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
-
 dailyactivities_noNA$Television <- as.numeric(dailyactivities_noNA$Television)
 dailyactivities_noNA$BoardGames <- as.numeric(dailyactivities_noNA$BoardGames)
 dailyactivities_noNA$ArtsCraft <- as.numeric(dailyactivities_noNA$ArtsCraft)
@@ -386,11 +334,9 @@ dailyactivities_noNA$GetAcrossRoom <- as.numeric(dailyactivities_noNA$GetAcrossR
 dailyactivities_noNA$Bathing <- as.numeric(dailyactivities_noNA$Bathing)
 dailyactivities_noNA$Eating <- as.numeric(dailyactivities_noNA$Eating)
 dailyactivities_noNA$GetOutOfBed <- as.numeric(dailyactivities_noNA$GetOutOfBed)
-
 var_daily = dailyactivities_noNA %>% dplyr::select(Television, BoardGames,ArtsCraft,Write,Computer,Memory,DecisionMaking,Organization,
                                                    Learning, CurrentEvents, Judgement, RecallConvo, RememberUsingThings, FollowingStory, 
                                                    Arithmetic, Reasoning, GetAcrossRoom, Bathing, Eating, GetOutOfBed)
-
 pairs.panels(var_daily)
 cor = cor(var_daily)
 corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.cex = .4)
@@ -399,45 +345,35 @@ corplot_dailyactivities = corrplot(cor, method = "number", tl.cex = .6, number.c
 ```{r}
 # Convert to numeric
 train_data <- train_data %>% mutate_if(is.integer, as.numeric)
-
 # Calculate principal components
 pca <- prcomp(train_data[, 1:37], center=TRUE, scale=TRUE)
-
 names(pca)
 dim(pca$x)
 pca$x
-
 pca$rotation
-
 fviz_eig(pca, addlabels = T, ncp = 16)
-
 fviz_pca_biplot(pca, habillage = train_data$ADCDRSTG)
 fviz_pca_ind(pca,
              col.ind = 'coord',
              habillage = train_data$ADCDRSTG)
-
 # print PCA loadings
 pca.loadings <- pca$rotation
 pca.loadings
-
 # Scree plot for eigenvalues
 fviz_eig(pca,
          choice = "eigenvalue",
          addlabels = T) +
   geom_hline(yintercept=1, size=1, color='green', linetype="dashed")
-
 # Get table to determine how many PCs needed for 80% variance
 get_eig(pca)
 ```
 ```{r}
 # Aggregate variance explained
 plot(summary(pca)$importance[3,])
-
 pcs <- as.data.frame(pca$x)
 pcs_x = pcs[,1:13]
 y = train_data$ADCDRSTG
 plot(y, pcs_x$PC1)
-
 pcaData <- cbind(y, pcs_x)
 ```
 
@@ -446,23 +382,18 @@ pcaData <- cbind(y, pcs_x)
 #Scale data
 numvar = train_data[,1:37]
 data_scaled = as.data.frame(sapply(numvar, function(x) scale(x)))
-
 # K-means clustering
 kmeans2 = kmeans(data_scaled, center = 7,iter.max = 70)
-
 fviz_cluster(kmeans2, data = data_scaled,
              geom = "point",
              ellipse.type = "convex", 
              ggtheme = theme_bw()
              )
-
 kmeans_table = table(kmeans2$cluster, train_data$ADCDRSTG)
 kmeans_table
-
 # Elbow method
 fviz_nbclust(data_scaled, kmeans, method = "wss") +
   labs(subtitle = "Elbow Method")
-
 # Silhouette method
 fviz_nbclust(data_scaled, kmeans, method = "silhouette") +
   labs(subtitle = "Elbow Method")
@@ -471,27 +402,23 @@ fviz_nbclust(data_scaled, kmeans, method = "silhouette") +
 ```{r}
 # Hierarchical clustering
 dis_mat = dist(data_scaled, method = 'euclidean')
-
 # Compute hclust
 hc = hclust(dis_mat, method = 'median')
-
 # methods = complete, average, centroid, mcquitty, single, median
-
 # Plot Dendrogram
 plot(hc, cex = 0.6, hang = -1)
 rect.hclust(hc, k=7, border = 'red')
-
 # Evaluated accuracy 
 cutHcl = cutree(hc, k=7)
 clusterTab = table(cutHcl, train_data$ADCDRSTG)
 clusterTab
-
 for (n in 5:10){ # n = number of clusters 
   cutHcl = cutree(hc, k = n)
   out = table(cutHcl, train_data$ADCDRSTG)
   print(paste("Number of Clusters =", n))
   print(out) }
 ```
+
 # Section 2: Model Building
 
 # EDA: Feature Importance: Random Forest 
@@ -971,21 +898,21 @@ plr_bic = BIC(polyLogModel)
 
 ```{r}
 # Multinomial Logistic Regression
-mlr_aic = AIC(multiMod)
-mlr_bic = BIC(multiMod)
+mlr_aic = AIC(multinom_model)
+mlr_bic = BIC(multinom_model)
 ```
 
 ```{r}
 # Classification Decision Tree
-cdt_aic = AIC(treeMod)
-cdt_bic = BIC(treeMod)
+cdt_aic = summarize_tree(treeMod)
+cdt_aic
 ```
 
 
 ```{r}
 # Linear Discriminant Analysis
-lda_aic = AIC(ldaMod)
-lda_bic = BIC(ldaMod)
+#lda_aic = AIC(ldaMod)
+#lda_bic = BIC(ldaMod)
 ```
 
 
