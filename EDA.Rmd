@@ -2,9 +2,7 @@
 title: "EDA"
 author: "Jia Yu Cheung"
 date: "2023-03-09"
-output:
-  pdf_document: default
-  html_document: default
+output: html_document
 ---
 
 ```{r setup, include=FALSE}
@@ -71,17 +69,20 @@ remove3SD <- function(df,col,colname){
 
 #Import Data Sets
 ```{r}
-  # Study Data Sets
-
-df_physexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AB_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AB_R.dct")
-
-df_score = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AD_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AD_R.dct")
-
-df_dailyactivities = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AG_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AG_R.dct")
-
-df_neuroexam = read_data("~/Desktop/adams1a/adams1ada/ADAMS1AN_R.da","~/Desktop/adams1a/adams1asta/ADAMS1AN_R.dct")
-
-
+ # Study Data Sets
+df_physexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AB_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AB_R.dct")
+#df_informantsurvey = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AC_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AC_R.dct")
+df_score = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AD_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AD_R.dct")
+#df_drug = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AE_D.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AE_D.dct")
+#df_parenthistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_R.dct")
+#df_siblinghistory = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AF_SB.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AF_SB.dct")
+df_dailyactivities = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AG_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AG_R.dct")
+#df_medcond_respondent = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_C.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_C.dct")
+#df_medcond_condition = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AH_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AH_R.dct")
+#df_neuroexam_dementia = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AJ_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AJ_R.dct")
+#df_medhist = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AM_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AM_R.dct")
+df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1ada/ADAMS1AN_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1a/adams1asta/ADAMS1AN_R.dct")
+#tracker = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1trk/ADAMS1TRK_R.da","/Users/jiayucheung/Desktop/BME580/Project/adams1trk/adams1trksta/ADAMS1TRK_R.dct")
 ```
 
 # Consolidate dataframes 
@@ -144,6 +145,18 @@ data_subset = raw_data %>% dplyr::select(Television, BoardGames, ArtsCraft, Writ
                                   Construction_praxis_score, Del_word_list_memory, IMM_word_list_recog, Word_list_recognition,
                                   Wechsler_logical_memory, Fuld_object_memory, Benton_vis_reten, Weight, Height, Pulse_obliteration_pressure,
                                   Vision, BPM, SystolicBP, DiastolicBP,ADCDRSTG)
+
+# Remove outliers in neuroexam score - Scores should be maximum 50 for most tests
+data_subset = filter(data_subset, MMSE_score <=30)
+data_subset = filter(data_subset, Animal_fluency_score <=50)
+data_subset = filter(data_subset, Boston_naming_test <=50)
+data_subset = filter(data_subset, Construction_praxis_score <=50)
+data_subset = filter(data_subset, Del_word_list_memory <=50)
+data_subset = filter(data_subset, IMM_word_list_recog <=50)
+data_subset = filter(data_subset, Word_list_recognition <=50)
+data_subset = filter(data_subset, Wechsler_logical_memory <=50)
+data_subset = filter(data_subset, Fuld_object_memory <=50)
+data_subset = filter(data_subset, Benton_vis_reten <=50)
 ```
 
 # Section 1: EDA
@@ -176,7 +189,7 @@ split_data2 = splitdata(0.7, data)
 train_data = split_data2[[1]]
 test_data = split_data2[[2]]
 test_data$ADCDRSTG = factor(test_data$ADCDRSTG, 
-                                                  levels = c(0,0.5,1,2,3,4,5))
+                                                  levels = c(0,0.5,1,2,3))
 ```
 
 #EDA: Histograms/Density
@@ -189,7 +202,7 @@ hist(train_data$ADCDRSTG,
      breaks = "FD")
 # Memory Across CDR Staging score
 train_data$ADCDRSTG = factor(train_data$ADCDRSTG, 
-                                                  levels = c(0,0.5,1,2,3,4,5))
+                                                  levels = c(0,0.5,1,2,3))
 no_NA = train_data %>% drop_na(ADCDRSTG)
 density_plot_CDR = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
   geom_density(alpha = 0.2) + 
@@ -206,39 +219,39 @@ par(mfrow = c(2,3))
 # violin for MMSE_score
 vioplot(MMSE_score~ADCDRSTG,
         data = train_data,
+        main="MMSE Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="MMSE Score")
-title("MMSE Score ~ CDR", adj = 0.5, line = 1)
 # violin for Animal_fluency_score
 vioplot(Animal_fluency_score~ADCDRSTG,
         data = train_data,
+        main="Animal Fluency Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Animal Fluency Score")
-title("Animal Fluency Score ~ CDR", adj = 0.5, line = 1)
 # violin for Boston_naming_test
 vioplot(Boston_naming_test~ADCDRSTG,
         data = train_data,
+        main="Boston Naming Test across CDR Staging Score",
         xlab="CDR Score",
         ylab="Boston Naming Test")
-title("Boston Naming Test ~ CDR", adj = 0.5, line = 1)
 # violin for Construction_praxis_score
 vioplot(Construction_praxis_score~ADCDRSTG,
         data = train_data,
+        main="Construction Praxis Score across CDR Staging Score",
         xlab="CDR Score",
         ylab="Construction Praxis Score")
-title("Construction Praxis ~ CDR", adj = 0.5, line = 1)
 # violin for Del_word_list_memory
 vioplot(Del_word_list_memory~ADCDRSTG,
         data = train_data,
+        main="Word List Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Word List Memory")
-title("Word List Memory ~ CDR", adj = 0.5, line = 1)
 # violin for Wechsler_logical_memory
 vioplot(Wechsler_logical_memory~ADCDRSTG,
         data = train_data,
+        main="Logical Memory across CDR Staging Score",
         xlab="CDR Score",
         ylab="Logical Memory")
-title("Logical Memory ~ CDR", adj = 0.5, line = 1)
 ```
 #EDA: Scatterplots
 ```{r}
@@ -248,7 +261,7 @@ fit <- cmdscale(d,k=2)# k is the resulting dimension # Multidimensional Scaling
 x <- fit[,1]
 y <- fit[,2]
 plot(x, y, xlab="Coordinate 1", ylab="Coordinate 2", main="Scatterplot of Multidimensional Scaled Data based on Severity", pch=19, xlim = c(-3,4), ylim = c(-2,4), col=colors)
-legend("topright", legend = c("0", "0.5", "1", "1.5", "2", "3"), fill = c("1", "2", "3", "4", "5", "6"), cex=0.8)
+legend("topright", legend = c("0", "0.5", "1", "2", "3"), fill = c("1", "2", "3", "4", "5"), cex=0.8)
 ```
 
 #EDA: Boxplot
@@ -352,10 +365,9 @@ dim(pca$x)
 pca$x
 pca$rotation
 fviz_eig(pca, addlabels = T, ncp = 16)
-fviz_pca_biplot(pca, habillage = train_data$ADCDRSTG, geom="point")
+fviz_pca_biplot(pca, habillage = train_data$ADCDRSTG)
 fviz_pca_ind(pca,
-            col.ind = 'coord',
-             geom="point",
+             col.ind = 'coord',
              habillage = train_data$ADCDRSTG)
 # print PCA loadings
 pca.loadings <- pca$rotation
@@ -384,7 +396,7 @@ pcaData <- cbind(y, pcs_x)
 numvar = train_data[,1:37]
 data_scaled = as.data.frame(sapply(numvar, function(x) scale(x)))
 # K-means clustering
-kmeans2 = kmeans(data_scaled, center = 7,iter.max = 70)
+kmeans2 = kmeans(data_scaled, center = 5,iter.max = 70)
 fviz_cluster(kmeans2, data = data_scaled,
              geom = "point",
              ellipse.type = "convex", 
@@ -408,9 +420,9 @@ hc = hclust(dis_mat, method = 'median')
 # methods = complete, average, centroid, mcquitty, single, median
 # Plot Dendrogram
 plot(hc, cex = 0.6, hang = -1)
-rect.hclust(hc, k=7, border = 'red')
+rect.hclust(hc, k=5, border = 'red')
 # Evaluated accuracy 
-cutHcl = cutree(hc, k=7)
+cutHcl = cutree(hc, k=5)
 clusterTab = table(cutHcl, train_data$ADCDRSTG)
 clusterTab
 for (n in 5:10){ # n = number of clusters 
