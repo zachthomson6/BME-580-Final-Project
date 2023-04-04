@@ -226,7 +226,7 @@ vioplot(Construction_praxis_score~ADCDRSTG,
         data = train_data,
         xlab="CDR Score",
         ylab="Construction Praxis Score")
-title("Construction Praxis Score ~ CDR", adj = 0.5, line = 1)
+title("Construction Praxis ~ CDR", adj = 0.5, line = 1)
 # violin for Del_word_list_memory
 vioplot(Del_word_list_memory~ADCDRSTG,
         data = train_data,
@@ -354,7 +354,7 @@ pca$rotation
 fviz_eig(pca, addlabels = T, ncp = 16)
 fviz_pca_biplot(pca, habillage = train_data$ADCDRSTG, geom="point")
 fviz_pca_ind(pca,
-              col.ind = 'coord',
+            col.ind = 'coord',
              geom="point",
              habillage = train_data$ADCDRSTG)
 # print PCA loadings
