@@ -419,6 +419,7 @@ for (n in 5:10){ # n = number of clusters
   print(out) }
 ```
 
+
 # Section 2: Model Building
 
 # EDA: Feature Importance: Random Forest 
@@ -607,7 +608,6 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 
 #KNN
 ```{r}
-
 for (i in seq(15, 40 , 5)) {
   knn = knn(train_data, test_data, cl = as.factor(train_data$ADCDRSTG), k = i)
   tab = table(knn,as.factor(test_data$ADCDRSTG))
@@ -726,7 +726,7 @@ test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
 
 
 pred = prediction(polylog.fit, test.fit)
-perf = performance(pred, 'tpr','fpr')
+perf = performance(pred, measure = "tpr", x.measure = "fpr")
 
 
 # Calculate AUC
@@ -746,17 +746,18 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 # Classification Decision Tree
 ```{r}
 
-#control <- rpart.control(minsplit = 20,
-#    minbucket = round(minsplit/3),
-#    maxdepth = 30)
-
 treeMod <- rpart(ADCDRSTG ~ ., data = train_data, method = "class")
 
 # Plot decision tree
 rpart.plot(treeMod, type = 4)
 
-probs_tree <- predict(treeMod, newdata = test_data, type = "prob")
-predict_tree <- colnames(probs_tree)[apply(probs_tree, 1, which.max)]
+predict_tree <- predict(treeMod, newdata = test_data, type = "class")
+
+# Calculate accuracy
+predict_dt = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
+tab_dt <- confusionMatrix(predict_dt, 
+                        test_data$ADCDRSTG)
+tab_dt
 
 # Overall performance stats of classification decision tree model
 predict_tree = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
@@ -785,19 +786,57 @@ text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
 abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
+
+
 ```
 
 ```{r}
 #Prune Tree
-treeMod_pruned <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control=rpart.control(minsplit=45, cp=0.001))
+treeMod_prune <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control = rpart.control(cp=0.005, 
+                                                                                                  minsplit = 10,
+                                                                                                  minbucket = round(10/3),
+                                                                                                  maxdepth = 20))
 
-probs_tree_pruned <- predict(treeMod_pruned, newdata = test_data, type = "prob")
-predict_tree_pruned <- colnames(probs_tree)[apply(probs_tree, 1, which.max)]
+# Plot decision tree
+rpart.plot(treeMod_prune, type = 4)
+
+predict_tree_prune <- predict(treeMod_prune, newdata = test_data, type = "class")
+
+# Calculate accuracy
+predict_dt = factor(predict_tree_prune,levels = c(0,0.5,1,2,3,4,5))
+tab_dt <- confusionMatrix(predict_dt, 
+                        test_data$ADCDRSTG)
+tab_dt
+
 
 # Overall performance stats of classification decision tree model
-predict_tree_pruned = factor(predict_tree,levels = c(0,0.5,1,2,3,4,5))
-tab_tree <- confusionMatrix(predict_tree_pruned, test_data$ADCDRSTG)
-tab_tree
+predict_tree_prune = factor(predict_tree_prune,levels = c(0,0.5,1,2,3,4,5))
+tab_tree_prune <- confusionMatrix(predict_tree_prune, test_data$ADCDRSTG)
+tab_tree_prune
+
+#ROC for severe versus mild dementia
+ct.fit.prune = predict(treeMod_prune, newdata = test_data, type='class')
+ct.fit.prune = ifelse(as.integer(ct.fit.prune) > 3, 1, 0)
+test.fit.prune = ifelse(as.integer(test_data$ADCDRSTG) > 3, 1, 0)
+
+
+pred_prune = prediction(ct.fit.prune, test.fit.prune)
+perf_prune = performance(pred_prune, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred_prune, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf_prune, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Classification Tree (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+
 
 ```
 
@@ -882,7 +921,7 @@ tab_ridge
 ## Train Accuracy: 63.4
 ```
 
-# Section 3: Model Evaluation Criteria  (AIC and BIC)
+# Section 3: Model Evaluation Criteria 
 
 ```{r}
 # Polynomial Logistic Regression - PCA
@@ -911,6 +950,7 @@ cdt_aic
 
 ```{r}
 # Linear Discriminant Analysis
+
 #lda_aic = AIC(ldaMod)
 #lda_bic = BIC(ldaMod)
 ```
@@ -928,5 +968,10 @@ knn_aic4 = AIC(knnf4)
 knn_bic4 = BIC(knnf4)
 avg_aic =(knn_aic1+knn_aic2+knn_aic3+knn_aic4)/4
 avg_bic =(knn_bic1+knn_bic2+knn_bic3+knn_bic4)/4
+```
+
+=======
+lda_aic = AIC(ldaMod)
+lda_bic = BIC(ldaMod)
 ```
 
