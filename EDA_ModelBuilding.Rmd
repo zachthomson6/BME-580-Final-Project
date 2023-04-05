@@ -449,13 +449,13 @@ scaled_train = train_data %>% mutate(across(-ADCDRSTG, scale)) %>% mutate_at("AD
 scaled_test = test_data %>% mutate(across(-ADCDRSTG, scale)) %>% mutate_at("ADCDRSTG", as.factor)
 
 # Train SVM Model on scaled train data
-svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 100,
-             kernel =  'linear')
+svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
+             kernel =  'sigmoid')
 
-plot(x=svmMod, data = scaled_train, formula = MMSE_score~Organization)
+#plot(x=svmMod, data = scaled_train, formula = MMSE_score~Organization)
 
 costVal = trainControl(method = 'repeatedcv',
-                       repeats = 3,
+                       repeats = 10,
                        number = 10)
 svmCv = train(ADCDRSTG~., 
               data = scaled_train,
@@ -477,7 +477,7 @@ optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
                                             sigma = c(0.5, 1, 2, 3, 4))
 
 optRadSVM = train(ADCDRSTG~.,
-                  scaled_train,
+                  scaled_test,
                   method = 'svmRadial',
                   tuneGrid = optParamGrid,
                   trControl = costVal,
@@ -488,6 +488,61 @@ optRadSVM$bestTune
 optRadPred = predict(optRadSVM, scaled_test, type = 'raw')
 CrossTable(optRadPred, scaled_test$ADCDRSTG)
 
+# Calculate accuracy
+tab = table(optRadPred,scaled_test$ADCDRSTG)
+tab
+
+accuracy = round((sum(diag(tab))/sum(tab))*100,3)
+print(paste("The accuracy for SVM is", accuracy))
+```
+
+```{r}
+# Train SVM Model on scaled train data
+svmMod = svm(y~., data = pcaData, type = 'C', cost = 50,
+             kernel =  'polynomial')
+
+#plot(x=svmMod, data = scaled_train, formula = MMSE_score~Organization)
+
+costVal = trainControl(method = 'repeatedcv',
+                       repeats = 3,
+                       number = 10)
+svmCv = train(y~., 
+              data = pcaData,
+              method = 'svmLinear',
+              trControl = costVal,
+              tuneGrid = expand.grid(C=c(10^seq(from = -3, to = 2, by = .2))),
+              metric = 'Kappa')
+
+optimal_cost = svmCv$bestTune
+
+originalSVMPred = predict(svmMod, pcaData_test, type = 'class')
+optSVMPred = predict(svmCv, pcaData_test, type = 'raw')
+
+
+CrossTable(originalSVMPred, pcaData_test$y)
+CrossTable(optSVMPred, pcaData_test$y)
+
+optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
+                                            sigma = c(0.5, 1, 2, 3, 4))
+
+optRadSVM = train(y~.,
+                  pcaData,
+                  method = 'svmRadial',
+                  tuneGrid = optParamGrid,
+                  trControl = costVal,
+                  metric = 'Accuracy') 
+print(optRadSVM)
+optRadSVM$bestTune
+
+optRadPred = predict(optRadSVM, pcaData_test, type = 'raw')
+CrossTable(optRadPred, pcaData_test$y)
+
+# Calculate accuracy
+tab = table(optRadPred,pcaData_test$y)
+tab
+
+accuracy = round((sum(diag(tab))/sum(tab))*100,3)
+print(paste("The accuracy for SVM (pca) is", accuracy))
 ```
 
 # Stepwise / Ridge to enhance model features
