@@ -91,6 +91,8 @@ df_neuroexam = read_data("/Users/jiayucheung/Desktop/BME580/Project/adams1a/adam
 raw_data = merge(df_dailyactivities,df_neuroexam,by="ADAMSSID")
 raw_data = merge(raw_data,df_physexam,by="ADAMSSID")
 raw_data = merge(raw_data, df_score[,c("ADAMSSID","ADCDRSTG")], by="ADAMSSID", how = 'left', all.x = TRUE)
+
+raw_data = filter(raw_data, ADCDRSTG<6)
 ```
 
 #Split Data into Training and Test data
@@ -165,6 +167,7 @@ data_subset = filter(data_subset, Benton_vis_reten <=50)
 ```{r}
 # Quantify missingness 
 summary(data_subset)
+
 # Mean Imputation (https://www.geeksforgeeks.org/replace-missing-values-by-column-mean-in-r-dataframe/)
 m <- c()
 for(i in colnames(data_subset)){
@@ -182,6 +185,7 @@ for(i in colnames(data))
     data[,i][is.na(data[,i])] <- a[,i]
 data
 summary(data)
+
 ```
 # Split Data into Train and Test
 ```{r}
@@ -194,7 +198,6 @@ test_data$ADCDRSTG = factor(test_data$ADCDRSTG,
 
 #EDA: Histograms/Density
 ```{r}
-train_data = filter(train_data, ADCDRSTG<6)
 train_data$ADCDRSTG = as.numeric(train_data$ADCDRSTG)
 hist(train_data$ADCDRSTG,
      main = "Frequency of CDR Staging Score",
@@ -384,7 +387,7 @@ get_eig(pca)
 # Aggregate variance explained
 plot(summary(pca)$importance[3,])
 pcs <- as.data.frame(pca$x)
-pcs_x = pcs[,1:13]
+pcs_x = pcs[,1:16]
 y = train_data$ADCDRSTG
 plot(y, pcs_x$PC1)
 pcaData <- cbind(y, pcs_x)
