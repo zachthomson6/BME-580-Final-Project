@@ -41,19 +41,56 @@ set.seed(580)
 #(https://www.listendata.com/2014/11/random-forest-with-r.html#id-b53c14)
 
 ```{r}
-RFmodel <- randomForest(ADCDRSTG~., data = train_data, importance=TRUE) 
+
+
+RFmodel <- randomForest(ADCDRSTG~., data = train_data) 
 
 # Evaluate variable important
 var_imp <- importance(RFmodel, type = 1) #How much model accuracy decreases if we leave out that variable
 var_imp
 
 # Plot the variable importance measures
-varImpPlot(RFmodel, cex.lab=0.5, 
-           main = "Random Forest: Variable Importance")
+varImpPlot(RFmodel,
+           n.var=20,
+           main = 'Random Forest: Variable Importance')
+```
+```{r}
+# Make predictions for test set
+rfPreds = predict(RFmodel, test_data)
+confusionTab_rf = table(Predicted = rfPreds, Actual = test_data$ADCDRSTG)
+confusionTab_rf
+
+acc_rf = round((sum(diag(confusionTab_rf))/sum(confusionTab_rf))*100,2)
 ```
 
+```{r}
+trainctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 3)
 
-#Multonomial Logistic Model
+# Tuning grid
+tuningGrid <- expand.grid(mtry = 1:15)
+
+# Train the model
+rfModel_tuned <- train(ADCDRSTG ~ ., data = train_data, method = "rf", trControl = trainctrl, tuneGrid = tuningGrid)
+rfModel_tuned
+
+
+```
+```{r}
+# Optimized model
+optRf = randomForest(ADCDRSTG~., data = train_data, mtry = 15)
+optPreds = predict(optRf, test_data)
+
+# Calculate accuracy and misclassification
+opt_rf_acc = sum(ifelse(optPreds==test_data$ADCDRSTG, 1, 0)) / nrow(test_data)
+table(Predicted = optPreds, Actual = test_data$ADCDRSTG)
+
+print(paste("The accuracy is", round(opt_rf_acc,2)))
+
+misclass = 1-opt_rf_acc
+print(paste("The misclassification error rate is", round(misclass,2)))
+```
+
+#Multonomial Logistic Model (RF variables)
 ```{r}
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
 multinom_model <- nnet::multinom(formula = ADCDRSTG~ Memory + Wechsler_logical_memory + Fuld_object_memory + Del_word_list_memory + 
@@ -113,8 +150,18 @@ text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
 abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
+```
+```{r}
+# Calculate F-score for multonomial logistc regression (RF)
+precision <- diag(tab_multinom_test) / colSums(tab_multinom_test)
+recall <- diag(tab_multinom_test) / rowSums(tab_multinom_test)
+
+f_score <- 2 * (precision * recall) / (precision + recall)
+f_score
 
 ```
+
+
 ```{r}
 # Using PCs in multinom
 pcs <- as.data.frame(pca$x)
@@ -138,6 +185,8 @@ multinom_model_pc <- nnet::multinom(formula = y ~ PC1 + PC2 + PC3 + PC4 + PC5 + 
                                  + PC9 + PC10 + PC11 + PC12 + PC13 + + PC14 + PC15 + PC16, data = pcaData)
 
 ```
+
+
 # Multonomial Logistic Regression using PCs
 ```{r}
 exp(coef(multinom_model_pc)) # convert coefficients to odds
@@ -240,14 +289,39 @@ text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
 abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
+```
 
+
+```{r}
+# Calculate F-score for LDA
+precision <- diag(confusionTab_LDA_test) / colSums(confusionTab_LDA_test)
+recall <- diag(confusionTab_LDA_test) / rowSums(confusionTab_LDA_test)
+
+f_score <- 2 * (precision * recall) / (precision + recall)
+f_score
+```
+
+
+
+```{r}
+# Calculate AIC and BIC
+n <- nrow(train_data)
+k <- length(ldaMod$svd)
+logLik_val <- sum(log(predict(ldaMod, train_data)$x + 4))
+AIC_val <- -2 * logLik_val + 2 * k
+BIC_val <- -2 * logLik_val + k * log(n)
+
+AIC_val
+BIC_val
 ```
 
 #KNN
 ```{r}
+train_data_scaled[-c(38)] = scale(cardio_scaled[c(1,3,4,5,6)])
+
 for (i in seq(15, 40 , 5)) {
-  knn = knn(scale(train_data), scale(test_data), cl = as.factor(train_data$ADCDRSTG), k = i)
-  tab = table(knn,as.factor(test_data$ADCDRSTG))
+  knn = knn(train_data, test_data, cl = train_data$ADCDRSTG, k = i)
+  tab = table(knn,test_data$ADCDRSTG)
   print(paste("k =",i))
   print(tab)
   
@@ -340,11 +414,24 @@ auc_roc = auc_roc@y.values[[1]]
 # Plot ROC
 plot(perf, avg= "threshold",
      col='blue',
-     main= "ROC Curve for Polynomial Logistic Regression (Severe versus mild dementia)")
+     main= "ROC Curve for Polynomial Logistic Regression")
 text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
 abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
+```
+```{r}
+# Calculate F-score for polynomial logistic regression
+
+# precision = PPV
+# recall = TPR/ sensitivity
+
+f_score_1 <- 2 * (0.7857 * 0.7586) / (0.7857 + 0.7586)
+f_score_2 = 2*(0.7692*0.8140)/(0.7692+0.8140)
+f_score_3 = 2*(0.4*0.4)/(0.4+0.4)
+f_score_4 = 2*(0.57143*0.44444)/(0.57143+0.44444)
+
+averagef = (f_score_1+f_score_2+f_score_3+f_score_4)/4
 ```
 
 # Classification Decision Tree
@@ -450,7 +537,7 @@ scaled_test = test_data %>% mutate(across(-ADCDRSTG, scale)) %>% mutate_at("ADCD
 
 # Train SVM Model on scaled train data
 svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
-             kernel =  'sigmoid')
+             kernel =  'radial')
 
 #plot(x=svmMod, data = scaled_train, formula = MMSE_score~Organization)
 
@@ -478,7 +565,7 @@ optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
 
 optRadSVM = train(ADCDRSTG~.,
                   scaled_test,
-                  method = 'svmRadial',
+                  method = 'svmLinear',
                   tuneGrid = optParamGrid,
                   trControl = costVal,
                   metric = 'Accuracy') 
@@ -497,7 +584,7 @@ print(paste("The accuracy for SVM is", accuracy))
 ```
 
 ```{r}
-# Train SVM Model on scaled train data
+# Train SVM Model on PCs
 svmMod = svm(y~., data = pcaData, type = 'C', cost = 50,
              kernel =  'polynomial')
 
@@ -632,12 +719,18 @@ tab_ridge
 # Polynomial Logistic Regression - based on best RF variables
 plr_aic = AIC(polyLogModel)
 plr_bic = BIC(polyLogModel)
+
+plr_aic
+plr_bic
 ```
 
 ```{r}
 # Multinomial Logistic Regression (RF)
 mlr_aic = AIC(multinom_model)
 mlr_bic = BIC(multinom_model)
+
+mlr_aic
+mlr_bic
 ```
 
 ```{r}
@@ -655,10 +748,17 @@ cdt_aic
 
 ```{r}
 # Linear Discriminant Analysis
-#lda_aic = AIC(ldaMod)
-#lda_bic = BIC(ldaMod)
+#ldaMod = lda(ADCDRSTG~., data = train_data)
+#ldaPred = predict(ldaMod, train_data)
+
+lda_aic <- -2*logLik(ldaMod) + 2*(length(ldaMod$prior) + length(ldaMod$counts))
 ```
 
+```{r}
+# SVM
+svm_aic = AIC(optRadSVM)
+
+```
 
 ```{r}
 # K Nearest Neighbors
