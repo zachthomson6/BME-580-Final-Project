@@ -21,6 +21,7 @@ library(caTools)
 library(vioplot)
 library(gridExtra)
 library(grid)
+set.seed(1123)
 ```
 
 ## Functions
@@ -186,39 +187,40 @@ for(i in colnames(data))
 data
 summary(data)
 
+data$ADCDRSTG = factor(data$ADCDRSTG, 
+                        levels = c(0,0.5,1,2,3))
+
 ```
 # Split Data into Train and Test
 ```{r}
 split_data2 = splitdata(0.7, data)
 train_data = split_data2[[1]]
 test_data = split_data2[[2]]
-test_data$ADCDRSTG = factor(test_data$ADCDRSTG, 
-                                                  levels = c(0,0.5,1,2,3))
 ```
 
 #EDA: Histograms/Density
 ```{r}
-train_data$ADCDRSTG = as.numeric(train_data$ADCDRSTG)
-hist(train_data$ADCDRSTG,
-     main = "Frequency of CDR Staging Score",
-     xlab = "CDR Staging Score",
-     breaks = "FD")
 # Memory Across CDR Staging score
-train_data$ADCDRSTG = factor(train_data$ADCDRSTG, 
-                                                  levels = c(0,0.5,1,2,3))
-no_NA = train_data %>% drop_na(ADCDRSTG)
-density_plot_CDR = ggplot(data = no_NA, aes(x = Memory, fill = ADCDRSTG)) +
+density_plot_CDR = ggplot(data = train_data, aes(x = Memory, fill = ADCDRSTG)) +
   geom_density(alpha = 0.2) + 
   labs(title = 'Density Function of Memory Ability',
      x = 'Memory Function',
      y = 'Density',
      fill = 'CDR staging score')
 density_plot_CDR
+
+dummy_train = train_data
+dummy_train$ADCDRSTG = as.numeric(dummy_train$ADCDRSTG)
+hist(dummy_train$ADCDRSTG,
+     main = "Frequency of CDR Staging Score",
+     xlab = "CDR Staging Score",
+     breaks = "FD")
 ```
 #Violin Plots
 ```{r}
 # Create subplot of 2 rows and 3 columns
 par(mfrow = c(2,3))
+
 # violin for MMSE_score
 vioplot(MMSE_score~ADCDRSTG,
         data = train_data,
