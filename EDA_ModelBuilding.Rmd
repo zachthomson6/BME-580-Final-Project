@@ -42,7 +42,7 @@ set.seed(580)
 #(https://www.listendata.com/2014/11/random-forest-with-r.html#id-b53c14)
 
 ```{r}
-
+set.seed(580)
 
 RFmodel <- randomForest(ADCDRSTG~., data = train_data) 
 
@@ -57,15 +57,18 @@ varImpPlot(RFmodel,
 ```
 ```{r}
 # Make predictions for test set
+set.seed(580)
 rfPreds = predict(RFmodel, test_data)
 confusionTab_rf = table(Predicted = rfPreds, Actual = test_data$ADCDRSTG)
 confusionTab_rf
 
 acc_rf = round((sum(diag(confusionTab_rf))/sum(confusionTab_rf))*100,2)
+acc_rf
 ```
 
 ```{r}
-trainctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 3)
+set.seed(1800)
+trainctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 3
 
 # Tuning grid
 tuningGrid <- expand.grid(mtry = 1:15)
@@ -78,22 +81,61 @@ rfModel_tuned
 ```
 ```{r}
 # Optimized model
-optRf = randomForest(ADCDRSTG~., data = train_data, mtry = 15)
+set.seed(1900)
+optRf = randomForest(ADCDRSTG~., data = train_data, mtry = 14)
 optPreds = predict(optRf, test_data)
 
 # Calculate accuracy and misclassification
 opt_rf_acc = sum(ifelse(optPreds==test_data$ADCDRSTG, 1, 0)) / nrow(test_data)
-table(Predicted = optPreds, Actual = test_data$ADCDRSTG)
+rf_tab = table(Predicted = optPreds, Actual = test_data$ADCDRSTG)
 
-print(paste("The accuracy is", round(opt_rf_acc,2)))
+print(paste("The accuracy is", round(opt_rf_acc,4)))
 
 misclass = 1-opt_rf_acc
-print(paste("The misclassification error rate is", round(misclass,2)))
+print(paste("The misclassification error rate is", round(misclass,4)))
+```
+```{r}
+#ROC for severe versus mild dementia
+set.seed(580)
+rf.fit = predict(optRf, newdata = test_data, type='class')
+rf.fit = ifelse(as.integer(rf.fit) > 1, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 1, 1, 0)
+
+
+pred = prediction(rf.fit, test.fit)
+perf = performance(pred, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for Random Forest")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+```
+```{r}
+# Calculate precision, recall, f score
+precision_rf <- diag(rf_tab) / colSums(rf_tab)
+recall_rf <- diag(rf_tab) / rowSums(rf_tab)
+
+f_scorerf <- 2 * (precision_rf * recall_rf) / (precision_rf + recall_rf)
+
+precision_rf
+recall_rf
+f_scorerf
+
 ```
 
 #Multonomial Logistic Model (RF variables)
 ```{r}
 # Multinomial Logistic Regression (https://www.r-bloggers.com/2020/05/multinomial-logistic-regression-with-r/)
+set.seed(580)
 multinom_model <- nnet::multinom(formula = ADCDRSTG~ Memory + Wechsler_logical_memory + Fuld_object_memory + Del_word_list_memory + 
                                    Benton_vis_reten + Arithmetic + Learning, data = train_data)
 
@@ -130,6 +172,7 @@ print(paste("The accuracy of multinomial logistic regression (test) is", acc_mul
 ```
 ```{r}
 #ROC for severe versus mild dementia
+set.seed(580)
 log.fit = predict(multinom_model, newdata = test_data, type='class')
 log.fit = ifelse(as.integer(log.fit) > 1, 1, 0)
 test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 1, 1, 0)
@@ -162,9 +205,18 @@ f_score
 
 ```
 
+```{r}
+# Calculate AIC BIC
+aic_mlr_rf = AIC(multinom_model)
+bic_mlr_rf = BIC(multinom_model)
+
+aic_mlr_rf
+bic_mlr_rf
+```
 
 ```{r}
 # Using PCs in multinom
+set.seed(580)
 pcs <- as.data.frame(pca$x)
 pcs_x = pcs[,1:16]
 y = train_data$ADCDRSTG
@@ -190,6 +242,7 @@ multinom_model_pc <- nnet::multinom(formula = y ~ PC1 + PC2 + PC3 + PC4 + PC5 + 
 
 # Multonomial Logistic Regression using PCs
 ```{r}
+set.seed(580)
 exp(coef(multinom_model_pc)) # convert coefficients to odds
 head(round(fitted(multinom_model_pc), 2))
 
@@ -222,6 +275,7 @@ print(paste("The accuracy of multinomial logistic regression using PCs (test) is
 
 ```{r}
 #ROC for severe versus mild dementia
+set.seed(580)
 log.fit = predict(multinom_model_pc, newdata = pcaData_test, type='class')
 log.fit = ifelse(as.integer(log.fit) > 1, 1, 0)
 test.fit = ifelse(as.integer(pcaData_test$y) > 1, 1, 0)
@@ -247,6 +301,7 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 
 #Linear Discrimminant Analysis
 ```{r}
+set.seed(580)
 ldaMod = lda(ADCDRSTG~., data = train_data)
 ldaMod
 
@@ -318,8 +373,7 @@ BIC_val
 
 #KNN
 ```{r}
-train_data_scaled[-c(38)] = scale(cardio_scaled[c(1,3,4,5,6)])
-
+set.seed(580)
 for (i in seq(15, 40 , 5)) {
   knn = knn(train_data, test_data, cl = train_data$ADCDRSTG, k = i)
   tab = table(knn,test_data$ADCDRSTG)
@@ -331,72 +385,25 @@ for (i in seq(15, 40 , 5)) {
 } # Chose the optimal model to be k=25
 ```
 
-```{r}
-# K-fold cross validation
-data = filter(data, ADCDRSTG<6)
-
-folds = createFolds(data$ADCDRSTG, k = 4, list = FALSE)
-df_folded = cbind(data, folds)
-
-# Isolate each fold
-fold1 = filter(df_folded, folds == 1) %>% subset(select = -c(folds))
-fold2 = filter(df_folded, folds == 2) %>% subset(select = -c(folds))
-fold3 = filter(df_folded, folds == 3) %>% subset(select = -c(folds))
-fold4 = filter(df_folded, folds == 4) %>% subset(select = -c(folds))
-
-knnf1 = knn(fold1, test_data, 
-            cl = as.factor(fold1$ADCDRSTG), 
-            #k=sqrt(nrow(fold1)))
-            k=25)
-knnf2 = knn(fold2, test_data, 
-            cl = as.factor(fold2$ADCDRSTG), 
-            #k=sqrt(nrow(fold2)))
-            k=25)
-knnf3 = knn(fold3, test_data, 
-            cl = as.factor(fold3$ADCDRSTG), 
-            #k=sqrt(nrow(fold3)))
-            k=25)
-knnf4 = knn(fold4, test_data, 
-            cl = as.factor(fold4$ADCDRSTG), 
-            #k=sqrt(nrow(fold4)))
-            k=25)
-
-tabknnf1 = table(knnf1, as.factor(test_data$ADCDRSTG))
-tabknnf1
-tabknnf2 = table(knnf2, as.factor(test_data$ADCDRSTG))
-tabknnf2
-tabknnf3 = table(knnf3, as.factor(test_data$ADCDRSTG))
-tabknnf3
-tabknnf4 = table(knnf4, as.factor(test_data$ADCDRSTG))
-tabknnf4
-
-# Calculate accuracy
-accuracyf1 = round((sum(diag(tabknnf1))/sum(tabknnf1))*100,3)
-accuracyf2 = round((sum(diag(tabknnf2))/sum(tabknnf2))*100,3)
-accuracyf3 = round((sum(diag(tabknnf3))/sum(tabknnf3))*100,3)
-accuracyf4 = round((sum(diag(tabknnf4))/sum(tabknnf4))*100,3)
-
-average = (accuracyf1+accuracyf2+accuracyf3+accuracyf4)/4
-
-print(paste("Average accuracy of four groups is ",round(average,2)))
-```
-
 # Polynomial Logistic Regression 
 ```{r}
 # Polynomial Logistic Model with variables chosen using RF
+set.seed(580)
 polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Wechsler_logical_memory, 2) + poly(Fuld_object_memory, 2) + 
                          poly(Memory, 2) + poly(Benton_vis_reten, 2) + poly(Del_word_list_memory,2)
                          + poly(Arithmetic,2) + poly(Learning,2),
                          data = train_data, raw = FALSE)
 
-# Make predictions on test data
-polyLog_prob <- predict(polyLogModel, newdata = test_data, type = "prob")
-predict_polyLog <- colnames(polyLog_prob)[apply(polyLog_prob, 1, which.max)]
+# create confusion matrix for test set
+polyPred_test = predict(polyLogModel, test_data)
+confusionTab_poly_test = table(Predicted = polyPred_test$class,
+                      Actual = test_data$ADCDRSTG)
+confusionTab_poly_test
 
-# Overall performance stats
-predict_polyLog = factor(predict_polyLog,levels = c(0,0.5,1,2,3))
-tab_polyLog <- confusionMatrix(predict_polyLog, test_data$ADCDRSTG)
-tab_polyLog
+# Calculating accuracy - sum of diagonal elements divided by total obs
+acc_poly_test = round((sum(diag(confusionTab_poly_test))/sum(confusionTab_poly_test))*100,2)
+print(paste("The accuracy of polynomial logistic regression using RF (test) is", acc_poly_test))
+
 
 #ROC for severe versus mild dementia
 polylog.fit = predict(polyLogModel, newdata = test_data, type='class')
@@ -422,22 +429,30 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
 ```
 ```{r}
-# Calculate F-score for polynomial logistic regression
+# Calculate precision, recall, f score
+precision_poly <- diag(confusionTab_poly_test) / colSums(confusionTab_poly_test)
+recall_poly <- diag(confusionTab_poly_test) / rowSums(confusionTab_poly_test)
 
-# precision = PPV
-# recall = TPR/ sensitivity
+f_scorepoly <- 2 * (precision_poly * recall_poly) / (precision_poly + recall_poly)
 
-f_score_1 <- 2 * (0.7857 * 0.7586) / (0.7857 + 0.7586)
-f_score_2 = 2*(0.7692*0.8140)/(0.7692+0.8140)
-f_score_3 = 2*(0.4*0.4)/(0.4+0.4)
-f_score_4 = 2*(0.57143*0.44444)/(0.57143+0.44444)
+precision_poly
+recall_poly
+f_scorepoly
+```
 
-averagef = (f_score_1+f_score_2+f_score_3+f_score_4)/4
+```{r}
+# Calculate AIC BIC for Poly RF
+poly.aic = AIC(polyLogModel)
+poly.aic
+
+poly.bic = BIC(polyLogModel)
+poly.bic
+
 ```
 
 # Classification Decision Tree
 ```{r}
-
+set.seed(580)
 treeMod <- rpart(ADCDRSTG ~ ., data = train_data, method = "class")
 
 # Plot decision tree
@@ -450,6 +465,17 @@ predict_dt = factor(predict_tree,levels = c(0,0.5,1,2,3))
 tab_dt <- confusionMatrix(predict_dt, 
                         test_data$ADCDRSTG)
 tab_dt
+
+# create confusion matrix for test set
+dtPred_test = predict(treeMod, test_data,"class")
+confusionTab_dt_test = table(Predicted = dtPred_test,
+                      Actual = test_data$ADCDRSTG)
+confusionTab_dt_test
+
+# Calculating accuracy - sum of diagonal elements divided by total obs
+acc_dt_test = round((sum(diag(confusionTab_dt_test))/sum(confusionTab_dt_test))*100,2)
+print(paste("The accuracy of decision tree (test) is", acc_dt_test))
+
 
 # Overall performance stats of classification decision tree model
 predict_tree = factor(predict_tree,levels = c(0,0.5,1,2,3))
@@ -484,6 +510,7 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 
 ```{r}
 #Prune Tree
+set.seed(580)
 treeMod_prune <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control = rpart.control(cp=0.015, 
                                                                                                   minsplit = 10,
                                                                                                   minbucket = round(10/3),
@@ -495,10 +522,11 @@ rpart.plot(treeMod_prune, type = 4)
 predict_tree_prune <- predict(treeMod_prune, newdata = test_data, type = "class")
 
 # Calculate accuracy
-predict_dt = factor(predict_tree_prune,levels = c(0,0.5,1,2,3))
-tab_dt <- confusionMatrix(predict_dt, 
-                        test_data$ADCDRSTG)
-tab_dt
+predict_dt <- predict(treeMod_prune, newdata = test_data, "class")
+
+tab_dt <- table(Predicted = predict_dt,
+                      Actual = test_data$ADCDRSTG)
+acc = round((sum(diag(tab_dt))/sum(tab_dt))*100,3)
 
 
 # Overall performance stats of classification decision tree model
@@ -533,6 +561,7 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 # SVM
 ```{r}
 # Scale dataframe
+set.seed(580)
 scaled_train = train_data %>% mutate(across(-ADCDRSTG, scale))
 scaled_test = test_data %>% mutate(across(-ADCDRSTG, scale)) 
 
@@ -561,27 +590,57 @@ optSVMPred = predict(svmCv, scaled_test, type = 'raw')
 CrossTable(originalSVMPred, scaled_test$ADCDRSTG)
 CrossTable(optSVMPred, scaled_test$ADCDRSTG)
 
-#optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
-#                                            sigma = c(0.5, 1, 2, 3, 4))
-
-#optRadSVM = train(ADCDRSTG~.,
-#                  scaled_test,
-#                  method = 'svmLinear',
-#                  tuneGrid = optParamGrid,
-#                  trControl = costVal,
-#                  metric = 'Accuracy') 
-#print(optRadSVM)
-#optRadSVM$bestTune
-
-#optRadPred = predict(optRadSVM, scaled_test, type = 'raw')
-#CrossTable(optRadPred, scaled_test$ADCDRSTG)
-
 # Calculate accuracy
 tab = table(optSVMPred,scaled_test$ADCDRSTG)
 tab
 
 accuracy = round((sum(diag(tab))/sum(tab))*100,3)
 print(paste("The accuracy for SVM is", accuracy))
+```
+```{r}
+set.seed(580)
+# Calculate accuracy
+predict_svm <- predict(svmMod, scaled_test, type = 'class')
+
+tab_svm <- table(Predicted = predict_svm,
+                      Actual = scaled_test$ADCDRSTG)
+acc = round((sum(diag(tab_svm))/sum(tab_svm))*100,2)
+
+
+#ROC for severe versus mild dementia
+svm.fit = predict(svmMod, newdata = scaled_test, type = 'class')
+svm.fit = ifelse(as.integer(svm.fit) > 1, 1, 0)
+test.fit = ifelse(as.integer(scaled_test$ADCDRSTG) > 1, 1, 0)
+
+
+pred_svm = prediction(svm.fit, test.fit)
+perf_svm = performance(pred_prune, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred_svm, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf_svm, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for SVM (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+```
+```{r}
+# Calculate precision, recall, f score
+precision_svm <- diag(tab_svm) / colSums(tab_svm)
+recall_svm <- diag(tab_svm) / rowSums(tab_svm)
+
+f_scoresvm <- 2 * (precision_svm * recall_svm) / (precision_svm + recall_svm)
+
+precision_svm
+recall_svm
+f_scoresvm
+
 ```
 
 ```{r}
@@ -638,6 +697,7 @@ print(paste("The accuracy for SVM (pca) is", accuracy))
 ########################################### 
 #Using StepwiseAIC to select the variables#
 ########################################### 
+set.seed(580)
 
 # Using multinomial logistic regression (multinom_model)
 fit1 <- nnet::multinom(formula = ADCDRSTG~ Memory + Wechsler_logical_memory + Fuld_object_memory + Del_word_list_memory + 
@@ -659,6 +719,7 @@ print(paste("The accuracy of Multinomial Logistic Regression from stepwise is", 
 
 ```{r}
 # Polynomial Logistic Regression
+set.seed(580)
 fit2 <- nnet::multinom(ADCDRSTG ~ poly(Wechsler_logical_memory, 2) + poly(Fuld_object_memory, 2) + 
                          poly(Memory, 2) + poly(Benton_vis_reten, 2) + poly(Del_word_list_memory,2)
                          + poly(Arithmetic,2) + poly(Learning,2),
@@ -666,7 +727,7 @@ fit2 <- nnet::multinom(ADCDRSTG ~ poly(Wechsler_logical_memory, 2) + poly(Fuld_o
 
 #step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
 step.fit2$aic
-#summary(step.fit2)
+summary(step.fit2)
 
 predict_aic_poly = predict(step.fit2, newdata = test_data)
 confusionTab_aic_poly_test = table(Predicted = predict_aic_poly,
@@ -677,42 +738,6 @@ acc_aic_poly = round((sum(diag(confusionTab_aic_poly_test))/sum(confusionTab_aic
 print(paste("The accuracy of Polynomial Logistic Regression from stepwise is", acc_aic_poly))
 
 ```
-
-```{r}
-########################################### 
-####Using Ridge to select the variables####
-########################################### 
-# Multinomial Logistic Regression
-x <-  model.matrix(ADCDRSTG ~., data=train_data)[,-1]
-y <- train_data[,"ADCDRSTG"]
-
-x_test <-  model.matrix(ADCDRSTG ~., data=test_data)[,-1]
-y_test <- test_data[,"ADCDRSTG"]
-
-lambdas <- 10^seq(2, -3, by = -.1)
-ridge_reg = glmnet(x, y, nlambda = 25, alpha = 0, family = 'multinom', lambda = lambdas)
-
-cv_ridge <- cv.glmnet(x, y, alpha = 0, lambda = lambdas, family = "multinom")
-optimal_lambda <- cv_ridge$lambda.min
-optimal_lambda
-
-plot(ridge_reg)
-
-predictions_train <- predict(ridge_reg, s = optimal_lambda, newx = x, type = "class")
-predictions_test <- predict(ridge_reg, s = optimal_lambda, newx = x_test, type = "class")
-
-predictions_train = factor(predictions_train,levels = c(0,0.5,1,2,3))
-tab_ridge <- confusionMatrix(predictions_train, train_data$ADCDRSTG)
-tab_ridge
-
-predictions_test = factor(predictions_test,levels = c(0,0.5,1,2,3))
-tab_ridge <- confusionMatrix(predictions_test, test_data$ADCDRSTG)
-tab_ridge
-
-## Test Accuracy: 67.06
-## Train Accuracy: 63.4
-```
-
 
 # Section 3: Model Evaluation Criteria 
 
@@ -740,26 +765,6 @@ mlr_aic = AIC(multinom_model)
 mlr_bic = BIC(multinom_model)
 ```
 
-```{r}
-# Classification Decision Tree
-cdt_aic = summarize_tree(treeMod)
-cdt_aic
-```
-
-
-```{r}
-# Linear Discriminant Analysis
-#ldaMod = lda(ADCDRSTG~., data = train_data)
-#ldaPred = predict(ldaMod, train_data)
-
-lda_aic <- -2*logLik(ldaMod) + 2*(length(ldaMod$prior) + length(ldaMod$counts))
-```
-
-```{r}
-# SVM
-svm_aic = AIC(optRadSVM)
-
-```
 
 ```{r}
 # K Nearest Neighbors
