@@ -31,6 +31,7 @@ library(rpart.plot)
 library(glmnet)
 library(class)
 library(e1071)
+library(gmodels) # CrossTable()
 set.seed(580)
 ```
 
@@ -532,8 +533,8 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 # SVM
 ```{r}
 # Scale dataframe
-scaled_train = train_data %>% mutate(across(-ADCDRSTG, scale)) %>% mutate_at("ADCDRSTG", as.factor)
-scaled_test = test_data %>% mutate(across(-ADCDRSTG, scale)) %>% mutate_at("ADCDRSTG", as.factor)
+scaled_train = train_data %>% mutate(across(-ADCDRSTG, scale))
+scaled_test = test_data %>% mutate(across(-ADCDRSTG, scale)) 
 
 # Train SVM Model on scaled train data
 svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
@@ -560,23 +561,23 @@ optSVMPred = predict(svmCv, scaled_test, type = 'raw')
 CrossTable(originalSVMPred, scaled_test$ADCDRSTG)
 CrossTable(optSVMPred, scaled_test$ADCDRSTG)
 
-optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
-                                            sigma = c(0.5, 1, 2, 3, 4))
+#optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
+#                                            sigma = c(0.5, 1, 2, 3, 4))
 
-optRadSVM = train(ADCDRSTG~.,
-                  scaled_test,
-                  method = 'svmLinear',
-                  tuneGrid = optParamGrid,
-                  trControl = costVal,
-                  metric = 'Accuracy') 
-print(optRadSVM)
-optRadSVM$bestTune
+#optRadSVM = train(ADCDRSTG~.,
+#                  scaled_test,
+#                  method = 'svmLinear',
+#                  tuneGrid = optParamGrid,
+#                  trControl = costVal,
+#                  metric = 'Accuracy') 
+#print(optRadSVM)
+#optRadSVM$bestTune
 
-optRadPred = predict(optRadSVM, scaled_test, type = 'raw')
-CrossTable(optRadPred, scaled_test$ADCDRSTG)
+#optRadPred = predict(optRadSVM, scaled_test, type = 'raw')
+#CrossTable(optRadPred, scaled_test$ADCDRSTG)
 
 # Calculate accuracy
-tab = table(optRadPred,scaled_test$ADCDRSTG)
+tab = table(optSVMPred,scaled_test$ADCDRSTG)
 tab
 
 accuracy = round((sum(diag(tab))/sum(tab))*100,3)
