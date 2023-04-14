@@ -54,11 +54,15 @@ var_imp
 varImpPlot(RFmodel,
            n.var=20,
            main = 'Random Forest: Variable Importance')
+
+plot(RFmodel)
+which.min(RFmodel$err.rate)
 ```
 ```{r}
 # Make predictions for test set
 set.seed(580)
 rfPreds = predict(RFmodel, test_data)
+
 confusionTab_rf = table(Predicted = rfPreds, Actual = test_data$ADCDRSTG)
 confusionTab_rf
 
@@ -68,22 +72,24 @@ acc_rf
 
 ```{r}
 set.seed(1800)
-trainctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 3
+trainctrl <- trainControl(method = "repeatedcv", number = 5, repeats = 3)
 
-# Tuning grid
+#Tuning grid
 tuningGrid <- expand.grid(mtry = 1:15)
 
 # Train the model
 rfModel_tuned <- train(ADCDRSTG ~ ., data = train_data, method = "rf", trControl = trainctrl, tuneGrid = tuningGrid)
 rfModel_tuned
 
-
+plot(rfModel_tuned)
 ```
 ```{r}
 # Optimized model
 set.seed(1900)
 optRf = randomForest(ADCDRSTG~., data = train_data, mtry = 14)
 optPreds = predict(optRf, test_data)
+
+plot(optRf)
 
 # Calculate accuracy and misclassification
 opt_rf_acc = sum(ifelse(optPreds==test_data$ADCDRSTG, 1, 0)) / nrow(test_data)
@@ -384,6 +390,30 @@ for (i in seq(15, 40 , 5)) {
   print(paste("Accuracy:", accuracy))
 } # Chose the optimal model to be k=25
 ```
+```{r}
+#ROC for severe versus mild dementia
+knn.fit = knn(train_data, test_data, cl = train_data$ADCDRSTG, k = 25)
+knn.fit = ifelse(as.integer(knn.fit) > 1, 1, 0)
+test.fit = ifelse(as.integer(test_data$ADCDRSTG) > 1, 1, 0)
+
+
+pred = prediction(knn.fit, test.fit)
+perf = performance(pred, measure = "tpr", x.measure = "fpr")
+
+
+# Calculate AUC
+auc_roc = performance(pred, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for KNN")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
+```
 
 # Polynomial Logistic Regression 
 ```{r}
@@ -428,6 +458,7 @@ abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
 ```
+
 ```{r}
 # Calculate precision, recall, f score
 precision_poly <- diag(confusionTab_poly_test) / colSums(confusionTab_poly_test)
@@ -511,7 +542,7 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 ```{r}
 #Prune Tree
 set.seed(580)
-treeMod_prune <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control = rpart.control(cp=0.015, 
+treeMod_prune <- rpart(ADCDRSTG ~ ., data = train_data, method = "class", control = rpart.control(cp=0.03, 
                                                                                                   minsplit = 10,
                                                                                                   minbucket = round(10/3),
                                                                                                   maxdepth = 10))
@@ -560,6 +591,7 @@ legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
 
 # SVM
 ```{r}
+# SVM with Radial
 # Scale dataframe
 set.seed(580)
 scaled_train = train_data %>% mutate(across(-ADCDRSTG, scale))
@@ -574,11 +606,15 @@ svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
 costVal = trainControl(method = 'repeatedcv',
                        repeats = 10,
                        number = 10)
+optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
+                                            sigma = c(0.5, 1, 2, 3, 4))
+
+
 svmCv = train(ADCDRSTG~., 
               data = scaled_train,
-              method = 'svmLinear',
+              method = 'svmRadial',
               trControl = costVal,
-              tuneGrid = expand.grid(C=c(10^seq(from = -3, to = 2, by = .2))),
+              tuneGrid = optParamGrid,
               metric = 'Kappa')
 
 optimal_cost = svmCv$bestTune
@@ -596,7 +632,10 @@ tab
 
 accuracy = round((sum(diag(tab))/sum(tab))*100,3)
 print(paste("The accuracy for SVM is", accuracy))
+
 ```
+
+
 ```{r}
 set.seed(580)
 # Calculate accuracy
@@ -614,7 +653,7 @@ test.fit = ifelse(as.integer(scaled_test$ADCDRSTG) > 1, 1, 0)
 
 
 pred_svm = prediction(svm.fit, test.fit)
-perf_svm = performance(pred_prune, 'tpr','fpr')
+perf_svm = performance(pred_svm, 'tpr','fpr')
 
 
 # Calculate AUC
@@ -642,6 +681,7 @@ recall_svm
 f_scoresvm
 
 ```
+
 
 ```{r}
 # Train SVM Model on PCs
@@ -674,7 +714,7 @@ optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
 
 optRadSVM = train(y~.,
                   pcaData,
-                  method = 'svmRadial',
+                  method = 'svmLinear',
                   tuneGrid = optParamGrid,
                   trControl = costVal,
                   metric = 'Accuracy') 
@@ -690,6 +730,82 @@ tab
 
 accuracy = round((sum(diag(tab))/sum(tab))*100,3)
 print(paste("The accuracy for SVM (pca) is", accuracy))
+```
+
+```{r}
+# SVM with Linear
+# Scale dataframe
+set.seed(580)
+
+# Train SVM Model on scaled train data
+svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
+             kernel =  'linear')
+
+costVal = trainControl(method = 'repeatedcv',
+                       repeats = 10,
+                       number = 10)
+
+optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
+                                            sigma = c(0.5, 1, 2, 3, 4))
+
+svmCv = train(ADCDRSTG~., 
+              data = scaled_train,
+              method = 'svmLinear',
+              trControl = costVal,
+              tuneGrid = expand.grid(C=c(10^seq(from = -3, to = 2, by = .2))),
+              metric = 'Kappa')
+
+optimal_cost = svmCv$bestTune
+
+originalSVMPred = predict(svmMod, scaled_test, type = 'class')
+optSVMPred = predict(svmCv, scaled_test, type = 'raw')
+
+
+CrossTable(originalSVMPred, scaled_test$ADCDRSTG)
+CrossTable(optSVMPred, scaled_test$ADCDRSTG)
+
+# Calculate accuracy
+tab = table(optSVMPred,scaled_test$ADCDRSTG)
+tab
+
+accuracy = round((sum(diag(tab))/sum(tab))*100,3)
+print(paste("The accuracy for SVM is", accuracy))
+
+```
+
+
+```{r}
+set.seed(580)
+# Calculate accuracy
+predict_svm <- predict(svmMod, scaled_test, type = 'class')
+
+tab_svm <- table(Predicted = predict_svm,
+                      Actual = scaled_test$ADCDRSTG)
+acc = round((sum(diag(tab_svm))/sum(tab_svm))*100,2)
+
+
+#ROC for severe versus mild dementia
+svm.fit = predict(svmMod, newdata = scaled_test, type = 'class')
+svm.fit = ifelse(as.integer(svm.fit) > 1, 1, 0)
+test.fit = ifelse(as.integer(scaled_test$ADCDRSTG) > 1, 1, 0)
+
+
+pred_svm = prediction(svm.fit, test.fit)
+perf_svm = performance(pred_svm, 'tpr','fpr')
+
+
+# Calculate AUC
+auc_roc = performance(pred_svm, measure='auc')
+auc_roc = auc_roc@y.values[[1]]
+
+# Plot ROC
+plot(perf_svm, avg= "threshold",
+     col='blue',
+     main= "ROC Curve for SVM (Severe versus mild dementia)")
+text(0.05, 1, paste0("AUC = ", round(auc_roc, 3)))
+abline(0, 1, lty = 2, col = 'black')
+legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
+       col=c("blue", "black"), lty=1:2, cex=0.8)
 ```
 
 # Stepwise / Ridge to enhance model features
@@ -765,17 +881,3 @@ mlr_aic = AIC(multinom_model)
 mlr_bic = BIC(multinom_model)
 ```
 
-
-```{r}
-# K Nearest Neighbors
-knn_aic1 = AIC(knnf1)
-knn_bic1 = BIC(knnf1)
-knn_aic2 = AIC(knnf2)
-knn_bic2 = BIC(knnf2)
-knn_aic3 = AIC(knnf3)
-knn_bic3 = BIC(knnf3)
-knn_aic4 = AIC(knnf4)
-knn_bic4 = BIC(knnf4)
-avg_aic =(knn_aic1+knn_aic2+knn_aic3+knn_aic4)/4
-avg_bic =(knn_bic1+knn_bic2+knn_bic3+knn_bic4)/4
-```
