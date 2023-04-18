@@ -56,6 +56,7 @@ varImpPlot(RFmodel,
            main = 'Random Forest: Variable Importance')
 
 plot(RFmodel)
+legend("topright", colnames(RFmodel$err.rate), col = 1:6, lty = 1, cex = 0.8)
 which.min(RFmodel$err.rate)
 ```
 ```{r}
@@ -734,7 +735,6 @@ print(paste("The accuracy for SVM (pca) is", accuracy))
 
 ```{r}
 # SVM with Linear
-# Scale dataframe
 set.seed(580)
 
 # Train SVM Model on scaled train data
@@ -745,8 +745,6 @@ costVal = trainControl(method = 'repeatedcv',
                        repeats = 10,
                        number = 10)
 
-optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
-                                            sigma = c(0.5, 1, 2, 3, 4))
 
 svmCv = train(ADCDRSTG~., 
               data = scaled_train,
@@ -807,7 +805,45 @@ abline(0, 1, lty = 2, col = 'black')
 legend(0.7,0.2, legend=c("ROC Curve", "Random Classifier"),
        col=c("blue", "black"), lty=1:2, cex=0.8)
 ```
+```{r}
+# SVM with Polynomial
+set.seed(580)
 
+# Train SVM Model on scaled train data
+svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
+             kernel =  'polynomial', degree = 3)
+
+costVal = trainControl(method = 'repeatedcv',
+                       repeats = 10,
+                       number = 10)
+
+#optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
+ #                                           sigma = c(0.5, 1, 2, 3, 4))
+
+svmCv = train(ADCDRSTG~., 
+              data = scaled_train,
+              method = 'svmPoly',
+              trControl = costVal,
+              #tuneGrid = optParamGrid,
+              metric = 'Kappa')
+
+optimal_cost = svmCv$bestTune
+
+originalSVMPred = predict(svmMod, scaled_test, type = 'class')
+optSVMPred = predict(svmCv, scaled_test, type = 'raw')
+
+
+CrossTable(originalSVMPred, scaled_test$ADCDRSTG)
+CrossTable(optSVMPred, scaled_test$ADCDRSTG)
+
+# Calculate accuracy
+tab = table(optSVMPred,scaled_test$ADCDRSTG)
+tab
+
+accuracy = round((sum(diag(tab))/sum(tab))*100,3)
+print(paste("The accuracy for SVM is", accuracy))
+
+```
 # Stepwise / Ridge to enhance model features
 ```{r} 
 ########################################### 
