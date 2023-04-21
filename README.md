@@ -24,4 +24,6 @@ classification decision tree, linear discriminant analysis, and K nearest
 neighbors. We evaluated our models using accuracy, ROC curve area, precision, recall 
 and F-score. All the model building and evaluation processes can be found 
 within the EDA_ModelBuilding.Rmd file in this repository.
+
+Note: EDA.Rmd file should be run before the EDA_ModelBuilding.Rmd file. EDA_ModelBuilding builds off of variables created from the EDA.Rmd file.
  
