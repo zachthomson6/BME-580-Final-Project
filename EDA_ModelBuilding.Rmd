@@ -365,19 +365,6 @@ f_score
 ```
 
 
-
-```{r}
-# Calculate AIC and BIC
-n <- nrow(train_data)
-k <- length(ldaMod$svd)
-logLik_val <- sum(log(predict(ldaMod, train_data)$x + 4))
-AIC_val <- -2 * logLik_val + 2 * k
-BIC_val <- -2 * logLik_val + k * log(n)
-
-AIC_val
-BIC_val
-```
-
 #KNN
 ```{r}
 set.seed(580)
@@ -427,7 +414,7 @@ polyLogModel <- nnet::multinom(ADCDRSTG ~ poly(Wechsler_logical_memory, 2) + pol
 
 # create confusion matrix for test set
 polyPred_test = predict(polyLogModel, test_data)
-confusionTab_poly_test = table(Predicted = polyPred_test$class,
+confusionTab_poly_test = table(Predicted = polyPred_test,
                       Actual = test_data$ADCDRSTG)
 confusionTab_poly_test
 
@@ -607,9 +594,9 @@ svmMod = svm(ADCDRSTG~., data = scaled_train, type = 'C', cost = 50,
 costVal = trainControl(method = 'repeatedcv',
                        repeats = 10,
                        number = 10)
+
 optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
                                             sigma = c(0.5, 1, 2, 3, 4))
-
 
 svmCv = train(ADCDRSTG~., 
               data = scaled_train,
@@ -716,7 +703,7 @@ optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
 optRadSVM = train(y~.,
                   pcaData,
                   method = 'svmLinear',
-                  tuneGrid = optParamGrid,
+                  tuneGrid = expand.grid(C=c(10^seq(from = -3, to = 2, by = .2))),
                   trControl = costVal,
                   metric = 'Accuracy') 
 print(optRadSVM)
@@ -818,7 +805,7 @@ costVal = trainControl(method = 'repeatedcv',
                        number = 10)
 
 #optParamGrid = expand.grid(C=c(.001, .01, 1, 5, 10, 20, 50, 100),
- #                                           sigma = c(0.5, 1, 2, 3, 4))
+                                            #sigma = c(0.5, 1, 2, 3, 4))
 
 svmCv = train(ADCDRSTG~., 
               data = scaled_train,
@@ -855,7 +842,7 @@ set.seed(580)
 fit1 <- nnet::multinom(formula = ADCDRSTG~ Memory + Wechsler_logical_memory + Fuld_object_memory + Del_word_list_memory + 
                                    Benton_vis_reten + Arithmetic + Learning, data = train_data)
 
-# step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
+ step.fit1 <- stepAIC(fit1, direction = 'both', trace = FALSE)
 step.fit1$aic
 # summary(step.fit1)
 
@@ -877,7 +864,7 @@ fit2 <- nnet::multinom(ADCDRSTG ~ poly(Wechsler_logical_memory, 2) + poly(Fuld_o
                          + poly(Arithmetic,2) + poly(Learning,2),
                          data = train_data, raw = FALSE)
 
-#step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
+step.fit2 <- stepAIC(fit2, direction = 'both', trace = FALSE)
 step.fit2$aic
 summary(step.fit2)
 
